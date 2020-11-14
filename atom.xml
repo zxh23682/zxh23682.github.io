@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zxh23682.github.io</id>
+    <title>zxh23682</title>
+    <updated>2020-11-14T23:51:02.822Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zxh23682.github.io"/>
+    <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
+    <subtitle>蒟蒻一枚。</subtitle>
+    <logo>https://zxh23682.github.io/images/avatar.png</logo>
+    <icon>https://zxh23682.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, zxh23682</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello World]]></title>
+        <id>https://zxh23682.github.io/post/hello-world/</id>
+        <link href="https://zxh23682.github.io/post/hello-world/">
+        </link>
+        <updated>2020-11-14T14:51:50.000Z</updated>
+        <content type="html"><![CDATA[<p>这是我的第一篇博客文章。以后一些洛谷博客文章也会搬运到这里。</p>
+<h3 id="尽请期待">尽请期待！</h3>
+]]></content>
+    </entry>
+</feed>
