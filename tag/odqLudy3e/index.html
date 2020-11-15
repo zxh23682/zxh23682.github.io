@@ -1,424 +1,342 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>题解 | zxh23682</title>
 <meta name="description" content="一个蒟蒻OIer的博客">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605434502613">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605436548359">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://zxh23682.github.io/styles/main.css">
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://zxh23682.github.io">zxh23682</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://zxh23682.github.io">
+        <img class="avatar" src="https://zxh23682.github.io/images/avatar.png?v=1605436548359" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://zxh23682.github.io">
+        <h1 class="site-title">zxh23682</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
   </div>
-</nav>
-
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: 题解</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">题解 P6784 「EZEC-3」造房子</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge ">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">题解 CF878B 【Teams Formation】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge warning">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">题解 P6855 【「EZEC-4.5」走方格】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge secondary">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">题解 P7071 【优秀的拆分】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge secondary">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">题解 P1444 【[USACO1.3]虫洞 wormhole】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge warning">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/">题解 P6123 【[Neerc2016]Hard Refactoring】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge ">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/">题解 CF994A 【Fingerprints】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge warning">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">题解 P6850 【NOI】</a>
-    </h2>
-    <p class="article-meta">
-      2020-11-15
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge secondary">
-          题解
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://zxh23682.github.io/post/ti-jie-p6850-noi/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
-        </div>
-        <div class="row flex-edges">
-  
-  
 </div>
 
-      </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://zxh23682.github.io/images/avatar.png?v=1605434502613" class="no-responsive avatar">
-    <div class="text-muted">一个蒟蒻OIer的博客</div>
-    <div class="social-container">
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
         
-          <a href="github.com/zxh23682" target="_blank">
-            <i class="fab fa-github"></i>
+          <a href="/" class="menu purple-link">
+            首页
           </a>
         
       
         
-      
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
         
       
         
-      
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
         
       
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
         
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">题解 P6784 「EZEC-3」造房子</a>
-            </li>
-          
+          <a href="/about" class="menu purple-link">
+            关于
+          </a>
         
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/wo-de-ge-ren-xin-xi/">【置顶】我的个人信息</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">题解 CF878B 【Teams Formation】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/">题解 P6833 【[Cnoi2020]雷雨】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">题解 P6855 【「EZEC-4.5」走方格】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">题解 P7071 【优秀的拆分】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">题解 P1444 【[USACO1.3]虫洞 wormhole】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/">题解 P6123 【[Neerc2016]Hard Refactoring】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/">题解 CF994A 【Fingerprints】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">题解 P6850 【NOI】</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://zxh23682.github.io/tag/odqLudy3e/" class="badge success">
-          题解
-        </a>
-      
-        <a href="https://zxh23682.github.io/tag/7Hqj3q9M3/" class="badge success">
-          随笔
-        </a>
-      
-        <a href="https://zxh23682.github.io/tag/gEhYv41FQ/" class="badge warning">
-          游记
-        </a>
       
     </div>
   </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 题解
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">
+        <h2 class="post-title">题解 P6784 「EZEC-3」造房子</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">
+        <h2 class="post-title">题解 CF878B 【Teams Formation】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">
+        <h2 class="post-title">题解 P6855 【「EZEC-4.5」走方格】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">
+        <h2 class="post-title">题解 P7071 【优秀的拆分】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">
+        <h2 class="post-title">题解 P1444 【[USACO1.3]虫洞 wormhole】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/">
+        <h2 class="post-title">题解 P6123 【[Neerc2016]Hard Refactoring】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/">
+        <h2 class="post-title">题解 CF994A 【Fingerprints】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">
+        <h2 class="post-title">题解 P6850 【NOI】</h2>
+      </a>
+      <div class="post-abstract">
+        
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2020-11-15</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://zxh23682.github.io/tag/odqLudy3e/">
+                题解
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
 </div>
 
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">一个蒟蒻OIer的博客</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zxh23682" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
