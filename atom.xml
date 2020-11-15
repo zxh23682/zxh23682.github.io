@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682</title>
-    <updated>2020-11-15T02:42:16.217Z</updated>
+    <updated>2020-11-15T03:04:16.612Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,451 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF878B 【Teams Formation】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">
+        </link>
+        <updated>2020-11-15T03:03:42.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>给出一个长为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的序列，将其重复 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 次，连续相等的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的个元素可以被消除，问最后剩余多少个元素。</p>
+<h3 id="思路">思路：</h3>
+<p>首先我们先考虑单个串，如果单个串中有恰好 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的倍数个连续相同字符，那么我们应该先将其消除，那么第一步我们遍历数组，这里我们需要用到一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>i</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">pair</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 数组,数组中前面存数值，后面存个数。</p>
+<p>这样如果我们遍历到的数字和前一个相同也就是找到了连续相同的，我们只需要给顶部的元素的 <code>st[top].second+1</code>，如果发现和前一个元素不同说明已经不连续相同了，这时候我们再把这个数放进去，这样的好处就是我们 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>i</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">pair</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 数组中用一个数字和其个数代表了连续相等的串，这样我们只需要判断 <code>st[i].second%k</code> 是否等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就可以。</p>
+<p>这样对于初始串的处理就结束了，我们就得到的消去连续的后的单个串的个数我们记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">rec</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span></span></span></span>。</p>
+<p>然后我们观察，发现对于每两个串相连，其实就是一个串的首尾相连把连续相同的k个消去，这样我们还是对一个串处理，我们继续处理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>a</mi><mi>i</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">pair</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 数组。</p>
+<p>用两个下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 从两边向中间缩，如果两头数字相同并且，他们的个数之和恰好是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的倍数，那么这一堆全都可以消去，这样我们让 <code>l++，r++</code>，记录下消除的个数，一直到两头数字不能完全消除为止。</p>
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mi>h</mi><mi>i</mi><mi>l</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">while</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span></span></span></span> 循环实现，每个串消除的首尾总个数记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">rec2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord">2</span></span></span></span>，同时我们发现第一个串的首和最后一个串尾可能不会接触，那么我们可以确定一定会减去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">rec2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord">2</span></span></span></span>。</p>
+<p>接下来分两种情况讨论即可：</p>
+<ul>
+<li>
+<p>只剩下了一种数字</p>
+</li>
+<li>
+<p>剩下多种数字</p>
+</li>
+</ul>
+<p>注意要开 <code>long long</code>。</p>
+<h3 id="code">Code:</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+ll a[100005];
+pair&lt;ll,ll&gt; st[100005];
+ll top,n,m,k,l,r,rec,rec2;
+ll ans;
+int main() {
+	scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;k,&amp;m);
+	for(ll i=1; i&lt;=n; i++) scanf(&quot;%lld&quot;,&amp;a[i]);
+	for(ll i=1; i&lt;=n; i++) {
+		if(!top || st[top].first!=a[i]) st[++top]=make_pair(a[i],1);
+		else st[top].second=(st[top].second + 1)%k;
+		if(st[top].second==0) top--;
+	}
+	for(ll i=1; i&lt;=top; i++) rec += st[i].second;
+	l=1,r=top;
+	while(l&lt;r &amp;&amp; st[l].first==st[r].first &amp;&amp; (st[l].second+st[r].second)%k==0) {
+		rec2 += st[l].second+st[r].second;
+		l++;
+		r--;
+	}
+	if(l==r) {
+		if(st[l].second*m%k==0) ans -= rec2;
+		ans += m*rec-rec2*(m-1)-(st[l].second*m/k*k);
+	} else {
+		if(st[l].first==st[r].first) rec2 += (st[l].second+st[r].second)/k*k;
+		ans=m*rec-rec2*(m - 1);
+	}
+	printf(&quot;%lld\n&quot;,ans);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P6833 【[Cnoi2020]雷雨】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/">
+        </link>
+        <updated>2020-11-15T02:56:54.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="思路">思路</h3>
+<p>可以想到，这题其实就是找一个点满足这个点到题目要求的三个点的最短路之和最小（去除重复部分），所以直接用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>i</mi><mi>j</mi><mi>k</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Dijkstra</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span></span></span></span><br>
+求出三个点到每个点的最短路，然后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 扫描每个点找出满足上述条件的点即可。</p>
+<p>注意：输入的矩阵第一行是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 然后递减，所以如果是从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 开始输入的需要把题目中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 替换。</p>
+<p><strong>此题需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 。</strong></p>
+<hr>
+<h3 id="code">Code:</h3>
+<pre><code class="language-cpp">
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int A = 1e3 + 11;
+const int B = 1e6 + 11;
+const int mod = 1e9 + 7;
+const int inf = 0x3f3f3f3f;
+int dx[4] = {0, 0, 1, -1};
+int dy[4] = {1, -1, 0, 0};
+bool vis[A][A];
+int n, m, a, b, c;
+ll dis[3][A][A], mapp[A][A];
+
+struct node {
+	int x, y;
+	ll val;
+	bool operator &lt; (const node &amp;b) const {
+		return val &gt; b.val;
+	}
+};
+
+
+inline void Dij(int sx, int sy, int tag) {
+	priority_queue &lt;node&gt; Q;
+	memset(dis[tag], inf, sizeof(dis[tag]));
+	memset(vis, 0, sizeof(vis));
+	dis[tag][sx][sy] = mapp[sx][sy];
+	Q.push((node) {
+		sx, sy, dis[tag][sx][sy]
+	});
+	while (!Q.empty()) {
+		int x = Q.top().x, y = Q.top().y;
+		Q.pop();
+		if (vis[x][y]) continue;
+		vis[x][y] = 1;
+		for (int i=0; i&lt;4; i++) {
+			int bx = x + dx[i], by = y + dy[i];
+			if (bx &gt; n || bx &lt; 1 || by &gt; m || by &lt; 1) continue;
+			if (dis[tag][bx][by] &gt; dis[tag][x][y] + mapp[bx][by]) {
+				dis[tag][bx][by] = dis[tag][x][y] + 1ll * mapp[bx][by];
+				Q.push((node) {
+					bx, by, dis[tag][bx][by]
+				});
+			}
+		}
+	}
+}
+
+int main() {
+	cin&gt;&gt;n&gt;&gt;m&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+	for (int i=1; i&lt;=n; i++) for (int j=1; j&lt;=m; j++) cin&gt;&gt;mapp[i][j];
+	Dij(1, a, 0);
+	Dij(n, b, 1);
+	Dij(n, c, 2);
+	ll ans = 1e18;
+	for (int i=1; i&lt;=n; i++) {
+		for (int j=1; j&lt;=m; j++) {
+			ans = min(ans, dis[0][i][j] + dis[1][i][j] + dis[2][i][j] - 2 * mapp[i][j]);
+		}
+	}
+	cout&lt;&lt;ans;
+	return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P6855 【「EZEC-4.5」走方格】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">
+        </link>
+        <updated>2020-11-15T02:50:16.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∗</mi></mrow><annotation encoding="application/x-tex">∗</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">∗</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的网格，每个格子有一个数，可以选择一个位置变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。要求最小化最大权值和路径。</p>
+<h3 id="思路">思路：</h3>
+<p>考虑枚举哪个位置变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，一个位置变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 后我们将路径分为两种路径，一种是经过该点的路径，一种是不经过该点的路径。</p>
+<p>我们预处理出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 走到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> 的最大权和， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">g_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> 走到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 的最大权和。然后我们发现如果不走 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> 这个位置，那么一会走 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>−</mo><mo>&gt;</mo><mo>(</mo><mi>i</mi><mo separator="true">,</mo><mi>y</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(i,y)-&gt;(i,y+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>&lt;</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">i&lt;x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>；或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>j</mi><mo>)</mo><mo>−</mo><mo>&gt;</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,j)-&gt;(x+1,j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">)</span></span></span></span> 其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo>&lt;</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">j&lt;y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>。用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span></span></span></span> 计算这些走法的最大权值和即可。</p>
+<p>时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></p>
+<hr>
+<h3 id="code">Code：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+ll n,m,a[2005][2005],f[2005][2005],g[2005][2005],ar[2005][2005],br[2005][2005];
+int main() {
+	cin&gt;&gt;n&gt;&gt;m;
+	for(ll i=1; i&lt;=n; i++)
+		for(ll j=1; j&lt;=m; j++) {
+			cin&gt;&gt;a[i][j];
+			f[i][j] = max(f[i-1][j],f[i][j-1])+a[i][j];
+		}
+	for(ll i=n; i&gt;=1; i--)
+		for(ll j=m; j&gt;=1; j--) {
+			g[i][j] = max(g[i+1][j],g[i][j+1])+a[i][j];
+			ar[i][j] = f[i][j]+g[i+1][j];
+			br[i][j] = f[i][j]+g[i][j+1];
+		}
+	ll ans=1e18;
+	for(ll i=1; i&lt;=n; i++)
+		for(ll j=1; j&lt;=m; j++) {
+			ll z = max(f[i][j]+g[i][j]-2*a[i][j],max(ar[i][j-1],br[i-1][j]));
+			ans = min(ans,z);
+			if(j!=1) ar[i][j] = max(ar[i][j],ar[i][j-1]);
+			if(i!=1) br[i][j] = max(br[i][j],br[i-1][j]);
+		}
+	cout&lt;&lt;ans;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P7071 【优秀的拆分】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">
+        </link>
+        <updated>2020-11-15T02:49:36.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="思路">思路：</h3>
+<p>首先，易得如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为奇数就输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup><mo>&lt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{23}&lt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>&gt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{24}&gt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span>，所以从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 枚举，找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 次方小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 就输出，把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 减去上一个符合的数，直到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就跳出循环。</p>
+<hr>
+<h3 id="code">Code：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+ll n;
+int main() {
+//	freopen(&quot;power.in&quot;,&quot;r&quot;,stdin);
+//	freopen(&quot;power.out&quot;,&quot;w&quot;,stdout);
+	scanf(&quot;%lld&quot;,&amp;n);
+	if (n%2==1) { //如果n为奇数就 输出-1
+		printf(&quot;-1\n&quot;);
+		fclose(stdin);
+		fclose(stdout);
+		return 0;
+	}
+	for (int i=24;i&gt;=1;i--) {
+		if (pow(2,i)&lt;=n) {
+			cout&lt;&lt;(ll)pow(2,i)&lt;&lt;&quot; &quot;; //找到符合的就输出，注意要用long long输出
+			n -= pow(2,i); //减去上一个输出的数
+		}
+		if (n==0) break; //n为0时就结束程序
+	}
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P1444 【[USACO1.3]虫洞 wormhole】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">
+        </link>
+        <updated>2020-11-15T02:49:14.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>给定一些点，在横向穿过这些点时将会被传送回纵坐标相同的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 轴上，问有多少种情况会使得永远向右爬的虫子陷入死循环。</p>
+<h3 id="思路">思路：</h3>
+<p>首先因为只会向右爬，所以我们只需将同一行上的点间连边，然后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">dfs</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">s</span></span></span></span> 暴力找匹配，之后判环即可。</p>
+<h3 id="code">Code：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define x second
+#define y first
+using namespace std;
+int n,to[20],pre[20],ans;
+bool vis[20];
+pair&lt;int,int&gt;p[20];
+bool check(int k) { //判环
+	while(to[k]) {
+		if(vis[k]) return true;
+		vis[k]=true;
+		k=pre[to[k]];
+	}
+	return false;
+}
+void dfs(int dep) { //暴力找匹配
+	if(dep&gt;n) {
+		for(int i=1; i&lt;=n; i++) {
+			fill(vis+1,vis+1+n,0);
+			if(check(i)) {
+				ans++;
+				return;
+			}
+		}
+		return;
+	}
+	if(pre[dep]) dfs(dep+1);
+	else {
+		for(int i=dep+1; i&lt;=n; i++)
+			if(!pre[i]) {
+				pre[i]=dep;
+				pre[dep]=i;
+				dfs(dep+1);
+				pre[i]=0;
+				pre[dep]=0;
+			}
+	}
+}
+int main() {
+	cin&gt;&gt;n;
+	for(int i=1; i&lt;=n; i++) cin&gt;&gt;p[i].x&gt;&gt;p[i].y;
+	sort(p+1,p+1+n);
+	for(int i=1; i&lt;n; i++) if(p[i].y==p[i+1].y) to[i]=i+1;
+	dfs(1);
+	cout&lt;&lt;ans;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P6123 【[Neerc2016]Hard Refactoring】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/">
+        </link>
+        <updated>2020-11-15T02:48:33.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="思路">思路：</h3>
+<p>简单模拟，数字区间为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msup><mn>2</mn><mn>15</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>15</mn></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">[2^{15},2^{15}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>，全取为 <code>true</code> ，全不取为 <code>false</code> 。否则按最简表达式给出范围。</p>
+<p>对于输入给的表达式，读取其表示的区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> ，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>&lt;</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">l &lt;= r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> ，则将其在一维数轴上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 每个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span> 。</p>
+<p>对结果判断，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msup><mn>2</mn><mn>15</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>15</mn></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">[2^{15},2^{15}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span><br>
+区间的每个数字判断其是否能够取到，并合并区间，打印若干段不连续区间即可。</p>
+<p>对于如何快速对区间修改及单点查询，通过树状数组即可。</p>
+<p>注意处理好输入输出格式问题。</p>
+<hr>
+<h3 id="code">Code：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int BASE = 32769;
+const int N = 70005;
+int bin[N];
+inline int lowbit(int x) {
+	return x &amp; -x;
+}
+void add(int x, int w) {
+	for(int i=x; i&lt;N; i+=lowbit(i)) bin[i] += w;
+}
+int sum(int x) {
+	int ret = 0;
+	for(int i=x; i; i-=lowbit(i)) ret += bin[i];
+	return ret;
+}
+void update(int x, int y, int w) {
+	add(x, w),add(y+1, -w);
+}
+int main() {
+
+	char x[2], op[5], eop0, eop1;
+	int lmt, lft, rgt;
+	while(true) {
+		lft = -32768,rgt = 32767;
+		scanf(&quot; %s %s %d&quot;, x, op, &amp;lmt);
+		if(op[0] == '&lt;') rgt = lmt;
+		else lft = lmt;
+		if(cin&gt;&gt;eop0&gt;&gt;eop1) {
+			if(eop0 == '&amp;') {
+				scanf(&quot; %c %s %d&quot;, &amp;x, op, &amp;lmt);
+				if(op[0] == '&lt;') rgt = min(lmt, rgt);
+				else lft = max(lft, lmt);
+			}
+			if(lft &lt;= rgt) update(lft + BASE, rgt + BASE, 1);
+			if(eop0 == '&amp;') {
+				if(cin&gt;&gt;eop0&gt;&gt;eop1);
+				else break;
+			}
+		} else {
+			if(lft &lt;= rgt) update(lft + BASE, rgt + BASE, 1);
+			break;
+		}
+	}
+	int cnt = 0;
+	lft = -BASE;
+	bool flg = false;
+	for(int i=1, val; i&lt;=BASE + 32767; i++) {
+		val = sum(i);
+		cnt += (val &gt; 0 ? 1 : 0);
+		if(lft == -BASE &amp;&amp; val) lft = i-BASE;
+		if(lft != -BASE &amp;&amp; val == 0) {
+			if(flg) printf(&quot; ||\n&quot;);
+			if(lft == 1-BASE) printf(&quot;x &lt;= %d&quot;, i-BASE-1);
+			else printf(&quot;x &gt;= %d &amp;&amp; x &lt;= %d&quot;, lft, i-BASE-1);
+			lft = -BASE;
+			flg = true;
+		}
+	}
+	if(cnt == 0) printf(&quot;false\n&quot;);
+	else if(cnt == 32768*2) printf(&quot;true\n&quot;);
+	else if(lft != -BASE) {
+		if(flg) printf(&quot; ||\n&quot;);
+		printf(&quot;x &gt;= %d&quot;, lft);
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 CF994A 【Fingerprints】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/">
+        </link>
+        <updated>2020-11-15T02:48:05.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>按顺序输出第一个数组中在第二个数组中的数。</p>
+<p>这题两个数组都不会出现重复数字。</p>
+<hr>
+<h3 id="思路">思路：</h3>
+<p>输入两个数组，二重循环遍历 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 数组，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i=y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，就输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
+<hr>
+<h3 id="code">Code:</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m;
+int x[15],y[15];
+int main() {
+	cin&gt;&gt;n&gt;&gt;m;
+	for (int i=1; i&lt;=n; i++) cin&gt;&gt;x[i];
+	for (int i=1; i&lt;=m; i++) cin&gt;&gt;y[i]; //读入两个数组
+	for (int i=1; i&lt;=n; i++) {
+		for (int j=1; j&lt;=m; j++) {
+			if(x[i] == y[j]) cout &lt;&lt; x[i] &lt;&lt; &quot; &quot;; //如果找到相等的就输出
+		}
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P6850 【NOI】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-p6850-noi/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">
+        </link>
+        <updated>2020-11-15T02:47:27.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>你有基础分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分，给你 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> 个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo separator="true">,</mo><mi>e</mi><mo separator="true">,</mo><mi>f</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">a,b,c,d,e,f,g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span>，再给你两个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">h=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，分数加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span> 分。</p>
+<p>如果总分，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mo>+</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>+</mo><mi>d</mi><mo>+</mo><mi>e</mi><mo>+</mo><mi>f</mi><mo>+</mo><mi>g</mi><mo>(</mo><mo>+</mo><mn>5</mn><mo>)</mo><mo>≥</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">50+a+b+c+d+e+f+g(+5)≥i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord">+</span><span class="mord">5</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，就输出 <code>AKIOI</code>，否则输出 <code>AFO</code>。</p>
+<p>注意：此题唯一坑点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mi>O</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">NOI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span> 考试笔试<strong>白送</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span> 分！所以分数初始值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord">0</span></span></span></span>。</p>
+<hr>
+<h3 id="code">Code：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll; 
+ll a,b,c,d,e,f,g,h,i;
+ll ans = 50;
+inline int read() { //快读，可省略 
+	register int s=0,w=1;
+	char ch=getchar();
+	while(ch&lt;'0'||ch&gt;'9') {
+		if(ch=='-')w=-1;
+		ch=getchar();
+	}
+	while(ch&gt;='0'&amp;&amp;ch&lt;='9')s=s*10+ch-'0',ch=getchar();
+	return s*w;
+}
+int main() {
+	a=read();b=read();c=read();d=read();e=read();f=read();g=read();h=read();i=read(); //读入数据 
+	ans += (a+b+c+d+e+f+g); //计和 
+	if (h == 1) ans += 5; //判断是否要加5分 
+	if (ans &gt;=  i) { //是否进入集训队 
+		printf(&quot;AKIOI&quot;);
+		return 0;
+	}
+	printf(&quot;AFO&quot;);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[利用“永恒之蓝”漏洞进行Win7渗透的演示]]></title>
         <id>https://zxh23682.github.io/post/li-yong-yong-heng-zhi-lan-lou-dong-jin-xing-win7-shen-tou-de-yan-shi/</id>
@@ -129,2260 +574,6 @@ clearev                       #清除日志
 <p>《结束》</p>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[期中考试游记]]></title>
-        <id>https://zxh23682.github.io/post/qi-zhong-kao-shi-you-ji/</id>
-        <link href="https://zxh23682.github.io/post/qi-zhong-kao-shi-you-ji/">
-        </link>
-        <updated>2020-11-15T01:44:58.000Z</updated>
-        <content type="html"><![CDATA[<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>a</mi><mi>T</mi><mi>e</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">LaTex</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">e</span><span class="mord mathdefault">x</span></span></span></span> 爆炸原因，请到这里看：</p>
-<p><a href="https://www.luogu.com.cn/blog/zxhlg/qi-zhong-kao-shi-you-ji">Link</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷美化——Dark Mode]]></title>
-        <id>https://zxh23682.github.io/post/luo-gu-mei-hua-dark-mode/</id>
-        <link href="https://zxh23682.github.io/post/luo-gu-mei-hua-dark-mode/">
-        </link>
-        <updated>2020-11-15T01:38:03.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="准备">准备：</h3>
-<ul>
-<li>
-<p>电脑火狐浏览器</p>
-</li>
-<li>
-<p>去<a href="https://userstyles.org/styles/166554/argon-design-luogu-argon-design">这里</a>随便下载一种样式。</p>
-</li>
-</ul>
-<hr>
-<h3 id="开始">开始：</h3>
-<p>下载完之后，大家应该可以发现自己的洛谷有了变化。</p>
-<p>界面变得更漂亮，右上角有这样一个插件图标：</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/a6olgtzl.png" alt="" loading="lazy"></figure>
-<p>点击一下（如果安装正确的话就是这样的）：</p>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2eml2001.png" alt="" loading="lazy"></figure>
-<p>点击右上角三个点，再点击 <code>新建样式</code>。</p>
-<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/z9ahemr4.png" alt="" loading="lazy"></figure>
-<p>进入这个界面：</p>
-<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/lyzi65nj.png" alt="" loading="lazy"></figure>
-<p>点击 <code>添加其他部分</code>。</p>
-<p>这时会出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个代码区域。</p>
-<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9dvu19pc.png" alt="" loading="lazy"></figure>
-<h3 id="代码-1-中输入">代码 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 中输入：</h3>
-<pre><code class="language-python">/*---对于基本控件的处理*/
-
-/*--字体引用*/
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OX-hpOqc.woff2) format('woff2');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OVuhpOqc.woff2) format('woff2');
-    unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXuhpOqc.woff2) format('woff2');
-    unicode-range:U+1F00-1FFF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUehpOqc.woff2) format('woff2');
-    unicode-range:U+0370-03FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXehpOqc.woff2) format('woff2');
-    unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXOhpOqc.woff2) format('woff2');
-    unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:300;
-    src:local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2) format('woff2');
-    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWJ0bbck.woff2) format('woff2');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFUZ0bbck.woff2) format('woff2');
-    unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWZ0bbck.woff2) format('woff2');
-    unicode-range:U+1F00-1FFF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVp0bbck.woff2) format('woff2');
-    unicode-range:U+0370-03FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWp0bbck.woff2) format('woff2');
-    unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');
-    unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:400;
-    src:local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
-    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOX-hpOqc.woff2) format('woff2');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOVuhpOqc.woff2) format('woff2');
-    unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOXuhpOqc.woff2) format('woff2');
-    unicode-range:U+1F00-1FFF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUehpOqc.woff2) format('woff2');
-    unicode-range:U+0370-03FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOXehpOqc.woff2) format('woff2');
-    unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOXOhpOqc.woff2) format('woff2');
-    unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:600;
-    src:local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhp.woff2) format('woff2');
-    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOX-hpOqc.woff2) format('woff2');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOVuhpOqc.woff2) format('woff2');
-    unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXuhpOqc.woff2) format('woff2');
-    unicode-range:U+1F00-1FFF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUehpOqc.woff2) format('woff2');
-    unicode-range:U+0370-03FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXehpOqc.woff2) format('woff2');
-    unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXOhpOqc.woff2) format('woff2');
-    unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
-}
-
-@font-face {
-    font-family:'Open Sans';
-    font-style:normal;
-    font-weight:700;
-    src:local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2) format('woff2');
-    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
-}
-/*--全局*/
-html, body {
-    background-color: #f4f5f7 !important;
-}
-
-html, body {
-    font-family: 'open sans' !important;
-}
-
-body {
-    overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600 !important;
-}
-
-*&gt;h2:first-child {
-    margin-bottom: 1.6rem;
-}
-
-.card .color-default {
-    color: #ACAAC4 !important;
-}
-/*--顶栏*/
-.lg-header, .lg-header-list&gt;li {
-    background-color: #555abf;
-    border-color: #555abf;
-}
-
-.lg-header {
-    box-shadow: 0 5px 15px rgba(50, 50, 93, .1), 0 5px 8px rgba(0, 0, 0, .07)!important;
-}
-/*--代码字体*/
-code {
-    background: #000000
-}
-
-.hljs {
-    background: #404040 !important;
-}
-
-.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-selector-id {
-    color: #93c763 !important;
-}
-
-.hljs-number {
-    color: #ffcd22 !important;
-}
-
-.hljs {
-    color: #e0e2e4 !important;
-}
-
-.hljs-attribute {
-    color: #668bb0 !important;
-}
-
-.hljs-code,.hljs-class .hljs-title,.hljs-section {
-    color: white !important;
-}
-
-.hljs-regexp,.hljs-link {
-    color: #d39745 !important;
-}
-
-.hljs-meta {
-    color: #557182 !important
-}
-
-.hljs-tag,.hljs-name,.hljs-bullet,.hljs-subst,.hljs-emphasis,.hljs-type,.hljs-built_in,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-addition,.hljs-variable,.hljs-template-tag,.hljs-template-variable {
-    color: #8cbbad !important;
-}
-
-.hljs-string,.hljs-symbol {
-    color: #ec7600 !important;
-}
-
-.hljs-comment,.hljs-quote,.hljs-deletion {
-    color: #818e96 !important;
-}
-
-.hljs-selector-class {
-    color: #a082bd !important;
-}
-
-.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-doctag,.hljs-title,.hljs-section,.hljs-type,.hljs-name,.hljs-strong {
-    font-weight: bold !important;
-}
-
-/*--加载进度条处理*/
-#nprogress .nprogress-peg {
-    box-shadow: none !important;
-}
-
-#nprogress .nprogress-bar {
-    position: fixed;
-    top: 0 !important;
-    background: #5eb95e;
-}
-/*--选中内容的样式*/
-*::selection {
-    background-color: #cce2ff;
-}
-
-*::-moz-selection {
-    background-color: #cce2ff;
-}
-
-*::-webkit-selection {
-    background-color: #cce2ff;
-}
-/*--滚动条*/
-::-webkit-scrollbar {
-    width: 6px;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #5e72e4;
-}
-/*--超链接*/
-a {
-    transition: all .15s;
-    color: #d6d4ff;
-}
-/*--颜色定义*/
-.lg-fg-green {
-    color: #2dce89 !important;
-}
-
-.lg-bg-red {
-    background-color: #fb6340;
-}
-
-.lg-bg-orange {
-    background-color: #ff9d09;
-}
-
-.lg-bg-purple {
-    background-color: #8e44ad;
-}
-
-.lg-bg-green {
-    background-color: #2dce89;
-}
-
-.lg-bg-bluedark {
-    background-color: #001277;
-}
-/*--动画定义*/
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-35px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-/*--侧栏*/
-#app &gt; .lfe-body {
-    background: #000000 !important /*1*/
-    /*linear-gradient(30deg,#7795f8 15%,#6772e5 70%,#555abf 94%)*/;
-    box-shadow: 4px 5px 15px rgba(50, 50, 93, .1), 2px 5px 8px rgba(0, 0, 0, .07)!important;
-}
-
-#app &gt; .lfe-body &gt; a {
-    color: #5e72e4 !important;
-    height: 3.7em;
-    margin-top: 3px;
-    padding: 0 !important;
-}
-
-#app &gt; .lfe-body &gt; a:first-of-type {
-    margin-top: 10px !important;
-}
-
-#app &gt; .lfe-body &gt; a &gt; .icon {
-    line-height: 2.4em;
-    font-size: 18px;
-    width: 100%;
-    margin: 0 !important;
-    transition: all 0.3s ease;
-}
-
-#app &gt; .lfe-body &gt; a &gt; .text {
-    opacity: 0;
-    margin-top: -1em;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-#app &gt; .lfe-body &gt; a:hover &gt; .icon {
-    line-height: 1.5em;
-    font-size: 17px;
-}
-
-#app &gt; .lfe-body &gt; a:hover &gt; .text {
-    opacity: 1;
-    margin-top: 0.2em;
-}
-
-#app &gt; .lfe-body &gt; div:first-of-type {
-    background-color: #5e72e4 !important;
-}
-
-#app &gt; .lfe-body &gt; .popup-button {
-    background-color: transparent !important;
-    margin-top: 8px;
-    color: #5e72e4 !important;
-}
-/*-侧栏Hover动画*/
-.lg-sidebar-list li[class^=&quot;lg-nav&quot;] a span[class^=&quot;am-icon&quot;]:after {
-    content: &quot;&quot;;
-    background: #5e72e4;
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: 8px;
-    height: 2px;
-    width: 0px;
-    border-radius: 10px;
-    transition: all .15s ease;
-}
-
-.lg-sidebar-list li[class^=&quot;lg-nav&quot;] a:hover span[class^=&quot;am-icon&quot;]:after {
-    left: 40%;
-    right: 40%;
-    width: 20%;
-}
-/*--输入框*/
-.am-input-group, .input-group {
-    transition: box-shadow .15s ease;
-}
-
-.am-input-group {
-    border-radius: .5rem !important;
-}
-
-.am-form-field, .input-group &gt; .input-wrap &gt; input, .input-wrap &gt; input {
-    transition: box-shadow .15s ease;
-    border: none !important;
-    border-radius: 4px !important;
-    box-shadow: 0 1px 3px rgba(50, 50, 93, .15), 0 1px 0 rgba(0, 0, 0, .02);
-    min-height: 25px !important;
-}
-
-.am-form-field:focus, .input-group &gt; .input-wrap &gt; input:focus, .input-wrap &gt; input:focus {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .08), 0 1px 3px rgba(0, 0, 0, .05) !important;
-}
-
-.am-form-field, .input-group &gt; button {
-    transition: box-shadow .15s ease;
-    border: none;
-    border-radius: 4px !important;
-    box-shadow: 0 1px 3px rgba(50, 50, 93, .15), 0 1px 0 rgba(0, 0, 0, .02);
-}
-
-.input-group &gt; button {
-    margin-left: 3px;
-}
-
-.am-form-field, .input-group &gt; button:hover {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .08), 0 1px 3px rgba(0, 0, 0, .05) !important;
-}
-
-.am-input-group-sm&gt;.am-form-field, .am-input-group-sm&gt;.am-input-group-btn&gt;.am-btn, .am-input-group-sm&gt;.am-input-group-label {
-    font-size: 1.35rem !important;
-}
-
-.am-input-group-label {
-    background: transparent;
-    border: none;
-}
-
-.am-input-group-danger, .am-input-group-primary {
-    box-shadow: none;
-}
-
-.am-input-group-danger &gt; .am-input-group-label, .am-input-group-primary &gt; .am-input-group-label {
-    border-radius: .5rem !important;
-    outline: none !important;
-    letter-spacing: .05em;
-    transition: all .15s ease;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    color: #fff !important;
-    margin-bottom: 6px;
-    height: 33.4px;
-}
-
-.am-input-group-danger &gt; .am-input-group-label:hover, .am-input-group-primary &gt; .am-input-group-label:hover {
-    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-}
-
-.am-input-group-danger &gt; .am-input-group-label:active, .am-input-group-primary &gt; .am-input-group-label:active {
-    box-shadow: none;
-}
-
-.am-input-group-danger &gt; .am-input-group-label {
-    border-color: #f5365c;
-    background-color: #f5365c;
-    /*#ec0c38*/
-}
-
-.am-input-group-primary &gt; .am-input-group-label {
-    border-color: #5e72e4;
-    background-color: #5e72e4;
-    border-radius: .5rem !important;
-}
-
-textarea {
-    box-shadow: 0 1px 3px rgba(50, 50, 93, .15), 0 1px 0 rgba(0, 0, 0, .02);
-    border: none !important;
-}
-
-textarea:focus {
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .08), 0 1px 3px rgba(0, 0, 0, .05) !important;
-}
-
-.lg-input-title {
-    margin-bottom: 5px;
-    border-radius: 5px;
-    border-color: #ddd;
-}
-/*-特判顶部工具条搜索*/
-#topbar-search-text {
-    border-radius: .5rem 0 0 .5em !important;
-}
-
-#topbar-search {
-    border-radius: 0 .5rem .5em 0 !important;
-    border-color: #5e72e4;
-    background-color: #5e72e4;
-}
-/*--卡片*/
-.lg-article, .lg-summary, .lg-article-sub, .card {
-    transition: all .15s ease;
-    box-shadow: 0 5px 15px rgba(50, 50, 93, .1), 0 5px 8px rgba(0, 0, 0, .07)!important;
-    word-wrap: break-word;
-    border-radius: .25rem;
-    background-color: #454545 !important;
-    overflow: visible !important;
-}
-
-.lg-article:hover, .lg-summary:hover, .lg-article-sub:hover, .card:hover {
-    box-shadow: 0 10px 30px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07)!important;
-}
-
-.card {
-    line-height: 1.8;
-}
-/*--按钮*/
-.am-btn {
-    outline: none !important;
-    border: none !important;
-    letter-spacing: .05em;
-    padding: 8px 18px;
-    transition: all .15s ease;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    color: #fff !important;
-    margin-bottom: 6px;
-}
-
-.am-dropdown &gt; .am-btn {
-    color: inherit !important;
-}
-
-button[type='button'] {
-    outline: none !important;
-    border: none !important;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    transition: all .15s ease;
-    margin-bottom: 6px;
-    padding: 8px 18px;
-}
-
-.am-btn.am-disabled, .am-btn[disabled], fieldset[disabled] .am-btn, button[type='button'][disabled], button.disabled[type='button'] {
-    box-shadow: none;
-    opacity: .65;
-}
-
-.am-btn:hover, button[type='button']:hover {
-    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-    transform: translateY(-1px);
-}
-
-.am-btn:active, button[type='button']:active {
-    box-shadow: none;
-}
-
-.am-btn-danger, .am-btn-danger:hover, .am-btn-danger:active, .am-btn-danger:focus, .am-btn-danger:visited {
-    border-color: #f5365c;
-    background-color: #f5365c;
-    /*#ec0c38*/
-}
-
-.am-btn-primary, .am-btn-primary:hover, .am-btn-primary:active, .am-btn-primary:focus, a.am-btn-primary:visited {
-    border-color: #5e72e4;
-    background-color: #5e72e4;
-}
-
-.am-btn-success, .am-btn-success:hover, .am-btn-success:active, .am-btn-success:focus, a.am-btn-success:visited {
-    border-color: #2dce89;
-    background-color: #2dce89;
-}
-
-.am-btn-warning, .am-btn-warning:hover, .am-btn-warning:active, .am-btn-warning:focus, a.am-btn-warning:visited {
-    border-color: #fb6340;
-    background-color: #fb6340;
-}
-/*-复制按钮*/
-.copy-btn {
-    border-color: #5e72e4!important;
-    background-color: #5e72e4 !important;
-    color: #fff !important;
-    margin-top: 3px;
-}
-/*--Tooltip*/
-.tip-twitter {
-    background: #172b4d;
-    color: #fff;
-    border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-}
-
-.tip-twitter&gt;div {
-    font-weight: unset !important;
-    font-size: 13px !important;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-/*--标签*/
-.am-badge {
-    border-radius: 50px !important;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    transition: all .15s;
-}
-
-.tag span.lfe-caption, .difficulty span.lfe-caption {
-    border-radius: 50px !important;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    transition: all .15s;
-}
-
-.am-badge:hover, .tag span.lfe-caption:hover, .difficulty span.lfe-caption:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-}
-
-.am-badge, .lfe-caption[slot='difficulty'], .lfe-caption.tag, .tags-wrap {
-    overflow: visible !important;
-}
-
-.am-badge.lg-bg-red {
-    background-color: #f80031;
-}
-
-.am-badge.lg-bg-orange {
-    background-color: #ff471d;
-}
-
-.am-badge.lg-bg-yellow {
-    background-color: #ff9d09;
-}
-
-.am-badge.lg-bg-green {
-    background-color: #1aae6f;
-}
-
-.am-badge.lg-bg-bluelight {
-    background-color: #03acca;
-}
-
-.am-badge.lg-bg-purple {
-    background-color: #8e44ad;
-}
-
-.am-badge.lg-bg-bluedark {
-    background-color: #001277;
-}
-
-.am-badge.am-badge-warning {
-    background-color: #fb6340;
-}
-/*--菜单*/
-.am-dropdown-content {
-    padding: 1.5rem;
-    border-radius: .25rem;
-    background: #fff;
-    width: 300px;
-    border: none;
-    margin-top: 5px;
-    box-shadow: 0 50px 100px rgba(50, 50, 93, .1), 0 15px 35px rgba(50, 50, 93, .15), 0 5px 15px rgba(0, 0, 0, .1);
-}
-
-.am-dropdown-content:before, .am-dropdown-content:after {
-    display: none !important;
-}
-/*--私信提示浮窗*/
-.lg-unread {
-    line-height: 60px;
-    width: 60px;
-    height: 60px;
-    padding: 0;
-    text-align: center;
-    border-radius: 50%;
-    transition: all .15s ease;
-    color: #fff;
-    background-color: #5e72e4;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    overflow: hidden;
-}
-/*--消息内容*/
-.am-comment-main {
-    border: none;
-    box-shadow: 0 3px 5px rgba(50, 50, 93, .1), 0 2px 3px rgba(0, 0, 0, .08);
-    transition: all .15s;
-}
-
-.am-comment-main:hover {
-    border: none;
-    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-}
-
-.am-comment-main:before, .am-comment-main:after {
-    display: none;
-}
-/*--标题栏*/
-.main-container &gt; .header-layout {
-    height: 380px !important;
-    display: block;
-    position: relative !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: linear-gradient(90deg, #00364D 0, #21064D 100%) !important;
-    border: none;
-    color: #fff;
-    font-weight: unset !important;
-}
-
-.main-container &gt; .header-layout .background {
-    display: none !important;
-}
-
-.main-container &gt; .header-layout &gt; .header {
-    max-width: 1250px;
-    background: transparent !important;
-    padding-left: 35px;
-    position: relative;
-}
-
-.main-container &gt; .header-layout &gt; .header .user-nav {
-    right: 0;
-}
-
-@media screen and(max-width:1475px) {
-    .main-container &gt; .header-layout &gt; .header {
-        position: initial;
-    }
-
-    .main-container &gt; .header-layout &gt; .header .user-nav {
-        right: calc(80px);
-    }
-}
-
-.main-container &gt; .header-layout &gt; .header &gt; h1 {
-    font-size: 50px;
-    margin-top: 25px;
-    padding-bottom: 8px;
-    animation: fadeInLeft .5s ease;
-    max-width: calc(100vw - 150px);
-}
-
-.main-container &gt; main.lfe-body {
-    margin-top: -180px;
-    position: relative;
-    background: transparent !important;
-}
-
-@media screen and(max-width: 576px) {
-    .main-container &gt; main.lfe-body {
-        margin-top: -60px;
-    }
-
-    .main-container &gt; .header-layout &gt; .header {
-        padding-left: 5px;
-    }
-
-    .main-container &gt; .header-layout &gt; .header &gt; h1 {
-        font-size: 35px;
-    }
-}
-/*-面包屑导航*/
-.main-container &gt; .header-layout .bread-crumb, .main-container &gt; .header-layout .bread-crumb a {
-    color: rgba(255, 255, 255, .8) !important;
-    text-decoration: none;
-}
-
-.lg-main-content.solution-block {
-    margin-top: 0 !important;
-}
-/*-面包屑导航*/
-.main-container &gt; header .bread-crumb, .main-container &gt; header .bread-crumb a {
-    color: rgba(255, 255, 255, .8) !important;
-    text-decoration: none;
-}
-
-.lg-main-content.solution-block {
-    margin-top: 0 !important;
-}
-/*--列表（旧版）*/
-.lg-content-table-left {
-    background: #fcfcfc;
-    box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15) !important;
-    border-radius: .375rem;
-    margin-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-    position: relative;
-}
-
-.lg-content-table-left&gt;.lg-table-row {
-    width: 100% !important;
-    box-shadow: none;
-    background: transparent;
-    border-radius: 0;
-    border-bottom: 0.6px solid rgba(0, 0, 0, 0.08);
-    border-spacing: 2px;
-    padding-bottom: 20px;
-}
-
-.lg-content-table-left&gt;.lg-table-row:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-/*--题目列表等表格*/
-div &gt; .header-wrap {
-    padding-bottom: 20px !important;
-    font-size: 17px;
-    border-bottom: 0.6px solid rgba(0, 0, 0, 0.08) !important;
-}
-
-div &gt; .header-wrap .lfe-caption {
-    box-shadow: none !important;
-}
-
-div &gt; .row-wrap {
-    padding: 24px 0 !important;
-    font-size: 17px;
-    border-bottom: 0.6px solid rgba(0, 0, 0, 0.08) !important;
-}
-
-div &gt; .row-wrap:last-child {
-    margin-bottom: 30px;
-}
-
-div &gt; .row-wrap .lfe-caption {
-    font-size: 14px;
-}
-/*-通过率条 tooltip*/
-.rate-wrapper .rate-popup {
-    transition: all .25s ease !important;
-    display: block !important;
-    border-radius: 3px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08) !important;
-    min-width: 4em;
-    min-height: 1em;
-    width: 4em;
-    height: 1em;
-    padding: 0 !important;
-    margin-bottom: -15px;
-    overflow: hidden !important;
-    opacity: 0;
-    color: transparent;
-    background: transparent;
-    pointer-events: none;
-}
-
-.rate-wrapper:hover .rate-popup {
-    border-radius: 30px;
-    margin-bottom: 10px;
-    min-width: 10em;
-    min-height: 1em;
-    width: unset;
-    height: unset;
-    padding: 5px 18px !important;
-    opacity: .8;
-    color: #fff;
-    background: #172b4d;
-}
-/*--页码*/
-.am-pagination, .page-area {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: max-content;
-    width: -moz-max-content;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: none !important;
-}
-
-.am-pagination &gt; li &gt; a, .page-area .page-bar &gt; button {
-    outline: none !important;
-    cursor: pointer;
-    line-height: 1.25;
-    position: relative;
-    display: block;
-    margin-left: -.0625rem;
-    padding: .5rem .75rem;
-    color: #8898aa;
-    border: .0625rem solid #dee2e6;
-    background-color: #fff;
-    font-size: 15px;
-    font-weight: unset;
-    display: flex;
-    min-width: 36px;
-    height: 36px;
-    margin: 0 3px;
-    border-radius: 100px!important;
-    align-items: center;
-    justify-content: center;
-    transition: all .3s;
-}
-
-.page-area .page-bar &gt; button:hover {
-    background-color: #eee;
-}
-
-.am-pagination &gt; .am-active &gt; a, .page-area .page-bar &gt; button[style*='background'] {
-    color: #fff;
-    border-color: #5e72e4 !important;
-    background-color: #5e72e4 !important;
-    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-}
-
-.am-pagination &gt; .am-active &gt; a:hover {
-    color: #fff;
-    border-color: #5e72e4;
-    background-color: #5e72e4;
-}
-/*-针对单独页码卡片特殊适配消除卡片*/
-.lg-article .pagination-centered:before {
-    content: &quot;&quot;;
-    background: #f4f5f7;
-    width: calc(100% + 35px);
-    height: calc(100% + 40px);
-    position: absolute;
-    left: -15px;
-    top: -10px;
-}
-/*--评测详情色块*/
-.lg-record-tile {
-    transition: all .15s ease;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    border-radius: 3px;
-}
-
-.lg-record-tile:hover {
-    transition: all .15s ease;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
-}
-/*--评测详情色块(新版)*/
-.test-case-wrap &gt; .wrapper {
-    width: 100px;
-    height: 100px;
-    margin-right: 16px;
-    margin-bottom: 12px;
-}
-
-.test-case-wrap {
-    margin-top: 25px;
-}
-
-.test-case-wrap &gt; .wrapper .test-case {
-    width: 100px;
-    height: 100px;
-    transition: all .2s ease;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    border-radius: 3px;
-    padding: 3px;
-}
-
-.test-case-wrap &gt; .wrapper .test-case:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
-}
-
-.test-case-wrap &gt; .wrapper .test-case .info {
-    width: calc(100% - 10px);
-    line-height: 15px;
-    font-size: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.test-case-wrap &gt; .wrapper .test-case:hover .info {
-    white-space: normal;
-}
-
-.test-case-wrap &gt; .wrapper .test-case .id {
-    margin-left: 3px;
-}
-
-.test-case-wrap &gt; .wrapper .test-case .status {
-    font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 5px;
-}
-
-.test-case-wrap &gt; .wrapper .message {
-    transition: all .25s ease !important;
-    display: block !important;
-    border-radius: 3px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-    min-width: 105px;
-    min-height: 105px;
-    width: 105px;
-    padding: 0;
-    margin-top: 40px;
-    opacity: 0;
-    color: transparent;
-    background: transparent;
-    pointer-events: none;
-}
-
-.test-case-wrap &gt; .wrapper:hover .message {
-    border-radius: 30px;
-    margin-top: -30px;
-    min-width: 12em;
-    min-height: 1em;
-    width: unset;
-    height: unset;
-    padding: 5px 18px;
-    opacity: .8;
-    color: #fff;
-    background: #172b4d;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='rgb(112, 173, 71)'] {
-    background-color: #2dce89 !important;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='rgb(231, 76, 60)'] {
-    background-color: #fb6340 !important;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='rgb(157, 61, 207)'] {
-    background-color: #8e44ad !important;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='rgb(5, 34, 66)'] {
-    background-color: #001277 !important;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='rgb(14, 29, 105)'] {
-    background-color: #34495e !important;
-}
-
-.test-case-wrap &gt; .wrapper .test-case[style*='background: rgb(20, 85, 143);'] {
-    background-color: #3498db !important;
-}
-/*--头像*/
-.am-comment-avatar {
-    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
-    border: none;
-    transition: all .15s;
-}
-
-.am-comment-avatar:hover {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
-}
-
-.am-panel-bd .am-comment-avatar, .lg-message-content .am-comment-avatar, .lg-message-contact .am-comment-avatar, .lg-inline-up .am-comment-avatar, .lg-header-li .am-comment-avatar {
-    box-shadow: none;
-}
-/*--卡片面板*/
- 
-.lg-article , .lg-summary , .lg-article-sub , .lg-content-table-left , html &gt; body:first-of-type #app &gt; .lfe-body {
-    background: #363636 !important;
-    color: #fff !important;
-}
-
-#app &gt; .lfe-body * {
-    color: #fff !important;
-}
-
-html &gt; body:first-of-type #app &gt; .lfe-body div:first-of-type {
-    background: #353535 !important;
-}
-
-.popup , #app-header .content nav a[href^=&quot;/space/show&quot;]+div.center , #app-header .content nav a[href^=&quot;/space/show&quot;]+div.center * {
-    background: #424242 !important;
-    color: #fff !important;
-}
-
-.am-panel,.feed-selector&gt;a,.am-nav-tabs li&gt;a,.am-comment-bd,.lg-sub-article,.am-alert,#lg-tag-result,#lg-tag-select {
-    background: #454545 !important;
-    color: #fff !important;
-}
-
-code {
-    background: #404040 !important;
-    color: #000 !important;
-}
-
-pre {
-    background-color: #404040 !important;
-    border: none !important;
-    border-width: 0px !important;
-    padding: 5px !important;
-}
-
-.am-comment-hd {
-    background: #404040 !important;
-}
-
-textarea,input {
-    background: #666666 !important;
-    color: #fff !important;
-}
-
-.time, .title, .content {
-    color: #fff !important;
-}
-
-html &gt; body:first-of-type &gt; #app-header , html &gt; body:first-of-type &gt; #app-header .content &gt; header {
-    background: #212121 !important;
-    color: #fff !important;
-}
-
-#app-header h1:before {
-    content: &quot;&quot;;
-    box-shadow: inset -15px 0 30px #212121;
-}
-
-body,html,html&gt;body:first-of-type {
-    background: #303030 !important;
-}
-
-.lg-small,strong {
-    color: rgba(255,255,255,.6);
-}
-
-.highcharts-axis.highcharts-yaxis &gt; text,.highcharts-axis-labels.highcharts-yaxis-labels &gt; text,.highcharts-axis-labels.highcharts-xaxis-labels &gt; text {
-    fill: #ddd !important;
-}
-
-.ace_content {
-    color: #fff;
-    background: #212121;
-}
-
-.ace-clouds .ace_keyword.ace_operator {
-    color: #aaa !important;
-}
-
-.ace-clouds .ace_storage, .ace-clouds .ace_support.ace_class, .ace-clouds .ace_support.ace_function, .ace-clouds .ace_support.ace_other, .ace-clouds .ace_support.ace_type {
-    color: #e778b0 !important;
-}
-
-.ace-clouds .ace_keyword, .ace-clouds .ace_meta, .ace-clouds .ace_support.ace_constant.ace_property-value {
-    color: #40c4ff !important;
-}
-
-.ace-clouds .ace_constant.ace_numeric {
-    color: #5af354 !important;
-}
-
-.ace-clouds .ace_marker-layer .ace_active-line {
-    background: #404040;
-}
-
-.ace_layer.ace_gutter-layer.ace_folding-enabled {
-    background: #303030;
-    color: #fff;
-}
-
-.ace-clouds .ace_gutter-active-line {
-    background-color: #666666;
-}
-
-body:before {
-    content: &quot;&quot;;
-    position: fixed;
-    z-index: 999999999999999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.2);
-    pointer-events: none;
-}
-
-.am-progress {
-    background-color: #e9ecef0d;
-}
-
-#mp-toolbar {
-    background: #212121;
-    border: none;
-}
-
-#mp-toolbar *,#mp-editor-area {
-    border: none !important;
-}
-
-.mp-editor-menu {
-    color: #fff !important;
-    border: none !important;
-    border-width: 0px !important;
-}
-
-.CodeMirror {
-    background: #303030 !important;
-}
-
-.CodeMirror-cursor {
-    border-color: #fff;
-}
-
-#mp-editor-area * {
-    background: #303030 !important;
-}
-
-.CodeMirror-gutters,#mp-editor-preview-area {
-    border-color: #555;
-    background-color: #404040 !important;
-    background: #404040 !important;
-}
-
-.mp-preview-area {
-    background-color: #303030 !important;
-    color: #fff !important;
-}
-
-.mp-preview-content {
-    color: #fff !important;
-}
-
-.cm-s-default .cm-link {
-    color: #B7B8FF;
-}
-
-.cm-s-default .cm-string {
-    color: #ca405b;
-}
-
-pre.CodeMirror-line {
-    color: #fff;
-    background-color: #303030;
-    background: #303030;
-}
-
-.am-pagination&gt;li&gt;a {
-    background: #424242;
-    border: none;
-}
-
-#app-footer {
-    background: #212121 !important;
-}
-
-ul.am-dropdown-content&gt;li&gt;a {
-    color: #ddd;
-}
-
-.am-dropdown-header {
-    color: #ccc;
-}
-
-textarea, input, .am-dropdown-content {
-    background: #303030 !important;
-    color: #fff !important;
-}
-
-ul.am-dropdown-content .am-divider {
-    background-color: #555555;
-}
-
-.am-modal-dialog {
-    background-color: #424242;
-}
-
-.am-modal-dialog&gt;#lg-alert-message, .am-modal-dialog&gt;#memadmin {
-    color: #fff;
-}
-
-.am-modal-dialog&gt;#lg-alert-title, .am-modal-dialog&gt;#memtitle {
-    color: #fff;
-}
-
-pre {
-    background: transparent;
-    border-color: #555;
-    color: #fff !important;
-}
-
-hr {
-    border-color: #666;
-}
-
-.lg-sidebar-list li[class^=&quot;lg-nav&quot;] a span[class^=&quot;am-icon&quot;]:after {
-    background: #fff !important;
-    opacity: 0.95;
-}
-
-.lg-index-benben &gt; div.lg-article:nth-of-type(2) {
-    background: #424242 !important;
-    box-shadow: 0 5px 15px rgba(50,50,93,.1),0 5px 8px rgba(0,0,0,.07)!important;
-}
-
-#home-center-nav {
-    background: #303030 !important;
-}
-
-.lg-fg-bluedark {
-    color: #678baf !important;
-}
-
-#app-header * {
-    color: #ddd !important;
-}
-
-#app &gt; .lfe-body &gt; div.popup-button {
-    color: #fff !important;
-}
-
-.lfe-body {
-    color: white;
-    background-color: black;
-}
-/*
-.main-container &gt; .header-layout .background {
-     display: none !important;
-}*/
-.lg-summary-content li {
-    background: transparent !important;
-}
-
-.lg-summary-content .fadeout {
-    background-image: linear-gradient(transparent 0%,rgb(69,69,69) 90%);
-}
-
-.lg-summary-content .comment-show-more {
-    color: #aaa;
-}
-
-.lg-article .pagination-centered:before {
-    background: #303030 !important;
-}
-
-#mp-editor-area div.CodeMirror-selected {
-    background: rgba(255,255,255,0.5) !important;
-}
-
-#mp-editor-area .CodeMirror-line,#mp-editor-area .CodeMirror-line * {
-    background: transparent !important;
-}
-/*--------------------侧栏颜色*/
-/*#app-sidenav{
-    background: linear-gradient(30deg,#7795f8 15%,#6772e5 70%,#555abf 94%) !important;
-}
-#app-sidenav &gt; a , .popup-button &gt; i{
-    color: #fafafa !important;
-}*/
-
-#app &gt; .lfe-body {
-    background: linear-gradient(30deg,#7795f8 15%,#6772e5 70%,#555abf 94%) !important;
-}
-
-#app &gt; .lfe-body &gt; a , .popup-button &gt; i {
-    color: #fafafa !important;
-}
-
-/*--------------------禁用顶栏标题动画*/
-
-/*下面是禁用顶栏标题动画CSS
-.main-container &gt; header &gt; .header &gt; h1{
-    animation:none !important;
-}
-*/ {
-border:none;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-}
-/*--Footer*/
-.main-container &gt; .lfe-body:last-child {
-padding: 0;
-}
-
-.main-container &gt; .lfe-body:last-child .background {
-display: none !important;
-}
-
-.main-container &gt; .lfe-body:last-child &gt; .footer {
-background: linear-gradient(150deg, #404040 15%, #454545 90%, #505050 70%) !important;
-max-width: unset !important;
-padding: 25px 35px;
-}
-
-.main-container &gt; .lfe-body:last-child &gt; .footer a {
-color: #fff !important;
-}
-
-.main-container &gt; .lfe-body:last-child &gt; .footer .qr-img {
-display: none !important;
-}
-/*--团队成员卡*/
-.lg-mcard {
-border: none;
-transition: all .15s ease;
-box-shadow: 0 2px 3px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-border-radius: 3px;
-}
-
-.lg-mcard:hover {
-transition: all .15s ease;
-transform: translateY(-1px);
-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-}
-/*--犇犇Tab条*/
-
-/*此处使用了不太好的适配器解决方案，日后可能会优化*/
-
-/*.lg-index-benben &gt; .lg-article:nth-of-type(2){
-    box-shadow:none !important;
-    background:transparent;
-}*/
-.feed-selector &gt; a {
-font-weight: 500;
-transition: all .15s ease;
-color: #5e72e4;
-background-color: #fff;
-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-border-radius: 5px !important;
-height: 50px;
-line-height: 36px;
-}
-
-.feed-selector.am-active &gt; a {
-color: #fff;
-background: #5e72e4 !important;
-}
-/*--其余Tab条*/
-.am-nav-tabs li&gt;a {
-font-weight: 500;
-transition: all .15s ease;
-color: #5e72e4;
-background-color: #fff;
-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-border-radius: 5px !important;
-height: 50px;
-line-height: 36px;
-padding-left: 20px;
-padding-right: 20px;
-border: none !important;
-margin-right: 10px;
-}
-
-.am-nav-tabs li.am-active&gt;a {
-color: #fff !important;
-background: #5e72e4 !important;
-}
-
-.am-nav-tabs {
-border: none;
-margin-bottom: 20px;
-}
-
-.am-tabs-bd {
-border-radius: 5px;
-border: 0.6px solid rgba(0, 0, 0, 0.1);
-background: transparent;
-}
-/*--进度条*/
-.lg-table-small {
-margin-top: 5px;
-}
-
-.am-progress, .progress-frame {
-border-radius: .5rem;
-background-color: #e9ecef;
-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-border: none !important;
-}
-
-.am-progress-bar-secondary, .am-progress-bar, .progress-frame &gt; div {
-background-color: #5e72e4 !important;
-}
-/*--复选框*/
-.am-ucheck-checkbox:checked+.am-ucheck-icons, .am-ucheck-checkbox:hover:not(.am-nohover):not(:disabled)+.am-ucheck-icons, .am-ucheck-radio:checked+.am-ucheck-icons, .am-ucheck-radio:hover:not(.am-nohover):not(:disabled)+.am-ucheck-icons {
-color: #5e72e4;
-}
-
-.am-checkbox .am-icon-unchecked:before, .am-checkbox-inline .am-icon-unchecked:before {
-content: &quot;&quot;;
-border: 1px solid rgba(0, 0, 0, 0.1);
-height: 15px;
-width: 15px;
-border-radius: 3px;
-margin-top: 3px;
-}
-/*--404页面*/
-.lg-info-box &gt; #pic, .lg-info-box &gt; .lg-stamp {
-display: none;
-}
-
-.lg-info-box {
-color: #fff;
-border-color: #555abf;
-background-color: #555abf;
-padding: 1rem 1.5rem;
-border: 0;
-border-radius: .25rem;
-min-height: 100px !important;
-}
-
-.lg-info-box&gt;.am-text-left&gt;h1 {
-margin-bottom: 10px;
-margin-top: 10px;
-}
-
-.lg-info-box&gt;.am-text-left&gt;p {
-margin-top: 0px;
-margin-bottom: 0;
-}
-
-.lg-info-box &gt;.am-text-left .lg-small {
-margin-top: 15px;
-margin-bottom: 15px;
-color: rgba(255, 255, 255, 0.6);
-display: block;
-}
-/*--对话框*/
-.am-modal-dialog {
-box-shadow: 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .17);
-border: 1px solid rgba(0, 0, 0, .2);
-border-radius: .5rem;
-outline: 0;
-background-color: #fff;
-background-clip: padding-box;
-}
-
-.am-modal-dialog&gt;#lg-alert-title, .am-modal-dialog&gt;#memtitle {
-font-family: inherit;
-font-weight: 400;
-line-height: 1.3;
-color: #32325d;
-text-align: left;
-padding-left: 15px;
-padding-bottom: 15px;
-border-bottom: 0.7px solid rgba(0, 0, 0, 0.1);
-margin-bottom: 15px;
-}
-
-.am-modal-dialog&gt;#lg-alert-message, .am-modal-dialog&gt;#memadmin {
-line-height: 1.3;
-color: #32325d;
-text-align: left;
-padding-left: 15px;
-padding-bottom: 25px;
-padding-top: 10px;
-border-bottom: 0.7px solid rgba(0, 0, 0, 0.1);
-}
-
-.am-modal-dialog .lg-model-content {
-margin-top: 10px;
-}
-
-.am-modal-btn {
-outline: none !important;
-border: none !important;
-letter-spacing: .05em;
-padding: 8px 18px;
-transition: all .15s ease;
-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-color: #fafafa !important;
-height: unset;
-line-height: unset;
-border-radius: 5px !important;
-margin-right: 3px;
-display: inline-block !important;
-}
-
-.am-modal-btn:hover {
-box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
-transform: translateY(-1px);
-}
-
-.am-modal-btn:active {
-box-shadow: none;
-}
-
-.am-modal-btn, .am-modal-btn:hover, .am-modal-btn:active, .am-modal-btn:focus, a.am-modal-btn:visited {
-border-color: #5e72e4;
-background-color: #5e72e4;
-}
-
-.am-modal-footer {
-width: max-content;
-height: max-content;
-padding: 5px;
-display: block;
-margin-top: 10px;
-margin-bottom: 8px;
-padding-left: 15px;
-}
-/*---PopupMenu*/
-.popup {
-border: none !important;
-border-radius: .3rem !important;
-background-color: #fff !important;
-background-clip: padding-box !important;
-box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, .2);
-text-shadow: none;
-padding: 10px !important;
-animation: fade 0.2s ease;
-}
-/*---用户信息Popup*/
-.main-container &gt; .header-layout &gt; .header nav a[href^=&quot;/space/show&quot;]+div.center, .main-container &gt; .header-layout .user-nav a[href^=&quot;/space/show&quot;]+div.center {
-border: none !important;
-border-radius: .3rem !important;
-background-color: #fff !important;
-background-clip: padding-box !important;
-box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, .2);
-text-shadow: none;
-padding: 10px !important;
-}
-
-.main-container &gt; .header-layout &gt; .header nav a[href^=&quot;/space/show&quot;]+div.center &gt; .header, .main-container &gt; .header-layout &gt; .header nav a[href^=&quot;/space/show&quot;]+div.center &gt; footer, .main-container &gt; .header-layout .user-nav a[href^=&quot;/space/show&quot;]+div.center &gt; .header-layout, .main-container &gt; .header-layout .user-nav a[href^=&quot;/space/show&quot;]+div.center &gt; footer {
-border: none;
-background: transparent;
-}
-
-.main-container &gt; .header-layout &gt; .header nav a[href^=&quot;/space/show&quot;]+div.center, .main-container &gt; .header-layout .user-nav a[href^=&quot;/space/show&quot;]+div.center {
-display: block !important;
-transform: translate(0, 0px) perspective(0px) rotateX(0deg);
-opacity: 1;
-transition: all .25s ease;
-}
-
-.main-container &gt; .header-layout &gt; .header nav a[href^=&quot;/space/show&quot;]+div.center[style*=&quot;none&quot;], .main-container &gt; .header-layout .user-nav a[href^=&quot;/space/show&quot;]+div.center[style*=&quot;none&quot;] {
-pointer-events: none;
-opacity: 0;
-transform: translate(0, 10px) perspective(80px) rotateX(-2deg);
-}
-/*---首页 Banner 滚动指示器*/
-.am-slider-default .am-control-nav li a {
-box-shadow: none;
-transition: all 0.5s ease;
-}
-
-.am-slider-default .am-control-nav li a.am-active {
-width: 15px;
-background-color: #5e72e4;
-}
-/*---一些细节的处理*/
-.lg-message-contact:hover {
-    /*私信左列hover的颜色*/
-background: rgba(200, 200, 200, 0.2);
-}
-
-.lg-message-contact *:not(.am-badge):hover {
-background: transparent;
-}
-
-.am-selected-list li:hover {
-    /*弹出菜单项Hover处理*/
-background: rgba(200, 200, 200, 0.2) !important;
-}
-/*--针对犇犇样式变化的适配*/
-
-/*.lg-index-benben &gt; div.lg-article:nth-of-type(2) {
-    background: rgba(255,255,255,.7) !important;
-    box-shadow: 0 5px 15px rgba(50,50,93,.1),0 5px 8px rgba(0,0,0,.07)!important;
-}
-#home-center-nav {
-    background: #f4f5f7 !important;
-    position: absolute;
-    left: -1px;
-    right: -1px;
-    top: 0;
-}*/
-.lg-index-benben div:nth-of-type(4) {
-background: transparent !important;
-box-shadow: none !important;
-padding-left: 0;
-padding-right: 0;
-}
-
-.lg-index-benben div:nth-of-type(4) #home-center-nav {
-background: transparent;
-}
-/*
-#feed {
-    margin-top: 45px !important;
-}*/
-
-/*--修一个 Markdown 编辑器弹窗时页码覆盖弹窗的玄学 Bug*/
-#replyarea {
-opacity: 1 !important;
-}
-/*--- Luogu 4 Beta 兼容*/
-
-/*--主框架*/
-
-/*#app-body &gt; div{
-    max-width: 1250px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    width:100%;
-}*/
-
-/*--分隔线*/
-.card hr {
-margin: .8em 0;
-height: .5px;
-background: rgba(0, 0, 0, 0.08);
-border: none;
-}
-/*适配 Tiny 顶栏*/
-#app &gt; .main-container &gt; .header-layout.tiny {
-height: 4em !important;
-background: #505050 !important;
-color: #fff !important;
-}
-
-.header-link {
-color: #fff !important;
-}
-
-.container {
-color: #fff !important;
-}
-
-.header-layout.tiny ~ main.lfe-body {
-margin-top: 0px !important;
-}
-</code></pre>
-<h3 id="代码-2-中输入">代码 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 中输入：</h3>
-<pre><code class="language-python">.lg-article , .lg-summary , .lg-article-sub , .lg-content-table-left , html &gt; body:first-of-type #app &gt; .lfe-body {
-	background: #363636 !important;
-	color: #fff !important;
-}
-
-#app &gt; .lfe-body * {
-	color: #fff !important;
-}
-
-html &gt; body:first-of-type #app &gt; .lfe-body div:first-of-type {
-	background: #353535 !important;
-}
-
-.popup , #app-header .content nav a[href^=&quot;/space/show&quot;]+div.center , #app-header .content nav a[href^=&quot;/space/show&quot;]+div.center * {
-	background: #424242 !important;
-	color: #fff !important;
-}
-
-.am-panel,.feed-selector&gt;a,.am-nav-tabs li&gt;a,.am-comment-bd,.lg-sub-article,.am-alert,#lg-tag-result,#lg-tag-select {
-	background: #454545 !important;
-	color: #fff !important;
-}
-
-.float-bottom {
-	background-color: #000 !important;
-	color: #fff !important;
-}
-
-code {
-	background: #404040 !important;
-	color: #fff !important;
-}
-
-button {
-	background: #404040 !important;
-	color: #fff !important;
-}
-
-.am-comment-hd {
-	background: #404040 !important;
-}
-
-textarea,input {
-	background: #666666 !important;
-	color: #fff !important;
-}
-
-.time, .title, .content, .info-content, .result-count, .number, .expand-tip, .lfe-caption {
-	color: #fff !important;
-}
-
-html &gt; body:first-of-type &gt; #app-header , html &gt; body:first-of-type &gt; #app-header .content &gt; header {
-	background: #212121 !important;
-	color: #fff !important;
-}
-
-#app-header h1:before {
-	content: &quot;&quot;;
-	box-shadow: inset -15px 0 30px #212121;
-}
-
-body,html,html&gt;body:first-of-type {
-	background: #303030 !important;
-}
-
-.lg-small,strong {
-	color: rgba(255,255,255,.6);
-}
-
-.highcharts-axis.highcharts-yaxis &gt; text,.highcharts-axis-labels.highcharts-yaxis-labels &gt; text,.highcharts-axis-labels.highcharts-xaxis-labels &gt; text {
-	fill: #ddd !important;
-}
-
-.ace_content {
-	color: #fff;
-	background: #212121;
-}
-
-.ace-clouds .ace_keyword.ace_operator {
-	color: #aaa !important;
-}
-
-.ace-clouds .ace_storage, .ace-clouds .ace_support.ace_class, .ace-clouds .ace_support.ace_function, .ace-clouds .ace_support.ace_other, .ace-clouds .ace_support.ace_type {
-	color: #e778b0 !important;
-}
-
-.ace-clouds .ace_keyword, .ace-clouds .ace_meta, .ace-clouds .ace_support.ace_constant.ace_property-value {
-	color: #40c4ff !important;
-}
-
-.ace-clouds .ace_constant.ace_numeric {
-	color: #5af354 !important;
-}
-
-.ace-clouds .ace_marker-layer .ace_active-line {
-	background: #404040;
-}
-
-.ace_layer.ace_gutter-layer.ace_folding-enabled {
-	background: #303030;
-	color: #fff;
-}
-
-.ace-clouds .ace_gutter-active-line {
-	background-color: #666666;
-}
-
-body:before {
-	content: &quot;&quot;;
-	position: fixed;
-	z-index: 999999999999999;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0,0,0,0.2);
-	pointer-events: none;
-}
-
-.am-progress {
-	background-color: #e9ecef0d;
-}
-
-#mp-toolbar {
-	background: #212121;
-	border: none;
-}
-
-#mp-toolbar *,#mp-editor-area {
-	border: none !important;
-}
-
-.CodeMirror-cursor {
-	border-color: #ccc;
-}
-
-#mp-editor-area * {
-	background: #303030 !important;
-}
-
-.CodeMirror-gutters,#mp-editor-preview-area {
-	border-color: #555;
-}
-
-.cm-s-default .cm-link {
-	color: #B7B8FF;
-}
-
-.cm-s-default .cm-string {
-	color: #ca405b;
-}
-
-pre.CodeMirror-line {
-	color: #fff;
-}
-
-.am-pagination&gt;li&gt;a {
-	background: #424242;
-	border: none;
-}
-
-#app-footer {
-	background: #212121 !important;
-}
-
-ul.am-dropdown-content&gt;li&gt;a {
-	color: #ddd;
-}
-
-.am-dropdown-header {
-	color: #ccc;
-}
-
-textarea, input, .am-dropdown-content {
-	background: #303030 !important;
-	color: #fff !important;
-}
-
-ul.am-dropdown-content .am-divider {
-	background-color: #555555;
-}
-
-.am-modal-dialog {
-	background-color: #424242;
-}
-
-.am-modal-dialog&gt;#lg-alert-message, .am-modal-dialog&gt;#memadmin {
-	color: #fff;
-}
-
-.am-modal-dialog&gt;#lg-alert-title, .am-modal-dialog&gt;#memtitle {
-	color: #fff;
-}
-
-.message-block {
-	color: black !important;
-}
-
-pre {
-	background: transparent;
-	border-color: #555;
-	color: #fff !important;
-}
-
-hr {
-	border-color: #666;
-}
-
-.lg-sidebar-list li[class^=&quot;lg-nav&quot;] a span[class^=&quot;am-icon&quot;]:after {
-	background: #fff !important;
-	opacity: 0.95;
-}
-
-.lg-index-benben &gt; div.lg-article:nth-of-type(2) {
-	background: #424242 !important;
-	box-shadow: 0 5px 15px rgba(50,50,93,.1),0 5px 8px rgba(0,0,0,.07)!important;
-}
-
-#home-center-nav {
-	background: #303030 !important;
-}
-
-.lg-fg-bluedark {
-	color: #678baf !important;
-}
-
-#app-header * {
-	color: #ddd !important;
-}
-
-#app &gt; .lfe-body &gt; div.popup-button {
-	color: #fff !important;
-}
-
-.lfe-body {
-	color: white;
-	background-color: black;
-}
-/*
-.main-container &gt; .header-layout .background {
-     display: none !important;
-}*/
-.lg-summary-content li {
-	background: transparent !important;
-}
-
-.lg-summary-content .fadeout {
-	background-image: linear-gradient(transparent 0%,rgb(69,69,69) 90%);
-}
-
-.lg-summary-content .comment-show-more {
-	color: #aaa;
-}
-
-.lg-article .pagination-centered:before {
-	background: #303030 !important;
-}
-
-#mp-editor-area div.CodeMirror-selected {
-	background: rgba(255,255,255,0.5) !important;
-}
-
-#mp-editor-area .CodeMirror-line,#mp-editor-area .CodeMirror-line * {
-	background: transparent !important;
-}
-
-.inner-card {
-	background-color: #505050 !important;
-	border: none;
-	color: white !important;
-}
-/*--------------------侧栏颜色*/
-/*#app-sidenav{
-    background: linear-gradient(30deg,#7795f8 15%,#6772e5 70%,#555abf 94%) !important;
-}
-#app-sidenav &gt; a , .popup-button &gt; i{
-    color: #fafafa !important;
-}*/
-
-#app &gt; .lfe-body {
-	background: linear-gradient(30deg,#7795f8 15%,#6772e5 70%,#555abf 94%) !important;
-}
-
-#app &gt; .lfe-body &gt; a , .popup-button &gt; i {
-	color: #fafafa !important;
-}
-
-/*--------------------禁用顶栏标题动画*/
-
-/*下面是禁用顶栏标题动画CSS
-.main-container &gt; header &gt; .header &gt; h1{
-    animation:none !important;
-}
-*/
-</code></pre>
-<p>如图：</p>
-<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tbv9g4ox.png" alt="" loading="lazy"></figure>
-<p>在两个代码区域都点击 <code>指定</code>。</p>
-<p>两个区域都如下图进行配置：</p>
-<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/hf541krp.png" alt="" loading="lazy"></figure>
-<p>点击 <code>保存</code>。</p>
-<p>回到洛谷，你就会看到成效了！</p>
-<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/t1lk5mty.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="9"><img src="https://i.loli.net/2020/09/25/cG9kPnCyQbgu38L.png" alt="" loading="lazy"></figure>
-<h3 id="声明">声明：</h3>
-<p>上方两张图来自 @NSObject <code>23786</code>。</p>
-<p>两段代码都由 @NSObject <code>23786</code> 编写。 <s>本人只是帮他推广</s></p>
-<h3 id="附件">附件：</h3>
-<p><a href="https://github.com/23786/Luogu-Dark/">代码下载</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[计蒜客 CSP-J2 模拟赛 5 游记]]></title>
-        <id>https://zxh23682.github.io/post/ji-suan-ke-csp-j2-mo-ni-sai-5-you-ji/</id>
-        <link href="https://zxh23682.github.io/post/ji-suan-ke-csp-j2-mo-ni-sai-5-you-ji/">
-        </link>
-        <updated>2020-11-15T00:39:23.000Z</updated>
-        <content type="html"><![CDATA[<p>赛制： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">OI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>。</p>
-<h2 id="t1"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">T1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span></span></span></span>：</h2>
-<p><a href="https://nanti.jisuanke.com/t/49298">题目</a></p>
-<p>细节题。打 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> 调了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分钟过了所有样例和我造的样例。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-int T;
-ll n,k;
-ll ans;
-int main() {
-    freopen(&quot;stairs.in&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;stairs.out&quot;,&quot;w&quot;,stdout);
-    scanf(&quot;%d&quot;,&amp;T);
-    while(T--) {
-        scanf(&quot;%lld %lld&quot;,&amp;n,&amp;k);
-        if (n&lt;k) printf(&quot;1\n&quot;);
-        else {
-            if (n%(2*k-1)==0) ans=n/(2*k-1)*2;
-            else {
-                ans=(n/(2*k-1))*2;
-                if (n%(2*k-1)&gt;k) ans+=2;
-                else ans++;
-            }
-            printf(&quot;%lld\n&quot;,ans);
-            ans=0;
-        }
-    }
-    fclose(stdin);
-    fclose(stdout);
-    return 0;
-}
-</code></pre>
-<h2 id="t2"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span>：</h2>
-<p><a href="https://nanti.jisuanke.com/t/49299">题目</a></p>
-<p>先打暴力，没过样例。</p>
-<p>考虑了一下发现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的情况可能比较多。</p>
-<p>然后直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就溜了。</p>
-<h2 id="t3"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">T3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">3</span></span></span></span>：</h2>
-<p><a href="https://nanti.jisuanke.com/t/49300">题目</a></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的部分分很简单。</p>
-<p>于是打了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分的部分分。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-ll n,m,q;
-ll a[2000005];
-ll b;
-ll l,r;
-ll ans=0;
-int main() {
-    freopen(&quot;sequence.in&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;sequence.out&quot;,&quot;w&quot;,stdout);
-    scanf(&quot;%lld %lld %lld&quot;,&amp;n,&amp;m,&amp;q);
-    if (m==1) {
-        for (int i=1;i&lt;=n;i++) scanf(&quot;%lld&quot;,&amp;a[i]);
-        scanf(&quot;%lld&quot;,&amp;b);
-        while(q--) {
-            scanf(&quot;%lld %lld&quot;,&amp;l,&amp;r);
-            for (int j=l;j&lt;=r;j++) {
-                if (a[j]==b) ans++;
-            }
-            if (ans==(r-l+1)) printf(&quot;Yes\n&quot;);
-            else printf(&quot;No\n&quot;);
-            ans=0;
-        }
-    }
-    else printf(&quot;Yes\nYes\nNo&quot;); 
-    fclose(stdin);
-    fclose(stdout);
-    return 0;
-}
-</code></pre>
-<h2 id="t4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">T4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span></span></span></span>:</h2>
-<p><a href="https://nanti.jisuanke.com/t/49301">题目</a></p>
-<p>暴力又没过样例。</p>
-<p>直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，结束。</p>
-<hr>
-<p>打完之后还剩下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1.5</mn><mi>h</mi></mrow><annotation encoding="application/x-tex">1.5h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">5</span><span class="mord mathdefault">h</span></span></span></span>。</p>
-<p>估分：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo>+</mo><mn>10</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>130</mn></mrow><annotation encoding="application/x-tex">100+10+20+0=130</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">0</span></span></span></span>。</p>
-<p>估计排名：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>k</mi><mn>50</mn></mrow><annotation encoding="application/x-tex">rk50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">5</span><span class="mord">0</span></span></span></span>。</p>
-<hr>
-<p>过了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个小时来查分：</p>
-<p>实际分数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo>+</mo><mn>40</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>160</mn></mrow><annotation encoding="application/x-tex">100+40+20+0=160</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mord">0</span></span></span></span>。</p>
-<p>实际排名：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>k</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">rk8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">8</span></span></span></span>。</p>
-<p><code>oooooooooohhhhhhhhhhhhh没挂分</code></p>
-<p>真没想到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span> 能有这么多 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (</p>
-<p>真没想到能排名这么靠前 (</p>
-<p><a href="https://www.jisuanke.com/contest/13423/rank?page=1">排行榜</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World]]></title>
-        <id>https://zxh23682.github.io/post/hello-world/</id>
-        <link href="https://zxh23682.github.io/post/hello-world/">
-        </link>
-        <updated>2020-11-14T14:51:50.000Z</updated>
-        <content type="html"><![CDATA[<p>这是我的第一篇博客文章。以后一些洛谷博客文章也会搬运到这里。</p>
-<h3 id="尽请期待">尽请期待！</h3>
 ]]></content>
     </entry>
 </feed>

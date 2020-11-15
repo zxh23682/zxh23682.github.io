@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>题解 P6833 【[Cnoi2020]雷雨】 | zxh23682</title>
+<meta name="description" content="一个蒟蒻OIer的博客">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605409451092">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://zxh23682.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://zxh23682.github.io">
+        <img class="avatar" src="https://zxh23682.github.io/images/avatar.png?v=1605409451092" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://zxh23682.github.io">
+        <h1 class="site-title">zxh23682</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">题解 P6833 【[Cnoi2020]雷雨】</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-11-15</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://zxh23682.github.io/tag/gEhYv41FQ/">
+                    游记
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h3 id="思路">思路</h3>
+<p>可以想到，这题其实就是找一个点满足这个点到题目要求的三个点的最短路之和最小（去除重复部分），所以直接用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>i</mi><mi>j</mi><mi>k</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Dijkstra</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span></span></span></span><br>
+求出三个点到每个点的最短路，然后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 扫描每个点找出满足上述条件的点即可。</p>
+<p>注意：输入的矩阵第一行是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 然后递减，所以如果是从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 开始输入的需要把题目中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 替换。</p>
+<p><strong>此题需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 。</strong></p>
+<hr>
+<h3 id="code">Code:</h3>
+<pre><code class="language-cpp">
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int A = 1e3 + 11;
+const int B = 1e6 + 11;
+const int mod = 1e9 + 7;
+const int inf = 0x3f3f3f3f;
+int dx[4] = {0, 0, 1, -1};
+int dy[4] = {1, -1, 0, 0};
+bool vis[A][A];
+int n, m, a, b, c;
+ll dis[3][A][A], mapp[A][A];
+
+struct node {
+	int x, y;
+	ll val;
+	bool operator &lt; (const node &amp;b) const {
+		return val &gt; b.val;
+	}
+};
+
+
+inline void Dij(int sx, int sy, int tag) {
+	priority_queue &lt;node&gt; Q;
+	memset(dis[tag], inf, sizeof(dis[tag]));
+	memset(vis, 0, sizeof(vis));
+	dis[tag][sx][sy] = mapp[sx][sy];
+	Q.push((node) {
+		sx, sy, dis[tag][sx][sy]
+	});
+	while (!Q.empty()) {
+		int x = Q.top().x, y = Q.top().y;
+		Q.pop();
+		if (vis[x][y]) continue;
+		vis[x][y] = 1;
+		for (int i=0; i&lt;4; i++) {
+			int bx = x + dx[i], by = y + dy[i];
+			if (bx &gt; n || bx &lt; 1 || by &gt; m || by &lt; 1) continue;
+			if (dis[tag][bx][by] &gt; dis[tag][x][y] + mapp[bx][by]) {
+				dis[tag][bx][by] = dis[tag][x][y] + 1ll * mapp[bx][by];
+				Q.push((node) {
+					bx, by, dis[tag][bx][by]
+				});
+			}
+		}
+	}
+}
+
+int main() {
+	cin&gt;&gt;n&gt;&gt;m&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+	for (int i=1; i&lt;=n; i++) for (int j=1; j&lt;=m; j++) cin&gt;&gt;mapp[i][j];
+	Dij(1, a, 0);
+	Dij(n, b, 1);
+	Dij(n, c, 2);
+	ll ans = 1e18;
+	for (int i=1; i&lt;=n; i++) {
+		for (int j=1; j&lt;=m; j++) {
+			ans = min(ans, dis[0][i][j] + dis[1][i][j] + dis[2][i][j] - 2 * mapp[i][j]);
+		}
+	}
+	cout&lt;&lt;ans;
+	return 0;
+}
+
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">
+              <h3 class="post-title">
+                下一篇：题解 P6855 【「EZEC-4.5」走方格】
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">一个蒟蒻OIer的博客</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/zxh23682" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
