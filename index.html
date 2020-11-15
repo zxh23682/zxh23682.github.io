@@ -1,112 +1,213 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>zxh23682</title>
-<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605398484628">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605401174455">
 <link rel="stylesheet" href="https://zxh23682.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="zxh23682 - Atom Feed" href="https://zxh23682.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="蒟蒻一枚。" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一个蒟蒻OIer的博客">
+    
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://zxh23682.github.io">
-  <img class="avatar" src="https://zxh23682.github.io/images/avatar.png?v=1605398484628" alt="">
-  </a>
-  <h1 class="site-title">
-    zxh23682
-  </h1>
-  <p class="site-description">
-    蒟蒻一枚。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
+    <div id="app" class="main">
 
-    
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://zxh23682.github.io/post/hello-world/">
-        <h2 class="post-title">Hello World</h2>
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zxh23682.github.io">
+        <img src="https://zxh23682.github.io/images/avatar.png?v=1605401174455" class="site-logo">
+        <h1 class="site-title">zxh23682</h1>
       </a>
-      <div class="post-info">
-        <span>
-          2020-11-14
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-      </div>
-      
-      <div class="post-abstract">
-        
-      </div>
-    </article>
-  
-</div>
-
-    
-        <div class="pagination-container">
-  
-  
-</div>
-
-    
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个蒟蒻OIer的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">
+                  <h2 class="post-title">题解 CF878B 【Teams Formation】</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">
+                  <h2 class="post-title">题解 P7071 优秀的拆分</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/ji-suan-ke-csp-j2-mo-ni-sai-5-you-ji/">
+                  <h2 class="post-title">计蒜客 CSP-J2 模拟赛 5 游记</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">
+                  <h2 class="post-title">题解 P6855 【「EZEC-4.5」走方格】</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/qi-zhong-kao-shi-you-ji/">
+                  <h2 class="post-title">期中考试游记</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-15
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://zxh23682.github.io/post/hello-world/">
+                  <h2 class="post-title">Hello World</h2>
+                </a>
+                <div class="post-date">
+                  2020-11-14
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
   </body>
 </html>

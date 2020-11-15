@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>计蒜客 CSP-J2 模拟赛 5 游记 | zxh23682</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zxh23682.github.io/favicon.ico?v=1605401174455">
+<link rel="stylesheet" href="https://zxh23682.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="赛制： OIOIOI。
+T1T1T1：
+题目
+细节题。打 +++ 调了 101010 分钟过了所有样例和我造的样例。
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef l..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zxh23682.github.io">
+        <img src="https://zxh23682.github.io/images/avatar.png?v=1605401174455" class="site-logo">
+        <h1 class="site-title">zxh23682</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个蒟蒻OIer的博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zxh23682.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">计蒜客 CSP-J2 模拟赛 5 游记</h2>
+            <div class="post-date">2020-11-15</div>
+            
+            <div class="post-content" v-pre>
+              <p>赛制： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">OI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>。</p>
+<h2 id="t1"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">T1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span></span></span></span>：</h2>
+<p><a href="https://nanti.jisuanke.com/t/49298">题目</a></p>
+<p>细节题。打 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> 调了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 分钟过了所有样例和我造的样例。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+int T;
+ll n,k;
+ll ans;
+int main() {
+    freopen(&quot;stairs.in&quot;,&quot;r&quot;,stdin);
+    freopen(&quot;stairs.out&quot;,&quot;w&quot;,stdout);
+    scanf(&quot;%d&quot;,&amp;T);
+    while(T--) {
+        scanf(&quot;%lld %lld&quot;,&amp;n,&amp;k);
+        if (n&lt;k) printf(&quot;1\n&quot;);
+        else {
+            if (n%(2*k-1)==0) ans=n/(2*k-1)*2;
+            else {
+                ans=(n/(2*k-1))*2;
+                if (n%(2*k-1)&gt;k) ans+=2;
+                else ans++;
+            }
+            printf(&quot;%lld\n&quot;,ans);
+            ans=0;
+        }
+    }
+    fclose(stdin);
+    fclose(stdout);
+    return 0;
+}
+</code></pre>
+<h2 id="t2"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span>：</h2>
+<p><a href="https://nanti.jisuanke.com/t/49299">题目</a></p>
+<p>先打暴力，没过样例。</p>
+<p>考虑了一下发现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的情况可能比较多。</p>
+<p>然后直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就溜了。</p>
+<h2 id="t3"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">T3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">3</span></span></span></span>：</h2>
+<p><a href="https://nanti.jisuanke.com/t/49300">题目</a></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的部分分很简单。</p>
+<p>于是打了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span> 分的部分分。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+ll n,m,q;
+ll a[2000005];
+ll b;
+ll l,r;
+ll ans=0;
+int main() {
+    freopen(&quot;sequence.in&quot;,&quot;r&quot;,stdin);
+    freopen(&quot;sequence.out&quot;,&quot;w&quot;,stdout);
+    scanf(&quot;%lld %lld %lld&quot;,&amp;n,&amp;m,&amp;q);
+    if (m==1) {
+        for (int i=1;i&lt;=n;i++) scanf(&quot;%lld&quot;,&amp;a[i]);
+        scanf(&quot;%lld&quot;,&amp;b);
+        while(q--) {
+            scanf(&quot;%lld %lld&quot;,&amp;l,&amp;r);
+            for (int j=l;j&lt;=r;j++) {
+                if (a[j]==b) ans++;
+            }
+            if (ans==(r-l+1)) printf(&quot;Yes\n&quot;);
+            else printf(&quot;No\n&quot;);
+            ans=0;
+        }
+    }
+    else printf(&quot;Yes\nYes\nNo&quot;); 
+    fclose(stdin);
+    fclose(stdout);
+    return 0;
+}
+</code></pre>
+<h2 id="t4"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">T4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span></span></span></span>:</h2>
+<p><a href="https://nanti.jisuanke.com/t/49301">题目</a></p>
+<p>暴力又没过样例。</p>
+<p>直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，结束。</p>
+<hr>
+<p>打完之后还剩下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1.5</mn><mi>h</mi></mrow><annotation encoding="application/x-tex">1.5h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">5</span><span class="mord mathdefault">h</span></span></span></span>。</p>
+<p>估分：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo>+</mo><mn>10</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>130</mn></mrow><annotation encoding="application/x-tex">100+10+20+0=130</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mord">0</span></span></span></span>。</p>
+<p>估计排名：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>k</mi><mn>50</mn></mrow><annotation encoding="application/x-tex">rk50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">5</span><span class="mord">0</span></span></span></span>。</p>
+<hr>
+<p>过了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个小时来查分：</p>
+<p>实际分数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>100</mn><mo>+</mo><mn>40</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>0</mn><mo>=</mo><mn>160</mn></mrow><annotation encoding="application/x-tex">100+40+20+0=160</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">6</span><span class="mord">0</span></span></span></span>。</p>
+<p>实际排名：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>k</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">rk8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord">8</span></span></span></span>。</p>
+<p><code>oooooooooohhhhhhhhhhhhh没挂分</code></p>
+<p>真没想到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span> 能有这么多 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> (</p>
+<p>真没想到能排名这么靠前 (</p>
+<p><a href="https://www.jisuanke.com/contest/13423/rank?page=1">排行榜</a></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">
+                  <h3 class="post-title">
+                    题解 P6855 【「EZEC-4.5」走方格】
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
