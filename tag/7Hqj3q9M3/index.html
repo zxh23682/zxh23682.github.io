@@ -9,7 +9,7 @@
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#000">
 <title>zxh23682 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605530061339">
+<link rel="shortcut icon" href="/favicon.ico?v=1605530350662">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -182,7 +182,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">16</span>
+        <span class="site-item-stat-count">17</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -233,6 +233,8 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
       
       
       
@@ -1089,6 +1091,313 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/"" data-c="
+          &lt;p&gt;模板：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void selection_sort(int* a, int n) {
+	for (int i = 1; i &amp;lt; n; ++i) {
+		int ith = i;
+		for (int j = i + 1; j &amp;lt;= n; ++j) {
+			if (a[j] &amp;lt; a[ith]) {
+				ith = j;
+			}
+		}
+		int t = a[i];
+		a[i] = a[ith];
+		a[ith] = t;
+	}
+} //xuan ze pai xu
+
+
+
+void bubble_sort(int *a, int n) {
+	bool flag = true;
+	while (flag) {
+		flag = false;
+		for (int i = 1; i &amp;lt; n; ++i) {
+			if (a[i] &amp;gt; a[i + 1]) {
+				flag = true;
+				int t = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = t;
+			}
+		}
+	}
+}//mao pao pai xu
+
+
+
+void insertion_sort(int* a, int n) {
+	for (int i = 2; i &amp;lt;= n; ++i) {
+		int key = a[i];
+		int j = i - 1;
+		while (j &amp;gt; 0 &amp;amp;&amp;amp; a[j] &amp;gt; key) {
+			a[j + 1] = a[j];
+			--j;
+		}
+		a[j + 1] = key;
+	}
+}//cha ru pai xu
+
+
+
+const int N = 100010;
+const int W = 100010;
+
+int n, w, a[N], cnt[W], b[N];
+
+void counting_sort() {
+	memset(cnt, 0, sizeof(cnt));
+	for (int i = 1; i &amp;lt;= n; ++i) ++cnt[a[i]];
+	for (int i = 1; i &amp;lt;= w; ++i) cnt[i] += cnt[i - 1];
+	for (int i = n; i &amp;gt;= 1; --i) b[cnt[a[i]]--] = a[i];
+} //计数排序
+
+
+
+const int N = 100010;
+const int W = 100010;
+const int K = 100;
+
+int n, w[K], k, cnt[W];
+
+struct Element {
+	int key[K];
+	bool operator&amp;lt;(const Element&amp;amp; y) const {
+		for (int i = 1; i &amp;lt;= k; ++i) {
+			if (key[i] == y.key[i]) continue;
+			return key[i] &amp;lt; y.key[i];
+		}
+		return false;
+	}
+} a[N], b[N];
+
+void counting_sort(int p) {
+	memset(cnt, 0, sizeof(cnt));
+	for (int i = 1; i &amp;lt;= n; ++i) ++cnt[a[i].key[p]];
+	for (int i = 1; i &amp;lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
+	for (int i = n; i &amp;gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
+	memcpy(a, b, sizeof(a));
+}
+
+const int N = 100010;
+const int W = 100010;
+const int K = 100;
+
+int n, w[K], k, cnt[W];
+
+struct Element {
+	int key[K];
+	bool operator&amp;lt;(const Element&amp;amp; y) const {
+		for (int i = 1; i &amp;lt;= k; ++i) {
+			if (key[i] == y.key[i]) continue;
+			return key[i] &amp;lt; y.key[i];
+		}
+		return false;
+	}
+} a[N], b[N];
+
+void counting_sort(int p) {
+	memset(cnt, 0, sizeof(cnt));
+	for (int i = 1; i &amp;lt;= n; ++i) ++cnt[a[i].key[p]];
+	for (int i = 1; i &amp;lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
+	for (int i = n; i &amp;gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
+	memcpy(a, b, sizeof(a));
+}
+
+void radix_sort() {
+	for (int i = k; i &amp;gt;= 1; --i) {
+		counting_sort(i);
+	}
+} //基数排序
+
+
+
+struct Range {
+	int start, end;
+	Range(int s = 0, int e = 0) {
+		start = s, end = e;
+	}
+};
+
+template &amp;lt;typename T&amp;gt;
+void quick_sort(T arr[], const int len) {
+	if (len &amp;lt;= 0) return;
+	Range r[len];
+	int p = 0;
+	r[p++] = Range(0, len - 1);
+	while (p) {
+		Range range = r[--p];
+		if (range.start &amp;gt;= range.end) continue;
+		T mid = arr[range.end];
+		int left = range.start, right = range.end - 1;
+		while (left &amp;lt; right) {
+			while (arr[left] &amp;lt; mid &amp;amp;&amp;amp; left &amp;lt; right) left++;
+			while (arr[right] &amp;gt;= mid &amp;amp;&amp;amp; left &amp;lt; right) right--;
+			std::swap(arr[left], arr[right]);
+		}
+		if (arr[left] &amp;gt;= arr[range.end])
+			std::swap(arr[left], arr[range.end]);
+		else
+			left++;
+		r[p++] = Range(range.start, left - 1);
+		r[p++] = Range(left + 1, range.end);
+	}
+} //kuai su pai xu
+
+
+
+
+void merge(int ll, int rr) {
+	// 用来把 a[ll.. rr - 1] 这一区间的数排序。 t 数组是临时存放有序的版本用的。
+	if (rr - ll &amp;lt;= 1) return;
+	int mid = ll + (rr - ll &amp;gt;&amp;gt; 1);
+	merge(ll, mid);
+	merge(mid, rr);
+	int p = ll, q = mid, s = ll;
+	while (s &amp;lt; rr) {
+		if (p &amp;gt;= mid || (q &amp;lt; rr &amp;amp;&amp;amp; a[p] &amp;gt; a[q])) {
+			t[s++] = a[q++];
+			// ans += mid - p;
+		} else
+			t[s++] = a[p++];
+	}
+	for (int i = ll; i &amp;lt; rr; ++i) a[i] = t[i];
+}//gui bing pai xu
+
+
+
+void max_heapify(int arr[], int start, int end) {
+	int dad = start;
+	int son = dad * 2 + 1;
+	while (son &amp;lt;= end) {
+		if (son + 1 &amp;lt;= end &amp;amp;&amp;amp;
+		        arr[son] &amp;lt; arr[son + 1])
+			son++;
+		if (arr[dad] &amp;gt;
+		        arr[son])
+			return;
+		else {
+			swap(arr[dad], arr[son]);
+			dad = son;
+			son = dad * 2 + 1;
+		}
+	}
+}
+
+void heap_sort(int arr[], int len) {
+	for (int i = len / 2 - 1; i &amp;gt;= 0; i--) max_heapify(arr, i, len - 1);
+	for (int i = len - 1; i &amp;gt; 0; i--) {
+		swap(arr[0], arr[i]);
+		max_heapify(arr, 0, i - 1);
+	}
+} //dui pai xu
+
+
+
+
+const int N = 100010;
+
+int n, w, a[N];
+vector&amp;lt;int&amp;gt; bucket[N];
+
+void insertion_sort(vector&amp;lt;int&amp;gt;&amp;amp; A) {
+	for (int i = 1; i &amp;lt; A.size(); ++i) {
+		int key = A[i];
+		int j = i - 1;
+		while (j &amp;gt;= 0 &amp;amp;&amp;amp; A[j] &amp;gt; key) {
+			A[j + 1] = A[j];
+			--j;
+		}
+		A[j + 1] = key;
+	}
+}
+
+void bucket_sort() {
+	int bucket_size = w / n + 1;
+	for (int i = 0; i &amp;lt; n; ++i) {
+		bucket[i].clear();
+	}
+	for (int i = 1; i &amp;lt;= n; ++i) {
+		bucket[a[i] / bucket_size].push_back(a[i]);
+	}
+	int p = 0;
+	for (int i = 0; i &amp;lt; n; ++i) {
+		insertion_sort(bucket[i]);
+		for (int j = 0; j &amp;lt; bucket[i].size(); ++j) {
+			a[++p] = bucket[i][j];
+		}
+	}
+}//tong pai xu
+
+
+
+template &amp;lt;typename T&amp;gt;
+void shell_sort(T array[], int length) {
+	int h = 1;
+	while (h &amp;lt; length / 3) {
+		h = 3 * h + 1;
+	}
+	while (h &amp;gt;= 1) {
+		for (int i = h; i &amp;lt; length; i++) {
+			for (int j = i; j &amp;gt;= h &amp;amp;&amp;amp; array[j] &amp;lt; array[j - h]; j -= h) {
+				std::swap(array[j], array[j - h]);
+			}
+		}
+		h = h / 3;
+	}
+}//xi er pai xu
+
+
+int n, a[maxn], tmp[maxn &amp;lt;&amp;lt; 1];
+
+int winner(int pos1, int pos2) {
+	int u = pos1 &amp;gt;= n ? pos1 : tmp[pos1];
+	int v = pos2 &amp;gt;= n ? pos2 : tmp[pos2];
+	if (tmp[u] &amp;lt;= tmp[v]) return u;
+	return v;
+}
+
+void creat_tree(int &amp;amp;value) {
+	for (int i = 0; i &amp;lt; n; i++) tmp[n + i] = a[i];
+	for (int i = 2 * n - 1; i &amp;gt; 1; i -= 2) {
+		int k = i / 2;
+		int j = i - 1;
+		tmp[k] = winner(i, j);
+	}
+	value = tmp[tmp[1]];
+	tmp[tmp[1]] = INF;
+}
+
+void recreat(int &amp;amp;value) {
+	int i = tmp[1];
+	while (i &amp;gt; 1) {
+		int j, k = i / 2;
+		if (i % 2 == 0 &amp;amp;&amp;amp; i &amp;lt; 2 * n - 1)
+			j = i + 1;
+		else
+			j = i - 1;
+		tmp[k] = winner(i, j);
+		i = k;
+	}
+	value = tmp[tmp[1]];
+	tmp[tmp[1]] = INF;
+}
+
+void tournament_sort() {
+	int value;
+	creat_tree(value);
+	for (int i = 0; i &amp;lt; n; i++) {
+		a[i] = value;
+		recreat(value);
+	}
+}//jing biao sai pai xu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;时间复杂度：&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">C++ 排序笔记</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/"" data-c="
