@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-11-18T11:59:22.785Z</updated>
+    <updated>2020-11-18T12:24:28.040Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,76 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[安装 Windows7 操作系统]]></title>
+        <id>https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/</id>
+        <link href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/">
+        </link>
+        <updated>2020-11-18T12:18:02.000Z</updated>
+        <content type="html"><![CDATA[<!-- wp:paragraph -->
+<p>Win7旗舰版-简体中文版镜像可以点<a href="http://d2.w10a.com/win7/cn_windows_7_ultimate_with_sp1_x64_dvd_677408.iso">这里</a>下载。当然用自己的也没问题的啦！<br>建议使用迅雷下载，亲测快很多。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>好了，接下来我们开始安装。</p>
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:heading -->
+<h2>以下内容仅虚拟机需要，物理机可直接跳至第9步！</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>1.在“库”一栏中右键，选择“新建虚拟机”，使用“典型”设置。<br><img src="https://img-blog.csdnimg.cn/20200301133239539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在“库”一栏中右键，选择“新建虚拟机”"><br><img src="https://img-blog.csdnimg.cn/2020030113331520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="使用“典型”设置。"><br>2.选择稍后创建操作系统。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>3.操作系统选择Microsoft Windows，版本选择Windows 7，64位电脑的小伙伴们可以选择x64的，看电脑位数请参见这篇<a href="https://blog.csdn.net/EricNTH/article/details/104499438">博客</a>。<br><img src="https://img-blog.csdnimg.cn/20200301133748351.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="Windows7"><br>4.之后自己起一个喜欢的名字，最好不要有中文和空格哦！<br>5. 选择大小，装系统大概只要7.8个G就够了我设了40个G，大家可以设更多，反正只是上限。当然也可以设少一点，等会我们做双硬盘。单个文件性能好，选他。<br><img src="https://img-blog.csdnimg.cn/20200301134850743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>6. 停！选择“自定义硬件”，然后跟着图片操作，载入刚下载的iso映像。<img src="https://img-blog.csdnimg.cn/20200301135049140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>7. 声卡，打印机这些，如果不用，可以删除。如果想要更流畅，可以调高内存。<br>8. 网络NAT，桥接都可以。然后我们选择“添加…”，硬盘，再添加一个硬盘（可省略，如果要装双系统会方便一些。如果没有的话，可以先创建，然后在编辑设置里添加）。
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:list {"ordered":true,"start":9} -->
+<ol start="9"><li>好了，启动虚拟机。如图。<img src="https://img-blog.csdnimg.cn/20200301140021420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>10.选择语言，键盘，下一步。<img src="https://img-blog.csdnimg.cn/20200301140057986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>11.选择：现在安装。<img src="https://img-blog.csdnimg.cn/20200301140233495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ol>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>显示“正在启动”。。。<img src="https://img-blog.csdnimg.cn/20200301140303645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>我接受，然后下一步<img src="https://img-blog.csdnimg.cn/20200301140417415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“自定义”，否则很慢。<br><img src="https://img-blog.csdnimg.cn/20200301140537584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>装在哪里都可以，如果要装双系统建议不要装在磁盘0。否则建议选择磁盘0.<br><img src="https://img-blog.csdnimg.cn/20200301140556863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>12.开始安装了，可以泡个茶，大概十分钟就好了，期间可能会重启数次。展开比较慢，其它就比较快了。<br><img src="https://img-blog.csdnimg.cn/20200301140746625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>如图，正在重启。<br><img src="https://img-blog.csdnimg.cn/20200301140926839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>很快就好了！<br><img src="https://img-blog.csdnimg.cn/20200301141015827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>13.装完了，开始设置。输入自己的昵称。<br><img src="https://img-blog.csdnimg.cn/20200301141240434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>14.我们不用设置密码，直接下一步即可。<br><img src="https://img-blog.csdnimg.cn/20200301141322562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>输入激活密钥，网上一抓一大把，这里列一些在<a href="http://www.win7zhijia.cn/jiaocheng/win7_24688.html">Win7之家</a>找到的密钥。</p>
+<!-- /wp:paragraph -->
+<p><code>FJGCP-4DFJD-GJY49-VJBQ7-HYRR2</code></p>
+<p><code>VQ3PY-VRX6D-CBG4J-8C6R2-TCVBD</code></p>
+<p><code>2Y4WT-DHTBF-Q6MMK-KYK6X-VKM6G</code></p>
+<p><code>342DG-6YJR8-X92GV-V7DCV-P4K27</code></p>
+<p><code>9CW99-79BBF-D4M3X-9BK9M-4RPH9</code></p>
+<p><code>MHFPT-8C8M2-V9488-FGM44-2C9T3</code></p>
+<p><code>6K2KY-BFH24-PJW6W-9GK29-TMPWP</code></p>
+<p><code>49PB6-6BJ6Y-KHGCQ-7DDY6-TF7CD</code></p>
+<p><code>YJJYR-666KV-8T4YH-KM9TB-4PY2W</code></p>
+<p><code>76MTG-QMQJQ-46DQR-CHRBB-7K3HD</code></p>
+<p><code>4BRY2-6W9VH-9CM6R-GPKRY-HHVCY</code></p>
+<p><code>2XQ63-J3P67-9G3JC-FHQ68-8Q2F3</code></p>
+<p><code>KH2J9-PC326-T44D4-39H6V-TVPBY</code></p>
+<p><code>87VT2-FY2XW-F7K39-W3T8R-XMFGF</code></p>
+<p><code>236TW-X778T-8MV9F-937GT-QVKBB</code></p>
+<p><code>RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289</code></p>
+<p><code>6K2KY-BFH24-PJW6W-9GK29-TMPWP</code></p>
+<p><code>TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK</code></p>
+<p><code>RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289</code></p>
+<p><code>V77DJ-CT8WB-Y3GXT-X3FBP-6F987</code></p>
+<p><code>PRG2C-6MTQ2-RPFKB-QFJRR-CDM36</code></p>
+<p><br><img src="https://img-blog.csdnimg.cn/20200301141553638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>15.安全，选择“稍后询问我”。<br><img src="https://img-blog.csdnimg.cn/20200301141840499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>16.设置时间，北京时间UTC+8即可。<br><img src="https://img-blog.csdnimg.cn/20200301141918466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>17.根据自己的情况选择。<br><img src="https://img-blog.csdnimg.cn/20200301141955531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301142039360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>18.OK！成功！ 安装完成！<br><img src="https://img-blog.csdnimg.cn/20200301142052350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>19.哎呀呀！这怎么行！桌面上只有“回收站”！<br><img src="https://img-blog.csdnimg.cn/20200301142212271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>桌面上右键，选择“个性化”。<br><img src="https://img-blog.csdnimg.cn/20200301142533980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“更改桌面图标”。<br><img src="https://img-blog.csdnimg.cn/20200301142657484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择自己想要的，确定。<br><img src="https://img-blog.csdnimg.cn/20200301142737967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，完成！<br>至于分辨率，桌面背景这些，大家可以自行上网搜索查阅。<br>好了，使用物理机的小伙伴们，你们的任务到此为止，再见！</p></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:paragraph -->
+<p>20.安装VMware Tools（或者用 Virtualbox的选安装增强功能）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>有没有觉得分辨率低看着很不顺眼？有没有想互相拖放文件？我们来安装Tools.<br>先选择“我已完成安装”（没有也没事）。<br>如图所示，右键该虚拟机，选择“安装VMware Tools”<br><img src="https://img-blog.csdnimg.cn/20200301143232152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后进入“计算机”，双击启动DVD驱动器VMware Tools。<br><img src="https://img-blog.csdnimg.cn/20200301143443818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“是”<br><img src="https://img-blog.csdnimg.cn/2020030114352853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301143541907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301143719599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>准备完成后，就可以开始安装了，选择下一步。<br><img src="https://img-blog.csdnimg.cn/20200301143749400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“典型安装”。<br><img src="https://img-blog.csdnimg.cn/20200301143810888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“安装".<br><img src="https://img-blog.csdnimg.cn/20200301143857942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后就开始安装了，等待即可。<br><img src="https://img-blog.csdnimg.cn/20200301143930810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>安装完成，下面的提示框淡出，我们点完成即可。<br><img src="https://img-blog.csdnimg.cn/20200301144010433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>根据提示重启。<br><img src="https://img-blog.csdnimg.cn/20200301144046370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，分辨率变高了，真好！<br><img src="https://img-blog.csdnimg.cn/20200301144356252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>21.现在大家可以进行分区设置，网上也有很多教程，这里只给大家放几张图片，不赘述了。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>右键开始菜单的“计算机”，选择管理。<br><img src="https://img-blog.csdnimg.cn/20200301144522740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“磁盘管理”。<br><img src="https://img-blog.csdnimg.cn/20200301144609433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后大家就可以设置了，根据喜好即可。可以分盘，也可以修改盘符。大家自己上网搜索吧！</p>
+<!-- /wp:paragraph -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C++ 测评bat文件模板]]></title>
         <id>https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/</id>
@@ -738,91 +808,6 @@ int main() {
 	for(int i=1; i&lt;n; i++) if(p[i].y==p[i+1].y) to[i]=i+1;
 	dfs(1);
 	cout&lt;&lt;ans;
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P6123 【[Neerc2016]Hard Refactoring】]]></title>
-        <id>https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/</id>
-        <link href="https://zxh23682.github.io/post/ti-jie-p6123-neerc2016hard-refactoring/">
-        </link>
-        <updated>2020-11-15T02:48:33.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="思路">思路：</h3>
-<p>简单模拟，数字区间为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msup><mn>2</mn><mn>15</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>15</mn></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">[2^{15},2^{15}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>，全取为 <code>true</code> ，全不取为 <code>false</code> 。否则按最简表达式给出范围。</p>
-<p>对于输入给的表达式，读取其表示的区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> ，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>&lt;</mo><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">l &lt;= r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> ，则将其在一维数轴上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l, r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 每个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span> 。</p>
-<p>对结果判断，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msup><mn>2</mn><mn>15</mn></msup><mo separator="true">,</mo><msup><mn>2</mn><mn>15</mn></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">[2^{15},2^{15}]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">5</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span><br>
-区间的每个数字判断其是否能够取到，并合并区间，打印若干段不连续区间即可。</p>
-<p>对于如何快速对区间修改及单点查询，通过树状数组即可。</p>
-<p>注意处理好输入输出格式问题。</p>
-<hr>
-<h3 id="code">Code：</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int BASE = 32769;
-const int N = 70005;
-int bin[N];
-inline int lowbit(int x) {
-	return x &amp; -x;
-}
-void add(int x, int w) {
-	for(int i=x; i&lt;N; i+=lowbit(i)) bin[i] += w;
-}
-int sum(int x) {
-	int ret = 0;
-	for(int i=x; i; i-=lowbit(i)) ret += bin[i];
-	return ret;
-}
-void update(int x, int y, int w) {
-	add(x, w),add(y+1, -w);
-}
-int main() {
-
-	char x[2], op[5], eop0, eop1;
-	int lmt, lft, rgt;
-	while(true) {
-		lft = -32768,rgt = 32767;
-		scanf(&quot; %s %s %d&quot;, x, op, &amp;lmt);
-		if(op[0] == '&lt;') rgt = lmt;
-		else lft = lmt;
-		if(cin&gt;&gt;eop0&gt;&gt;eop1) {
-			if(eop0 == '&amp;') {
-				scanf(&quot; %c %s %d&quot;, &amp;x, op, &amp;lmt);
-				if(op[0] == '&lt;') rgt = min(lmt, rgt);
-				else lft = max(lft, lmt);
-			}
-			if(lft &lt;= rgt) update(lft + BASE, rgt + BASE, 1);
-			if(eop0 == '&amp;') {
-				if(cin&gt;&gt;eop0&gt;&gt;eop1);
-				else break;
-			}
-		} else {
-			if(lft &lt;= rgt) update(lft + BASE, rgt + BASE, 1);
-			break;
-		}
-	}
-	int cnt = 0;
-	lft = -BASE;
-	bool flg = false;
-	for(int i=1, val; i&lt;=BASE + 32767; i++) {
-		val = sum(i);
-		cnt += (val &gt; 0 ? 1 : 0);
-		if(lft == -BASE &amp;&amp; val) lft = i-BASE;
-		if(lft != -BASE &amp;&amp; val == 0) {
-			if(flg) printf(&quot; ||\n&quot;);
-			if(lft == 1-BASE) printf(&quot;x &lt;= %d&quot;, i-BASE-1);
-			else printf(&quot;x &gt;= %d &amp;&amp; x &lt;= %d&quot;, lft, i-BASE-1);
-			lft = -BASE;
-			flg = true;
-		}
-	}
-	if(cnt == 0) printf(&quot;false\n&quot;);
-	else if(cnt == 32768*2) printf(&quot;true\n&quot;);
-	else if(lft != -BASE) {
-		if(flg) printf(&quot; ||\n&quot;);
-		printf(&quot;x &gt;= %d&quot;, lft);
-	}
 	return 0;
 }
 </code></pre>

@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#000">
-<title>zxh23682 的博客</title>
+<title>安装 Windows7 操作系统 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1605702261982">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="安装 Windows7 操作系统" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -159,8 +161,23 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -207,125 +224,221 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box gemini box-shadow-wrapper">
-          <section class="friends-section bg-color slide-down-in">
-            <div class="firends-box">
-              <h1 class="firends-title" itemprop="name headline">友情链接</h1>
-              
-              
-              <a href="https://www.luogu.com.cn/user/357545" target="_blank">
-                <div class="firends-item">
-                  <img src="https://cdn.luogu.com.cn/upload/usericon/357545.png" />
-                  <div class="right">
-                    <div class="top">
-                      NSObject
-                    </div>
-                    <div class="bottom">
-                      
-                    </div>
-                  </div>
-                </div>
-              </a>
-              
-              <a href="https://www.luogu.com.cn/user/279197" target="_blank">
-                <div class="firends-item">
-                  <img src="https://cdn.luogu.com.cn/upload/usericon/279197.png" />
-                  <div class="right">
-                    <div class="top">
-                      Mars_Dingdang
-                    </div>
-                    <div class="bottom">
-                      
-                    </div>
-                  </div>
-                </div>
-              </a>
-              
-              <a href="https://www.luogu.com.cn/user/339632" target="_blank">
-                <div class="firends-item">
-                  <img src="https://cdn.luogu.com.cn/upload/usericon/339632.png" />
-                  <div class="right">
-                    <div class="top">
-                      LucasXu80
-                    </div>
-                    <div class="bottom">
-                      
-                    </div>
-                  </div>
-                </div>
-              </a>
-              
-              <a href="https://www.luogu.com.cn/user/258325" target="_blank">
-                <div class="firends-item">
-                  <img src="https://cdn.luogu.com.cn/upload/usericon/258325.png" />
-                  <div class="right">
-                    <div class="top">
-                      LFC_伟大的哲学
-                    </div>
-                    <div class="bottom">
-                      
-                    </div>
-                  </div>
-                </div>
-              </a>
-              
-              <a href="https://www.luogu.com.cn/user/278629" target="_blank">
-                <div class="firends-item">
-                  <img src="https://cdn.luogu.com.cn/upload/usericon/278629.png" />
-                  <div class="right">
-                    <div class="top">
-                      Rolling_Code
-                    </div>
-                    <div class="bottom">
-                      
-                    </div>
-                  </div>
-                </div>
-              </a>
-              
-              
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/">
+      安装 Windows7 操作系统
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-11-18 20:18:02">2020-11-18</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>1043<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <!-- wp:paragraph -->
+<p>Win7旗舰版-简体中文版镜像可以点<a href="http://d2.w10a.com/win7/cn_windows_7_ultimate_with_sp1_x64_dvd_677408.iso">这里</a>下载。当然用自己的也没问题的啦！<br>建议使用迅雷下载，亲测快很多。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>好了，接下来我们开始安装。</p>
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:heading -->
+<h2>以下内容仅虚拟机需要，物理机可直接跳至第9步！</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>1.在“库”一栏中右键，选择“新建虚拟机”，使用“典型”设置。<br><img src="https://img-blog.csdnimg.cn/20200301133239539.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在“库”一栏中右键，选择“新建虚拟机”"><br><img src="https://img-blog.csdnimg.cn/2020030113331520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="使用“典型”设置。"><br>2.选择稍后创建操作系统。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>3.操作系统选择Microsoft Windows，版本选择Windows 7，64位电脑的小伙伴们可以选择x64的，看电脑位数请参见这篇<a href="https://blog.csdn.net/EricNTH/article/details/104499438">博客</a>。<br><img src="https://img-blog.csdnimg.cn/20200301133748351.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="Windows7"><br>4.之后自己起一个喜欢的名字，最好不要有中文和空格哦！<br>5. 选择大小，装系统大概只要7.8个G就够了我设了40个G，大家可以设更多，反正只是上限。当然也可以设少一点，等会我们做双硬盘。单个文件性能好，选他。<br><img src="https://img-blog.csdnimg.cn/20200301134850743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>6. 停！选择“自定义硬件”，然后跟着图片操作，载入刚下载的iso映像。<img src="https://img-blog.csdnimg.cn/20200301135049140.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>7. 声卡，打印机这些，如果不用，可以删除。如果想要更流畅，可以调高内存。<br>8. 网络NAT，桥接都可以。然后我们选择“添加…”，硬盘，再添加一个硬盘（可省略，如果要装双系统会方便一些。如果没有的话，可以先创建，然后在编辑设置里添加）。
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:list {"ordered":true,"start":9} -->
+<ol start="9"><li>好了，启动虚拟机。如图。<img src="https://img-blog.csdnimg.cn/20200301140021420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>10.选择语言，键盘，下一步。<img src="https://img-blog.csdnimg.cn/20200301140057986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>11.选择：现在安装。<img src="https://img-blog.csdnimg.cn/20200301140233495.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li></ol>
+<!-- /wp:list -->
+<!-- wp:paragraph -->
+<p>显示“正在启动”。。。<img src="https://img-blog.csdnimg.cn/20200301140303645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>我接受，然后下一步<img src="https://img-blog.csdnimg.cn/20200301140417415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“自定义”，否则很慢。<br><img src="https://img-blog.csdnimg.cn/20200301140537584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>装在哪里都可以，如果要装双系统建议不要装在磁盘0。否则建议选择磁盘0.<br><img src="https://img-blog.csdnimg.cn/20200301140556863.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>12.开始安装了，可以泡个茶，大概十分钟就好了，期间可能会重启数次。展开比较慢，其它就比较快了。<br><img src="https://img-blog.csdnimg.cn/20200301140746625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>如图，正在重启。<br><img src="https://img-blog.csdnimg.cn/20200301140926839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>很快就好了！<br><img src="https://img-blog.csdnimg.cn/20200301141015827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>13.装完了，开始设置。输入自己的昵称。<br><img src="https://img-blog.csdnimg.cn/20200301141240434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>14.我们不用设置密码，直接下一步即可。<br><img src="https://img-blog.csdnimg.cn/20200301141322562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>输入激活密钥，网上一抓一大把，这里列一些在<a href="http://www.win7zhijia.cn/jiaocheng/win7_24688.html">Win7之家</a>找到的密钥。</p>
+<!-- /wp:paragraph -->
+<p><code>FJGCP-4DFJD-GJY49-VJBQ7-HYRR2</code></p>
+<p><code>VQ3PY-VRX6D-CBG4J-8C6R2-TCVBD</code></p>
+<p><code>2Y4WT-DHTBF-Q6MMK-KYK6X-VKM6G</code></p>
+<p><code>342DG-6YJR8-X92GV-V7DCV-P4K27</code></p>
+<p><code>9CW99-79BBF-D4M3X-9BK9M-4RPH9</code></p>
+<p><code>MHFPT-8C8M2-V9488-FGM44-2C9T3</code></p>
+<p><code>6K2KY-BFH24-PJW6W-9GK29-TMPWP</code></p>
+<p><code>49PB6-6BJ6Y-KHGCQ-7DDY6-TF7CD</code></p>
+<p><code>YJJYR-666KV-8T4YH-KM9TB-4PY2W</code></p>
+<p><code>76MTG-QMQJQ-46DQR-CHRBB-7K3HD</code></p>
+<p><code>4BRY2-6W9VH-9CM6R-GPKRY-HHVCY</code></p>
+<p><code>2XQ63-J3P67-9G3JC-FHQ68-8Q2F3</code></p>
+<p><code>KH2J9-PC326-T44D4-39H6V-TVPBY</code></p>
+<p><code>87VT2-FY2XW-F7K39-W3T8R-XMFGF</code></p>
+<p><code>236TW-X778T-8MV9F-937GT-QVKBB</code></p>
+<p><code>RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289</code></p>
+<p><code>6K2KY-BFH24-PJW6W-9GK29-TMPWP</code></p>
+<p><code>TFP9Y-VCY3P-VVH3T-8XXCC-MF4YK</code></p>
+<p><code>RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289</code></p>
+<p><code>V77DJ-CT8WB-Y3GXT-X3FBP-6F987</code></p>
+<p><code>PRG2C-6MTQ2-RPFKB-QFJRR-CDM36</code></p>
+<p><br><img src="https://img-blog.csdnimg.cn/20200301141553638.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>15.安全，选择“稍后询问我”。<br><img src="https://img-blog.csdnimg.cn/20200301141840499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>16.设置时间，北京时间UTC+8即可。<br><img src="https://img-blog.csdnimg.cn/20200301141918466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>17.根据自己的情况选择。<br><img src="https://img-blog.csdnimg.cn/20200301141955531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301142039360.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>18.OK！成功！ 安装完成！<br><img src="https://img-blog.csdnimg.cn/20200301142052350.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>19.哎呀呀！这怎么行！桌面上只有“回收站”！<br><img src="https://img-blog.csdnimg.cn/20200301142212271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>桌面上右键，选择“个性化”。<br><img src="https://img-blog.csdnimg.cn/20200301142533980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“更改桌面图标”。<br><img src="https://img-blog.csdnimg.cn/20200301142657484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择自己想要的，确定。<br><img src="https://img-blog.csdnimg.cn/20200301142737967.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，完成！<br>至于分辨率，桌面背景这些，大家可以自行上网搜索查阅。<br>好了，使用物理机的小伙伴们，你们的任务到此为止，再见！</p></p>
+<!-- /wp:paragraph -->
+<!-- wp:separator -->
+<hr class="wp-block-separator"/>
+<!-- /wp:separator -->
+<!-- wp:paragraph -->
+<p>20.安装VMware Tools（或者用 Virtualbox的选安装增强功能）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>有没有觉得分辨率低看着很不顺眼？有没有想互相拖放文件？我们来安装Tools.<br>先选择“我已完成安装”（没有也没事）。<br>如图所示，右键该虚拟机，选择“安装VMware Tools”<br><img src="https://img-blog.csdnimg.cn/20200301143232152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后进入“计算机”，双击启动DVD驱动器VMware Tools。<br><img src="https://img-blog.csdnimg.cn/20200301143443818.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“是”<br><img src="https://img-blog.csdnimg.cn/2020030114352853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301143541907.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200301143719599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>准备完成后，就可以开始安装了，选择下一步。<br><img src="https://img-blog.csdnimg.cn/20200301143749400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“典型安装”。<br><img src="https://img-blog.csdnimg.cn/20200301143810888.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“安装".<br><img src="https://img-blog.csdnimg.cn/20200301143857942.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后就开始安装了，等待即可。<br><img src="https://img-blog.csdnimg.cn/20200301143930810.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>安装完成，下面的提示框淡出，我们点完成即可。<br><img src="https://img-blog.csdnimg.cn/20200301144010433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>根据提示重启。<br><img src="https://img-blog.csdnimg.cn/20200301144046370.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，分辨率变高了，真好！<br><img src="https://img-blog.csdnimg.cn/20200301144356252.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>21.现在大家可以进行分区设置，网上也有很多教程，这里只给大家放几张图片，不赘述了。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>右键开始菜单的“计算机”，选择管理。<br><img src="https://img-blog.csdnimg.cn/20200301144522740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“磁盘管理”。<br><img src="https://img-blog.csdnimg.cn/20200301144609433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后大家就可以设置了，根据喜好即可。可以分盘，也可以修改盘符。大家自己上网搜索吧！</p>
+<!-- /wp:paragraph -->
+
             </div>
-            <hr>
-            <div style="text-align:center">
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
-              <span class="language" data-lan="leave-message">留言添加友链</span>
-              <span class="with-love">
-                <i class="fa fa-heart"></i>
-              </span>
-            </div>
-            <hr>
-            <div class="friends-note">
-              <p><strong class="language" data-lan="format">友链格式：</strong></p>
-              <ul>
-                <li><span class="language" data-lan="site-name">网站名称：</span>zxh23682 的博客</li>
-                <li><span class="language" data-lan="site-link">网站地址：</span><a href="https://zxh23682.github.io" data-pjax-state="">https://zxh23682.github.io</a></li>
-                <li><span class="language" data-lan="site-desc">网站描述：</span>一个蒟蒻OIer</li>
-                <li><span class="language" data-lan="site-img">网站头像：</span>
-                  <a href="https://zxh23682.github.io/images/avatar.png">https://zxh23682.github.io/images/avatar.png</a>
-                </li>
-              </ul>
-            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      zxh23682
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/" title="安装 Windows7 操作系统">https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">C++ 测评bat文件模板</a>
+        <a class="nav-mobile-next" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
             
   
 
-          </section>
+          </div>
         </div>
       </div>
     </div>
@@ -1094,6 +1207,253 @@
   }
 
 </script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -4740,7 +5100,6 @@ int main() {
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
 <script type="text/javascript" src="/media/js/mouse/fireworks.js"></script>
-
 
 
 
