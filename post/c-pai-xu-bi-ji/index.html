@@ -9,7 +9,7 @@
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#000">
 <title>C++ 排序笔记 | zxh23682 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605530350662">
+<link rel="shortcut icon" href="/favicon.ico?v=1605694856402">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -177,7 +177,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -199,7 +200,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">17</span>
+        <span class="site-item-stat-count">18</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -224,6 +225,201 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%A8%A1%E6%9D%BF">模板：</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">完整代码</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -326,18 +522,18 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>8<span class="language" data-lan="minute">分钟</span></span>
+      <span>9<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1164<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1318<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>模板：</p>
+              <h3 id="模板">模板：</h3>
 <pre><code class="language-cpp">void selection_sort(int* a, int n) {
 	for (int i = 1; i &lt; n; ++i) {
 		int ith = i;
@@ -637,7 +833,43 @@ void tournament_sort() {
 	}
 }//jing biao sai pai xu
 </code></pre>
-<p>时间复杂度：</p>
+<h3 id="完整代码">完整代码</h3>
+<p>快速排序：</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn=1e4+5;
+int n;
+int a[maxn];
+void qsort(int l,int r) {
+	int m,n;
+	int mid,p;
+	m=l,n=r;
+	mid=a[(l+r)/2];           
+	do {
+		while (a[m]&lt;mid) m++;  
+		while (a[n]&gt;mid) n--;    
+		if (m&lt;=n) {
+			swap(a[m],a[n]);
+			m++; 
+			n--;           
+		}
+	} while (m&lt;=n);             
+	if (m&lt;n) qsort(l,n);            
+	if (m&lt;r) qsort(m,r);
+}
+int main() {
+	freopen(&quot;kp.in&quot;,&quot;r&quot;,stdin);
+    freopen(&quot;kp.out&quot;,&quot;w&quot;,stdout);
+	scanf(&quot;%d&quot;,&amp;n);
+	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
+	qsort(1,n);
+	for (int i=1; i&lt;=n; i++) printf(&quot;%d &quot;,a[i]);	
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
+</code></pre>
+<h3 id="时间复杂度">时间复杂度</h3>
 <figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
 
             </div>
@@ -663,6 +895,10 @@ void tournament_sort() {
   </div>
   <div class="nav">
     <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">C++ 测评bat文件模板</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">上一篇</a>
       
     </div>
     <div class="nav-next">
@@ -1671,8 +1907,45 @@ void tournament_sort() {
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/"" data-c="
+          &lt;pre&gt;&lt;code&gt;@echo off
+title TestData - carry
+if &amp;quot;%1&amp;quot;==&amp;quot;&amp;quot; goto loop
+copy carry%1.in carry.in &amp;gt;nul
+echo Problem Test
+echo Data %1
+time&amp;lt;enter
+carry.exe
+time&amp;lt;enter
+fc carry.out carry%1.out
+pause
+goto end
+:loop
+echo.&amp;gt;enter
+for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i
+del enter
+del carry.in
+del carry.out
+:end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中 ：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;carry&lt;/code&gt;  为题目文件名，可以修改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i&lt;/code&gt; 有 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 组测试数据，可以修改，如 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;15&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 组： &lt;code&gt;for %%i in (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) do call %0 %%i&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;fc carry.out carry%1.out&lt;/code&gt; 的后一个 &lt;code&gt;.out&lt;/code&gt; 可以修改，如 &lt;code&gt;.ans&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">C++ 测评bat文件模板</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/"" data-c="
-          &lt;p&gt;模板：&lt;/p&gt;
+          &lt;h3 id=&#34;模板&#34;&gt;模板：&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;void selection_sort(int* a, int n) {
 	for (int i = 1; i &amp;lt; n; ++i) {
 		int ith = i;
@@ -1972,7 +2245,43 @@ void tournament_sort() {
 	}
 }//jing biao sai pai xu
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;时间复杂度：&lt;/p&gt;
+&lt;h3 id=&#34;完整代码&#34;&gt;完整代码&lt;/h3&gt;
+&lt;p&gt;快速排序：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+const int maxn=1e4+5;
+int n;
+int a[maxn];
+void qsort(int l,int r) {
+	int m,n;
+	int mid,p;
+	m=l,n=r;
+	mid=a[(l+r)/2];           
+	do {
+		while (a[m]&amp;lt;mid) m++;  
+		while (a[n]&amp;gt;mid) n--;    
+		if (m&amp;lt;=n) {
+			swap(a[m],a[n]);
+			m++; 
+			n--;           
+		}
+	} while (m&amp;lt;=n);             
+	if (m&amp;lt;n) qsort(l,n);            
+	if (m&amp;lt;r) qsort(m,r);
+}
+int main() {
+	freopen(&amp;quot;kp.in&amp;quot;,&amp;quot;r&amp;quot;,stdin);
+    freopen(&amp;quot;kp.out&amp;quot;,&amp;quot;w&amp;quot;,stdout);
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+	for (int i=1; i&amp;lt;=n; i++) scanf(&amp;quot;%d&amp;quot;,&amp;amp;a[i]);
+	qsort(1,n);
+	for (int i=1; i&amp;lt;=n; i++) printf(&amp;quot;%d &amp;quot;,a[i]);	
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;时间复杂度&#34;&gt;时间复杂度&lt;/h3&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 ">C++ 排序笔记</a>
       </div>

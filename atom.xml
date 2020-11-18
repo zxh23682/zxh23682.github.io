@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-11-16T12:39:33.316Z</updated>
+    <updated>2020-11-18T10:21:05.893Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -11,12 +11,52 @@
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
     <entry>
+        <title type="html"><![CDATA[C++ 测评bat文件模板]]></title>
+        <id>https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/</id>
+        <link href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">
+        </link>
+        <updated>2020-11-18T10:16:20.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>@echo off
+title TestData - carry
+if &quot;%1&quot;==&quot;&quot; goto loop
+copy carry%1.in carry.in &gt;nul
+echo Problem Test
+echo Data %1
+time&lt;enter
+carry.exe
+time&lt;enter
+fc carry.out carry%1.out
+pause
+goto end
+:loop
+echo.&gt;enter
+for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i
+del enter
+del carry.in
+del carry.out
+:end
+</code></pre>
+<p>其中 ：</p>
+<ul>
+<li>
+<p><code>carry</code>  为题目文件名，可以修改。</p>
+</li>
+<li>
+<p><code>for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i</code> 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 组测试数据，可以修改，如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> 组： <code>for %%i in (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) do call %0 %%i</code></p>
+</li>
+<li>
+<p><code>fc carry.out carry%1.out</code> 的后一个 <code>.out</code> 可以修改，如 <code>.ans</code></p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[C++ 排序笔记]]></title>
         <id>https://zxh23682.github.io/post/c-pai-xu-bi-ji/</id>
         <link href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/">
         </link>
         <updated>2020-11-16T12:38:17.000Z</updated>
-        <content type="html"><![CDATA[<p>模板：</p>
+        <content type="html"><![CDATA[<h3 id="模板">模板：</h3>
 <pre><code class="language-cpp">void selection_sort(int* a, int n) {
 	for (int i = 1; i &lt; n; ++i) {
 		int ith = i;
@@ -316,7 +356,43 @@ void tournament_sort() {
 	}
 }//jing biao sai pai xu
 </code></pre>
-<p>时间复杂度：</p>
+<h3 id="完整代码">完整代码</h3>
+<p>快速排序：</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn=1e4+5;
+int n;
+int a[maxn];
+void qsort(int l,int r) {
+	int m,n;
+	int mid,p;
+	m=l,n=r;
+	mid=a[(l+r)/2];           
+	do {
+		while (a[m]&lt;mid) m++;  
+		while (a[n]&gt;mid) n--;    
+		if (m&lt;=n) {
+			swap(a[m],a[n]);
+			m++; 
+			n--;           
+		}
+	} while (m&lt;=n);             
+	if (m&lt;n) qsort(l,n);            
+	if (m&lt;r) qsort(m,r);
+}
+int main() {
+	freopen(&quot;kp.in&quot;,&quot;r&quot;,stdin);
+    freopen(&quot;kp.out&quot;,&quot;w&quot;,stdout);
+	scanf(&quot;%d&quot;,&amp;n);
+	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
+	qsort(1,n);
+	for (int i=1; i&lt;=n; i++) printf(&quot;%d &quot;,a[i]);	
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
+</code></pre>
+<h3 id="时间复杂度">时间复杂度</h3>
 <figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
@@ -746,38 +822,6 @@ int main() {
 	else if(lft != -BASE) {
 		if(flg) printf(&quot; ||\n&quot;);
 		printf(&quot;x &gt;= %d&quot;, lft);
-	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF994A 【Fingerprints】]]></title>
-        <id>https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/</id>
-        <link href="https://zxh23682.github.io/post/ti-jie-cf994a-fingerprints/">
-        </link>
-        <updated>2020-11-15T02:48:05.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
-<p>按顺序输出第一个数组中在第二个数组中的数。</p>
-<p>这题两个数组都不会出现重复数字。</p>
-<hr>
-<h3 id="思路">思路：</h3>
-<p>输入两个数组，二重循环遍历 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 数组，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i=y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，就输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
-<hr>
-<h3 id="code">Code:</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-int n,m;
-int x[15],y[15];
-int main() {
-	cin&gt;&gt;n&gt;&gt;m;
-	for (int i=1; i&lt;=n; i++) cin&gt;&gt;x[i];
-	for (int i=1; i&lt;=m; i++) cin&gt;&gt;y[i]; //读入两个数组
-	for (int i=1; i&lt;=n; i++) {
-		for (int j=1; j&lt;=m; j++) {
-			if(x[i] == y[j]) cout &lt;&lt; x[i] &lt;&lt; &quot; &quot;; //如果找到相等的就输出
-		}
 	}
 	return 0;
 }
