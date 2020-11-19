@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>题解 P7071 【优秀的拆分】 | zxh23682 的博客</title>
+<title>安装 NOI Linux 操作系统 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1605787820702">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="题解 P7071 【优秀的拆分】" />
-  <meta name="keywords" content="题解" />
+  <meta name="description" content="安装 NOI Linux 操作系统" />
+  <meta name="keywords" content="随笔" />
 </head>
 
 <body>
@@ -177,8 +177,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -232,200 +231,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%80%9D%E8%B7%AF">思路：</a></li>
-<li><a href="#code">Code：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -513,8 +318,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">
-      题解 P7071 【优秀的拆分】
+    <a class="post-title-link" href="https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/">
+      安装 NOI Linux 操作系统
     </a>
   </h1>
   <div class="post-meta">
@@ -522,7 +327,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-11-15 10:49:36">2020-11-15</span>
+      <span class="publish-time" data-t="2020-11-19 20:06:35">2020-11-19</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -531,8 +336,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://zxh23682.github.io/tag/odqLudy3e/">
-        <span>题解</span>
+      <a href="https://zxh23682.github.io/tag/7Hqj3q9M3/">
+        <span>随笔</span>
       </a>
       
       
@@ -541,49 +346,58 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>4<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>220<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>887<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="思路">思路：</h3>
-<p>首先，易得如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为奇数就输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</p>
-<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup><mo>&lt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{23}&lt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>&gt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{24}&gt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span>，所以从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 枚举，找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 次方小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 就输出，把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 减去上一个符合的数，直到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就跳出循环。</p>
-<hr>
-<h3 id="code">Code：</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-ll n;
-int main() {
-//	freopen(&quot;power.in&quot;,&quot;r&quot;,stdin);
-//	freopen(&quot;power.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%lld&quot;,&amp;n);
-	if (n%2==1) { //如果n为奇数就 输出-1
-		printf(&quot;-1\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	for (int i=24;i&gt;=1;i--) {
-		if (pow(2,i)&lt;=n) {
-			cout&lt;&lt;(ll)pow(2,i)&lt;&lt;&quot; &quot;; //找到符合的就输出，注意要用long long输出
-			n -= pow(2,i); //减去上一个输出的数
-		}
-		if (n==0) break; //n为0时就结束程序
-	}
-	fclose(stdin);
-	fclose(stdout);
-	return 0;
-}
-</code></pre>
-
+              <!-- wp:heading -->
+<h2>准备工作</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>NOI Linux 1.4.1 iso镜像<a href="https://sys-code.oss-cn-beijing.aliyuncs.com/NOI/noilinux-1.4.1.iso">（点我下载）</a>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>我们开始吧！</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>打开VMware Workstation 15.x（更低版本也没什么问题，像VirtualBox这些其它虚拟机软件也行），在“库”一栏中右键，选择“新建虚拟机”。<br><img src="https://img-blog.csdnimg.cn/20200225162318852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在向导里选典型，继续。<br><img src="https://img-blog.csdnimg.cn/2020022516252028.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“稍后安装操作系统”，下一步。<br>（用过的都知道那个简易安装有多恶心，非VMware没有此问题）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>选择Linux，版本是Ubuntu（如果是64位电脑可以选择Ubuntu 64位，电脑是几位的可以通过右键“计算机”-&gt;属性-&gt;系统-&gt;系统类型查看），下一步。<br><img src="https://img-blog.csdnimg.cn/20200225162833276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>取个自己喜欢的名字，不要有中文，最好不要有空格，下一步。<br>（提示：最好不要放在系统盘（C:）否则更慢！）<br><img src="https://img-blog.csdnimg.cn/20200225163122949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>20GB足够，（这是上限，可以开高点。安装大概只要2个G左右）。单个文件性能好，选他。<img src="https://img-blog.csdnimg.cn/20200225163425591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>注意，刹住！跟着图片走！<br>使用iso镜像文件，载入你刚刚千辛万苦下载的noilinux-1.4.1.iso，并点“关闭”，“完成”。（可以再选择显示器&gt;加速3D图形）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><img src="https://img-blog.csdnimg.cn/20200225163621887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，虚拟机创建好了！<br>（——不过，这只是完成了一个小目标…）<br>——————————————————————————</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>安装NOI Linux</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>开启此虚拟机。<br>等它跳来跳去，等个半分钟左右，出现下下图，就可以开始安装了。<br><img src="https://img-blog.csdnimg.cn/20200225164222697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225164409536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择中文（简体），安装Ubuntu。<br><img src="https://img-blog.csdnimg.cn/20200225164608128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>继续，两个复选框统统不要。<br><img src="https://img-blog.csdnimg.cn/20200225164710463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>清除整个磁盘并安装。<br><img src="https://img-blog.csdnimg.cn/20200225164853992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>我在哪里？如实告诉他就行了，反正它也找不到我。<br><img src="https://img-blog.csdnimg.cn/20200225165116440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>汉语，汉语，继续。<br><img src="https://img-blog.csdnimg.cn/20200225165201223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>慢慢等待吧。</p>
+<!-- /wp:paragraph -->
+如果断了网，大概15分钟就装好了。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><br><img src="https://img-blog.csdnimg.cn/20200225165223132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>装完后他会提示你要重启，你确定。【注意！如果重启了2，3分钟没动静，果断拔电！（强制关机），这是你重新打开它应该已经装好可以用了。】</p></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>这里就不等了，直接给大家看成品吧！默认用户名noilinux，密码123456，墙纸是我另外设的.<br><img src="https://img-blog.csdnimg.cn/20200225170003333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>第一次我装的时候简直苦恼的不行，因为分辨率实在太低【相信大家现在也这样吧】，连设置都无法设定（分辨率太低让“完成”按钮愣是点不到，糟心~），这里给大家一个方法。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Ctrl+Alt+T运行终端，输入sudo gedit /etc/default/grub（sudo类似于获取管理员权限，不然无法保存），按下Enter，以越快越好的速度输入密码（123456），大概两三秒后就要重试了。<img src="https://img-blog.csdnimg.cn/20200225170822105.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在打开的文件中加上这两行，如图（1280x800只是个人随便设的，你可以随便改（但一定要是标准的，如1920x1080,1366x768），注意是x不是*，应该原本设的是800x600，怪不得！），然后保存，重启。<br>GRUB_GFXMODE=1280x800<br>GRUB_GFXPAYLOAD_LINUX=keep<br><img src="https://img-blog.csdnimg.cn/20200225170946121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了！成功！<br>应该也有朋友注意到了，这里没装Ubuntu Software Center！<br>好了，这里给大家安装方法（我可搜了好久呢）<br>sudo apt install software-center<br>这个几分钟就行了，会有文字提示，比较好。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>通过应用程序 编程-&gt;GUIDE来启动这个操作系统的主要目的——写程序。<br><img src="https://img-blog.csdnimg.cn/20200225171749870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225171957210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>这些就不用说了吧。再讲一句，要保存为cpp文件才有语法高亮！！！<br><img src="https://img-blog.csdnimg.cn/20200225172059461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>通过键盘图标-&gt;输入法-&gt;GOOGLE拼音来打中文。<br><img src="https://img-blog.csdnimg.cn/20200225172221757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，今天就写这么多啦，感兴趣的同志们可以去多学学Linux终端和命令行，那个比cmd强大多了！</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Linux安装便捷，使用稳定，不用担心蓝屏（Windows特产），等等，值得推荐！</p>
+<!-- /wp:paragraph -->
             </div>
             
             
@@ -595,7 +409,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/" title="题解 P7071 【优秀的拆分】">https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/</a>
+      <a href="https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/" title="安装 NOI Linux 操作系统">https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -604,21 +418,17 @@ int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://zxh23682.github.io/tag/odqLudy3e/"># 题解</a>
+      <a href="https://zxh23682.github.io/tag/7Hqj3q9M3/"># 随笔</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 P6855 【「EZEC-4.5」走方格】" href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">题解 P6855 【「EZEC-4.5」走方格】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 P6855 【「EZEC-4.5」走方格】" href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 P1444 【[USACO1.3]虫洞 wormhole】" href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">题解 P1444 【[USACO1.3]虫洞 wormhole】</a>
-        <a class="nav-mobile-next" title="题解 P1444 【[USACO1.3]虫洞 wormhole】" href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">下一篇</a>
+        <a class="nav-pc-next" title="安装 Windows7 操作系统" href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/">安装 Windows7 操作系统</a>
+        <a class="nav-mobile-next" title="安装 Windows7 操作系统" href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

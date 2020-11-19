@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-11-19T11:59:50.153Z</updated>
+    <updated>2020-11-19T12:10:24.244Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,54 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[安装 NOI Linux 操作系统]]></title>
+        <id>https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/</id>
+        <link href="https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/">
+        </link>
+        <updated>2020-11-19T12:06:35.000Z</updated>
+        <content type="html"><![CDATA[<!-- wp:heading -->
+<h2>准备工作</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>NOI Linux 1.4.1 iso镜像<a href="https://sys-code.oss-cn-beijing.aliyuncs.com/NOI/noilinux-1.4.1.iso">（点我下载）</a>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>我们开始吧！</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>打开VMware Workstation 15.x（更低版本也没什么问题，像VirtualBox这些其它虚拟机软件也行），在“库”一栏中右键，选择“新建虚拟机”。<br><img src="https://img-blog.csdnimg.cn/20200225162318852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在向导里选典型，继续。<br><img src="https://img-blog.csdnimg.cn/2020022516252028.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“稍后安装操作系统”，下一步。<br>（用过的都知道那个简易安装有多恶心，非VMware没有此问题）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>选择Linux，版本是Ubuntu（如果是64位电脑可以选择Ubuntu 64位，电脑是几位的可以通过右键“计算机”-&gt;属性-&gt;系统-&gt;系统类型查看），下一步。<br><img src="https://img-blog.csdnimg.cn/20200225162833276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>取个自己喜欢的名字，不要有中文，最好不要有空格，下一步。<br>（提示：最好不要放在系统盘（C:）否则更慢！）<br><img src="https://img-blog.csdnimg.cn/20200225163122949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>20GB足够，（这是上限，可以开高点。安装大概只要2个G左右）。单个文件性能好，选他。<img src="https://img-blog.csdnimg.cn/20200225163425591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>注意，刹住！跟着图片走！<br>使用iso镜像文件，载入你刚刚千辛万苦下载的noilinux-1.4.1.iso，并点“关闭”，“完成”。（可以再选择显示器&gt;加速3D图形）</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><img src="https://img-blog.csdnimg.cn/20200225163621887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，虚拟机创建好了！<br>（——不过，这只是完成了一个小目标…）<br>——————————————————————————</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>安装NOI Linux</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>开启此虚拟机。<br>等它跳来跳去，等个半分钟左右，出现下下图，就可以开始安装了。<br><img src="https://img-blog.csdnimg.cn/20200225164222697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225164409536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择中文（简体），安装Ubuntu。<br><img src="https://img-blog.csdnimg.cn/20200225164608128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>继续，两个复选框统统不要。<br><img src="https://img-blog.csdnimg.cn/20200225164710463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>清除整个磁盘并安装。<br><img src="https://img-blog.csdnimg.cn/20200225164853992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>我在哪里？如实告诉他就行了，反正它也找不到我。<br><img src="https://img-blog.csdnimg.cn/20200225165116440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>汉语，汉语，继续。<br><img src="https://img-blog.csdnimg.cn/20200225165201223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>慢慢等待吧。</p>
+<!-- /wp:paragraph -->
+如果断了网，大概15分钟就装好了。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p><br><img src="https://img-blog.csdnimg.cn/20200225165223132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>装完后他会提示你要重启，你确定。【注意！如果重启了2，3分钟没动静，果断拔电！（强制关机），这是你重新打开它应该已经装好可以用了。】</p></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>这里就不等了，直接给大家看成品吧！默认用户名noilinux，密码123456，墙纸是我另外设的.<br><img src="https://img-blog.csdnimg.cn/20200225170003333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>第一次我装的时候简直苦恼的不行，因为分辨率实在太低【相信大家现在也这样吧】，连设置都无法设定（分辨率太低让“完成”按钮愣是点不到，糟心~），这里给大家一个方法。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Ctrl+Alt+T运行终端，输入sudo gedit /etc/default/grub（sudo类似于获取管理员权限，不然无法保存），按下Enter，以越快越好的速度输入密码（123456），大概两三秒后就要重试了。<img src="https://img-blog.csdnimg.cn/20200225170822105.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在打开的文件中加上这两行，如图（1280x800只是个人随便设的，你可以随便改（但一定要是标准的，如1920x1080,1366x768），注意是x不是*，应该原本设的是800x600，怪不得！），然后保存，重启。<br>GRUB_GFXMODE=1280x800<br>GRUB_GFXPAYLOAD_LINUX=keep<br><img src="https://img-blog.csdnimg.cn/20200225170946121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了！成功！<br>应该也有朋友注意到了，这里没装Ubuntu Software Center！<br>好了，这里给大家安装方法（我可搜了好久呢）<br>sudo apt install software-center<br>这个几分钟就行了，会有文字提示，比较好。</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>通过应用程序 编程-&gt;GUIDE来启动这个操作系统的主要目的——写程序。<br><img src="https://img-blog.csdnimg.cn/20200225171749870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225171957210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>这些就不用说了吧。再讲一句，要保存为cpp文件才有语法高亮！！！<br><img src="https://img-blog.csdnimg.cn/20200225172059461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>通过键盘图标-&gt;输入法-&gt;GOOGLE拼音来打中文。<br><img src="https://img-blog.csdnimg.cn/20200225172221757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，今天就写这么多啦，感兴趣的同志们可以去多学学Linux终端和命令行，那个比cmd强大多了！</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Linux安装便捷，使用稳定，不用担心蓝屏（Windows特产），等等，值得推荐！</p>
+<!-- /wp:paragraph -->]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[安装 Windows7 操作系统]]></title>
         <id>https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/</id>
@@ -745,67 +793,6 @@ int main() {
 	}
 	fclose(stdin);
 	fclose(stdout);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P1444 【[USACO1.3]虫洞 wormhole】]]></title>
-        <id>https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/</id>
-        <link href="https://zxh23682.github.io/post/ti-jie-p1444-usaco13chong-dong-wormhole/">
-        </link>
-        <updated>2020-11-15T02:49:14.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
-<p>给定一些点，在横向穿过这些点时将会被传送回纵坐标相同的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 轴上，问有多少种情况会使得永远向右爬的虫子陷入死循环。</p>
-<h3 id="思路">思路：</h3>
-<p>首先因为只会向右爬，所以我们只需将同一行上的点间连边，然后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">dfs</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">s</span></span></span></span> 暴力找匹配，之后判环即可。</p>
-<h3 id="code">Code：</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-#define x second
-#define y first
-using namespace std;
-int n,to[20],pre[20],ans;
-bool vis[20];
-pair&lt;int,int&gt;p[20];
-bool check(int k) { //判环
-	while(to[k]) {
-		if(vis[k]) return true;
-		vis[k]=true;
-		k=pre[to[k]];
-	}
-	return false;
-}
-void dfs(int dep) { //暴力找匹配
-	if(dep&gt;n) {
-		for(int i=1; i&lt;=n; i++) {
-			fill(vis+1,vis+1+n,0);
-			if(check(i)) {
-				ans++;
-				return;
-			}
-		}
-		return;
-	}
-	if(pre[dep]) dfs(dep+1);
-	else {
-		for(int i=dep+1; i&lt;=n; i++)
-			if(!pre[i]) {
-				pre[i]=dep;
-				pre[dep]=i;
-				dfs(dep+1);
-				pre[i]=0;
-				pre[dep]=0;
-			}
-	}
-}
-int main() {
-	cin&gt;&gt;n;
-	for(int i=1; i&lt;=n; i++) cin&gt;&gt;p[i].x&gt;&gt;p[i].y;
-	sort(p+1,p+1+n);
-	for(int i=1; i&lt;n; i++) if(p[i].y==p[i+1].y) to[i]=i+1;
-	dfs(1);
-	cout&lt;&lt;ans;
 	return 0;
 }
 </code></pre>

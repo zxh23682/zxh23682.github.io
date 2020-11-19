@@ -9,7 +9,7 @@
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
 <title>题解 P1444 【[USACO1.3]虫洞 wormhole】 | zxh23682 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1605787186309">
+<link rel="shortcut icon" href="/favicon.ico?v=1605787820702">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -200,7 +200,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">19</span>
+        <span class="site-item-stat-count">20</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1648,6 +1648,51 @@ int main() {
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/"" data-c="
+          &lt;!-- wp:heading --&gt;
+&lt;h2&gt;准备工作&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;NOI Linux 1.4.1 iso镜像&lt;a href=&#34;https://sys-code.oss-cn-beijing.aliyuncs.com/NOI/noilinux-1.4.1.iso&#34;&gt;（点我下载）&lt;/a&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2&gt;我们开始吧！&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;打开VMware Workstation 15.x（更低版本也没什么问题，像VirtualBox这些其它虚拟机软件也行），在“库”一栏中右键，选择“新建虚拟机”。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225162318852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;在向导里选典型，继续。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/2020022516252028.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;选择“稍后安装操作系统”，下一步。&lt;br&gt;（用过的都知道那个简易安装有多恶心，非VMware没有此问题）&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;选择Linux，版本是Ubuntu（如果是64位电脑可以选择Ubuntu 64位，电脑是几位的可以通过右键“计算机”-&amp;gt;属性-&amp;gt;系统-&amp;gt;系统类型查看），下一步。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225162833276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;取个自己喜欢的名字，不要有中文，最好不要有空格，下一步。&lt;br&gt;（提示：最好不要放在系统盘（C:）否则更慢！）&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225163122949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;20GB足够，（这是上限，可以开高点。安装大概只要2个G左右）。单个文件性能好，选他。&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225163425591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;注意，刹住！跟着图片走！&lt;br&gt;使用iso镜像文件，载入你刚刚千辛万苦下载的noilinux-1.4.1.iso，并点“关闭”，“完成”。（可以再选择显示器&amp;gt;加速3D图形）&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225163621887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;好了，虚拟机创建好了！&lt;br&gt;（——不过，这只是完成了一个小目标…）&lt;br&gt;——————————————————————————&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:heading --&gt;
+&lt;h2&gt;安装NOI Linux&lt;/h2&gt;
+&lt;!-- /wp:heading --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;开启此虚拟机。&lt;br&gt;等它跳来跳去，等个半分钟左右，出现下下图，就可以开始安装了。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225164222697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225164409536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;选择中文（简体），安装Ubuntu。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225164608128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;继续，两个复选框统统不要。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225164710463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;清除整个磁盘并安装。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225164853992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;我在哪里？如实告诉他就行了，反正它也找不到我。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225165116440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;汉语，汉语，继续。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225165201223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;慢慢等待吧。&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+如果断了网，大概15分钟就装好了。&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225165223132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;装完后他会提示你要重启，你确定。【注意！如果重启了2，3分钟没动静，果断拔电！（强制关机），这是你重新打开它应该已经装好可以用了。】&lt;/p&gt;&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;这里就不等了，直接给大家看成品吧！默认用户名noilinux，密码123456，墙纸是我另外设的.&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225170003333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;第一次我装的时候简直苦恼的不行，因为分辨率实在太低【相信大家现在也这样吧】，连设置都无法设定（分辨率太低让“完成”按钮愣是点不到，糟心~），这里给大家一个方法。&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;Ctrl+Alt+T运行终端，输入sudo gedit /etc/default/grub（sudo类似于获取管理员权限，不然无法保存），按下Enter，以越快越好的速度输入密码（123456），大概两三秒后就要重试了。&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225170822105.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;在打开的文件中加上这两行，如图（1280x800只是个人随便设的，你可以随便改（但一定要是标准的，如1920x1080,1366x768），注意是x不是*，应该原本设的是800x600，怪不得！），然后保存，重启。&lt;br&gt;GRUB_GFXMODE=1280x800&lt;br&gt;GRUB_GFXPAYLOAD_LINUX=keep&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225170946121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;好了！成功！&lt;br&gt;应该也有朋友注意到了，这里没装Ubuntu Software Center！&lt;br&gt;好了，这里给大家安装方法（我可搜了好久呢）&lt;br&gt;sudo apt install software-center&lt;br&gt;这个几分钟就行了，会有文字提示，比较好。&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;通过应用程序 编程-&amp;gt;GUIDE来启动这个操作系统的主要目的——写程序。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225171749870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225171957210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;这些就不用说了吧。再讲一句，要保存为cpp文件才有语法高亮！！！&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225172059461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;通过键盘图标-&amp;gt;输入法-&amp;gt;GOOGLE拼音来打中文。&lt;br&gt;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200225172221757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70&#34; alt=&#34;&#34;&gt;&lt;br&gt;好了，今天就写这么多啦，感兴趣的同志们可以去多学学Linux终端和命令行，那个比cmd强大多了！&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;
+&lt;!-- wp:paragraph --&gt;
+&lt;p&gt;Linux安装便捷，使用稳定，不用担心蓝屏（Windows特产），等等，值得推荐！&lt;/p&gt;
+&lt;!-- /wp:paragraph --&gt;">安装 NOI Linux 操作系统</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/an-zhuang-windows7-cao-zuo-xi-tong/"" data-c="
