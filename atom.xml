@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-11-18T12:35:35.790Z</updated>
+    <updated>2020-11-19T10:21:23.838Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -22,9 +22,6 @@
 <!-- wp:paragraph -->
 <p>好了，接下来我们开始安装。</p>
 <!-- /wp:paragraph -->
-<!-- wp:separator -->
-<hr class="wp-block-separator"/>
-<!-- /wp:separator -->
 <!-- wp:heading -->
 <h2>以下内容仅虚拟机需要，物理机可直接跳至第9步！</h2>
 <!-- /wp:heading -->
