@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-11-20T08:42:47.629Z</updated>
+    <updated>2020-11-25T13:00:24.750Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[C++ 对拍]]></title>
+        <id>https://zxh23682.github.io/post/c-dui-pai/</id>
+        <link href="https://zxh23682.github.io/post/c-dui-pai/">
+        </link>
+        <updated>2020-11-25T12:54:48.000Z</updated>
+        <content type="html"><![CDATA[<p>共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件<br>
+各个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件的含义：</p>
+<ul>
+<li><code>1.cpp</code>是自己的程序</li>
+<li><code>2.cpp</code>是正确答案</li>
+<li><code>3.cpp</code>是随机数程序，在本程序中，生成的输入内容不需要指定输出到哪个文件，只需要直接输出。</li>
+<li><code>4.cpp</code>是对拍程序。</li>
+</ul>
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件运行后，把 <code>1.exe</code>，<code>2.exe</code>，<code>3.exe</code>，<code>4,cpp</code> 放到同一目录下，再运行 <code>4.cpp</code>。</p>
+<p>对拍程序（即 <code>4.cpp</code>）代码：</p>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;cstdlib&gt;
+#include&lt;ctime&gt;
+int main()
+{
+    long s,t;
+    while(1)
+    {
+        system(&quot;cls&quot;);
+        do{
+            system(&quot;3 &gt; 3.in&quot;);  //数据生成程序
+            s=clock();
+            system(&quot;1 &lt; 3.in &gt; 1.out&quot;);  //自己程序
+            t=clock();
+            system(&quot;2 &lt; 3.in &gt; 2.out&quot;);  //答案
+            if(system(&quot;fc 1.out  2.out &gt; nul&quot;))break;
+            else printf(&quot;AC time: %ldms\n&quot;,t-s);
+        }while(1);
+        printf(&quot;WA time: %ldms\n&quot;,t-s);
+        system(&quot;fc 1.out 2.out&quot;);
+        system(&quot;pause &gt; nul&quot;);
+    }
+}
+</code></pre>
+<p>如果正确，就会显示 <code>FC：找不到差异</code>。</p>
+<p>程序停止后，可以打开 <code>3.in</code> 查看输入，<code>1.out</code> 和 <code>2.out</code> 查看输出。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[安装 NOI Linux 操作系统]]></title>
         <id>https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/</id>
@@ -754,45 +798,6 @@ int main() {
 			if(i!=1) br[i][j] = max(br[i][j],br[i-1][j]);
 		}
 	cout&lt;&lt;ans;
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P7071 【优秀的拆分】]]></title>
-        <id>https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/</id>
-        <link href="https://zxh23682.github.io/post/ti-jie-p7071-you-xiu-de-chai-fen/">
-        </link>
-        <updated>2020-11-15T02:49:36.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="思路">思路：</h3>
-<p>首先，易得如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为奇数就输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</p>
-<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup><mo>&lt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{23}&lt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>&gt;</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup></mrow><annotation encoding="application/x-tex">2^{24}&gt;10^7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.853208em;vertical-align:-0.0391em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span>，所以从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 枚举，找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 次方小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 就输出，把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 减去上一个符合的数，直到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就跳出循环。</p>
-<hr>
-<h3 id="code">Code：</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-ll n;
-int main() {
-//	freopen(&quot;power.in&quot;,&quot;r&quot;,stdin);
-//	freopen(&quot;power.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%lld&quot;,&amp;n);
-	if (n%2==1) { //如果n为奇数就 输出-1
-		printf(&quot;-1\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	for (int i=24;i&gt;=1;i--) {
-		if (pow(2,i)&lt;=n) {
-			cout&lt;&lt;(ll)pow(2,i)&lt;&lt;&quot; &quot;; //找到符合的就输出，注意要用long long输出
-			n -= pow(2,i); //减去上一个输出的数
-		}
-		if (n==0) break; //n为0时就结束程序
-	}
-	fclose(stdin);
-	fclose(stdout);
 	return 0;
 }
 </code></pre>
