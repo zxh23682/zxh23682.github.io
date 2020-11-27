@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>题解 P6833 【[Cnoi2020]雷雨】 | zxh23682 的博客</title>
+<title>题解 CF621D 【Rat Kwesh and Cheese】 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1606473977889">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="题解 P6833 【[Cnoi2020]雷雨】" />
-  <meta name="keywords" content="游记" />
+  <meta name="description" content="题解 CF621D 【Rat Kwesh and Cheese】" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -242,8 +242,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
-<li><a href="#code">Code:</a></li>
+<li><a href="#%E9%A2%98%E6%84%8F">题意：</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路：</a></li>
+<li><a href="#code"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Code</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span></span></span></span>：</a></li>
 </ul>
 </li>
 </ul>
@@ -513,8 +514,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/">
-      题解 P6833 【[Cnoi2020]雷雨】
+    <a class="post-title-link" href="https://zxh23682.github.io/post/ti-jie-cf621d-rat-kwesh-and-cheese/">
+      题解 CF621D 【Rat Kwesh and Cheese】
     </a>
   </h1>
   <div class="post-meta">
@@ -522,108 +523,64 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-11-15 10:56:54">2020-11-15</span>
+      <span class="publish-time" data-t="2020-11-27 18:45:27">2020-11-27</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://zxh23682.github.io/tag/gEhYv41FQ/">
-        <span>游记</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>445<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>293<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="思路">思路</h3>
-<p>可以想到，这题其实就是找一个点满足这个点到题目要求的三个点的最短路之和最小（去除重复部分），所以直接用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>i</mi><mi>j</mi><mi>k</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">Dijkstra</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span></span></span></span><br>
-求出三个点到每个点的最短路，然后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 扫描每个点找出满足上述条件的点即可。</p>
-<p>注意：输入的矩阵第一行是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 然后递减，所以如果是从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 开始输入的需要把题目中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 替换。</p>
-<p><strong>此题需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>n</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">long</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span> 。</strong></p>
-<hr>
-<h3 id="code">Code:</h3>
-<pre><code class="language-cpp">
-#include &lt;bits/stdc++.h&gt;
+              <h3 id="题意">题意：</h3>
+<p>给三个实数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x,y,z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span>。求出值最大的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 对应的字符串。</p>
+<h3 id="思路">思路：</h3>
+<p>先将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span> 个字符串打表，读入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x,y,z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span></span></span></span> 后，算出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>11</mn></msub></mrow><annotation encoding="application/x-tex">a_{11}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值，找出其中的最小值，最后输出对应的字符串即可。</p>
+<h3 id="code"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Code</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span></span></span></span>：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
-typedef long long ll;
-const int A = 1e3 + 11;
-const int B = 1e6 + 11;
-const int mod = 1e9 + 7;
-const int inf = 0x3f3f3f3f;
-int dx[4] = {0, 0, 1, -1};
-int dy[4] = {1, -1, 0, 0};
-bool vis[A][A];
-int n, m, a, b, c;
-ll dis[3][A][A], mapp[A][A];
-
-struct node {
-	int x, y;
-	ll val;
-	bool operator &lt; (const node &amp;b) const {
-		return val &gt; b.val;
-	}
+long double x,y,z;
+long double a[12];
+int ans=0;
+const char s[12][10]= { //12个字符串 
+	&quot;x^y^z&quot;,
+	&quot;x^z^y&quot;,
+	&quot;(x^y)^z&quot;,
+	&quot;(x^z)^y&quot;,
+	&quot;y^x^z&quot;,
+	&quot;y^z^x&quot;,
+	&quot;(y^x)^z&quot;,
+	&quot;(y^z)^x&quot;,
+	&quot;z^x^y&quot;,
+	&quot;z^y^x&quot;,
+	&quot;(z^x)^y&quot;,
+	&quot;(z^y)^x&quot;
 };
-
-
-inline void Dij(int sx, int sy, int tag) {
-	priority_queue &lt;node&gt; Q;
-	memset(dis[tag], inf, sizeof(dis[tag]));
-	memset(vis, 0, sizeof(vis));
-	dis[tag][sx][sy] = mapp[sx][sy];
-	Q.push((node) {
-		sx, sy, dis[tag][sx][sy]
-	});
-	while (!Q.empty()) {
-		int x = Q.top().x, y = Q.top().y;
-		Q.pop();
-		if (vis[x][y]) continue;
-		vis[x][y] = 1;
-		for (int i=0; i&lt;4; i++) {
-			int bx = x + dx[i], by = y + dy[i];
-			if (bx &gt; n || bx &lt; 1 || by &gt; m || by &lt; 1) continue;
-			if (dis[tag][bx][by] &gt; dis[tag][x][y] + mapp[bx][by]) {
-				dis[tag][bx][by] = dis[tag][x][y] + 1ll * mapp[bx][by];
-				Q.push((node) {
-					bx, by, dis[tag][bx][by]
-				});
-			}
-		}
-	}
-}
-
 int main() {
-	cin&gt;&gt;n&gt;&gt;m&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-	for (int i=1; i&lt;=n; i++) for (int j=1; j&lt;=m; j++) cin&gt;&gt;mapp[i][j];
-	Dij(1, a, 0);
-	Dij(n, b, 1);
-	Dij(n, c, 2);
-	ll ans = 1e18;
-	for (int i=1; i&lt;=n; i++) {
-		for (int j=1; j&lt;=m; j++) {
-			ans = min(ans, dis[0][i][j] + dis[1][i][j] + dis[2][i][j] - 2 * mapp[i][j]);
-		}
-	}
-	cout&lt;&lt;ans;
+	cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+	a[0]=pow(y,z)*log(x); //计算所有a[i]的值 
+	a[1]=pow(z,y)*log(x);
+	a[2]=a[3]=y*z*log(x);
+	a[4]=pow(x,z)*log(y);
+	a[5]=pow(z,x)*log(y);
+	a[6]=a[7]=x*z*log(y);
+	a[8]=pow(x,y)*log(z);
+	a[9]=pow(y,x)*log(z);
+	a[10]=a[11]=x*y*log(z);
+	for(int i=1; i&lt;=11; i++) { //求出最大值a[i]的下标 
+		if(a[i]&gt;a[ans]) ans=i;
+	}	
+	printf(&quot;%s\n&quot;,s[ans]);
 	return 0;
 }
-
 </code></pre>
 
             </div>
@@ -637,7 +594,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/" title="题解 P6833 【[Cnoi2020]雷雨】">https://zxh23682.github.io/post/ti-jie-p6833-cnoi2020lei-yu/</a>
+      <a href="https://zxh23682.github.io/post/ti-jie-cf621d-rat-kwesh-and-cheese/" title="题解 CF621D 【Rat Kwesh and Cheese】">https://zxh23682.github.io/post/ti-jie-cf621d-rat-kwesh-and-cheese/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -646,21 +603,15 @@ int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://zxh23682.github.io/tag/gEhYv41FQ/"># 游记</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 CF878B 【Teams Formation】" href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">题解 CF878B 【Teams Formation】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 CF878B 【Teams Formation】" href="https://zxh23682.github.io/post/ti-jie-cf878b-teams-formation/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 P6855 【「EZEC-4.5」走方格】" href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">题解 P6855 【「EZEC-4.5」走方格】</a>
-        <a class="nav-mobile-next" title="题解 P6855 【「EZEC-4.5」走方格】" href="https://zxh23682.github.io/post/ti-jie-p6855-ezec-45-zou-fang-ge/">下一篇</a>
+        <a class="nav-pc-next" title="C++ 对拍" href="https://zxh23682.github.io/post/c-dui-pai/">C++ 对拍</a>
+        <a class="nav-mobile-next" title="C++ 对拍" href="https://zxh23682.github.io/post/c-dui-pai/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
