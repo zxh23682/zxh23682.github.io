@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-12-01T14:40:42.941Z</updated>
+    <updated>2020-12-03T14:07:14.656Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[C++ 常用模板]]></title>
+        <id>https://zxh23682.github.io/post/c-chang-yong-mo-ban/</id>
+        <link href="https://zxh23682.github.io/post/c-chang-yong-mo-ban/">
+        </link>
+        <updated>2020-12-03T14:05:17.000Z</updated>
+        <content type="html"><![CDATA[<p>扔几个链接。</p>
+<p>https://www.luogu.com.cn/blog/Mars-LG/STL-usage</p>
+<p>https://www.luogu.com.cn/blog/Mars-LG/chang-yong-bei-bao-mu-ban</p>
+<p>https://www.luogu.com.cn/paste/o1b1bau1</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020 CSP-J 游记]]></title>
         <id>https://zxh23682.github.io/post/2020-csp-j-you-ji/</id>
@@ -950,52 +962,6 @@ int main() {
 </code></pre>
 <h3 id="时间复杂度">时间复杂度</h3>
 <figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P6784 「EZEC-3」造房子]]></title>
-        <id>https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/</id>
-        <link href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">
-        </link>
-        <updated>2020-11-15T06:57:59.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
-<p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 块钱、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 材料和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 材料，造第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 层楼需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 材料与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 材料，每块钱都可以用来买 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 材料或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 材料，问最多可以造几层楼。</p>
-<hr>
-<h3 id="思路">思路：</h3>
-<p>要求最多可以造几层楼，那么只要暴力枚举第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 层即可。</p>
-<p>注意数据范围，要开 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mi>l</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">ull</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span></p>
-<hr>
-<h3 id="code">Code:</h3>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef unsigned long long ull;
-ull a,b,c;
-ull ans;
-int main() {
-	cin&gt;&gt;a&gt;&gt;b&gt;&gt;c; //输入 
-	if(a&gt;b) swap(a,b); //如果 a&gt;b 就交换 a,b 的值 
-	for (ans=1;;ans++) { //无条件循环枚举每一层 
-		if(a&lt;ans) { //如果 a&lt;ans 
-			if(a+c &gt;= ans) {
-				c-=ans-a;
-				a=ans;
-			}
-			else break;
-		}
-		if(b&lt;ans) { //如果 b&lt;ans 
-			if(b+c &gt;= ans) {
-				c-=ans-b;
-			    b = ans;
-			}
-			else break;
-		}
-		a-=ans, b-=ans;
-	}
-	cout&lt;&lt;ans-1; //注意输出的是 ans-1 
-	return 0;
-}
-
-</code></pre>
 ]]></content>
     </entry>
 </feed>
