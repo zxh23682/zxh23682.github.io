@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-12-03T14:07:14.656Z</updated>
+    <updated>2020-12-09T10:14:49.017Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,110 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF1415A 【Prison Break】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-cf1415a-prison-break/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-cf1415a-prison-break/">
+        </link>
+        <updated>2020-12-09T10:13:12.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>求方阵上每一个点到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离的最大值。</p>
+<hr>
+<h3 id="思路">思路：</h3>
+<p>既然每一个点都要到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span>，那么最少用的时间一定是用时最长的情况下所用的时间。</p>
+<p>我们容易知道：与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 曼哈顿距离最大的点一定是四个顶点，即左上角，右上角，左下角，右下角其中的一个。</p>
+<p>左上角坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>+</mo><mi>c</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">r+c-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</p>
+<p>右上角坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>−</mo><mn>1</mn><mo>+</mo><mi>m</mi><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">r-1+m-c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>。</p>
+<p>左下角坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mi>r</mi><mo>+</mo><mi>c</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-r+c-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>右下角坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mi>r</mi><mo>+</mo><mi>m</mi><mo>−</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">n-r+m-c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>。</p>
+<p>那么只要求出这四个顶点到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>c</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span></span></span></span> 的曼哈顿距离的最大值，即为答案。</p>
+<p>时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>。</p>
+<hr>
+<h3 id="code"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Code</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span></span></span></span>：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+inline ll read() {
+	register ll s=0,w=1;
+	char ch=getchar();
+	while(ch&lt;'0'||ch&gt;'9') {
+		if(ch=='-')w=-1;
+		ch=getchar();
+	}
+	while(ch&gt;='0'&amp;&amp;ch&lt;='9')s=s*10+ch-'0',ch=getchar();
+	return s*w;
+}
+ll T;
+ll n,m,r,c;
+ll ans=0;
+ll ans1=0,ans2=0;
+int main() {
+	T=read();
+	while (T--) {
+		n=read();m=read();r=read();c=read();
+	    ans1=max(n-r+m-c,r+c-2);  //右下角与左上角到目标的曼哈顿距离的更大值 
+	    ans2=max(r-1+m-c,n-r+c-1); //右上角与左下角到目标的曼哈顿距离的更大值  
+	    ans=max(ans1,ans2); //最后求出答案 
+		printf(&quot;%lld\n&quot;,ans);
+		ans=0; //别忘了清零 
+	}
+	return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 CF748C 【Santa Claus and Robot】]]></title>
+        <id>https://zxh23682.github.io/post/ti-jie-cf748c-santa-claus-and-robot/</id>
+        <link href="https://zxh23682.github.io/post/ti-jie-cf748c-santa-claus-and-robot/">
+        </link>
+        <updated>2020-12-09T10:12:53.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意：</h3>
+<p>机器人在网格线上行走，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">p1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord">1</span></span></span></span> 点开始，沿最短路径到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">p2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord">2</span></span></span></span>，再沿最短路径到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">p3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord">3</span></span></span></span>，依此类推。在此过程中留下了行走的运动轨迹，用 <code>RULD</code> 表示。若只给出运动轨迹，求最少的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">i</span></span></span></span> 点的个数。</p>
+<h3 id="思路">思路：</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">pi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">i</span></span></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">pi+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 是沿最短路径走的，因此在此路径中不可能同时出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mi>D</mi></mrow><annotation encoding="application/x-tex">UD</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">LR</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> 两个方向。因此只要同时出现，那一定证明此刻已往下一个目标点走。</p>
+<p>用四个方向的标记分别记录，然后对于每个点后都要初始化标记的值。</p>
+<h3 id="code"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Code</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span></span></span></span>：</h3>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n;
+char a[200005];
+map&lt;char,int&gt; mp;
+int vis[5];
+int ans=1;
+bool judge(int x) {
+	if(x==0 &amp;&amp; vis[1]) return true;
+	if(x==1 &amp;&amp; vis[0]) return true;
+	if(x==2 &amp;&amp; vis[3]) return true;
+	if(x==3 &amp;&amp; vis[2]) return true;
+	return false;
+}
+int main() {
+	mp['L']=0;
+	mp['R']=1;
+	mp['U']=2;
+	mp['D']=3;
+	while(scanf(&quot;%d&quot;,&amp;n)==1) {
+		scanf(&quot;%s&quot;,a);
+		ans=1;
+		memset(vis,0,sizeof(vis));
+		for(int i=0; i&lt;n; i++) {
+			int tmp=mp[a[i]];
+			if(judge(tmp)) {
+				memset(vis,0,sizeof(vis));
+				ans++; 
+			}
+			vis[tmp]=1;
+		}
+		printf(&quot;%d\n&quot;,ans);
+		return 0;
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C++ 常用模板]]></title>
         <id>https://zxh23682.github.io/post/c-chang-yong-mo-ban/</id>
@@ -576,392 +680,6 @@ int main()
 <!-- wp:paragraph -->
 <p>右键开始菜单的“计算机”，选择管理。<br><img src="https://img-blog.csdnimg.cn/20200301144522740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“磁盘管理”。<br><img src="https://img-blog.csdnimg.cn/20200301144609433.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>然后大家就可以设置了，根据喜好即可。可以分盘，也可以修改盘符。大家自己上网搜索吧！</p>
 <!-- /wp:paragraph -->
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C++ 测评bat文件模板]]></title>
-        <id>https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/</id>
-        <link href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">
-        </link>
-        <updated>2020-11-18T10:16:20.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>@echo off
-title TestData - carry
-if &quot;%1&quot;==&quot;&quot; goto loop
-copy carry%1.in carry.in &gt;nul
-echo Problem Test
-echo Data %1
-time&lt;enter
-carry.exe
-time&lt;enter
-fc carry.out carry%1.out
-pause
-goto end
-:loop
-echo.&gt;enter
-for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i
-del enter
-del carry.in
-del carry.out
-:end
-</code></pre>
-<p>其中 ：</p>
-<ul>
-<li>
-<p><code>carry</code>  为题目文件名，可以修改。</p>
-</li>
-<li>
-<p><code>for %%i in (1 2 3 4 5 6 7 8 9 10) do call %0 %%i</code> 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 组测试数据，可以修改，如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> 组： <code>for %%i in (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15) do call %0 %%i</code></p>
-</li>
-<li>
-<p><code>fc carry.out carry%1.out</code> 的后一个 <code>.out</code> 可以修改，如 <code>.ans</code></p>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C++ 排序笔记]]></title>
-        <id>https://zxh23682.github.io/post/c-pai-xu-bi-ji/</id>
-        <link href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/">
-        </link>
-        <updated>2020-11-16T12:38:17.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="模板">模板：</h3>
-<pre><code class="language-cpp">void selection_sort(int* a, int n) {
-	for (int i = 1; i &lt; n; ++i) {
-		int ith = i;
-		for (int j = i + 1; j &lt;= n; ++j) {
-			if (a[j] &lt; a[ith]) {
-				ith = j;
-			}
-		}
-		int t = a[i];
-		a[i] = a[ith];
-		a[ith] = t;
-	}
-} //xuan ze pai xu
-
-
-
-void bubble_sort(int *a, int n) {
-	bool flag = true;
-	while (flag) {
-		flag = false;
-		for (int i = 1; i &lt; n; ++i) {
-			if (a[i] &gt; a[i + 1]) {
-				flag = true;
-				int t = a[i];
-				a[i] = a[i + 1];
-				a[i + 1] = t;
-			}
-		}
-	}
-}//mao pao pai xu
-
-
-
-void insertion_sort(int* a, int n) {
-	for (int i = 2; i &lt;= n; ++i) {
-		int key = a[i];
-		int j = i - 1;
-		while (j &gt; 0 &amp;&amp; a[j] &gt; key) {
-			a[j + 1] = a[j];
-			--j;
-		}
-		a[j + 1] = key;
-	}
-}//cha ru pai xu
-
-
-
-const int N = 100010;
-const int W = 100010;
-
-int n, w, a[N], cnt[W], b[N];
-
-void counting_sort() {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i]];
-	for (int i = 1; i &lt;= w; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i]]--] = a[i];
-} //计数排序
-
-
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
-}
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
-}
-
-void radix_sort() {
-	for (int i = k; i &gt;= 1; --i) {
-		counting_sort(i);
-	}
-} //基数排序
-
-
-
-struct Range {
-	int start, end;
-	Range(int s = 0, int e = 0) {
-		start = s, end = e;
-	}
-};
-
-template &lt;typename T&gt;
-void quick_sort(T arr[], const int len) {
-	if (len &lt;= 0) return;
-	Range r[len];
-	int p = 0;
-	r[p++] = Range(0, len - 1);
-	while (p) {
-		Range range = r[--p];
-		if (range.start &gt;= range.end) continue;
-		T mid = arr[range.end];
-		int left = range.start, right = range.end - 1;
-		while (left &lt; right) {
-			while (arr[left] &lt; mid &amp;&amp; left &lt; right) left++;
-			while (arr[right] &gt;= mid &amp;&amp; left &lt; right) right--;
-			std::swap(arr[left], arr[right]);
-		}
-		if (arr[left] &gt;= arr[range.end])
-			std::swap(arr[left], arr[range.end]);
-		else
-			left++;
-		r[p++] = Range(range.start, left - 1);
-		r[p++] = Range(left + 1, range.end);
-	}
-} //kuai su pai xu
-
-
-
-
-void merge(int ll, int rr) {
-	// 用来把 a[ll.. rr - 1] 这一区间的数排序。 t 数组是临时存放有序的版本用的。
-	if (rr - ll &lt;= 1) return;
-	int mid = ll + (rr - ll &gt;&gt; 1);
-	merge(ll, mid);
-	merge(mid, rr);
-	int p = ll, q = mid, s = ll;
-	while (s &lt; rr) {
-		if (p &gt;= mid || (q &lt; rr &amp;&amp; a[p] &gt; a[q])) {
-			t[s++] = a[q++];
-			// ans += mid - p;
-		} else
-			t[s++] = a[p++];
-	}
-	for (int i = ll; i &lt; rr; ++i) a[i] = t[i];
-}//gui bing pai xu
-
-
-
-void max_heapify(int arr[], int start, int end) {
-	int dad = start;
-	int son = dad * 2 + 1;
-	while (son &lt;= end) {
-		if (son + 1 &lt;= end &amp;&amp;
-		        arr[son] &lt; arr[son + 1])
-			son++;
-		if (arr[dad] &gt;
-		        arr[son])
-			return;
-		else {
-			swap(arr[dad], arr[son]);
-			dad = son;
-			son = dad * 2 + 1;
-		}
-	}
-}
-
-void heap_sort(int arr[], int len) {
-	for (int i = len / 2 - 1; i &gt;= 0; i--) max_heapify(arr, i, len - 1);
-	for (int i = len - 1; i &gt; 0; i--) {
-		swap(arr[0], arr[i]);
-		max_heapify(arr, 0, i - 1);
-	}
-} //dui pai xu
-
-
-
-
-const int N = 100010;
-
-int n, w, a[N];
-vector&lt;int&gt; bucket[N];
-
-void insertion_sort(vector&lt;int&gt;&amp; A) {
-	for (int i = 1; i &lt; A.size(); ++i) {
-		int key = A[i];
-		int j = i - 1;
-		while (j &gt;= 0 &amp;&amp; A[j] &gt; key) {
-			A[j + 1] = A[j];
-			--j;
-		}
-		A[j + 1] = key;
-	}
-}
-
-void bucket_sort() {
-	int bucket_size = w / n + 1;
-	for (int i = 0; i &lt; n; ++i) {
-		bucket[i].clear();
-	}
-	for (int i = 1; i &lt;= n; ++i) {
-		bucket[a[i] / bucket_size].push_back(a[i]);
-	}
-	int p = 0;
-	for (int i = 0; i &lt; n; ++i) {
-		insertion_sort(bucket[i]);
-		for (int j = 0; j &lt; bucket[i].size(); ++j) {
-			a[++p] = bucket[i][j];
-		}
-	}
-}//tong pai xu
-
-
-
-template &lt;typename T&gt;
-void shell_sort(T array[], int length) {
-	int h = 1;
-	while (h &lt; length / 3) {
-		h = 3 * h + 1;
-	}
-	while (h &gt;= 1) {
-		for (int i = h; i &lt; length; i++) {
-			for (int j = i; j &gt;= h &amp;&amp; array[j] &lt; array[j - h]; j -= h) {
-				std::swap(array[j], array[j - h]);
-			}
-		}
-		h = h / 3;
-	}
-}//xi er pai xu
-
-
-int n, a[maxn], tmp[maxn &lt;&lt; 1];
-
-int winner(int pos1, int pos2) {
-	int u = pos1 &gt;= n ? pos1 : tmp[pos1];
-	int v = pos2 &gt;= n ? pos2 : tmp[pos2];
-	if (tmp[u] &lt;= tmp[v]) return u;
-	return v;
-}
-
-void creat_tree(int &amp;value) {
-	for (int i = 0; i &lt; n; i++) tmp[n + i] = a[i];
-	for (int i = 2 * n - 1; i &gt; 1; i -= 2) {
-		int k = i / 2;
-		int j = i - 1;
-		tmp[k] = winner(i, j);
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void recreat(int &amp;value) {
-	int i = tmp[1];
-	while (i &gt; 1) {
-		int j, k = i / 2;
-		if (i % 2 == 0 &amp;&amp; i &lt; 2 * n - 1)
-			j = i + 1;
-		else
-			j = i - 1;
-		tmp[k] = winner(i, j);
-		i = k;
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void tournament_sort() {
-	int value;
-	creat_tree(value);
-	for (int i = 0; i &lt; n; i++) {
-		a[i] = value;
-		recreat(value);
-	}
-}//jing biao sai pai xu
-</code></pre>
-<h3 id="完整代码">完整代码</h3>
-<p>快速排序：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int maxn=1e4+5;
-int n;
-int a[maxn];
-void qsort(int l,int r) {
-	int m,n;
-	int mid,p;
-	m=l,n=r;
-	mid=a[(l+r)/2];           
-	do {
-		while (a[m]&lt;mid) m++;  
-		while (a[n]&gt;mid) n--;    
-		if (m&lt;=n) {
-			swap(a[m],a[n]);
-			m++; 
-			n--;           
-		}
-	} while (m&lt;=n);             
-	if (m&lt;n) qsort(l,n);            
-	if (m&lt;r) qsort(m,r);
-}
-int main() {
-	freopen(&quot;kp.in&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;kp.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%d&quot;,&amp;n);
-	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
-	qsort(1,n);
-	for (int i=1; i&lt;=n; i++) printf(&quot;%d &quot;,a[i]);	
-	fclose(stdin);
-	fclose(stdout);
-	return 0;
-}
-</code></pre>
-<h3 id="时间复杂度">时间复杂度</h3>
-<figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
