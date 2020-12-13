@@ -2162,10 +2162,10 @@ body {
       background-color: #f8f9fafe;
     }
     .gemini .blog-header, .gemini .sidebar-wrapper, .gemini .article-wrapper, .gemini .post, .gemini .page, .gemini .section, .gemini .section-box, .gemini .sidebar-box, .gemini .friends-section {
-      border-radius: 10px;
+      border-radius: 5px;
     }
     .pisces .blog-header, .pisces .sidebar-wrapper, .pisces .article-wrapper, .pisces .section, .pisces .sidebar-box, .pisces .friends-section {
-      border-radius: 10px;
+      border-radius: 5px;
     }
     .site-meta {
       background: #91a7ff !important;
