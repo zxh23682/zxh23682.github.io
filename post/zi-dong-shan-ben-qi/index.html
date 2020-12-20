@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>C++ 排序笔记 | zxh23682 的博客</title>
+<title>自动删犇器 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1608427845114">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="C++ 排序笔记" />
+  <meta name="description" content="自动删犇器" />
   <meta name="keywords" content="随笔" />
 </head>
 
@@ -177,8 +177,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -232,201 +231,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%A8%A1%E6%9D%BF">模板：</a></li>
-<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">完整代码</a></li>
-<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -514,8 +318,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/">
-      C++ 排序笔记
+    <a class="post-title-link" href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/">
+      自动删犇器
     </a>
   </h1>
   <div class="post-meta">
@@ -523,7 +327,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-11-16 20:38:17">2020-11-16</span>
+      <span class="publish-time" data-t="2020-12-20 09:28:37">2020-12-20</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -542,17 +346,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>9<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1318<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>196<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/c-pai-xu-bi-ji/" data-flag-title="C++ 排序笔记" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/zi-dong-shan-ben-qi/" data-flag-title="自动删犇器" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -561,344 +365,38 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="模板">模板：</h3>
-<pre><code class="language-cpp">void selection_sort(int* a, int n) {
-	for (int i = 1; i &lt; n; ++i) {
-		int ith = i;
-		for (int j = i + 1; j &lt;= n; ++j) {
-			if (a[j] &lt; a[ith]) {
-				ith = j;
-			}
-		}
-		int t = a[i];
-		a[i] = a[ith];
-		a[ith] = t;
-	}
-} //xuan ze pai xu
-
-
-
-void bubble_sort(int *a, int n) {
-	bool flag = true;
-	while (flag) {
-		flag = false;
-		for (int i = 1; i &lt; n; ++i) {
-			if (a[i] &gt; a[i + 1]) {
-				flag = true;
-				int t = a[i];
-				a[i] = a[i + 1];
-				a[i + 1] = t;
-			}
-		}
-	}
-}//mao pao pai xu
-
-
-
-void insertion_sort(int* a, int n) {
-	for (int i = 2; i &lt;= n; ++i) {
-		int key = a[i];
-		int j = i - 1;
-		while (j &gt; 0 &amp;&amp; a[j] &gt; key) {
-			a[j + 1] = a[j];
-			--j;
-		}
-		a[j + 1] = key;
-	}
-}//cha ru pai xu
-
-
-
-const int N = 100010;
-const int W = 100010;
-
-int n, w, a[N], cnt[W], b[N];
-
-void counting_sort() {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i]];
-	for (int i = 1; i &lt;= w; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i]]--] = a[i];
-} //计数排序
-
-
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
+              <p>在洛谷主页 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mn>12</mn></mrow><annotation encoding="application/x-tex">F12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord">1</span><span class="mord">2</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">/</mi></mrow><annotation encoding="application/x-tex">/</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mi>n</mi><mo>+</mo><mi>F</mi><mn>12</mn></mrow><annotation encoding="application/x-tex">Fn+F12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord">1</span><span class="mord">2</span></span></span></span>，进入控制台 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">/</mi></mrow><annotation encoding="application/x-tex">/</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>o</mi><mi>l</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">console</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span></span></span></span>。</p>
+<p>输入 <code>allow pasting</code> 后回车。</p>
+<p>输入下面的代码并回车：</p>
+<pre><code>switchMode('my');
+function load() {
+    console.log('page ' + feedPage);
+     $.get(&quot;/feed/&quot; + feedMode + &quot;?page=&quot; + feedPage, function (resp) {
+		$feed.append(resp);
+         $(&quot;#feed-more&quot;).children(&quot;a&quot;).text(&quot;点击查看更多...&quot;)
+		$(&quot;[name=feed-delete]&quot;).click(function () {
+             $.post(&quot;/api/feed/delete/&quot; + $(this).attr('data-feed-id'), function () {
+                switchMode('all');
+            })
+        }); feedPage++;
+        if (resp.indexOf('没有更多动态了') != -1) console.log('finished');
+        else setTimeout(load, 200);
+    });
 }
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
-}
-
-void radix_sort() {
-	for (int i = k; i &gt;= 1; --i) {
-		counting_sort(i);
-	}
-} //基数排序
-
-
-
-struct Range {
-	int start, end;
-	Range(int s = 0, int e = 0) {
-		start = s, end = e;
-	}
-};
-
-template &lt;typename T&gt;
-void quick_sort(T arr[], const int len) {
-	if (len &lt;= 0) return;
-	Range r[len];
-	int p = 0;
-	r[p++] = Range(0, len - 1);
-	while (p) {
-		Range range = r[--p];
-		if (range.start &gt;= range.end) continue;
-		T mid = arr[range.end];
-		int left = range.start, right = range.end - 1;
-		while (left &lt; right) {
-			while (arr[left] &lt; mid &amp;&amp; left &lt; right) left++;
-			while (arr[right] &gt;= mid &amp;&amp; left &lt; right) right--;
-			std::swap(arr[left], arr[right]);
-		}
-		if (arr[left] &gt;= arr[range.end])
-			std::swap(arr[left], arr[range.end]);
-		else
-			left++;
-		r[p++] = Range(range.start, left - 1);
-		r[p++] = Range(left + 1, range.end);
-	}
-} //kuai su pai xu
-
-
-
-
-void merge(int ll, int rr) {
-	// 用来把 a[ll.. rr - 1] 这一区间的数排序。 t 数组是临时存放有序的版本用的。
-	if (rr - ll &lt;= 1) return;
-	int mid = ll + (rr - ll &gt;&gt; 1);
-	merge(ll, mid);
-	merge(mid, rr);
-	int p = ll, q = mid, s = ll;
-	while (s &lt; rr) {
-		if (p &gt;= mid || (q &lt; rr &amp;&amp; a[p] &gt; a[q])) {
-			t[s++] = a[q++];
-			// ans += mid - p;
-		} else
-			t[s++] = a[p++];
-	}
-	for (int i = ll; i &lt; rr; ++i) a[i] = t[i];
-}//gui bing pai xu
-
-
-
-void max_heapify(int arr[], int start, int end) {
-	int dad = start;
-	int son = dad * 2 + 1;
-	while (son &lt;= end) {
-		if (son + 1 &lt;= end &amp;&amp;
-		        arr[son] &lt; arr[son + 1])
-			son++;
-		if (arr[dad] &gt;
-		        arr[son])
-			return;
-		else {
-			swap(arr[dad], arr[son]);
-			dad = son;
-			son = dad * 2 + 1;
-		}
-	}
-}
-
-void heap_sort(int arr[], int len) {
-	for (int i = len / 2 - 1; i &gt;= 0; i--) max_heapify(arr, i, len - 1);
-	for (int i = len - 1; i &gt; 0; i--) {
-		swap(arr[0], arr[i]);
-		max_heapify(arr, 0, i - 1);
-	}
-} //dui pai xu
-
-
-
-
-const int N = 100010;
-
-int n, w, a[N];
-vector&lt;int&gt; bucket[N];
-
-void insertion_sort(vector&lt;int&gt;&amp; A) {
-	for (int i = 1; i &lt; A.size(); ++i) {
-		int key = A[i];
-		int j = i - 1;
-		while (j &gt;= 0 &amp;&amp; A[j] &gt; key) {
-			A[j + 1] = A[j];
-			--j;
-		}
-		A[j + 1] = key;
-	}
-}
-
-void bucket_sort() {
-	int bucket_size = w / n + 1;
-	for (int i = 0; i &lt; n; ++i) {
-		bucket[i].clear();
-	}
-	for (int i = 1; i &lt;= n; ++i) {
-		bucket[a[i] / bucket_size].push_back(a[i]);
-	}
-	int p = 0;
-	for (int i = 0; i &lt; n; ++i) {
-		insertion_sort(bucket[i]);
-		for (int j = 0; j &lt; bucket[i].size(); ++j) {
-			a[++p] = bucket[i][j];
-		}
-	}
-}//tong pai xu
-
-
-
-template &lt;typename T&gt;
-void shell_sort(T array[], int length) {
-	int h = 1;
-	while (h &lt; length / 3) {
-		h = 3 * h + 1;
-	}
-	while (h &gt;= 1) {
-		for (int i = h; i &lt; length; i++) {
-			for (int j = i; j &gt;= h &amp;&amp; array[j] &lt; array[j - h]; j -= h) {
-				std::swap(array[j], array[j - h]);
-			}
-		}
-		h = h / 3;
-	}
-}//xi er pai xu
-
-
-int n, a[maxn], tmp[maxn &lt;&lt; 1];
-
-int winner(int pos1, int pos2) {
-	int u = pos1 &gt;= n ? pos1 : tmp[pos1];
-	int v = pos2 &gt;= n ? pos2 : tmp[pos2];
-	if (tmp[u] &lt;= tmp[v]) return u;
-	return v;
-}
-
-void creat_tree(int &amp;value) {
-	for (int i = 0; i &lt; n; i++) tmp[n + i] = a[i];
-	for (int i = 2 * n - 1; i &gt; 1; i -= 2) {
-		int k = i / 2;
-		int j = i - 1;
-		tmp[k] = winner(i, j);
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void recreat(int &amp;value) {
-	int i = tmp[1];
-	while (i &gt; 1) {
-		int j, k = i / 2;
-		if (i % 2 == 0 &amp;&amp; i &lt; 2 * n - 1)
-			j = i + 1;
-		else
-			j = i - 1;
-		tmp[k] = winner(i, j);
-		i = k;
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void tournament_sort() {
-	int value;
-	creat_tree(value);
-	for (int i = 0; i &lt; n; i++) {
-		a[i] = value;
-		recreat(value);
-	}
-}//jing biao sai pai xu
+setTimeout(load, 1000)
 </code></pre>
-<h3 id="完整代码">完整代码</h3>
-<p>快速排序：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int maxn=1e4+5;
-int n;
-int a[maxn];
-void qsort(int l,int r) {
-	int m,n;
-	int mid,p;
-	m=l,n=r;
-	mid=a[(l+r)/2];           
-	do {
-		while (a[m]&lt;mid) m++;  
-		while (a[n]&gt;mid) n--;    
-		if (m&lt;=n) {
-			swap(a[m],a[n]);
-			m++; 
-			n--;           
-		}
-	} while (m&lt;=n);             
-	if (m&lt;n) qsort(l,n);            
-	if (m&lt;r) qsort(m,r);
+<p>等待数字停止后，输入下面一段代码并回车：</p>
+<pre><code>var l =  $('#feed &gt; li &gt; div.am-comment-main &gt; header &gt; div &gt; a:nth-child(2)');
+function f(i) {
+$.post(&quot;/api/feed/delete/&quot;+ $(l[i]).attr('data-feed-id'), function() {
+console.log(i);
+if(i&lt;l.length-1)setTimeout(`f(${i+1})`,200);
+})
 }
-int main() {
-	freopen(&quot;kp.in&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;kp.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%d&quot;,&amp;n);
-	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
-	qsort(1,n);
-	for (int i=1; i&lt;=n; i++) printf(&quot;%d &quot;,a[i]);	
-	fclose(stdin);
-	fclose(stdout);
-	return 0;
-}
+f(0);
 </code></pre>
-<h3 id="时间复杂度">时间复杂度</h3>
-<figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
+<p>等待数字停止，犇犇就删完了。</p>
 
             </div>
             
@@ -911,7 +409,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/" title="C++ 排序笔记">https://zxh23682.github.io/post/c-pai-xu-bi-ji/</a>
+      <a href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/" title="自动删犇器">https://zxh23682.github.io/post/zi-dong-shan-ben-qi/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -927,14 +425,14 @@ int main() {
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">C++ 测评bat文件模板</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">上一篇</a>
+        <a class="nav-pc-next" title="贪心学习笔记" href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/">贪心学习笔记</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="贪心学习笔记" href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 P6784 「EZEC-3」造房子" href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">题解 P6784 「EZEC-3」造房子</a>
-        <a class="nav-mobile-next" title="题解 P6784 「EZEC-3」造房子" href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">下一篇</a>
+        <a class="nav-pc-next" title="题解 CF1462A 【Favorite Sequence】" href="https://zxh23682.github.io/post/ti-jie-cf1462a-favorite-sequence/">题解 CF1462A 【Favorite Sequence】</a>
+        <a class="nav-mobile-next" title="题解 CF1462A 【Favorite Sequence】" href="https://zxh23682.github.io/post/ti-jie-cf1462a-favorite-sequence/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

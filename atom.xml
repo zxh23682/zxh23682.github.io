@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-12-16T10:15:33.824Z</updated>
+    <updated>2020-12-20T01:30:54.710Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -10,6 +10,221 @@
     <logo>https://zxh23682.github.io/images/avatar.png</logo>
     <icon>https://zxh23682.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, zxh23682 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[贪心学习笔记]]></title>
+        <id>https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/</id>
+        <link href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/">
+        </link>
+        <updated>2020-12-20T01:29:47.000Z</updated>
+        <content type="html"><![CDATA[<p>早就应该写了。现在来补</p>
+<hr>
+<h1 id="概念">概念</h1>
+<p>贪心算法又叫登山算法，它的根本思想是逐步到达山顶，即逐步获得最优解，是解决最优化问题时的一种简单但是适用范围有限的策略。</p>
+<p>贪心算法没有固定的框架，算法设计的关键是贪婪策略的选择。贪心策略要无后向性，也就是说某状态以后的过程不会影响以前的状态，至于当前状态有关。</p>
+<p>贪心算法是对某些求解最优解问题的最简单、最迅速的技术。某些问题的最优解可以通过一系列的最优的选择即贪心选择来达到 。但局部最优并不总能获得整体最优解，但通常能获得近似最优解。</p>
+<p>在每一部贪心选择中，只考虑当前对自己最有利的选择，而不去考虑在后面看来这种选择是否合理。</p>
+<hr>
+<h1 id="贪心算法求解事应考虑的问题">贪心算法求解事应考虑的问题</h1>
+<ul>
+<li>候选集合</li>
+</ul>
+<p>为了构造问题的解决方案，有一个候选集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 作为问题的可能解，问题的最终解均取自于候选集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>。</p>
+<ul>
+<li>解集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span></li>
+</ul>
+<p>随着贪心选择的进行，解集合不断扩展，直到构成一个满足问题的完整解。</p>
+<ul>
+<li>解决函数</li>
+</ul>
+<p>检查解集合是否构成问题的完整解。</p>
+<ul>
+<li>选择函数</li>
+</ul>
+<p>即贪心策略，这是贪心算法的关键，它指出哪个候选对象有希望构成成问题的解。</p>
+<ul>
+<li>可行函数</li>
+</ul>
+<p>检查解集合中加入一个候选对象是否可行，即解集合扩展后是否满足约束条件。</p>
+<hr>
+<h1 id="贪心算法的基本步骤">贪心算法的基本步骤</h1>
+<ul>
+<li>
+<p>从问题的某个初始解出发</p>
+</li>
+<li>
+<p>采用循环语句，当可以向求解目标前进一步时，就根据局部最优策略，得到一个不分解，缩小问题的范围或规模。</p>
+</li>
+<li>
+<p>将所有的部分解综合起来，得到问题的最终解。</p>
+</li>
+</ul>
+<pre><code class="language-cpp">Greedy(C){ //C是问题的输入集合即候选集合
+	S = {}; //初始解集合为空
+		while(not solution(S)){ //集合S没有构成问题的一个解
+				x = select(C); //在候选集合C中做贪心选择
+				if feasible(S,x); //判断集合加入x后的解是否可行
+					S += {x};
+					C -= {s};
+		}
+		return S;
+}
+</code></pre>
+<hr>
+<h1 id="贪心策略选择">贪心策略选择</h1>
+<p>贪心算法的原理是通过局部最优来达到全局最优，采用的是逐步构造最优解的方法。在每个阶段，都做出一个看上去最优的，决策一旦做出，就不再更改。</p>
+<p>要选出最优解可不是一件容易的事，要证明局部最优为全局最优，要进行数学证明，否则就不能说明为全局最优。</p>
+<p>很多问题表面上看来用贪心算法可以找到最优解，实际上却把最优解给漏掉了。这就像现实生活中的 “贪小便宜吃大亏” 。所以我们在解决问题的时候，一定要谨慎使用贪心算法，一定要注意这个问题适不适合采用贪心算法。</p>
+<p>贪心算法很多时候并不能达到全局最优，为什么我们还要使用它呢？</p>
+<p>因为在很多大规模问题中，寻找最优解是一件相当费时耗力的事情，有时候付出大量人力物力财力后，回报并不与投入成正比。在这个时候选择相对最优的贪心算法就比较经济可行了。有的问题对最优的要求不是很高，在充分衡量付出和回报后，选择贪心算法未尝不是一种不错的选择。</p>
+<hr>
+<h1 id="练习">练习</h1>
+<h2 id="题目">题目：</h2>
+<ul>
+<li>组成新数最小</li>
+</ul>
+<p>键盘输入一个较大的正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，去掉其中任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 个数字后剩下的数字按原左右次序将组成一个新的正整数。对于给定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>，通过编程寻找一种方案使得剩下的数字组成的新数最小。</p>
+<p>输出应包括所去掉的数字的位置和组成的新的正整数。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>240</mn></msup></mrow><annotation encoding="application/x-tex">1≤n≤10^{240}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">4</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>≤</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">0≤s≤20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span>。</p>
+<h2 id="思路">思路：</h2>
+<p>因为输入的数字比较大，将输入的数字存储为字符串格式，在删除时记录删除的位置。</p>
+<p>如果让高位的数字尽量小，数字的总值就小。</p>
+<p>从高位到低位，让相邻的数字进行比较（总是让左边数字的与右边的数字比较），如果高位的数字比低位大，就把高位删除。</p>
+<p>如果比较过后删除了高位，那么将低位与删除的高位的左边数字进行比较，如果高位数字大，把高位删除。</p>
+<p>即删除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 位后，必须向前考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 位与第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 位进行比较。</p>
+<p>例如：</p>
+<pre><code>n = 2 3 1 1 8 3。
+3 比 1 大删除：n = 2 空 1 1 8 3
+2 比 1 大删除：n = 空 空 1 1 8 3
+8 比 3 大删除：n = 空 空 1 1 空 3
+即删除 i 位后，必须向前考虑 i-1 位与第 i+1 位进行比较
+</code></pre>
+<p>如果前面高位出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，这里不考虑。</p>
+<p>如果数字全是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，应该保留一个零。</p>
+<p>如果比较一遍删除的位数不够 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>，就考虑删除后几位。</p>
+<p>在下面代码中，用字符 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 1: #̲'>#</span> 来表示数字删除，处理的时候再把 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 1: #̲'>#</span> 一起删除。</p>
+<p>保证数据正确有解。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">Code:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+string index=&quot;&quot;; //记录删除的下标
+int count=0; //删除的次数
+int main() {
+	string tanxin(string num,int s); //贪心算法函数
+	string process(string minnum); //处理函数
+	int s; //要删除的位数
+	string a;
+	cin&gt;&gt;a;
+	string num=a; //为了方便定义的时候初始化
+	string minnum;
+	cout&lt;&lt;&quot;请输入您想要去掉几个数字：&quot;;
+	cin&gt;&gt;s;
+	minnum=tanxin(num,s);
+	cout&lt;&lt;&quot;开始数字为：&quot;&lt;&lt;num&lt;&lt;endl;
+	cout&lt;&lt;&quot;处理过后的结果为:&quot;;
+	cout&lt;&lt;process(minnum)&lt;&lt;endl;
+	cout&lt;&lt;&quot;删除的下标为:&quot;;
+	cout&lt;&lt;index&lt;&lt;endl;
+	return 0;
+}
+string tanxin(string num,int s) {
+	int i,j;
+	string result=num;
+	for(i=0; i&lt;num.size()&amp;&amp;count&lt;s; i++) {
+		if(result[i]&gt;result[i+1]) {
+			result[i]='#'; //置#代表删除
+			index.insert(index.size(),std::to_string(i)); //在尾部插入
+			count++;
+			if((i-1&gt;=0)&amp;&amp;result[i-1]&gt;result[i+1]) {
+				result[i-1]='#';
+				index.insert(index.size(),std::to_string(i-1)); //在尾部插入
+				count++;
+			}
+		}
+	}
+	if(count&lt;s) { //没有删除s次
+		int s0=s-count;
+		for(i=result.size()-1; i&gt;=s0; i--) {
+			result[i]='#';
+		}
+	}
+	return result;
+}
+string process(string minnum) { //处理找到的字符串
+	string result=minnum,resultsum=&quot;&quot;;
+	int i,temp=0;
+	//判断前端是否有多余0
+	for(i=0; i&lt;minnum.size(); i++) {
+		if(result[i]=='0'&amp;&amp;result[i]=='#') { //前面有不为0 且不为#的数字,把标识变量置1
+			temp=1;
+		}
+		if(result[i]=='0'&amp;&amp;temp==0) {
+			result[i]='#';
+		}
+	}
+	//去除占位符#
+	for(i=0; i&lt;result.size(); i++) {
+		if(result[i]!='#') resultsum += result[i]; //拼接
+	}
+	return resultsum;
+}
+</code></pre>
+<p><strong>注意：以上代码需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>+</mo><mo>+</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">C++11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">1</span></span></span></span></strong>。</p>
+<p>样例：</p>
+<pre><code>input:
+
+231183
+3
+
+output:
+
+请输入您想要去掉几个数字：开始数字为：231183
+处理过后的结果为:113
+删除的下标为:104
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[自动删犇器]]></title>
+        <id>https://zxh23682.github.io/post/zi-dong-shan-ben-qi/</id>
+        <link href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/">
+        </link>
+        <updated>2020-12-20T01:28:37.000Z</updated>
+        <content type="html"><![CDATA[<p>在洛谷主页 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mn>12</mn></mrow><annotation encoding="application/x-tex">F12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord">1</span><span class="mord">2</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">/</mi></mrow><annotation encoding="application/x-tex">/</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mi>n</mi><mo>+</mo><mi>F</mi><mn>12</mn></mrow><annotation encoding="application/x-tex">Fn+F12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord">1</span><span class="mord">2</span></span></span></span>，进入控制台 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">/</mi></mrow><annotation encoding="application/x-tex">/</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>n</mi><mi>s</mi><mi>o</mi><mi>l</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">console</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span></span></span></span>。</p>
+<p>输入 <code>allow pasting</code> 后回车。</p>
+<p>输入下面的代码并回车：</p>
+<pre><code>switchMode('my');
+function load() {
+    console.log('page ' + feedPage);
+     $.get(&quot;/feed/&quot; + feedMode + &quot;?page=&quot; + feedPage, function (resp) {
+		$feed.append(resp);
+         $(&quot;#feed-more&quot;).children(&quot;a&quot;).text(&quot;点击查看更多...&quot;)
+		$(&quot;[name=feed-delete]&quot;).click(function () {
+             $.post(&quot;/api/feed/delete/&quot; + $(this).attr('data-feed-id'), function () {
+                switchMode('all');
+            })
+        }); feedPage++;
+        if (resp.indexOf('没有更多动态了') != -1) console.log('finished');
+        else setTimeout(load, 200);
+    });
+}
+setTimeout(load, 1000)
+</code></pre>
+<p>等待数字停止后，输入下面一段代码并回车：</p>
+<pre><code>var l =  $('#feed &gt; li &gt; div.am-comment-main &gt; header &gt; div &gt; a:nth-child(2)');
+function f(i) {
+$.post(&quot;/api/feed/delete/&quot;+ $(l[i]).attr('data-feed-id'), function() {
+console.log(i);
+if(i&lt;l.length-1)setTimeout(`f(${i+1})`,200);
+})
+}
+f(0);
+</code></pre>
+<p>等待数字停止，犇犇就删完了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF1462A 【Favorite Sequence】]]></title>
         <id>https://zxh23682.github.io/post/ti-jie-cf1462a-favorite-sequence/</id>
@@ -567,97 +782,5 @@ int main() {
 }
 </code></pre>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C++ 对拍]]></title>
-        <id>https://zxh23682.github.io/post/c-dui-pai/</id>
-        <link href="https://zxh23682.github.io/post/c-dui-pai/">
-        </link>
-        <updated>2020-11-25T12:54:48.000Z</updated>
-        <content type="html"><![CDATA[<p>共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件<br>
-各个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件的含义：</p>
-<ul>
-<li><code>1.cpp</code>是自己的程序</li>
-<li><code>2.cpp</code>是正确答案</li>
-<li><code>3.cpp</code>是随机数程序，在本程序中，生成的输入内容不需要指定输出到哪个文件，只需要直接输出。</li>
-<li><code>4.cpp</code>是对拍程序。</li>
-</ul>
-<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>p</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">cpp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">p</span><span class="mord mathdefault">p</span></span></span></span> 文件运行后，把 <code>1.exe</code>，<code>2.exe</code>，<code>3.exe</code>，<code>4,cpp</code> 放到同一目录下，再运行 <code>4.cpp</code>。</p>
-<p>对拍程序（即 <code>4.cpp</code>）代码：</p>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;cstdlib&gt;
-#include&lt;ctime&gt;
-int main()
-{
-    long s,t;
-    while(1)
-    {
-        system(&quot;cls&quot;);
-        do{
-            system(&quot;3 &gt; 3.in&quot;);  //数据生成程序
-            s=clock();
-            system(&quot;1 &lt; 3.in &gt; 1.out&quot;);  //自己程序
-            t=clock();
-            system(&quot;2 &lt; 3.in &gt; 2.out&quot;);  //答案
-            if(system(&quot;fc 1.out  2.out &gt; nul&quot;))break;
-            else printf(&quot;AC time: %ldms\n&quot;,t-s);
-        }while(1);
-        printf(&quot;WA time: %ldms\n&quot;,t-s);
-        system(&quot;fc 1.out 2.out&quot;);
-        system(&quot;pause &gt; nul&quot;);
-    }
-}
-</code></pre>
-<p>如果正确，就会显示 <code>FC：找不到差异</code>。</p>
-<p>程序停止后，可以打开 <code>3.in</code> 查看输入，<code>1.out</code> 和 <code>2.out</code> 查看输出。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[安装 NOI Linux 操作系统]]></title>
-        <id>https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/</id>
-        <link href="https://zxh23682.github.io/post/an-zhuang-noi-linux-cao-zuo-xi-tong/">
-        </link>
-        <updated>2020-11-19T12:06:35.000Z</updated>
-        <content type="html"><![CDATA[<!-- wp:heading -->
-<h2>准备工作</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>NOI Linux 1.4.1 iso镜像<a href="https://sys-code.oss-cn-beijing.aliyuncs.com/NOI/noilinux-1.4.1.iso">（点我下载）</a>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2>我们开始吧！</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>打开VMware Workstation 15.x（更低版本也没什么问题，像VirtualBox这些其它虚拟机软件也行），在“库”一栏中右键，选择“新建虚拟机”。<br><img src="https://img-blog.csdnimg.cn/20200225162318852.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在向导里选典型，继续。<br><img src="https://img-blog.csdnimg.cn/2020022516252028.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择“稍后安装操作系统”，下一步。<br>（用过的都知道那个简易安装有多恶心，非VMware没有此问题）</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>选择Linux，版本是Ubuntu（如果是64位电脑可以选择Ubuntu 64位，电脑是几位的可以通过右键“计算机”-&gt;属性-&gt;系统-&gt;系统类型查看），下一步。<br><img src="https://img-blog.csdnimg.cn/20200225162833276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>取个自己喜欢的名字，不要有中文，最好不要有空格，下一步。<br>（提示：最好不要放在系统盘（C:）否则更慢！）<br><img src="https://img-blog.csdnimg.cn/20200225163122949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>20GB足够，（这是上限，可以开高点。安装大概只要2个G左右）。单个文件性能好，选他。<img src="https://img-blog.csdnimg.cn/20200225163425591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>注意，刹住！跟着图片走！<br>使用iso镜像文件，载入你刚刚千辛万苦下载的noilinux-1.4.1.iso，并点“关闭”，“完成”。（可以再选择显示器&gt;加速3D图形）</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p><img src="https://img-blog.csdnimg.cn/20200225163621887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，虚拟机创建好了！<br>（——不过，这只是完成了一个小目标…）<br>——————————————————————————</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2>安装NOI Linux</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>开启此虚拟机。<br>等它跳来跳去，等个半分钟左右，出现下下图，就可以开始安装了。<br><img src="https://img-blog.csdnimg.cn/20200225164222697.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225164409536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>选择中文（简体），安装Ubuntu。<br><img src="https://img-blog.csdnimg.cn/20200225164608128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>继续，两个复选框统统不要。<br><img src="https://img-blog.csdnimg.cn/20200225164710463.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>清除整个磁盘并安装。<br><img src="https://img-blog.csdnimg.cn/20200225164853992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>我在哪里？如实告诉他就行了，反正它也找不到我。<br><img src="https://img-blog.csdnimg.cn/20200225165116440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>汉语，汉语，继续。<br><img src="https://img-blog.csdnimg.cn/20200225165201223.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>慢慢等待吧。</p>
-<!-- /wp:paragraph -->
-如果断了网，大概15分钟就装好了。</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p><br><img src="https://img-blog.csdnimg.cn/20200225165223132.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>装完后他会提示你要重启，你确定。【注意！如果重启了2，3分钟没动静，果断拔电！（强制关机），这是你重新打开它应该已经装好可以用了。】</p></p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>这里就不等了，直接给大家看成品吧！默认用户名noilinux，密码123456，墙纸是我另外设的.<br><img src="https://img-blog.csdnimg.cn/20200225170003333.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>第一次我装的时候简直苦恼的不行，因为分辨率实在太低【相信大家现在也这样吧】，连设置都无法设定（分辨率太低让“完成”按钮愣是点不到，糟心~），这里给大家一个方法。</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>Ctrl+Alt+T运行终端，输入sudo gedit /etc/default/grub（sudo类似于获取管理员权限，不然无法保存），按下Enter，以越快越好的速度输入密码（123456），大概两三秒后就要重试了。<img src="https://img-blog.csdnimg.cn/20200225170822105.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>在打开的文件中加上这两行，如图（1280x800只是个人随便设的，你可以随便改（但一定要是标准的，如1920x1080,1366x768），注意是x不是*，应该原本设的是800x600，怪不得！），然后保存，重启。<br>GRUB_GFXMODE=1280x800<br>GRUB_GFXPAYLOAD_LINUX=keep<br><img src="https://img-blog.csdnimg.cn/20200225170946121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了！成功！<br>应该也有朋友注意到了，这里没装Ubuntu Software Center！<br>好了，这里给大家安装方法（我可搜了好久呢）<br>sudo apt install software-center<br>这个几分钟就行了，会有文字提示，比较好。</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>通过应用程序 编程-&gt;GUIDE来启动这个操作系统的主要目的——写程序。<br><img src="https://img-blog.csdnimg.cn/20200225171749870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200225171957210.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>这些就不用说了吧。再讲一句，要保存为cpp文件才有语法高亮！！！<br><img src="https://img-blog.csdnimg.cn/20200225172059461.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>通过键盘图标-&gt;输入法-&gt;GOOGLE拼音来打中文。<br><img src="https://img-blog.csdnimg.cn/20200225172221757.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VyaWNOVEg=,size_16,color_FFFFFF,t_70" alt=""><br>好了，今天就写这么多啦，感兴趣的同志们可以去多学学Linux终端和命令行，那个比cmd强大多了！</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>Linux安装便捷，使用稳定，不用担心蓝屏（Windows特产），等等，值得推荐！</p>
-<!-- /wp:paragraph -->]]></content>
     </entry>
 </feed>

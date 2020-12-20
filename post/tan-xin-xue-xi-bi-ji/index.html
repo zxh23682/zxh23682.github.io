@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>C++ 排序笔记 | zxh23682 的博客</title>
+<title>贪心学习笔记 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1608427845114">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="C++ 排序笔记" />
+  <meta name="description" content="贪心学习笔记" />
   <meta name="keywords" content="随笔" />
 </head>
 
@@ -238,15 +238,14 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E6%B1%82%E8%A7%A3%E4%BA%8B%E5%BA%94%E8%80%83%E8%99%91%E7%9A%84%E9%97%AE%E9%A2%98">贪心算法求解事应考虑的问题</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4">贪心算法的基本步骤</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5%E9%80%89%E6%8B%A9">贪心策略选择</a></li>
+<li><a href="#%E7%BB%83%E4%B9%A0">练习</a>
 <ul>
-<li>
-<ul>
-<li><a href="#%E6%A8%A1%E6%9D%BF">模板：</a></li>
-<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81">完整代码</a></li>
-<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a></li>
-</ul>
-</li>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目：</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路：</a></li>
 </ul>
 </li>
 </ul>
@@ -514,8 +513,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/">
-      C++ 排序笔记
+    <a class="post-title-link" href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/">
+      贪心学习笔记
     </a>
   </h1>
   <div class="post-meta">
@@ -523,7 +522,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-11-16 20:38:17">2020-11-16</span>
+      <span class="publish-time" data-t="2020-12-20 09:29:47">2020-12-20</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -542,17 +541,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>9<span class="language" data-lan="minute">分钟</span></span>
+      <span>8<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1318<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1845<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/c-pai-xu-bi-ji/" data-flag-title="C++ 排序笔记" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/tan-xin-xue-xi-bi-ji/" data-flag-title="贪心学习笔记" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -561,344 +560,173 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="模板">模板：</h3>
-<pre><code class="language-cpp">void selection_sort(int* a, int n) {
-	for (int i = 1; i &lt; n; ++i) {
-		int ith = i;
-		for (int j = i + 1; j &lt;= n; ++j) {
-			if (a[j] &lt; a[ith]) {
-				ith = j;
-			}
+              <p>早就应该写了。现在来补</p>
+<hr>
+<h1 id="概念">概念</h1>
+<p>贪心算法又叫登山算法，它的根本思想是逐步到达山顶，即逐步获得最优解，是解决最优化问题时的一种简单但是适用范围有限的策略。</p>
+<p>贪心算法没有固定的框架，算法设计的关键是贪婪策略的选择。贪心策略要无后向性，也就是说某状态以后的过程不会影响以前的状态，至于当前状态有关。</p>
+<p>贪心算法是对某些求解最优解问题的最简单、最迅速的技术。某些问题的最优解可以通过一系列的最优的选择即贪心选择来达到 。但局部最优并不总能获得整体最优解，但通常能获得近似最优解。</p>
+<p>在每一部贪心选择中，只考虑当前对自己最有利的选择，而不去考虑在后面看来这种选择是否合理。</p>
+<hr>
+<h1 id="贪心算法求解事应考虑的问题">贪心算法求解事应考虑的问题</h1>
+<ul>
+<li>候选集合</li>
+</ul>
+<p>为了构造问题的解决方案，有一个候选集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 作为问题的可能解，问题的最终解均取自于候选集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>。</p>
+<ul>
+<li>解集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span></li>
+</ul>
+<p>随着贪心选择的进行，解集合不断扩展，直到构成一个满足问题的完整解。</p>
+<ul>
+<li>解决函数</li>
+</ul>
+<p>检查解集合是否构成问题的完整解。</p>
+<ul>
+<li>选择函数</li>
+</ul>
+<p>即贪心策略，这是贪心算法的关键，它指出哪个候选对象有希望构成成问题的解。</p>
+<ul>
+<li>可行函数</li>
+</ul>
+<p>检查解集合中加入一个候选对象是否可行，即解集合扩展后是否满足约束条件。</p>
+<hr>
+<h1 id="贪心算法的基本步骤">贪心算法的基本步骤</h1>
+<ul>
+<li>
+<p>从问题的某个初始解出发</p>
+</li>
+<li>
+<p>采用循环语句，当可以向求解目标前进一步时，就根据局部最优策略，得到一个不分解，缩小问题的范围或规模。</p>
+</li>
+<li>
+<p>将所有的部分解综合起来，得到问题的最终解。</p>
+</li>
+</ul>
+<pre><code class="language-cpp">Greedy(C){ //C是问题的输入集合即候选集合
+	S = {}; //初始解集合为空
+		while(not solution(S)){ //集合S没有构成问题的一个解
+				x = select(C); //在候选集合C中做贪心选择
+				if feasible(S,x); //判断集合加入x后的解是否可行
+					S += {x};
+					C -= {s};
 		}
-		int t = a[i];
-		a[i] = a[ith];
-		a[ith] = t;
-	}
-} //xuan ze pai xu
-
-
-
-void bubble_sort(int *a, int n) {
-	bool flag = true;
-	while (flag) {
-		flag = false;
-		for (int i = 1; i &lt; n; ++i) {
-			if (a[i] &gt; a[i + 1]) {
-				flag = true;
-				int t = a[i];
-				a[i] = a[i + 1];
-				a[i + 1] = t;
-			}
-		}
-	}
-}//mao pao pai xu
-
-
-
-void insertion_sort(int* a, int n) {
-	for (int i = 2; i &lt;= n; ++i) {
-		int key = a[i];
-		int j = i - 1;
-		while (j &gt; 0 &amp;&amp; a[j] &gt; key) {
-			a[j + 1] = a[j];
-			--j;
-		}
-		a[j + 1] = key;
-	}
-}//cha ru pai xu
-
-
-
-const int N = 100010;
-const int W = 100010;
-
-int n, w, a[N], cnt[W], b[N];
-
-void counting_sort() {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i]];
-	for (int i = 1; i &lt;= w; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i]]--] = a[i];
-} //计数排序
-
-
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
+		return S;
 }
-
-const int N = 100010;
-const int W = 100010;
-const int K = 100;
-
-int n, w[K], k, cnt[W];
-
-struct Element {
-	int key[K];
-	bool operator&lt;(const Element&amp; y) const {
-		for (int i = 1; i &lt;= k; ++i) {
-			if (key[i] == y.key[i]) continue;
-			return key[i] &lt; y.key[i];
-		}
-		return false;
-	}
-} a[N], b[N];
-
-void counting_sort(int p) {
-	memset(cnt, 0, sizeof(cnt));
-	for (int i = 1; i &lt;= n; ++i) ++cnt[a[i].key[p]];
-	for (int i = 1; i &lt;= w[p]; ++i) cnt[i] += cnt[i - 1];
-	for (int i = n; i &gt;= 1; --i) b[cnt[a[i].key[p]]--] = a[i];
-	memcpy(a, b, sizeof(a));
-}
-
-void radix_sort() {
-	for (int i = k; i &gt;= 1; --i) {
-		counting_sort(i);
-	}
-} //基数排序
-
-
-
-struct Range {
-	int start, end;
-	Range(int s = 0, int e = 0) {
-		start = s, end = e;
-	}
-};
-
-template &lt;typename T&gt;
-void quick_sort(T arr[], const int len) {
-	if (len &lt;= 0) return;
-	Range r[len];
-	int p = 0;
-	r[p++] = Range(0, len - 1);
-	while (p) {
-		Range range = r[--p];
-		if (range.start &gt;= range.end) continue;
-		T mid = arr[range.end];
-		int left = range.start, right = range.end - 1;
-		while (left &lt; right) {
-			while (arr[left] &lt; mid &amp;&amp; left &lt; right) left++;
-			while (arr[right] &gt;= mid &amp;&amp; left &lt; right) right--;
-			std::swap(arr[left], arr[right]);
-		}
-		if (arr[left] &gt;= arr[range.end])
-			std::swap(arr[left], arr[range.end]);
-		else
-			left++;
-		r[p++] = Range(range.start, left - 1);
-		r[p++] = Range(left + 1, range.end);
-	}
-} //kuai su pai xu
-
-
-
-
-void merge(int ll, int rr) {
-	// 用来把 a[ll.. rr - 1] 这一区间的数排序。 t 数组是临时存放有序的版本用的。
-	if (rr - ll &lt;= 1) return;
-	int mid = ll + (rr - ll &gt;&gt; 1);
-	merge(ll, mid);
-	merge(mid, rr);
-	int p = ll, q = mid, s = ll;
-	while (s &lt; rr) {
-		if (p &gt;= mid || (q &lt; rr &amp;&amp; a[p] &gt; a[q])) {
-			t[s++] = a[q++];
-			// ans += mid - p;
-		} else
-			t[s++] = a[p++];
-	}
-	for (int i = ll; i &lt; rr; ++i) a[i] = t[i];
-}//gui bing pai xu
-
-
-
-void max_heapify(int arr[], int start, int end) {
-	int dad = start;
-	int son = dad * 2 + 1;
-	while (son &lt;= end) {
-		if (son + 1 &lt;= end &amp;&amp;
-		        arr[son] &lt; arr[son + 1])
-			son++;
-		if (arr[dad] &gt;
-		        arr[son])
-			return;
-		else {
-			swap(arr[dad], arr[son]);
-			dad = son;
-			son = dad * 2 + 1;
-		}
-	}
-}
-
-void heap_sort(int arr[], int len) {
-	for (int i = len / 2 - 1; i &gt;= 0; i--) max_heapify(arr, i, len - 1);
-	for (int i = len - 1; i &gt; 0; i--) {
-		swap(arr[0], arr[i]);
-		max_heapify(arr, 0, i - 1);
-	}
-} //dui pai xu
-
-
-
-
-const int N = 100010;
-
-int n, w, a[N];
-vector&lt;int&gt; bucket[N];
-
-void insertion_sort(vector&lt;int&gt;&amp; A) {
-	for (int i = 1; i &lt; A.size(); ++i) {
-		int key = A[i];
-		int j = i - 1;
-		while (j &gt;= 0 &amp;&amp; A[j] &gt; key) {
-			A[j + 1] = A[j];
-			--j;
-		}
-		A[j + 1] = key;
-	}
-}
-
-void bucket_sort() {
-	int bucket_size = w / n + 1;
-	for (int i = 0; i &lt; n; ++i) {
-		bucket[i].clear();
-	}
-	for (int i = 1; i &lt;= n; ++i) {
-		bucket[a[i] / bucket_size].push_back(a[i]);
-	}
-	int p = 0;
-	for (int i = 0; i &lt; n; ++i) {
-		insertion_sort(bucket[i]);
-		for (int j = 0; j &lt; bucket[i].size(); ++j) {
-			a[++p] = bucket[i][j];
-		}
-	}
-}//tong pai xu
-
-
-
-template &lt;typename T&gt;
-void shell_sort(T array[], int length) {
-	int h = 1;
-	while (h &lt; length / 3) {
-		h = 3 * h + 1;
-	}
-	while (h &gt;= 1) {
-		for (int i = h; i &lt; length; i++) {
-			for (int j = i; j &gt;= h &amp;&amp; array[j] &lt; array[j - h]; j -= h) {
-				std::swap(array[j], array[j - h]);
-			}
-		}
-		h = h / 3;
-	}
-}//xi er pai xu
-
-
-int n, a[maxn], tmp[maxn &lt;&lt; 1];
-
-int winner(int pos1, int pos2) {
-	int u = pos1 &gt;= n ? pos1 : tmp[pos1];
-	int v = pos2 &gt;= n ? pos2 : tmp[pos2];
-	if (tmp[u] &lt;= tmp[v]) return u;
-	return v;
-}
-
-void creat_tree(int &amp;value) {
-	for (int i = 0; i &lt; n; i++) tmp[n + i] = a[i];
-	for (int i = 2 * n - 1; i &gt; 1; i -= 2) {
-		int k = i / 2;
-		int j = i - 1;
-		tmp[k] = winner(i, j);
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void recreat(int &amp;value) {
-	int i = tmp[1];
-	while (i &gt; 1) {
-		int j, k = i / 2;
-		if (i % 2 == 0 &amp;&amp; i &lt; 2 * n - 1)
-			j = i + 1;
-		else
-			j = i - 1;
-		tmp[k] = winner(i, j);
-		i = k;
-	}
-	value = tmp[tmp[1]];
-	tmp[tmp[1]] = INF;
-}
-
-void tournament_sort() {
-	int value;
-	creat_tree(value);
-	for (int i = 0; i &lt; n; i++) {
-		a[i] = value;
-		recreat(value);
-	}
-}//jing biao sai pai xu
 </code></pre>
-<h3 id="完整代码">完整代码</h3>
-<p>快速排序：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+<hr>
+<h1 id="贪心策略选择">贪心策略选择</h1>
+<p>贪心算法的原理是通过局部最优来达到全局最优，采用的是逐步构造最优解的方法。在每个阶段，都做出一个看上去最优的，决策一旦做出，就不再更改。</p>
+<p>要选出最优解可不是一件容易的事，要证明局部最优为全局最优，要进行数学证明，否则就不能说明为全局最优。</p>
+<p>很多问题表面上看来用贪心算法可以找到最优解，实际上却把最优解给漏掉了。这就像现实生活中的 “贪小便宜吃大亏” 。所以我们在解决问题的时候，一定要谨慎使用贪心算法，一定要注意这个问题适不适合采用贪心算法。</p>
+<p>贪心算法很多时候并不能达到全局最优，为什么我们还要使用它呢？</p>
+<p>因为在很多大规模问题中，寻找最优解是一件相当费时耗力的事情，有时候付出大量人力物力财力后，回报并不与投入成正比。在这个时候选择相对最优的贪心算法就比较经济可行了。有的问题对最优的要求不是很高，在充分衡量付出和回报后，选择贪心算法未尝不是一种不错的选择。</p>
+<hr>
+<h1 id="练习">练习</h1>
+<h2 id="题目">题目：</h2>
+<ul>
+<li>组成新数最小</li>
+</ul>
+<p>键盘输入一个较大的正整数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，去掉其中任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 个数字后剩下的数字按原左右次序将组成一个新的正整数。对于给定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>，通过编程寻找一种方案使得剩下的数字组成的新数最小。</p>
+<p>输出应包括所去掉的数字的位置和组成的新的正整数。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>240</mn></msup></mrow><annotation encoding="application/x-tex">1≤n≤10^{240}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">4</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>≤</mo><mn>20</mn></mrow><annotation encoding="application/x-tex">0≤s≤20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span>。</p>
+<h2 id="思路">思路：</h2>
+<p>因为输入的数字比较大，将输入的数字存储为字符串格式，在删除时记录删除的位置。</p>
+<p>如果让高位的数字尽量小，数字的总值就小。</p>
+<p>从高位到低位，让相邻的数字进行比较（总是让左边数字的与右边的数字比较），如果高位的数字比低位大，就把高位删除。</p>
+<p>如果比较过后删除了高位，那么将低位与删除的高位的左边数字进行比较，如果高位数字大，把高位删除。</p>
+<p>即删除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 位后，必须向前考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 位与第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 位进行比较。</p>
+<p>例如：</p>
+<pre><code>n = 2 3 1 1 8 3。
+3 比 1 大删除：n = 2 空 1 1 8 3
+2 比 1 大删除：n = 空 空 1 1 8 3
+8 比 3 大删除：n = 空 空 1 1 空 3
+即删除 i 位后，必须向前考虑 i-1 位与第 i+1 位进行比较
+</code></pre>
+<p>如果前面高位出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，这里不考虑。</p>
+<p>如果数字全是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，应该保留一个零。</p>
+<p>如果比较一遍删除的位数不够 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>，就考虑删除后几位。</p>
+<p>在下面代码中，用字符 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 1: #̲'>#</span> 来表示数字删除，处理的时候再把 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 1: #̲'>#</span> 一起删除。</p>
+<p>保证数据正确有解。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>o</mi><mi>d</mi><mi>e</mi><mo>:</mo></mrow><annotation encoding="application/x-tex">Code:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
 using namespace std;
-const int maxn=1e4+5;
-int n;
-int a[maxn];
-void qsort(int l,int r) {
-	int m,n;
-	int mid,p;
-	m=l,n=r;
-	mid=a[(l+r)/2];           
-	do {
-		while (a[m]&lt;mid) m++;  
-		while (a[n]&gt;mid) n--;    
-		if (m&lt;=n) {
-			swap(a[m],a[n]);
-			m++; 
-			n--;           
-		}
-	} while (m&lt;=n);             
-	if (m&lt;n) qsort(l,n);            
-	if (m&lt;r) qsort(m,r);
-}
+string index=&quot;&quot;; //记录删除的下标
+int count=0; //删除的次数
 int main() {
-	freopen(&quot;kp.in&quot;,&quot;r&quot;,stdin);
-    freopen(&quot;kp.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%d&quot;,&amp;n);
-	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
-	qsort(1,n);
-	for (int i=1; i&lt;=n; i++) printf(&quot;%d &quot;,a[i]);	
-	fclose(stdin);
-	fclose(stdout);
+	string tanxin(string num,int s); //贪心算法函数
+	string process(string minnum); //处理函数
+	int s; //要删除的位数
+	string a;
+	cin&gt;&gt;a;
+	string num=a; //为了方便定义的时候初始化
+	string minnum;
+	cout&lt;&lt;&quot;请输入您想要去掉几个数字：&quot;;
+	cin&gt;&gt;s;
+	minnum=tanxin(num,s);
+	cout&lt;&lt;&quot;开始数字为：&quot;&lt;&lt;num&lt;&lt;endl;
+	cout&lt;&lt;&quot;处理过后的结果为:&quot;;
+	cout&lt;&lt;process(minnum)&lt;&lt;endl;
+	cout&lt;&lt;&quot;删除的下标为:&quot;;
+	cout&lt;&lt;index&lt;&lt;endl;
 	return 0;
 }
+string tanxin(string num,int s) {
+	int i,j;
+	string result=num;
+	for(i=0; i&lt;num.size()&amp;&amp;count&lt;s; i++) {
+		if(result[i]&gt;result[i+1]) {
+			result[i]='#'; //置#代表删除
+			index.insert(index.size(),std::to_string(i)); //在尾部插入
+			count++;
+			if((i-1&gt;=0)&amp;&amp;result[i-1]&gt;result[i+1]) {
+				result[i-1]='#';
+				index.insert(index.size(),std::to_string(i-1)); //在尾部插入
+				count++;
+			}
+		}
+	}
+	if(count&lt;s) { //没有删除s次
+		int s0=s-count;
+		for(i=result.size()-1; i&gt;=s0; i--) {
+			result[i]='#';
+		}
+	}
+	return result;
+}
+string process(string minnum) { //处理找到的字符串
+	string result=minnum,resultsum=&quot;&quot;;
+	int i,temp=0;
+	//判断前端是否有多余0
+	for(i=0; i&lt;minnum.size(); i++) {
+		if(result[i]=='0'&amp;&amp;result[i]=='#') { //前面有不为0 且不为#的数字,把标识变量置1
+			temp=1;
+		}
+		if(result[i]=='0'&amp;&amp;temp==0) {
+			result[i]='#';
+		}
+	}
+	//去除占位符#
+	for(i=0; i&lt;result.size(); i++) {
+		if(result[i]!='#') resultsum += result[i]; //拼接
+	}
+	return resultsum;
+}
 </code></pre>
-<h3 id="时间复杂度">时间复杂度</h3>
-<figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/08/849589-20180402133438219-1946132192-1536x1038.png" alt="" loading="lazy"></figure>
+<p><strong>注意：以上代码需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>+</mo><mo>+</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">C++11</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">1</span></span></span></span></strong>。</p>
+<p>样例：</p>
+<pre><code>input:
+
+231183
+3
+
+output:
+
+请输入您想要去掉几个数字：开始数字为：231183
+处理过后的结果为:113
+删除的下标为:104
+
+</code></pre>
 
             </div>
             
@@ -911,7 +739,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/c-pai-xu-bi-ji/" title="C++ 排序笔记">https://zxh23682.github.io/post/c-pai-xu-bi-ji/</a>
+      <a href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/" title="贪心学习笔记">https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -926,15 +754,11 @@ int main() {
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">C++ 测评bat文件模板</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="C++ 测评bat文件模板" href="https://zxh23682.github.io/post/c-ce-ping-bat-wen-jian-mo-ban/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 P6784 「EZEC-3」造房子" href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">题解 P6784 「EZEC-3」造房子</a>
-        <a class="nav-mobile-next" title="题解 P6784 「EZEC-3」造房子" href="https://zxh23682.github.io/post/ti-jie-p6784-ezec-3-zao-fang-zi/">下一篇</a>
+        <a class="nav-pc-next" title="自动删犇器" href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/">自动删犇器</a>
+        <a class="nav-mobile-next" title="自动删犇器" href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

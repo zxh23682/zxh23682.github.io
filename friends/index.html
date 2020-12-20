@@ -9,7 +9,7 @@
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
 <title>zxh23682 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1608113716896">
+<link rel="shortcut icon" href="/favicon.ico?v=1608427845114">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -177,7 +177,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">29</span>
+        <span class="site-item-stat-count">31</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -549,6 +549,215 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/tan-xin-xue-xi-bi-ji/"" data-c="
+          &lt;p&gt;早就应该写了。现在来补&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;概念&#34;&gt;概念&lt;/h1&gt;
+&lt;p&gt;贪心算法又叫登山算法，它的根本思想是逐步到达山顶，即逐步获得最优解，是解决最优化问题时的一种简单但是适用范围有限的策略。&lt;/p&gt;
+&lt;p&gt;贪心算法没有固定的框架，算法设计的关键是贪婪策略的选择。贪心策略要无后向性，也就是说某状态以后的过程不会影响以前的状态，至于当前状态有关。&lt;/p&gt;
+&lt;p&gt;贪心算法是对某些求解最优解问题的最简单、最迅速的技术。某些问题的最优解可以通过一系列的最优的选择即贪心选择来达到 。但局部最优并不总能获得整体最优解，但通常能获得近似最优解。&lt;/p&gt;
+&lt;p&gt;在每一部贪心选择中，只考虑当前对自己最有利的选择，而不去考虑在后面看来这种选择是否合理。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;贪心算法求解事应考虑的问题&#34;&gt;贪心算法求解事应考虑的问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;候选集合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了构造问题的解决方案，有一个候选集合 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;C&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 作为问题的可能解，问题的最终解均取自于候选集合 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;C&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解集合 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;S&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;随着贪心选择的进行，解集合不断扩展，直到构成一个满足问题的完整解。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;解决函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;检查解集合是否构成问题的完整解。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;即贪心策略，这是贪心算法的关键，它指出哪个候选对象有希望构成成问题的解。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可行函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;检查解集合中加入一个候选对象是否可行，即解集合扩展后是否满足约束条件。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;贪心算法的基本步骤&#34;&gt;贪心算法的基本步骤&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;从问题的某个初始解出发&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;采用循环语句，当可以向求解目标前进一步时，就根据局部最优策略，得到一个不分解，缩小问题的范围或规模。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将所有的部分解综合起来，得到问题的最终解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;Greedy(C){ //C是问题的输入集合即候选集合
+	S = {}; //初始解集合为空
+		while(not solution(S)){ //集合S没有构成问题的一个解
+				x = select(C); //在候选集合C中做贪心选择
+				if feasible(S,x); //判断集合加入x后的解是否可行
+					S += {x};
+					C -= {s};
+		}
+		return S;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;贪心策略选择&#34;&gt;贪心策略选择&lt;/h1&gt;
+&lt;p&gt;贪心算法的原理是通过局部最优来达到全局最优，采用的是逐步构造最优解的方法。在每个阶段，都做出一个看上去最优的，决策一旦做出，就不再更改。&lt;/p&gt;
+&lt;p&gt;要选出最优解可不是一件容易的事，要证明局部最优为全局最优，要进行数学证明，否则就不能说明为全局最优。&lt;/p&gt;
+&lt;p&gt;很多问题表面上看来用贪心算法可以找到最优解，实际上却把最优解给漏掉了。这就像现实生活中的 “贪小便宜吃大亏” 。所以我们在解决问题的时候，一定要谨慎使用贪心算法，一定要注意这个问题适不适合采用贪心算法。&lt;/p&gt;
+&lt;p&gt;贪心算法很多时候并不能达到全局最优，为什么我们还要使用它呢？&lt;/p&gt;
+&lt;p&gt;因为在很多大规模问题中，寻找最优解是一件相当费时耗力的事情，有时候付出大量人力物力财力后，回报并不与投入成正比。在这个时候选择相对最优的贪心算法就比较经济可行了。有的问题对最优的要求不是很高，在充分衡量付出和回报后，选择贪心算法未尝不是一种不错的选择。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;练习&#34;&gt;练习&lt;/h1&gt;
+&lt;h2 id=&#34;题目&#34;&gt;题目：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;组成新数最小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;键盘输入一个较大的正整数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，去掉其中任意 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个数字后剩下的数字按原左右次序将组成一个新的正整数。对于给定的 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 和 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，通过编程寻找一种方案使得剩下的数字组成的新数最小。&lt;/p&gt;
+&lt;p&gt;输出应包括所去掉的数字的位置和组成的新的正整数。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;240&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1≤n≤10^{240}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7719400000000001em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;0≤s≤20&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.78041em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7719400000000001em;vertical-align:-0.13597em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路：&lt;/h2&gt;
+&lt;p&gt;因为输入的数字比较大，将输入的数字存储为字符串格式，在删除时记录删除的位置。&lt;/p&gt;
+&lt;p&gt;如果让高位的数字尽量小，数字的总值就小。&lt;/p&gt;
+&lt;p&gt;从高位到低位，让相邻的数字进行比较（总是让左边数字的与右边的数字比较），如果高位的数字比低位大，就把高位删除。&lt;/p&gt;
+&lt;p&gt;如果比较过后删除了高位，那么将低位与删除的高位的左边数字进行比较，如果高位数字大，把高位删除。&lt;/p&gt;
+&lt;p&gt;即删除 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.65952em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 位后，必须向前考虑 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.74285em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 位与第 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i+1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.74285em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 位进行比较。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;n = 2 3 1 1 8 3。
+3 比 1 大删除：n = 2 空 1 1 8 3
+2 比 1 大删除：n = 空 空 1 1 8 3
+8 比 3 大删除：n = 空 空 1 1 空 3
+即删除 i 位后，必须向前考虑 i-1 位与第 i+1 位进行比较
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果前面高位出现 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，这里不考虑。&lt;/p&gt;
+&lt;p&gt;如果数字全是 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;0&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，应该保留一个零。&lt;/p&gt;
+&lt;p&gt;如果比较一遍删除的位数不够 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;s&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，就考虑删除后几位。&lt;/p&gt;
+&lt;p&gt;在下面代码中，用字符 &lt;span class=&#39;katex-error&#39; title=&#39;ParseError: KaTeX parse error: Expected &amp;#039;EOF&amp;#039;, got &amp;#039;#&amp;#039; at position 1: #̲&#39;&gt;#&lt;/span&gt; 来表示数字删除，处理的时候再把 &lt;span class=&#39;katex-error&#39; title=&#39;ParseError: KaTeX parse error: Expected &amp;#039;EOF&amp;#039;, got &amp;#039;#&amp;#039; at position 1: #̲&#39;&gt;#&lt;/span&gt; 一起删除。&lt;/p&gt;
+&lt;p&gt;保证数据正确有解。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;Code:&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespace std;
+string index=&amp;quot;&amp;quot;; //记录删除的下标
+int count=0; //删除的次数
+int main() {
+	string tanxin(string num,int s); //贪心算法函数
+	string process(string minnum); //处理函数
+	int s; //要删除的位数
+	string a;
+	cin&amp;gt;&amp;gt;a;
+	string num=a; //为了方便定义的时候初始化
+	string minnum;
+	cout&amp;lt;&amp;lt;&amp;quot;请输入您想要去掉几个数字：&amp;quot;;
+	cin&amp;gt;&amp;gt;s;
+	minnum=tanxin(num,s);
+	cout&amp;lt;&amp;lt;&amp;quot;开始数字为：&amp;quot;&amp;lt;&amp;lt;num&amp;lt;&amp;lt;endl;
+	cout&amp;lt;&amp;lt;&amp;quot;处理过后的结果为:&amp;quot;;
+	cout&amp;lt;&amp;lt;process(minnum)&amp;lt;&amp;lt;endl;
+	cout&amp;lt;&amp;lt;&amp;quot;删除的下标为:&amp;quot;;
+	cout&amp;lt;&amp;lt;index&amp;lt;&amp;lt;endl;
+	return 0;
+}
+string tanxin(string num,int s) {
+	int i,j;
+	string result=num;
+	for(i=0; i&amp;lt;num.size()&amp;amp;&amp;amp;count&amp;lt;s; i++) {
+		if(result[i]&amp;gt;result[i+1]) {
+			result[i]=&#39;#&#39;; //置#代表删除
+			index.insert(index.size(),std::to_string(i)); //在尾部插入
+			count++;
+			if((i-1&amp;gt;=0)&amp;amp;&amp;amp;result[i-1]&amp;gt;result[i+1]) {
+				result[i-1]=&#39;#&#39;;
+				index.insert(index.size(),std::to_string(i-1)); //在尾部插入
+				count++;
+			}
+		}
+	}
+	if(count&amp;lt;s) { //没有删除s次
+		int s0=s-count;
+		for(i=result.size()-1; i&amp;gt;=s0; i--) {
+			result[i]=&#39;#&#39;;
+		}
+	}
+	return result;
+}
+string process(string minnum) { //处理找到的字符串
+	string result=minnum,resultsum=&amp;quot;&amp;quot;;
+	int i,temp=0;
+	//判断前端是否有多余0
+	for(i=0; i&amp;lt;minnum.size(); i++) {
+		if(result[i]==&#39;0&#39;&amp;amp;&amp;amp;result[i]==&#39;#&#39;) { //前面有不为0 且不为#的数字,把标识变量置1
+			temp=1;
+		}
+		if(result[i]==&#39;0&#39;&amp;amp;&amp;amp;temp==0) {
+			result[i]=&#39;#&#39;;
+		}
+	}
+	//去除占位符#
+	for(i=0; i&amp;lt;result.size(); i++) {
+		if(result[i]!=&#39;#&#39;) resultsum += result[i]; //拼接
+	}
+	return resultsum;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意：以上代码需要 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;C++11&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;样例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;input:
+
+231183
+3
+
+output:
+
+请输入您想要去掉几个数字：开始数字为：231183
+处理过后的结果为:113
+删除的下标为:104
+
+&lt;/code&gt;&lt;/pre&gt;
+">贪心学习笔记</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/zi-dong-shan-ben-qi/"" data-c="
+          &lt;p&gt;在洛谷主页 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;F12&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;/&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;Fn+F12&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，进入控制台 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;/&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;console&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;输入 &lt;code&gt;allow pasting&lt;/code&gt; 后回车。&lt;/p&gt;
+&lt;p&gt;输入下面的代码并回车：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;switchMode(&#39;my&#39;);
+function load() {
+    console.log(&#39;page &#39; + feedPage);
+     $.get(&amp;quot;/feed/&amp;quot; + feedMode + &amp;quot;?page=&amp;quot; + feedPage, function (resp) {
+		$feed.append(resp);
+         $(&amp;quot;#feed-more&amp;quot;).children(&amp;quot;a&amp;quot;).text(&amp;quot;点击查看更多...&amp;quot;)
+		$(&amp;quot;[name=feed-delete]&amp;quot;).click(function () {
+             $.post(&amp;quot;/api/feed/delete/&amp;quot; + $(this).attr(&#39;data-feed-id&#39;), function () {
+                switchMode(&#39;all&#39;);
+            })
+        }); feedPage++;
+        if (resp.indexOf(&#39;没有更多动态了&#39;) != -1) console.log(&#39;finished&#39;);
+        else setTimeout(load, 200);
+    });
+}
+setTimeout(load, 1000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;等待数字停止后，输入下面一段代码并回车：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var l =  $(&#39;#feed &amp;gt; li &amp;gt; div.am-comment-main &amp;gt; header &amp;gt; div &amp;gt; a:nth-child(2)&#39;);
+function f(i) {
+$.post(&amp;quot;/api/feed/delete/&amp;quot;+ $(l[i]).attr(&#39;data-feed-id&#39;), function() {
+console.log(i);
+if(i&amp;lt;l.length-1)setTimeout(`f(${i+1})`,200);
+})
+}
+f(0);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;等待数字停止，犇犇就删完了。&lt;/p&gt;
+">自动删犇器</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/ti-jie-cf1462a-favorite-sequence/"" data-c="
