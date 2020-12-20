@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zxh23682.github.io</id>
     <title>zxh23682 的博客</title>
-    <updated>2020-12-20T01:30:54.710Z</updated>
+    <updated>2020-12-20T02:07:03.078Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zxh23682.github.io"/>
     <link rel="self" href="https://zxh23682.github.io/atom.xml"/>
@@ -183,6 +183,36 @@ output:
 删除的下标为:104
 
 </code></pre>
+<hr>
+<h2 id="题目-2">题目：</h2>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P1181">P1181 数列分段Section I</a></li>
+</ul>
+<h2 id="思路-2">思路：</h2>
+<p>对于当前元素只有两种选择 并到其他段上和单独一段。</p>
+<p>当前元素能找到和在一起的段就并上，找不到就自己就自己一段。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">ans</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span> 一开始设置为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，因为还要并 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 号元素，每并一次少一段。</p>
+<p>用到的是贪心想法。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m;
+int a[100005];
+int ans;
+int main() {
+	scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+	ans = n + 1;
+	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
+	for (int i=1; i&lt;=n; i++) {
+		if(a[i] + a[i-1] &lt;= m) {
+			a[i] += a[i-1];
+			ans--;
+		}
+	}
+	printf(&quot;%d\n&quot;,ans);
+	return 0;
+}
+</code></pre>
+<p>本篇学习笔记编写结束</p>
 ]]></content>
     </entry>
     <entry>
