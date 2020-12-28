@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>2020 CSP-J 游记 | zxh23682 的博客</title>
+<title>队列学习笔记 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1609150114604">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="2020 CSP-J 游记" />
-  <meta name="keywords" content="游记" />
+  <meta name="description" content="队列学习笔记" />
+  <meta name="keywords" content="随笔" />
 </head>
 
 <body>
@@ -238,27 +238,15 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E9%98%9F%E5%88%97">队列</a></li>
+<li><a href="#%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E9%98%9F%E5%88%97">数组模拟队列</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E7%9A%84%E9%98%9F%E5%88%97">特殊的队列</a>
 <ul>
-<li>
-<ul>
-<li><a href="#%E5%89%8D%E8%A8%80">前言：</a></li>
+<li><a href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97">双端队列</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97">循环队列</a></li>
 </ul>
 </li>
-<li><a href="#%E5%88%9D%E8%B5%9B">初赛</a></li>
-<li><a href="#%E5%A4%8D%E8%B5%9B">复赛</a>
-<ul>
-<li><a href="#textttday-5-2020111"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-5</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/1</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -5 2020/11/1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -5 2020/11/1</span></span></span></span></span></a></li>
-<li><a href="#textttday-4-2020113"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-4</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/3</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -4 2020/11/3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -4 2020/11/3</span></span></span></span></span></a></li>
-<li><a href="#textttday-1-2020116"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-1</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/6</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -1 2020/11/6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -1 2020/11/6</span></span></span></span></span></a></li>
-<li><a href="#textttday-0-2020117"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">0</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/7</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 0 2020/11/7}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 0 2020/11/7</span></span></span></span></span></a></li>
-<li><a href="#textttday-1-2020118"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">1</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/8</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 1 2020/11/8}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 1 2020/11/8</span></span></span></span></span></a></li>
-<li><a href="#textttday-9-20201116"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">9</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/16</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 9 2020/11/16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 9 2020/11/16</span></span></span></span></span></a></li>
-<li><a href="#textttday-end-20201121"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">END</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/21</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day END 2020/11/21}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day END 2020/11/21</span></span></span></span></span></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#%E7%BB%83%E4%B9%A0">练习</a></li>
 </ul>
 
   </div>
@@ -524,8 +512,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/2020-csp-j-you-ji/">
-      2020 CSP-J 游记
+    <a class="post-title-link" href="https://zxh23682.github.io/post/dui-lie-xue-xi-bi-ji/">
+      队列学习笔记
     </a>
   </h1>
   <div class="post-meta">
@@ -533,7 +521,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-12-01 20:27:38">2020-12-01</span>
+      <span class="publish-time" data-t="2020-12-28 18:08:11">2020-12-28</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -542,8 +530,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://zxh23682.github.io/tag/gEhYv41FQ/">
-        <span>游记</span>
+      <a href="https://zxh23682.github.io/tag/7Hqj3q9M3/">
+        <span>随笔</span>
       </a>
       
       
@@ -557,12 +545,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1259<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1289<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/2020-csp-j-you-ji/" data-flag-title="2020 CSP-J 游记" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/dui-lie-xue-xi-bi-ji/" data-flag-title="队列学习笔记" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -571,246 +559,248 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="前言">前言：</h3>
-<p>这是我第一次（肯定不是最后一次）参加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>S</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">CSP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>。</p>
-<p>祝我 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>p</mi><mo>+</mo><mo>+</mo></mrow><annotation encoding="application/x-tex">rp++</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span>。</p>
-<h2 id="初赛">初赛</h2>
-<p><a href="https://www.luogu.com.cn/paste/9gxhp5ce">详见</a></p>
-<h2 id="复赛">复赛</h2>
-<h3 id="textttday-5-2020111"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-5</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/1</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -5 2020/11/1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -5 2020/11/1</span></span></span></span></span></h3>
-<p>复习期中考试......</p>
-<hr>
-<h3 id="textttday-4-2020113"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-4</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/3</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -4 2020/11/3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -4 2020/11/3</span></span></span></span></span></h3>
-<p>考点在曹杨二中文萃楼<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>613</mn></mrow><annotation encoding="application/x-tex">613</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">1</span><span class="mord">3</span></span></span></span> <s>欢迎面基</s>，离我家好远。</p>
-<p>复习语文。。明天语文期中考试。\fad</p>
-<hr>
-<h3 id="textttday-1-2020116"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">-1</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/6</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day -1 2020/11/6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day -1 2020/11/6</span></span></span></span></span></h3>
-<p>期中考试考完了。</p>
-<p>明天 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>S</mi><mi>P</mi><mo>−</mo><mi>J</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">CSP-J2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord">2</span></span></span></span> 怕怕怕怕怕怕。</p>
-<hr>
-<h3 id="textttday-0-2020117"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">0</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/7</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 0 2020/11/7}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 0 2020/11/7</span></span></span></span></span></h3>
-<p>一早就走了。</p>
-<p>开考。</p>
-<p>cyez密码出了点问题，监考老师直接把文件发给我们了。</p>
-<p>让我没想到的是，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">T1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span></span></span></span> 就炸了。</p>
-<p>考场上没想到直接从大到小循环 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>24</mn></mrow><annotation encoding="application/x-tex">24</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">4</span></span></span></span> 次暴力就可以了。</p>
-<p>于是打了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn></mrow><annotation encoding="application/x-tex">60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">0</span></span></span></span> 部分分，还打了表。</p>
-<p>考场代码：</p>
+              <h1 id="队列">队列</h1>
+<p>队列 （queue） 是一种具有「先进入队列的元素一定先出队列」性质的表。由于该性质，队列通常也被称为先进先出 <code>（first in first out）</code> 表，简称  <code>FIFO</code> 表。</p>
+<p><code>C++ STL</code> 中实现了 队列 <code>std::queue</code> 和 优先队列 <code>std::priority_queue</code> 两个类，定义于头文件 <code>#include &lt;queue&gt;</code> 中。</p>
+<p><code>std::queue</code> 是容器适配器，默认的底层容器为双端队列 <code>std::deque</code>。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>T</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">STL</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">L</span></span></span></span> 队列操作：</p>
+<pre><code class="language-cpp">queue&lt;int&gt; q;
+q.empty() //如果队列为空返回true，否则返回false
+q.size()  //返回队列中元素的个数
+q.pop()   //删除队列首元素但不返回其值
+q.front() //回队首元素的值，但不删除该元素
+q.push()  //在队尾压入新元素
+q.back()  //返回队列尾元素的值，但不删除该元素
+</code></pre>
+<p>简单队列操作：</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
-typedef long long ll;
-ll n;
-ll max(ll a,ll b) {
-	if (a&gt;=b) return a;
-	else return b;
-}
-ll min(ll p,ll q) {
-	if (p&lt;q) return p;
-	else return q;
-}
-bool f(ll x) {
-	bool flag=false;
-	for (int l=1; pow(2,l)&lt;=n; l++) {
-		if (pow(2,l)==n) flag=true;
-	}
-	if (flag==true) return true;
-	else return false;
-}
 int main() {
-	freopen(&quot;power.in&quot;,&quot;r&quot;,stdin);
-	freopen(&quot;power.out&quot;,&quot;w&quot;,stdout);
-	scanf(&quot;%lld&quot;,&amp;n);
-	if (n%2==1) {
-		printf(&quot;-1\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
+	queue&lt;int&gt; q;
+	for (int i = 0; i &lt; 10; i++) {
+		q.push(i);
 	}
-	if (n==2) {
-		printf(&quot;2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
+	if (!q.empty()) {
+		cout &lt;&lt; &quot;队列q非空！&quot; &lt;&lt; endl;
+		cout &lt;&lt; &quot;q中有&quot; &lt;&lt; q.size() &lt;&lt; &quot;个元素&quot; &lt;&lt; endl;
 	}
-	if (n==4) {
-		printf(&quot;4\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
+	cout &lt;&lt; &quot;队头元素为：&quot; &lt;&lt; q.front() &lt;&lt; endl;
+	cout &lt;&lt; &quot;队尾元素为：&quot; &lt;&lt; q.back() &lt;&lt; endl;
+	for (int j = 0; j &lt; 10; j++) {
+		int tmp = q.front();
+		cout &lt;&lt; tmp &lt;&lt; &quot; &quot;;
+		q.pop();
 	}
-	if (n==6) {
-		printf(&quot;4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
+	cout &lt;&lt; endl;
+	if (!q.empty()) {
+		cout &lt;&lt; &quot;队列非空！&quot; &lt;&lt; endl;
 	}
-	if (n==8) {
-		printf(&quot;8\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==10) {
-		printf(&quot;8 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==126) {
-		printf(&quot;64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==254) {
-		printf(&quot;128 64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==510) {
-		printf(&quot;256 128 64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==1022) {
-		printf(&quot;512 256 128 64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==2046) {
-		printf(&quot;1024 512 256 128 64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	if (n==4094) {
-		printf(&quot;2048 1024 512 256 128 64 32 16 8 4 2\n&quot;);
-		fclose(stdin);
-		fclose(stdout);
-		return 0;
-	}
-	for (int k=1; pow(2,k)&lt;=n; k++) {
-		if (pow(2,k)==n) {
-			printf(&quot;%d\n&quot;,n);
-			fclose(stdin);
-			fclose(stdout);
-			return 0;
-		}
-	}
-	while(f(n)==false) {
-		for (int i=n; i&gt;=1; i--) {
-			if (pow(2,i)&lt;n) {
-				n -= pow(2,i);
-				printf(&quot;%d &quot;,pow(2,i));
-			}
-		}
-		printf(&quot;%d\n&quot;,n);
-	}
-	fclose(stdin);
-	fclose(stdout);
 	return 0;
 }
 </code></pre>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的模拟 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> 快排过了大样例。</p>
-<p>但考试的时候没有算清楚复杂度。否则会用更快的排序方式的。</p>
-<p>考场代码：</p>
+<hr>
+<h1 id="数组模拟队列">数组模拟队列</h1>
+<p>通常用一个数组模拟一个队列，用两个变量标记队列的首尾。</p>
+<pre><code class="language-cpp">int q[SIZE], ql = 1, qr;
+</code></pre>
+<ul>
+<li>
+<p>插入元素： <code>q[++qr]=x;</code></p>
+</li>
+<li>
+<p>删除元素： <code>++ql;</code></p>
+</li>
+<li>
+<p>访问队首/队尾： <code>q[ql] / q[qr]</code>。</p>
+</li>
+<li>
+<p>清空队列： <code>ql=1;qr=0;</code></p>
+</li>
+</ul>
+<hr>
+<h1 id="特殊的队列">特殊的队列</h1>
+<h2 id="双端队列">双端队列</h2>
+<p>双端队列是指一个可以在队首或队尾插入或删除元素的队列。相当于是栈与队列功能的结合。具体地，双端队列支持的操作有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 个：</p>
+<ul>
+<li>
+<p>在队首插入一个元素</p>
+</li>
+<li>
+<p>在队尾插入一个元素</p>
+</li>
+<li>
+<p>在队首删除一个元素</p>
+</li>
+<li>
+<p>在队尾删除一个元素</p>
+</li>
+</ul>
+<p>数组模拟双端队列的方式与普通队列相同。</p>
+<h2 id="循环队列">循环队列</h2>
+<p>使用数组模拟队列会导致一个问题：随着时间的推移，整个队列会向数组的尾部移动，一旦到达数组的最末端，即使数组的前端还有空闲位置，再进行入队操作也会导致溢出。这种数组里实际有空闲位置而发生了上溢的现象被称为 “假溢出”。</p>
+<p>解决假溢出的办法是采用循环的方式来组织存放队列元素的数组，即将数组下标为 0 的位置看做是最后一个位置的后继。数组下标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的元素，它的后继为 <code>(x + 1) % SIZE</code> 。这样就形成了循环队列。</p>
+<p>循环队列的实现：</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
-int n,w;
+template &lt;typename T&gt;
+class LoopQueue {
+	public:
+		LoopQueue(int c = 10);
+		~LoopQueue();
+		bool isEmpty();        //队列的判空
+		int size();            //队列的大小
+		bool push(T t);        //入队列
+		bool pop();            //出队列
+		T front();            //队首元素
+
+	private:
+		int capacity;
+		int begin;
+		int end;
+		T*  queue;
+};
+
+
+template&lt;typename T&gt;
+LoopQueue&lt;T&gt;::LoopQueue(int c = 10)
+	:capacity(c), begin(0), end(0), queue(nullptr) {
+	queue = new T[capacity];
+};
+
+template&lt;typename T&gt;
+LoopQueue&lt;T&gt;::~LoopQueue() {
+	delete[]queue;
+}
+
+template &lt;typename T&gt;
+bool LoopQueue&lt;T&gt;::isEmpty() {                 //判断循环队列是否为空
+	if (begin == end)
+		return true;
+	return false;
+};
+
+template&lt;typename T&gt;
+int LoopQueue&lt;T&gt;::size() {
+	return (end - begin + capacity) % capacity; //计算循环队列的长度
+};
+
+template&lt;typename T&gt;
+bool LoopQueue&lt;T&gt;::push(T t) {
+	if (end + 1 % capacity == begin) {          //判断队列是否已满
+		return false;
+	}
+	queue[end] = t;
+	end = (end + 1) % capacity;
+	return true;
+};
+
+template &lt;typename T&gt;
+bool LoopQueue&lt;T&gt;::pop() {                      //判断队列是否为空
+	if (end == begin) {
+		return false;
+	}
+	begin = (begin + 1) % capacity;
+	return true;
+};
+
+template &lt;typename T&gt;
+T LoopQueue&lt;T&gt;::front() {
+	if (end == begin) {
+		return false;
+	}
+	return queue[begin];
+};
+
+int main() {
+	LoopQueue&lt;string&gt; queue(6);
+	queue.push(&quot;one&quot;);
+	queue.push(&quot;two&quot;);
+	queue.push(&quot;three&quot;);
+	queue.push(&quot;four&quot;);
+	queue.push(&quot;five&quot;);
+	cout &lt;&lt; &quot;队列长度&quot; &lt;&lt; queue.size() &lt;&lt; endl;
+	while (!queue.isEmpty()) {
+		cout &lt;&lt; queue.front() &lt;&lt; endl;
+		queue.pop();
+	}
+	return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://img-blog.csdn.net/20180626221620257?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3ppY2hlbl96aXFp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="" loading="lazy"></figure>
+<hr>
+<h1 id="练习">练习</h1>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/P1996">P1996 约瑟夫问题</a></li>
+</ul>
+<p>队列模板题。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m;
+queue&lt;int&gt; a;
+int now = 1;
+int main() {
+	scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+	for(int i=1; i&lt;=n; i++) a.push(i);
+	while(!a.empty()) {
+		if (now == m) { 
+			printf(&quot;%d &quot;,a.front());
+			a.pop();
+			now = 1;
+		}
+		else if (now != m) { 
+			now++;
+			a.push(a.front());
+			a.pop();
+		}
+	}
+	return 0;
+}
+</code></pre>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/CF802G">CF802G Fake News (easy)</a></li>
+</ul>
+<p>把 <code>h e l l o</code> 入队，每次做判断。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+string s;
+queue&lt;char&gt; q;
+int main() {
+	q.push('h');q.push('e');q.push('i');q.push('d');q.push('i');
+	cin&gt;&gt;s;
+	int len = s.size();
+	for (int i=0; i&lt;len; i++) {
+		if (s[i] == q.front()) q.pop();
+	}
+	if (q.empty()) printf(&quot;YES\n&quot;);
+	else printf(&quot;NO\n&quot;);
+	return 0;
+}
+</code></pre>
+<ul>
+<li><a href="https://www.luogu.com.cn/problem/CF545D">CF545D Queue</a></li>
+</ul>
+<p>直接模拟即可，不需要用到队列。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n;
 int a[100005];
-int b[100005];
-int ans;
-int max(int p,int q) {
-	if (p&gt;=q) return p;
-	else return q;
-}
-bool cmp(int x,int y) {
-	return x&gt;y;
-}
+long long t = 0;
+int ans = 0;
 int main() {
-	freopen(&quot;live.in&quot;,&quot;r&quot;,stdin);
-	freopen(&quot;live.out&quot;,&quot;w&quot;,stdout);
-	memset(b,0,sizeof(b));
-	scanf(&quot;%d %d&quot;,&amp;n,&amp;w);
-	for (int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;,&amp;a[i]);
-//	sort(a+1,a+n+1);
-//	for (int i=1;i&lt;=n;i++) printf(&quot;%d &quot;,a[i]);
-	for (int p=1;p&lt;=n;p++) {
-		ans = max(1,p*w/100);
-	//	printf(&quot;%d &quot;,ans);
-		b[p] = a[p];
-	    sort(b+1,b+n+1,cmp);
-	    printf(&quot;%d &quot;,b[ans]);
+	scanf(&quot;%d&quot;,&amp;n);
+	for (int i=1; i&lt;=n; i++) scanf(&quot;%d&quot;,&amp;a[i]);
+	sort(a + 1,a + n + 1);
+	for (int i=1; i&lt;=n; i++) {
+		if (t &lt;= a[i]) {
+			ans++;
+			t += a[i];
+		} 
 	}
-	fclose(stdin);
-	fclose(stdout);
+	printf(&quot;%d\n&quot;,ans);
 	return 0;
 }
 </code></pre>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">T3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">3</span></span></span></span> 看到题就蒙了。全输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 骗分。</p>
-<p>然而出了考场发现 <code>cin&gt;&gt;s</code> 不能输入包含空格的字符串。只有</p>
-<p><code>getline(cin,s)</code> 才可以。</p>
-<p>爆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">T4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">4</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">dfs</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">s</span></span></span></span>暴力骗分。</p>
-<p>正解应该是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span>，没想到。</p>
-<p>期望：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>70</mn><mo>+</mo><mn>60</mn><mo>+</mo><mn>0</mn><mo>+</mo><mn>10</mn><mo>=</mo><mn>140</mn></mrow><annotation encoding="application/x-tex">70+60+0+10=140</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">7</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span><span class="mord">0</span></span></span></span>。</p>
-<p>估分：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mo>+</mo><mn>40</mn><mo>+</mo><mn>0</mn><mo>+</mo><mn>10</mn><mo>=</mo><mn>110</mn></mrow><annotation encoding="application/x-tex">60+40+0+10=110</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mord">0</span></span></span></span>。</p>
-<p>凉了。</p>
-<p>出考场。</p>
-<p>然而，一到家我就会做了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">T1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span></span></span></span>，打出了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">AC</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 代码。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-ll n;
-int main() {
-  freopen(&quot;power.in&quot;,&quot;r&quot;,stdin);
-  freopen(&quot;power.out&quot;,&quot;w&quot;,stdout);
-    scanf(&quot;%lld&quot;,&amp;n);
-    if (n%2==1) { 
-        printf(&quot;-1\n&quot;);
-        fclose(stdin);
-        fclose(stdout);
-        return 0;
-    }
-    for (int i=24;i&gt;=1;i--) {
-        if (pow(2,i)&lt;=n) {
-            cout&lt;&lt;(ll)pow(2,i)&lt;&lt;&quot; &quot;; 
-            n -= pow(2,i); 
-        }
-        if (n==0) break; 
-    }
-    fclose(stdin);
-    fclose(stdout);
-    return 0;
-}
-</code></pre>
-<p>想打人</p>
-<p>晚上民间数据出来了。</p>
-<p><code>计蒜客：70+50+0+5=125</code></p>
-<p><code>oitiku：65+50+0+0=115</code></p>
 <hr>
-<h3 id="textttday-1-2020118"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">1</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/8</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 1 2020/11/8}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 1 2020/11/8</span></span></span></span></span></h3>
-<p>下午洛谷所有数据都出来了。</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>60</mn><mo>+</mo><mn>50</mn><mo>+</mo><mn>0</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>115</mn></mrow><annotation encoding="application/x-tex">60+50+0+5=115</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mord">5</span></span></span></span></p>
-<p>估计奖项：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>=</mo></mrow><annotation encoding="application/x-tex">2=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>。</p>
-<p>总结：</p>
-<p>考场上可以再冷静一点，把复杂度算清楚，再耐心一点，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">T1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">T2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord">2</span></span></span></span>都是可以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">AC</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 的。</p>
-<hr>
-<h3 id="textttday-9-20201116"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">9</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/16</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day 9 2020/11/16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day 9 2020/11/16</span></span></span></span></span></h3>
-<p>中午 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mn>302</mn></mrow><annotation encoding="application/x-tex">B302</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord">3</span><span class="mord">0</span><span class="mord">2</span></span></span></span> 查分。</p>
-<p>官网卡了好久才进去（貌似我是唯一一个进去的）</p>
-<p>官方成绩：<code>65+50+0+0=115</code></p>
-<p>事实证明，洛谷是最靠谱的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>J</mi></mrow><annotation encoding="application/x-tex">OJ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span></span></span></span>。</p>
-<hr>
-<h3 id="textttday-end-20201121"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Day</mtext><mtext> </mtext><mtext mathvariant="monospace">END</mtext><mtext> </mtext><mtext mathvariant="monospace">2020/11/21</mtext></mrow><annotation encoding="application/x-tex">\texttt{Day END 2020/11/21}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9166599999999999em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">Day END 2020/11/21</span></span></span></span></span></h3>
-<p>在咕了一天多以后，在上晚课的时候公布了分数线。</p>
-<p>官网果然炸了。</p>
-<p>结果：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>=</mo></mrow><annotation encoding="application/x-tex">2=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>。</p>
-<p>我太菜了。</p>
-<p>本篇游记更新结束 ~</p>
 
             </div>
             
@@ -823,7 +813,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/2020-csp-j-you-ji/" title="2020 CSP-J 游记">https://zxh23682.github.io/post/2020-csp-j-you-ji/</a>
+      <a href="https://zxh23682.github.io/post/dui-lie-xue-xi-bi-ji/" title="队列学习笔记">https://zxh23682.github.io/post/dui-lie-xue-xi-bi-ji/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -832,21 +822,17 @@ int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://zxh23682.github.io/tag/gEhYv41FQ/"># 游记</a>
+      <a href="https://zxh23682.github.io/tag/7Hqj3q9M3/"># 随笔</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="C++ 常用模板" href="https://zxh23682.github.io/post/c-chang-yong-mo-ban/">C++ 常用模板</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="C++ 常用模板" href="https://zxh23682.github.io/post/c-chang-yong-mo-ban/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="洛谷 10 月月赛 II 赛后总结" href="https://zxh23682.github.io/post/luo-gu-10-yue-yue-sai-ii-sai-hou-zong-jie/">洛谷 10 月月赛 II 赛后总结</a>
-        <a class="nav-mobile-next" title="洛谷 10 月月赛 II 赛后总结" href="https://zxh23682.github.io/post/luo-gu-10-yue-yue-sai-ii-sai-hou-zong-jie/">下一篇</a>
+        <a class="nav-pc-next" title="栈学习笔记" href="https://zxh23682.github.io/post/zhan-xue-xi-bi-ji/">栈学习笔记</a>
+        <a class="nav-mobile-next" title="栈学习笔记" href="https://zxh23682.github.io/post/zhan-xue-xi-bi-ji/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
