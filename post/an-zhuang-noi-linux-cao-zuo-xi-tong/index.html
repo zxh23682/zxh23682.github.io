@@ -9,7 +9,7 @@
 <meta name="description" content="一个蒟蒻OIer">
 <meta name="theme-color" content="#91a7ff">
 <title>安装 NOI Linux 操作系统 | zxh23682 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1609150114604">
+<link rel="shortcut icon" href="/favicon.ico?v=1609845123894">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -194,7 +194,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">34</span>
+        <span class="site-item-stat-count">37</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -914,6 +914,1601 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/ti-jie-cf1453a-cancel-the-trains/"" data-c="
+          &lt;h2 id=&#34;题意&#34;&gt;题意：&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 组数据。&lt;/p&gt;
+&lt;p&gt;每组数据中给定两个长度为 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 和 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的数组，求它们中同时出现的数的个数。&lt;/p&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路：&lt;/h2&gt;
+&lt;p&gt;每次确定一个数组中的一个数，在另外一个数组中查找。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多组测试数据，不要忘记清零。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;时间复杂度 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(nm)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;code&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;Code:&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int T;
+int n,m;
+int a[105],b[105];
+int ans=0;
+int k;
+int main() {
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;T);
+	while(T--) {
+		scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+		for (int i=1; i&amp;lt;=n; i++) scanf(&amp;quot;%d&amp;quot;,&amp;amp;a[i]);
+		for (int j=1; j&amp;lt;=m; j++) scanf(&amp;quot;%d&amp;quot;,&amp;amp;b[j]);
+		for (int i=1; i&amp;lt;=n; i++) {
+			k=a[i]; //确定一个数
+			for (int j=1; j&amp;lt;=m; j++) { //查找这个数
+				if (b[j]==k) ans++;
+			}
+		}
+		printf(&amp;quot;%d\n&amp;quot;,ans);
+		ans=0; //清零
+	}
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+">题解 CF1453A 【Cancel the Trains】</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/shi-lian-chang/"" data-c="
+          &lt;h1 id=&#34;新手村&#34;&gt;新手村&lt;/h1&gt;
+&lt;p&gt;任何一个伟大的目标，都有一个微不足道的开始。&lt;/p&gt;
+&lt;h2 id=&#34;洛谷的第一个任务&#34;&gt;洛谷的第一个任务&lt;/h2&gt;
+&lt;p&gt;勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1000&#34;&gt;P1000&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1001&#34;&gt;P1001&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1421&#34;&gt;P1421&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1425&#34;&gt;P1425&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;顺序与分支&#34;&gt;顺序与分支&lt;/h2&gt;
+&lt;p&gt;计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1422&#34;&gt;P1422&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1085&#34;&gt;P1085&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1089&#34;&gt;P1089&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1909&#34;&gt;P1909&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;循环循环循环&#34;&gt;循环！循环！循环！&lt;/h2&gt;
+&lt;p&gt;计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1008&#34;&gt;P1008&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1035&#34;&gt;P1035&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1423&#34;&gt;P1423&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1424&#34;&gt;P1424&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1980&#34;&gt;P1980&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数组&#34;&gt;数组&lt;/h2&gt;
+&lt;p&gt;跟数组有关的题目基本上都要用到循环，所以请先完成1-3。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1046&#34;&gt;P1046&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1047&#34;&gt;P1047&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1427&#34;&gt;P1427&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1428&#34;&gt;P1428&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2141&#34;&gt;P2141&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1567&#34;&gt;P1567&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;简单字符串&#34;&gt;简单字符串&lt;/h2&gt;
+&lt;p&gt;计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1055&#34;&gt;P1055&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1200&#34;&gt;P1200&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1308&#34;&gt;P1308&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1553&#34;&gt;P1553&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1598&#34;&gt;P1598&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1914&#34;&gt;P1914&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;过程函数与递归&#34;&gt;过程函数与递归&lt;/h2&gt;
+&lt;p&gt;将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1028&#34;&gt;P1028&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1036&#34;&gt;P1036&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1149&#34;&gt;P1149&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1217&#34;&gt;P1217&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-入门综合练习1&#34;&gt;BOSS战-入门综合练习1&lt;/h2&gt;
+&lt;p&gt;这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1478&#34;&gt;P1478&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1618&#34;&gt;P1618&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1579&#34;&gt;P1579&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2089&#34;&gt;P2089&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-入门综合练习2&#34;&gt;BOSS战-入门综合练习2&lt;/h2&gt;
+&lt;p&gt;勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1426&#34;&gt;P1426&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1464&#34;&gt;P1464&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1014&#34;&gt;P1014&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1022&#34;&gt;P1022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1307&#34;&gt;P1307&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;普及练习场&#34;&gt;普及练习场&lt;/h1&gt;
+&lt;p&gt;普及组选手可冲刺训练，提高组选手亦可在此巩固基础。&lt;/p&gt;
+&lt;h2 id=&#34;简单的模拟&#34;&gt;简单的模拟&lt;/h2&gt;
+&lt;p&gt;开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1003&#34;&gt;P1003&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1067&#34;&gt;P1067&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1540&#34;&gt;P1540&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1056&#34;&gt;P1056&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1328&#34;&gt;P1328&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1563&#34;&gt;P1563&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;交叉模拟&#34;&gt;交叉模拟&lt;/h2&gt;
+&lt;p&gt;这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1023&#34;&gt;P1023&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1031&#34;&gt;P1031&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1042&#34;&gt;P1042&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1086&#34;&gt;P1086&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1098&#34;&gt;P1098&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3952&#34;&gt;P3952&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;排序&#34;&gt;排序&lt;/h2&gt;
+&lt;p&gt;将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1177&#34;&gt;P1177&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1059&#34;&gt;P1059&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1068&#34;&gt;P1068&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1781&#34;&gt;P1781&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;排序ex&#34;&gt;排序Ex&lt;/h2&gt;
+&lt;p&gt;这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1583&#34;&gt;P1583&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1051&#34;&gt;P1051&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1093&#34;&gt;P1093&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1309&#34;&gt;P1309&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;字符串处理&#34;&gt;字符串处理&lt;/h2&gt;
+&lt;p&gt;这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1603&#34;&gt;P1603&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1071&#34;&gt;P1071&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1012&#34;&gt;P1012&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1538&#34;&gt;P1538&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;贪心&#34;&gt;贪心&lt;/h2&gt;
+&lt;p&gt;贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1090&#34;&gt;P1090&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1181&#34;&gt;P1181&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1208&#34;&gt;P1208&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1223&#34;&gt;P1223&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1094&#34;&gt;P1094&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1803&#34;&gt;P1803&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1031&#34;&gt;P1031&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1080&#34;&gt;P1080&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;深度优先搜索&#34;&gt;深度优先搜索&lt;/h2&gt;
+&lt;p&gt;搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1219&#34;&gt;P1219&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1019&#34;&gt;P1019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1101&#34;&gt;P1101&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1605&#34;&gt;P1605&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1040&#34;&gt;P1040&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1092&#34;&gt;P1092&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;广度优先搜索&#34;&gt;广度优先搜索&lt;/h2&gt;
+&lt;p&gt;广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1162&#34;&gt;P1162&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1032&#34;&gt;P1032&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1141&#34;&gt;P1141&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1126&#34;&gt;P1126&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1443&#34;&gt;P1443&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;带有技巧的搜索&#34;&gt;带有技巧的搜索&lt;/h2&gt;
+&lt;p&gt;这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1118&#34;&gt;P1118&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1434&#34;&gt;P1434&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1433&#34;&gt;P1433&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1074&#34;&gt;P1074&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;分治算法&#34;&gt;分治算法&lt;/h2&gt;
+&lt;p&gt;将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1226&#34;&gt;P1226&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1010&#34;&gt;P1010&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1908&#34;&gt;P1908&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1498&#34;&gt;P1498&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;简单数学问题&#34;&gt;简单数学问题&lt;/h2&gt;
+&lt;p&gt;用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1088&#34;&gt;P1088&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1045&#34;&gt;P1045&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1403&#34;&gt;P1403&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1017&#34;&gt;P1017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1147&#34;&gt;P1147&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1029&#34;&gt;P1029&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;递推与递归二分&#34;&gt;递推与递归二分&lt;/h2&gt;
+&lt;p&gt;递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1192&#34;&gt;P1192&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1025&#34;&gt;P1025&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1057&#34;&gt;P1057&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1135&#34;&gt;P1135&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1216&#34;&gt;P1216&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1182&#34;&gt;P1182&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1316&#34;&gt;P1316&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;线性数据结构&#34;&gt;线性数据结构&lt;/h2&gt;
+&lt;p&gt;数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1996&#34;&gt;P1996&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1115&#34;&gt;P1115&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1739&#34;&gt;P1739&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1160&#34;&gt;P1160&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1449&#34;&gt;P1449&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;树形数据结构&#34;&gt;树形数据结构&lt;/h2&gt;
+&lt;p&gt;由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1087&#34;&gt;P1087&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1030&#34;&gt;P1030&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1305&#34;&gt;P1305&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P5018&#34;&gt;P5018&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划的背包问题&#34;&gt;动态规划的背包问题&lt;/h2&gt;
+&lt;p&gt;这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1060&#34;&gt;P1060&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1164&#34;&gt;P1164&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1064&#34;&gt;P1064&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1048&#34;&gt;P1048&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1049&#34;&gt;P1049&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1616&#34;&gt;P1616&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;线性动态规划&#34;&gt;线性动态规划&lt;/h2&gt;
+&lt;p&gt;这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1020&#34;&gt;P1020&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1091&#34;&gt;P1091&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1280&#34;&gt;P1280&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1880&#34;&gt;P1880&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1140&#34;&gt;P1140&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1282&#34;&gt;P1282&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;多维动态规划&#34;&gt;多维动态规划&lt;/h2&gt;
+&lt;p&gt;这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1508&#34;&gt;P1508&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1006&#34;&gt;P1006&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1387&#34;&gt;P1387&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1417&#34;&gt;P1417&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1855&#34;&gt;P1855&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1736&#34;&gt;P1736&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;更要技巧的动规与记忆化&#34;&gt;更要技巧的动规与记忆化&lt;/h2&gt;
+&lt;p&gt;这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1064&#34;&gt;P1064&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1541&#34;&gt;P1541&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1026&#34;&gt;P1026&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1063&#34;&gt;P1063&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1156&#34;&gt;P1156&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1052&#34;&gt;P1052&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高精度算法&#34;&gt;高精度算法&lt;/h2&gt;
+&lt;p&gt;就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1601&#34;&gt;P1601&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2142&#34;&gt;P2142&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1303&#34;&gt;P1303&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1255&#34;&gt;P1255&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1604&#34;&gt;P1604&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;贪心ex&#34;&gt;贪心EX&lt;/h2&gt;
+&lt;p&gt;虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1080&#34;&gt;P1080&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1031&#34;&gt;P1031&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1233&#34;&gt;P1233&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2123&#34;&gt;P2123&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;简单数学&#34;&gt;简单数学&lt;/h2&gt;
+&lt;p&gt;数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1865&#34;&gt;P1865&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1372&#34;&gt;P1372&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1338&#34;&gt;P1338&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2158&#34;&gt;P2158&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1582&#34;&gt;P1582&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-普及综合练习1&#34;&gt;BOSS战-普及综合练习1&lt;/h2&gt;
+&lt;p&gt;好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1478&#34;&gt;P1478&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1203&#34;&gt;P1203&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1363&#34;&gt;P1363&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1736&#34;&gt;P1736&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-普及综合练习2&#34;&gt;BOSS战-普及综合练习2&lt;/h2&gt;
+&lt;p&gt;来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1201&#34;&gt;P1201&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1095&#34;&gt;P1095&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1058&#34;&gt;P1058&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2258&#34;&gt;P2258&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1108&#34;&gt;P1108&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-普及综合练习3&#34;&gt;BOSS战-普及综合练习3&lt;/h2&gt;
+&lt;p&gt;普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1328&#34;&gt;P1328&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1062&#34;&gt;P1062&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1969&#34;&gt;P1969&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1037&#34;&gt;P1037&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;普及常见模板&#34;&gt;普及常见模板&lt;/h2&gt;
+&lt;p&gt;这里集中了比较基础的算法的模板。提高和省选也有模板题哦！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1177&#34;&gt;P1177&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3366&#34;&gt;P3366&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3367&#34;&gt;P3367&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3371&#34;&gt;P3371&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3383&#34;&gt;P3383&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;提高历练地&#34;&gt;提高历练地&lt;/h1&gt;
+&lt;p&gt;已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！&lt;/p&gt;
+&lt;h2 id=&#34;搜索ex&#34;&gt;搜索Ex&lt;/h2&gt;
+&lt;p&gt;开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1120&#34;&gt;P1120&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1378&#34;&gt;P1378&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1514&#34;&gt;P1514&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1312&#34;&gt;P1312&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1441&#34;&gt;P1441&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1242&#34;&gt;P1242&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划tglv1&#34;&gt;动态规划TG.lv(1)&lt;/h2&gt;
+&lt;p&gt;这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1005&#34;&gt;P1005&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1373&#34;&gt;P1373&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2279&#34;&gt;P2279&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1220&#34;&gt;P1220&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1156&#34;&gt;P1156&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划tglv2&#34;&gt;动态规划TG.lv(2)&lt;/h2&gt;
+&lt;p&gt;这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1273&#34;&gt;P1273&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1169&#34;&gt;P1169&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2577&#34;&gt;P2577&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1070&#34;&gt;P1070&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2051&#34;&gt;P2051&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划tglv3&#34;&gt;动态规划TG.lv(3)&lt;/h2&gt;
+&lt;p&gt;比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1415&#34;&gt;P1415&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2157&#34;&gt;P2157&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2216&#34;&gt;P2216&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2331&#34;&gt;P2331&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2467&#34;&gt;P2467&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3084&#34;&gt;P3084&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数论&#34;&gt;数论&lt;/h2&gt;
+&lt;p&gt;数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2152&#34;&gt;P2152&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1414&#34;&gt;P1414&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1134&#34;&gt;P1134&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1313&#34;&gt;P1313&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1306&#34;&gt;P1306&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;博弈论&#34;&gt;博弈论&lt;/h2&gt;
+&lt;p&gt;博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1199&#34;&gt;P1199&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1288&#34;&gt;P1288&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1290&#34;&gt;P1290&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2148&#34;&gt;P2148&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1247&#34;&gt;P1247&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2575&#34;&gt;P2575&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;其他数学问题&#34;&gt;其他数学问题&lt;/h2&gt;
+&lt;p&gt;听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1357&#34;&gt;P1357&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1641&#34;&gt;P1641&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2059&#34;&gt;P2059&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2154&#34;&gt;P2154&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2261&#34;&gt;P2261&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2327&#34;&gt;P2327&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1066&#34;&gt;P1066&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;图的遍历&#34;&gt;图的遍历&lt;/h2&gt;
+&lt;p&gt;图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2661&#34;&gt;P2661&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1330&#34;&gt;P1330&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1341&#34;&gt;P1341&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2921&#34;&gt;P2921&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最短路问题&#34;&gt;最短路问题&lt;/h2&gt;
+&lt;p&gt;最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1339&#34;&gt;P1339&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1462&#34;&gt;P1462&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1346&#34;&gt;P1346&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1119&#34;&gt;P1119&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1144&#34;&gt;P1144&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1522&#34;&gt;P1522&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最小生成树&#34;&gt;最小生成树&lt;/h2&gt;
+&lt;p&gt;最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1546&#34;&gt;P1546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2330&#34;&gt;P2330&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1991&#34;&gt;P1991&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1265&#34;&gt;P1265&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;较复杂图论i&#34;&gt;较复杂图论I&lt;/h2&gt;
+&lt;p&gt;别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1113&#34;&gt;P1113&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1268&#34;&gt;P1268&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1525&#34;&gt;P1525&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1983&#34;&gt;P1983&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;较复杂图论ii&#34;&gt;较复杂图论II&lt;/h2&gt;
+&lt;p&gt;更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1993&#34;&gt;P1993&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1726&#34;&gt;P1726&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2055&#34;&gt;P2055&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2149&#34;&gt;P2149&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1345&#34;&gt;P1345&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;并查集&#34;&gt;并查集&lt;/h2&gt;
+&lt;p&gt;用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1111&#34;&gt;P1111&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2024&#34;&gt;P2024&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1197&#34;&gt;P1197&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1196&#34;&gt;P1196&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;堆&#34;&gt;堆&lt;/h2&gt;
+&lt;p&gt;堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1801&#34;&gt;P1801&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2278&#34;&gt;P2278&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1631&#34;&gt;P1631&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2085&#34;&gt;P2085&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1484&#34;&gt;P1484&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;线段树树状数组基础&#34;&gt;线段树树状数组基础&lt;/h2&gt;
+&lt;p&gt;这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1972&#34;&gt;P1972&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1198&#34;&gt;P1198&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2023&#34;&gt;P2023&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2161&#34;&gt;P2161&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;神奇的解法&#34;&gt;神奇的解法&lt;/h2&gt;
+&lt;p&gt;有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1007&#34;&gt;P1007&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1984&#34;&gt;P1984&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2022&#34;&gt;P2022&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2320&#34;&gt;P2320&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;倍增&#34;&gt;倍增&lt;/h2&gt;
+&lt;p&gt;一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1967&#34;&gt;P1967&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1081&#34;&gt;P1081&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1613&#34;&gt;P1613&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;强连通分量&#34;&gt;强连通分量&lt;/h2&gt;
+&lt;p&gt;强连通分量&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2341&#34;&gt;P2341&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3469&#34;&gt;P3469&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2746&#34;&gt;P2746&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3119&#34;&gt;P3119&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3225&#34;&gt;P3225&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-提高综合练习1&#34;&gt;BOSS战-提高综合练习1&lt;/h2&gt;
+&lt;p&gt;年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2264&#34;&gt;P2264&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1772&#34;&gt;P1772&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1083&#34;&gt;P1083&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1979&#34;&gt;P1979&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2939&#34;&gt;P2939&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-提高综合练习2&#34;&gt;BOSS战-提高综合练习2&lt;/h2&gt;
+&lt;p&gt;再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1901&#34;&gt;P1901&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1314&#34;&gt;P1314&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2144&#34;&gt;P2144&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1073&#34;&gt;P1073&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2324&#34;&gt;P2324&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;boss战-提高综合练习3&#34;&gt;BOSS战-提高综合练习3&lt;/h2&gt;
+&lt;p&gt;既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1965&#34;&gt;P1965&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1311&#34;&gt;P1311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2296&#34;&gt;P2296&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1084&#34;&gt;P1084&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;提高模板-nlogn数据结构&#34;&gt;提高模板-nlogn数据结构&lt;/h2&gt;
+&lt;p&gt;虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3374&#34;&gt;P3374&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3368&#34;&gt;P3368&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3372&#34;&gt;P3372&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3373&#34;&gt;P3373&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1439&#34;&gt;P1439&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3378&#34;&gt;P3378&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;省选斗兽场noi神殿&#34;&gt;省选斗兽场/NOI神殿&lt;/h1&gt;
+&lt;p&gt;为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。&lt;/p&gt;
+&lt;h2 id=&#34;省选基础-读入输出优化&#34;&gt;省选基础-读入/输出优化&lt;/h2&gt;
+&lt;p&gt;读入/输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1580&#34;&gt;P1580&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2393&#34;&gt;P2393&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2394&#34;&gt;P2394&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;省选基础-位运算&#34;&gt;省选基础-位运算&lt;/h2&gt;
+&lt;p&gt;位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2114&#34;&gt;P2114&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2396&#34;&gt;P2396&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2397&#34;&gt;P2397&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;省选基础-打表&#34;&gt;省选基础-打表&lt;/h2&gt;
+&lt;p&gt;打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1149&#34;&gt;P1149&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1463&#34;&gt;P1463&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1896&#34;&gt;P1896&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划1&#34;&gt;动态规划1&lt;/h2&gt;
+&lt;p&gt;动态规划&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2051&#34;&gt;P2051&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1879&#34;&gt;P1879&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1850&#34;&gt;P1850&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2831&#34;&gt;P2831&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1131&#34;&gt;P1131&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1169&#34;&gt;P1169&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态规划2&#34;&gt;动态规划2&lt;/h2&gt;
+&lt;p&gt;动态规划&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1273&#34;&gt;P1273&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3648&#34;&gt;P3648&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2519&#34;&gt;P2519&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2515&#34;&gt;P2515&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3233&#34;&gt;P3233&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2501&#34;&gt;P2501&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;网络流最大流&#34;&gt;网络流——最大流&lt;/h2&gt;
+&lt;p&gt;最大流&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2765&#34;&gt;P2765&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2764&#34;&gt;P2764&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2763&#34;&gt;P2763&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2766&#34;&gt;P2766&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2774&#34;&gt;P2774&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2805&#34;&gt;P2805&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;网络流费用流&#34;&gt;网络流——费用流&lt;/h2&gt;
+&lt;p&gt;费用流&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2153&#34;&gt;P2153&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2053&#34;&gt;P2053&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3159&#34;&gt;P3159&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2604&#34;&gt;P2604&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2050&#34;&gt;P2050&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3980&#34;&gt;P3980&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;单调队列&#34;&gt;单调队列&lt;/h2&gt;
+&lt;p&gt;单调队列&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2698&#34;&gt;P2698&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2216&#34;&gt;P2216&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2219&#34;&gt;P2219&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2564&#34;&gt;P2564&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2569&#34;&gt;P2569&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;概率期望&#34;&gt;概率期望&lt;/h2&gt;
+&lt;p&gt;概率期望&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2473&#34;&gt;P2473&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2221&#34;&gt;P2221&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3317&#34;&gt;P3317&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3343&#34;&gt;P3343&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3600&#34;&gt;P3600&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3830&#34;&gt;P3830&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;二分图&#34;&gt;二分图&lt;/h2&gt;
+&lt;p&gt;二分图&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3386&#34;&gt;P3386&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1640&#34;&gt;P1640&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1129&#34;&gt;P1129&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1963&#34;&gt;P1963&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3231&#34;&gt;P3231&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2526&#34;&gt;P2526&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;点分治&#34;&gt;点分治&lt;/h2&gt;
+&lt;p&gt;点分治&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2634&#34;&gt;P2634&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2664&#34;&gt;P2664&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3806&#34;&gt;P3806&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3676&#34;&gt;P3676&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;后缀数组&#34;&gt;后缀数组&lt;/h2&gt;
+&lt;p&gt;后缀数组&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3809&#34;&gt;P3809&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1117&#34;&gt;P1117&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2178&#34;&gt;P2178&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2463&#34;&gt;P2463&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2336&#34;&gt;P2336&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;主席树&#34;&gt;主席树&lt;/h2&gt;
+&lt;p&gt;主席树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2468&#34;&gt;P2468&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3157&#34;&gt;P3157&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3302&#34;&gt;P3302&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3168&#34;&gt;P3168&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3313&#34;&gt;P3313&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数位dp&#34;&gt;数位DP&lt;/h2&gt;
+&lt;p&gt;数位DP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2602&#34;&gt;P2602&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3281&#34;&gt;P3281&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2518&#34;&gt;P2518&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2606&#34;&gt;P2606&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ac自动机&#34;&gt;AC自动机&lt;/h2&gt;
+&lt;p&gt;AC自动机&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3808&#34;&gt;P3808&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3796&#34;&gt;P3796&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2444&#34;&gt;P2444&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2414&#34;&gt;P2414&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;平衡树&#34;&gt;平衡树&lt;/h2&gt;
+&lt;p&gt;平衡树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2042&#34;&gt;P2042&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2596&#34;&gt;P2596&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1110&#34;&gt;P1110&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3285&#34;&gt;P3285&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3644&#34;&gt;P3644&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3765&#34;&gt;P3765&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3369&#34;&gt;P3369&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;树链剖分&#34;&gt;树链剖分&lt;/h2&gt;
+&lt;p&gt;树链剖分&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2590&#34;&gt;P2590&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2486&#34;&gt;P2486&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2146&#34;&gt;P2146&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3258&#34;&gt;P3258&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3178&#34;&gt;P3178&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;动态树&#34;&gt;动态树&lt;/h2&gt;
+&lt;p&gt;动态树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3690&#34;&gt;P3690&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2387&#34;&gt;P2387&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3203&#34;&gt;P3203&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3348&#34;&gt;P3348&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;树套树&#34;&gt;树套树&lt;/h2&gt;
+&lt;p&gt;树套树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1903&#34;&gt;P1903&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3157&#34;&gt;P3157&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3332&#34;&gt;P3332&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2166&#34;&gt;P2166&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3380&#34;&gt;P3380&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2137&#34;&gt;P2137&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3759&#34;&gt;P3759&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;可持久化trie树&#34;&gt;可持久化Trie树&lt;/h2&gt;
+&lt;p&gt;可持久化Trie树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2048&#34;&gt;P2048&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3527&#34;&gt;P3527&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3302&#34;&gt;P3302&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3168&#34;&gt;P3168&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3242&#34;&gt;P3242&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3241&#34;&gt;P3241&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3293&#34;&gt;P3293&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;莫队算法&#34;&gt;莫队算法&lt;/h2&gt;
+&lt;p&gt;莫队算法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1972&#34;&gt;P1972&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2336&#34;&gt;P2336&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3709&#34;&gt;P3709&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2709&#34;&gt;P2709&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3674&#34;&gt;P3674&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;分块&#34;&gt;分块&lt;/h2&gt;
+&lt;p&gt;分块&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1972&#34;&gt;P1972&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3396&#34;&gt;P3396&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1822&#34;&gt;P1822&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2801&#34;&gt;P2801&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3203&#34;&gt;P3203&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;莫比乌斯反演&#34;&gt;莫比乌斯反演&lt;/h2&gt;
+&lt;p&gt;莫比乌斯反演&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3768&#34;&gt;P3768&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3172&#34;&gt;P3172&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3455&#34;&gt;P3455&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2522&#34;&gt;P2522&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3327&#34;&gt;P3327&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;其他&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3377&#34;&gt;P3377&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3261&#34;&gt;P3261&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3382&#34;&gt;P3382&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2571&#34;&gt;P2571&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3222&#34;&gt;P3222&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3187&#34;&gt;P3187&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3199&#34;&gt;P3199&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3292&#34;&gt;P3292&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2824&#34;&gt;P2824&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3285&#34;&gt;P3285&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1552&#34;&gt;P1552&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;usaco&#34;&gt;USACO&lt;/h1&gt;
+&lt;p&gt;美国经典的算法练习题库，值得一刷&lt;/p&gt;
+&lt;h2 id=&#34;usaco-section-11&#34;&gt;USACO Section 1.1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1200&#34;&gt;P1200&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1201&#34;&gt;P1201&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1202&#34;&gt;P1202&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1203&#34;&gt;P1203&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-12&#34;&gt;USACO Section 1.2&lt;/h2&gt;
+&lt;p&gt;完全枚举&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3864&#34;&gt;P3864&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1204&#34;&gt;P1204&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1205&#34;&gt;P1205&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1206&#34;&gt;P1206&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1207&#34;&gt;P1207&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-13&#34;&gt;USACO Section 1.3&lt;/h2&gt;
+&lt;p&gt;贪心&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1208&#34;&gt;P1208&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1209&#34;&gt;P1209&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1211&#34;&gt;P1211&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1444&#34;&gt;P1444&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P3650&#34;&gt;P3650&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2693&#34;&gt;P2693&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-14&#34;&gt;USACO Section 1.4&lt;/h2&gt;
+&lt;p&gt;有技巧的枚举&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1214&#34;&gt;P1214&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1215&#34;&gt;P1215&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-15&#34;&gt;USACO Section 1.5&lt;/h2&gt;
+&lt;p&gt;二进制数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1216&#34;&gt;P1216&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1217&#34;&gt;P1217&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1218&#34;&gt;P1218&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-21&#34;&gt;USACO Section 2.1&lt;/h2&gt;
+&lt;p&gt;图论和洪水填充&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1457&#34;&gt;P1457&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1458&#34;&gt;P1458&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1459&#34;&gt;P1459&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1460&#34;&gt;P1460&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1461&#34;&gt;P1461&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-22&#34;&gt;USACO Section 2.2&lt;/h2&gt;
+&lt;p&gt;数据结构与动态规划&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1465&#34;&gt;P1465&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1466&#34;&gt;P1466&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1467&#34;&gt;P1467&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1468&#34;&gt;P1468&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-23&#34;&gt;USACO Section 2.3&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1470&#34;&gt;P1470&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1472&#34;&gt;P1472&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1473&#34;&gt;P1473&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1474&#34;&gt;P1474&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1475&#34;&gt;P1475&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-24&#34;&gt;USACO Section 2.4&lt;/h2&gt;
+&lt;p&gt;最短路径&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1518&#34;&gt;P1518&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1519&#34;&gt;P1519&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1522&#34;&gt;P1522&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1529&#34;&gt;P1529&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1530&#34;&gt;P1530&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-31&#34;&gt;USACO Section 3.1&lt;/h2&gt;
+&lt;p&gt;最小生成树&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1546&#34;&gt;P1546&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2722&#34;&gt;P2722&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2723&#34;&gt;P2723&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2724&#34;&gt;P2724&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2725&#34;&gt;P2725&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-32&#34;&gt;USACO Section 3.2&lt;/h2&gt;
+&lt;p&gt;背包问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1134&#34;&gt;P1134&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2727&#34;&gt;P2727&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2728&#34;&gt;P2728&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2729&#34;&gt;P2729&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2730&#34;&gt;P2730&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1828&#34;&gt;P1828&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-33&#34;&gt;USACO Section 3.3&lt;/h2&gt;
+&lt;p&gt;欧拉回路&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2731&#34;&gt;P2731&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2732&#34;&gt;P2732&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1930&#34;&gt;P1930&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2733&#34;&gt;P2733&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2734&#34;&gt;P2734&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-34&#34;&gt;USACO Section 3.4&lt;/h2&gt;
+&lt;p&gt;计算几何&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1827&#34;&gt;P1827&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2735&#34;&gt;P2735&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2736&#34;&gt;P2736&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-41&#34;&gt;USACO Section 4.1&lt;/h2&gt;
+&lt;p&gt;最优化&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2737&#34;&gt;P2737&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2738&#34;&gt;P2738&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-42&#34;&gt;USACO Section 4.2&lt;/h2&gt;
+&lt;p&gt;网络流&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2740&#34;&gt;P2740&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1894&#34;&gt;P1894&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2751&#34;&gt;P2751&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-43&#34;&gt;USACO Section 4.3&lt;/h2&gt;
+&lt;p&gt;高精度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2687&#34;&gt;P2687&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2752&#34;&gt;P2752&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2753&#34;&gt;P2753&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-44&#34;&gt;USACO Section 4.4&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1344&#34;&gt;P1344&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2739&#34;&gt;P2739&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2741&#34;&gt;P2741&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-51&#34;&gt;USACO Section 5.1&lt;/h2&gt;
+&lt;p&gt;二维凸包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2742&#34;&gt;P2742&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2743&#34;&gt;P2743&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2749&#34;&gt;P2749&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-52&#34;&gt;USACO Section 5.2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1560&#34;&gt;P1560&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-53&#34;&gt;USACO Section 5.3&lt;/h2&gt;
+&lt;p&gt;启发式搜索&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2701&#34;&gt;P2701&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2744&#34;&gt;P2744&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2745&#34;&gt;P2745&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2746&#34;&gt;P2746&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-54&#34;&gt;USACO Section 5.4&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1345&#34;&gt;P1345&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2747&#34;&gt;P2747&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2748&#34;&gt;P2748&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usaco-section-55&#34;&gt;USACO Section 5.5&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1709&#34;&gt;P1709&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P1856&#34;&gt;P1856&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/problem/P2750&#34;&gt;P2750&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;[
+  {
+    &amp;quot;name&amp;quot;: &amp;quot;新手村&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;任何一个伟大的目标，都有一个微不足道的开始。&amp;quot;,
+    &amp;quot;subtasks&amp;quot;: [
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;洛谷的第一个任务&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;勇敢的迈出第一步，了解下语言和洛谷。跟着书本和老师走，不会难的。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1000&amp;quot;, &amp;quot;P1001&amp;quot;, &amp;quot;P1421&amp;quot;, &amp;quot;P1425&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;顺序与分支&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;计算机的智能性开始得以体现，因为计算机能够根据不同的条件选择了。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1422&amp;quot;, &amp;quot;P1085&amp;quot;, &amp;quot;P1089&amp;quot;, &amp;quot;P1909&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;循环！循环！循环！&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;计算机最不怕的就是重复。你让它做10000次同样的事它也不怕啦，但是让他做1亿亿次的话……&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1008&amp;quot;, &amp;quot;P1035&amp;quot;, &amp;quot;P1423&amp;quot;, &amp;quot;P1424&amp;quot;, &amp;quot;P1980&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;数组&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;跟数组有关的题目基本上都要用到循环，所以请先完成1-3。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1046&amp;quot;, &amp;quot;P1047&amp;quot;, &amp;quot;P1427&amp;quot;, &amp;quot;P1428&amp;quot;, &amp;quot;P2141&amp;quot;, &amp;quot;P1567&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;简单字符串&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;计算机不仅可以处理数字，还能处理文字！就是其实跟数字也没什么差。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1055&amp;quot;, &amp;quot;P1200&amp;quot;, &amp;quot;P1308&amp;quot;, &amp;quot;P1553&amp;quot;, &amp;quot;P1598&amp;quot;, &amp;quot;P1914&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;过程函数与递归&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;将代码串进行打包，就是过程与函数。过程与函数调用自己则为递归。有一点小难但不要怕哦。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1028&amp;quot;, &amp;quot;P1036&amp;quot;, &amp;quot;P1149&amp;quot;, &amp;quot;P1217&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-入门综合练习1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里将前面的内容综合起来了，会有点难，不过你可以问老师同学，也能上网查资料。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1478&amp;quot;, &amp;quot;P1618&amp;quot;, &amp;quot;P1579&amp;quot;, &amp;quot;P2089&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-入门综合练习2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;勇士，竟然来到了BOSS的老巢！来一场恶斗，证明自己的实力，解锁下一个级别！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1426&amp;quot;, &amp;quot;P1464&amp;quot;, &amp;quot;P1014&amp;quot;, &amp;quot;P1022&amp;quot;, &amp;quot;P1307&amp;quot;]
+      }
+    ]
+  },
+  {
+    &amp;quot;name&amp;quot;: &amp;quot;普及练习场&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;普及组选手可冲刺训练，提高组选手亦可在此巩固基础。&amp;quot;,
+    &amp;quot;subtasks&amp;quot;: [
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;简单的模拟&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;开始普及组的训练！所谓模拟，就是直接根据题意编写，思维难度简单。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1003&amp;quot;, &amp;quot;P1067&amp;quot;, &amp;quot;P1540&amp;quot;, &amp;quot;P1056&amp;quot;, &amp;quot;P1328&amp;quot;, &amp;quot;P1563&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;交叉模拟&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里也是模拟，但是会混有些别的部分。思维难度不大，但是编写起来会有些难度。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1023&amp;quot;, &amp;quot;P1031&amp;quot;, &amp;quot;P1042&amp;quot;, &amp;quot;P1086&amp;quot;, &amp;quot;P1098&amp;quot;, &amp;quot;P3952&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;排序&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;将杂乱无章的数据变得有规律。有各种各样的排序算法，看情况使用。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1177&amp;quot;, &amp;quot;P1059&amp;quot;, &amp;quot;P1068&amp;quot;, &amp;quot;P1781&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;排序Ex&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里的排序就更上一层了。不仅融合了别的算法与技巧，排序本身也有各种花招。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1583&amp;quot;, &amp;quot;P1051&amp;quot;, &amp;quot;P1093&amp;quot;, &amp;quot;P1309&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;字符串处理&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里的字符串处理还会变得更加的有意思，难度也更大。需要好好地思考一下。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1603&amp;quot;, &amp;quot;P1071&amp;quot;, &amp;quot;P1012&amp;quot;, &amp;quot;P1538&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;贪心&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;贪心就是只考虑眼前的利益。对于我们人生来说太贪是不好的，不过oi中，有时是对的。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1090&amp;quot;, &amp;quot;P1181&amp;quot;, &amp;quot;P1208&amp;quot;, &amp;quot;P1223&amp;quot;, &amp;quot;P1094&amp;quot;, &amp;quot;P1803&amp;quot;, &amp;quot;P1031&amp;quot;, &amp;quot;P1080&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;深度优先搜索&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;搜索可以穷举各种情况。很多题目都可以用搜索完成。就算不能，搜索也是骗分神器。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1219&amp;quot;, &amp;quot;P1019&amp;quot;, &amp;quot;P1101&amp;quot;, &amp;quot;P1605&amp;quot;, &amp;quot;P1040&amp;quot;, &amp;quot;P1092&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;广度优先搜索&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;广度优先搜索可以用来找有关“最短步数”的问题。恩，也可以用来“地毯式搜索”。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1162&amp;quot;, &amp;quot;P1032&amp;quot;, &amp;quot;P1141&amp;quot;, &amp;quot;P1126&amp;quot;, &amp;quot;P1443&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;带有技巧的搜索&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里的搜索不仅包含了dfs和bfs，还包括剪枝、记录等技巧以加快速度。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1118&amp;quot;, &amp;quot;P1434&amp;quot;, &amp;quot;P1433&amp;quot;, &amp;quot;P1074&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;分治算法&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;将大问题拆分为小问题，分而治之，各个击破，然后在合并回来。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1226&amp;quot;, &amp;quot;P1010&amp;quot;, &amp;quot;P1908&amp;quot;, &amp;quot;P1498&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;简单数学问题&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;用计算机解决某些麻烦数学问题，再合适不过了。这真是绝妙的搭配啊！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1088&amp;quot;, &amp;quot;P1045&amp;quot;, &amp;quot;P1403&amp;quot;, &amp;quot;P1017&amp;quot;, &amp;quot;P1147&amp;quot;, &amp;quot;P1029&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;递推与递归二分&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;递推，层层递进，由基础推向顶层。二分不仅可以用来查找数据，还可以确定最合适的值。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1192&amp;quot;, &amp;quot;P1025&amp;quot;, &amp;quot;P1057&amp;quot;, &amp;quot;P1135&amp;quot;, &amp;quot;P1216&amp;quot;, &amp;quot;P1182&amp;quot;, &amp;quot;P1316&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;线性数据结构&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;数组，链表，队列，栈，都是线性结构。巧用这些结构可以做出不少方便的事情。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1996&amp;quot;, &amp;quot;P1115&amp;quot;, &amp;quot;P1739&amp;quot;, &amp;quot;P1160&amp;quot;, &amp;quot;P1449&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;树形数据结构&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;由一个根节点分叉，越分越多，就成了树。树可以表示数据之间的从属关系&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1087&amp;quot;, &amp;quot;P1030&amp;quot;, &amp;quot;P1305&amp;quot;, &amp;quot;P5018&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划的背包问题&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这是最基础的动态规划。不过如果是第一次接触会有些难以理解。加油闯过这个坎。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1060&amp;quot;, &amp;quot;P1164&amp;quot;, &amp;quot;P1064&amp;quot;, &amp;quot;P1048&amp;quot;, &amp;quot;P1049&amp;quot;, &amp;quot;P1616&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;线性动态规划&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这也是基础的动态规划。是在线性结构上面的动态规划，一定要掌握。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1020&amp;quot;, &amp;quot;P1091&amp;quot;, &amp;quot;P1280&amp;quot;, &amp;quot;P1880&amp;quot;, &amp;quot;P1140&amp;quot;, &amp;quot;P1282&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;多维动态规划&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里的动态规划就不止一维了。不仅要小心时间复杂度，也要注意空间复杂度。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1508&amp;quot;, &amp;quot;P1006&amp;quot;, &amp;quot;P1387&amp;quot;, &amp;quot;P1417&amp;quot;, &amp;quot;P1855&amp;quot;, &amp;quot;P1736&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;更要技巧的动规与记忆化&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这边的题目有各种搞法。当然有的题目也可以使用记忆化搜索来降低思维难度。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1064&amp;quot;, &amp;quot;P1541&amp;quot;, &amp;quot;P1026&amp;quot;, &amp;quot;P1063&amp;quot;, &amp;quot;P1156&amp;quot;, &amp;quot;P1052&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;高精度算法&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;就算是long long（或int64）还不够怎么办？用高精度算法。自己动手丰衣足食。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1601&amp;quot;, &amp;quot;P2142&amp;quot;, &amp;quot;P1303&amp;quot;, &amp;quot;P1255&amp;quot;, &amp;quot;P1604&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;贪心EX&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;虽然是贪心题，可能不是你当时你虐着玩的贪心惹qwq&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1080&amp;quot;, &amp;quot;P1031&amp;quot;, &amp;quot;P1233&amp;quot;, &amp;quot;P2123&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;简单数学&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;数学和oi是密切相关的，数学不仅是oi的基础，而且是算法的核心。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1865&amp;quot;, &amp;quot;P1372&amp;quot;, &amp;quot;P1338&amp;quot;, &amp;quot;P2158&amp;quot;, &amp;quot;P1582&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-普及综合练习1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;好不容易闯到这一关，你那还等什么呢？抄起家伙赶快上啊！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1478&amp;quot;, &amp;quot;P1203&amp;quot;, &amp;quot;P1363&amp;quot;, &amp;quot;P1736&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-普及综合练习2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;来搞定第二个BOSS。虽然战斗艰难，但你一定没有问题。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1201&amp;quot;, &amp;quot;P1095&amp;quot;, &amp;quot;P1058&amp;quot;, &amp;quot;P2258&amp;quot;, &amp;quot;P1108&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-普及综合练习3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;普及练习场的大BOSS：“一定让你有去无回”。怎么办呢？只能打倒他开启下一个级别！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1328&amp;quot;, &amp;quot;P1062&amp;quot;, &amp;quot;P1969&amp;quot;, &amp;quot;P1037&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;普及常见模板&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里集中了比较基础的算法的模板。提高和省选也有模板题哦！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1177&amp;quot;, &amp;quot;P3366&amp;quot;, &amp;quot;P3367&amp;quot;, &amp;quot;P3371&amp;quot;, &amp;quot;P3383&amp;quot;]
+      }
+    ]
+  },
+  {
+    &amp;quot;name&amp;quot;: &amp;quot;提高历练地&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;已经去除了普及组难度的，请组织放心。成长大牛之必写题！！！&amp;quot;,
+    &amp;quot;subtasks&amp;quot;: [
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;搜索Ex&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;开始提高组的试炼。这里已经去除了所有普及组难度的题目。哼哼，怕了吧。。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1120&amp;quot;, &amp;quot;P1378&amp;quot;, &amp;quot;P1514&amp;quot;, &amp;quot;P1312&amp;quot;, &amp;quot;P1441&amp;quot;, &amp;quot;P1242&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划TG.lv(1)&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这是提高组难度中比较基础的动态规划，也许一两个转移方程就可以写出。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1005&amp;quot;, &amp;quot;P1373&amp;quot;, &amp;quot;P2279&amp;quot;, &amp;quot;P1220&amp;quot;, &amp;quot;P1156&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划TG.lv(2)&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这里的动态规划稍稍有所加大难度，思考转移方程的时间可能会与编写程序的时间持平。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1273&amp;quot;, &amp;quot;P1169&amp;quot;, &amp;quot;P2577&amp;quot;, &amp;quot;P1070&amp;quot;, &amp;quot;P2051&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划TG.lv(3)&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;比较需要技巧的动态规划。有的不仅仅需要状态转移方程，可能还会与别的算法综合。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1415&amp;quot;, &amp;quot;P2157&amp;quot;, &amp;quot;P2216&amp;quot;, &amp;quot;P2331&amp;quot;, &amp;quot;P2467&amp;quot;, &amp;quot;P3084&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;数论&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;数论就是研究整数的理论。包括公约公倍数、质数、欧拉定理和同余方程等。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2152&amp;quot;, &amp;quot;P1414&amp;quot;, &amp;quot;P1134&amp;quot;, &amp;quot;P1313&amp;quot;, &amp;quot;P1306&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;博弈论&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1199&amp;quot;, &amp;quot;P1288&amp;quot;, &amp;quot;P1290&amp;quot;, &amp;quot;P2148&amp;quot;, &amp;quot;P1247&amp;quot;, &amp;quot;P2575&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;其他数学问题&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;听说学oi的同志们数学都挺好。那么。就请完成下面的题目证明这一点吧！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1357&amp;quot;, &amp;quot;P1641&amp;quot;, &amp;quot;P2059&amp;quot;, &amp;quot;P2154&amp;quot;, &amp;quot;P2261&amp;quot;, &amp;quot;P2327&amp;quot;, &amp;quot;P1066&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;图的遍历&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;图是一种非常重要的数据结构，描述对象复杂的练习。这里开始接触图的基本概念。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2661&amp;quot;, &amp;quot;P1330&amp;quot;, &amp;quot;P1341&amp;quot;, &amp;quot;P2921&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;最短路问题&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最短路是图论中最重要的部分，多种算法可以应用。很多题目都可以抽象成这种模型。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1339&amp;quot;, &amp;quot;P1462&amp;quot;, &amp;quot;P1346&amp;quot;, &amp;quot;P1119&amp;quot;, &amp;quot;P1144&amp;quot;, &amp;quot;P1522&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;最小生成树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最小生成树可以用kruskal（克鲁斯卡尔）算法或prim（普里姆）算法求出。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1546&amp;quot;, &amp;quot;P2330&amp;quot;, &amp;quot;P1991&amp;quot;, &amp;quot;P1265&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;较复杂图论I&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;别的些图论问题，包括树、拓扑排序等。要过这一关，需要学习不少新的算法。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1113&amp;quot;, &amp;quot;P1268&amp;quot;, &amp;quot;P1525&amp;quot;, &amp;quot;P1983&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;较复杂图论II&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;更高级的图论算法。包括差分约束、强连通、二分图等。会更难一些。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1993&amp;quot;, &amp;quot;P1726&amp;quot;, &amp;quot;P2055&amp;quot;, &amp;quot;P2149&amp;quot;, &amp;quot;P1345&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;并查集&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1111&amp;quot;, &amp;quot;P2024&amp;quot;, &amp;quot;P1197&amp;quot;, &amp;quot;P1196&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;堆&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;堆总是一棵完全树；堆中某个节点的值总是不大于或不小于其父节点的值。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1801&amp;quot;, &amp;quot;P2278&amp;quot;, &amp;quot;P1631&amp;quot;, &amp;quot;P2085&amp;quot;, &amp;quot;P1484&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;线段树树状数组基础&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;这都是比较高级的线性数据结构。在处理一些询问与修改线性问题时，是很好用的。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1972&amp;quot;, &amp;quot;P1198&amp;quot;, &amp;quot;P2023&amp;quot;, &amp;quot;P2161&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;神奇的解法&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;有些问题刚开始觉得无从下手。好好想一想，尽量别看题解，否则你会大呼“简单”。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1007&amp;quot;, &amp;quot;P1984&amp;quot;, &amp;quot;P2022&amp;quot;, &amp;quot;P2320&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;倍增&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;一种特殊的枚举算法，但可大大加快效率。近年noip有考到。难度较大。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1967&amp;quot;, &amp;quot;P1081&amp;quot;, &amp;quot;P1613&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;强连通分量&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;强连通分量&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2341&amp;quot;, &amp;quot;P3469&amp;quot;, &amp;quot;P2746&amp;quot;, &amp;quot;P3119&amp;quot;, &amp;quot;P3225&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-提高综合练习1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;年轻人，又是个送上门的，让我来看看你真实的本领。啊哈哈哈哈哈！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2264&amp;quot;, &amp;quot;P1772&amp;quot;, &amp;quot;P1083&amp;quot;, &amp;quot;P1979&amp;quot;, &amp;quot;P2939&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-提高综合练习2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;再来！这里有的题目并非单纯的考察某个算法，而是考察一种综合性的思维。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1901&amp;quot;, &amp;quot;P1314&amp;quot;, &amp;quot;P2144&amp;quot;, &amp;quot;P1073&amp;quot;, &amp;quot;P2324&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;BOSS战-提高综合练习3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;既然已经打倒了前面2个boss，那么第3个也是没有问题的。少年，来吧！&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1965&amp;quot;, &amp;quot;P1311&amp;quot;, &amp;quot;P2296&amp;quot;, &amp;quot;P1084&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;提高模板-nlogn数据结构&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;虽然这些算法不是noip必须的，但是不算困难，很多题目可以使用这些方法。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3374&amp;quot;, &amp;quot;P3368&amp;quot;, &amp;quot;P3372&amp;quot;, &amp;quot;P3373&amp;quot;, &amp;quot;P1439&amp;quot;, &amp;quot;P3378&amp;quot;]
+      }
+    ]
+  },
+  {
+    &amp;quot;name&amp;quot;: &amp;quot;省选斗兽场/NOI神殿&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;为省选及以上选手制作的训练场。其实，省选水平的oier不需要一些外加的刷题列表，本栏仅供参考，也欢迎各位指出不足。&amp;quot;,
+    &amp;quot;subtasks&amp;quot;: [
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;省选基础-读入/输出优化&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;读入/输出优化是省选刷题时必要的一个东西，这里给出了几题，需要自己手写相应的读入输出处理。作为第一关，这一关相对简单。&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1580&amp;quot;, &amp;quot;P2393&amp;quot;, &amp;quot;P2394&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;省选基础-位运算&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;位运算往往在必要的时候,能带你优化一下常数,也许是空间;也许是时间;有的时候这样可以多过很多分&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2114&amp;quot;, &amp;quot;P2396&amp;quot;, &amp;quot;P2397&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;省选基础-打表&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;打表虽然很赖皮,而且基本都是非正解,但是这种办法能让我们在省选中拿到一些会超时或者会超空间的一些数据点&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1149&amp;quot;, &amp;quot;P1463&amp;quot;, &amp;quot;P1896&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;动态规划&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2051&amp;quot;, &amp;quot;P1879&amp;quot;, &amp;quot;P1850&amp;quot;, &amp;quot;P2831&amp;quot;, &amp;quot;P1131&amp;quot;, &amp;quot;P1169&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态规划2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;动态规划&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1273&amp;quot;, &amp;quot;P3648&amp;quot;, &amp;quot;P2519&amp;quot;, &amp;quot;P2515&amp;quot;, &amp;quot;P3233&amp;quot;, &amp;quot;P2501&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;网络流——最大流&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最大流&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2765&amp;quot;, &amp;quot;P2764&amp;quot;, &amp;quot;P2763&amp;quot;, &amp;quot;P2766&amp;quot;, &amp;quot;P2774&amp;quot;, &amp;quot;P2805&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;网络流——费用流&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;费用流&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2153&amp;quot;, &amp;quot;P2053&amp;quot;, &amp;quot;P3159&amp;quot;, &amp;quot;P2604&amp;quot;, &amp;quot;P2050&amp;quot;, &amp;quot;P3980&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;单调队列&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;单调队列&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2698&amp;quot;, &amp;quot;P2216&amp;quot;, &amp;quot;P2219&amp;quot;, &amp;quot;P2564&amp;quot;, &amp;quot;P2569&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;概率期望&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;概率期望&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2473&amp;quot;, &amp;quot;P2221&amp;quot;, &amp;quot;P3317&amp;quot;, &amp;quot;P3343&amp;quot;, &amp;quot;P3600&amp;quot;, &amp;quot;P3830&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;二分图&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;二分图&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3386&amp;quot;, &amp;quot;P1640&amp;quot;, &amp;quot;P1129&amp;quot;, &amp;quot;P1963&amp;quot;, &amp;quot;P3231&amp;quot;, &amp;quot;P2526&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;点分治&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;点分治&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2634&amp;quot;, &amp;quot;P2664&amp;quot;, &amp;quot;P3806&amp;quot;, &amp;quot;P3676&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;后缀数组&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;后缀数组&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3809&amp;quot;, &amp;quot;P1117&amp;quot;, &amp;quot;P2178&amp;quot;, &amp;quot;P2463&amp;quot;, &amp;quot;P2336&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;主席树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;主席树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2468&amp;quot;, &amp;quot;P3157&amp;quot;, &amp;quot;P3302&amp;quot;, &amp;quot;P3168&amp;quot;, &amp;quot;P3313&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;数位DP&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;数位DP&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2602&amp;quot;, &amp;quot;P3281&amp;quot;, &amp;quot;P2518&amp;quot;, &amp;quot;P2606&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;AC自动机&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;AC自动机&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3808&amp;quot;, &amp;quot;P3796&amp;quot;, &amp;quot;P2444&amp;quot;, &amp;quot;P2414&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;平衡树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;平衡树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2042&amp;quot;, &amp;quot;P2596&amp;quot;, &amp;quot;P1110&amp;quot;, &amp;quot;P3285&amp;quot;, &amp;quot;P3644&amp;quot;, &amp;quot;P3765&amp;quot;, &amp;quot;P3369&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;树链剖分&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;树链剖分&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2590&amp;quot;, &amp;quot;P2486&amp;quot;, &amp;quot;P2146&amp;quot;, &amp;quot;P3258&amp;quot;, &amp;quot;P3178&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;动态树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;动态树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3690&amp;quot;, &amp;quot;P2387&amp;quot;, &amp;quot;P3203&amp;quot;, &amp;quot;P3348&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;树套树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;树套树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1903&amp;quot;, &amp;quot;P3157&amp;quot;, &amp;quot;P3332&amp;quot;, &amp;quot;P2166&amp;quot;, &amp;quot;P3380&amp;quot;, &amp;quot;P2137&amp;quot;, &amp;quot;P3759&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;可持久化Trie树&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;可持久化Trie树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2048&amp;quot;, &amp;quot;P3527&amp;quot;, &amp;quot;P3302&amp;quot;, &amp;quot;P3168&amp;quot;, &amp;quot;P3242&amp;quot;, &amp;quot;P3241&amp;quot;, &amp;quot;P3293&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;莫队算法&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;莫队算法&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1972&amp;quot;, &amp;quot;P2336&amp;quot;, &amp;quot;P3709&amp;quot;, &amp;quot;P2709&amp;quot;, &amp;quot;P3674&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;分块&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;分块&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1972&amp;quot;, &amp;quot;P3396&amp;quot;, &amp;quot;P1822&amp;quot;, &amp;quot;P2801&amp;quot;, &amp;quot;P3203&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;莫比乌斯反演&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;莫比乌斯反演&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3768&amp;quot;, &amp;quot;P3172&amp;quot;, &amp;quot;P3455&amp;quot;, &amp;quot;P2522&amp;quot;, &amp;quot;P3327&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;其他&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;其他&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3377&amp;quot;, &amp;quot;P3261&amp;quot;, &amp;quot;P3382&amp;quot;, &amp;quot;P2571&amp;quot;, &amp;quot;P3222&amp;quot;, &amp;quot;P3187&amp;quot;, &amp;quot;P3199&amp;quot;, &amp;quot;P3292&amp;quot;, &amp;quot;P2824&amp;quot;, &amp;quot;P3285&amp;quot;, &amp;quot;P1552&amp;quot;]
+      }
+    ]
+  },
+  {
+    &amp;quot;name&amp;quot;: &amp;quot;USACO&amp;quot;,
+    &amp;quot;description&amp;quot;: &amp;quot;美国经典的算法练习题库，值得一刷&amp;quot;,
+    &amp;quot;subtasks&amp;quot;: [
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 1.1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1200&amp;quot;, &amp;quot;P1201&amp;quot;, &amp;quot;P1202&amp;quot;, &amp;quot;P1203&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 1.2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;完全枚举&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P3864&amp;quot;, &amp;quot;P1204&amp;quot;, &amp;quot;P1205&amp;quot;, &amp;quot;P1206&amp;quot;, &amp;quot;P1207&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 1.3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;贪心&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1208&amp;quot;, &amp;quot;P1209&amp;quot;, &amp;quot;P1211&amp;quot;, &amp;quot;P1444&amp;quot;, &amp;quot;P3650&amp;quot;, &amp;quot;P2693&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 1.4&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;有技巧的枚举&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1214&amp;quot;, &amp;quot;P1215&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 1.5&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;二进制数&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1216&amp;quot;, &amp;quot;P1217&amp;quot;, &amp;quot;P1218&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 2.1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;图论和洪水填充&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1457&amp;quot;, &amp;quot;P1458&amp;quot;, &amp;quot;P1459&amp;quot;, &amp;quot;P1460&amp;quot;, &amp;quot;P1461&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 2.2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;数据结构与动态规划&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1465&amp;quot;, &amp;quot;P1466&amp;quot;, &amp;quot;P1467&amp;quot;, &amp;quot;P1468&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 2.3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1470&amp;quot;, &amp;quot;P1472&amp;quot;, &amp;quot;P1473&amp;quot;, &amp;quot;P1474&amp;quot;, &amp;quot;P1475&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 2.4&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最短路径&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1518&amp;quot;, &amp;quot;P1519&amp;quot;, &amp;quot;P1522&amp;quot;, &amp;quot;P1529&amp;quot;, &amp;quot;P1530&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 3.1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最小生成树&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1546&amp;quot;, &amp;quot;P2722&amp;quot;, &amp;quot;P2723&amp;quot;, &amp;quot;P2724&amp;quot;, &amp;quot;P2725&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 3.2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;背包问题&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1134&amp;quot;, &amp;quot;P2727&amp;quot;, &amp;quot;P2728&amp;quot;, &amp;quot;P2729&amp;quot;, &amp;quot;P2730&amp;quot;, &amp;quot;P1828&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 3.3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;欧拉回路&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2731&amp;quot;, &amp;quot;P2732&amp;quot;, &amp;quot;P1930&amp;quot;, &amp;quot;P2733&amp;quot;, &amp;quot;P2734&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 3.4&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;计算几何&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1827&amp;quot;, &amp;quot;P2735&amp;quot;, &amp;quot;P2736&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 4.1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;最优化&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2737&amp;quot;, &amp;quot;P2738&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 4.2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;网络流&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2740&amp;quot;, &amp;quot;P1894&amp;quot;, &amp;quot;P2751&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 4.3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;高精度&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2687&amp;quot;, &amp;quot;P2752&amp;quot;, &amp;quot;P2753&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 4.4&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1344&amp;quot;, &amp;quot;P2739&amp;quot;, &amp;quot;P2741&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 5.1&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;二维凸包&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2742&amp;quot;, &amp;quot;P2743&amp;quot;, &amp;quot;P2749&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 5.2&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1560&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 5.3&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;启发式搜索&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P2701&amp;quot;, &amp;quot;P2744&amp;quot;, &amp;quot;P2745&amp;quot;, &amp;quot;P2746&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 5.4&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1345&amp;quot;, &amp;quot;P2747&amp;quot;, &amp;quot;P2748&amp;quot;]
+      },
+      {
+        &amp;quot;name&amp;quot;: &amp;quot;USACO Section 5.5&amp;quot;,
+        &amp;quot;description&amp;quot;: &amp;quot;&amp;quot;,
+        &amp;quot;problems&amp;quot;: [&amp;quot;P1709&amp;quot;, &amp;quot;P1856&amp;quot;, &amp;quot;P2750&amp;quot;]
+      }
+    ]
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+">【置顶】试炼场</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/oi-in-2020/"" data-c="
+          &lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2020&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2020&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，学习 OI 的第二年。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;20201&#34;&gt;2020.1&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;干 whk。那时 OI 超弱&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20202&#34;&gt;2020.2&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开始上网课。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;感谢 564 搭建的网站 &lt;code&gt;ericnth.cn&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;我在那里写了好多文章，电脑水平提升了好多。但 OI 还是很弱。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20205&#34;&gt;2020.5&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;网课结束。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;回学校。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20206&#34;&gt;2020.6&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;放暑假。有更多的时间学 OI。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 6 月 7 日注册了洛谷。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;OI 转折点。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20207&#34;&gt;2020.7&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;成为洛谷活跃用户，并从那天开始从来没有间断打卡。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在打了一场月赛 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;div2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 以后成为绿名。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20208&#34;&gt;2020.8&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;洛谷咕值更新 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;gugugu&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.625em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 了一个星期，那两个星期中，我写了好多题解。成功在 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;8&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 月红名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20209&#34;&gt;2020.9&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开学。OI 学习时间少了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但每天都会做几道题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;202010&#34;&gt;2020.10&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在学校 OI 晚课学习。老师讲的很简单。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;截止到 &lt;code&gt;CSP-J 2020&lt;/code&gt; 前，我只学习了简单算法和一些基础数据结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 月中旬初赛。&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;62.5&lt;/mn&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;62.5pts&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8388800000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，踩线过。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分数线：&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;61&lt;/mn&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;61pts&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8388800000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;202011&#34;&gt;2020.11&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;11&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;11&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 月下旬复赛。考场上我像个sb。 /kk&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2=&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，也没有什么遗憾。确实菜。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;202012&#34;&gt;2020.12&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;总结经验，进一步学习算法与数据结构。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注册了 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;CF&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.13889em;&#34;&gt;F&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 帐号。打了几场 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;div2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;rating&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.85396em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 到了 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;817&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;817&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;7&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;20201218&#34;&gt;2020.12.18&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在机房写了这篇 &lt;code&gt;OI in 2020&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;希望我能在明年拿到 &lt;code&gt;CSP-J&lt;/code&gt; &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1=&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，&lt;code&gt;CSP-S&lt;/code&gt; 拿奖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;后记&#34;&gt;后记&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/zxhlg/post-zhi-ding-2021-nian-pu-ji-zu-xue-xi-an-pai&#34;&gt;2021 OI&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/zxhlg/qi-zhong-kao-shi-you-ji&#34;&gt;期中考试&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/blog/zxhlg/csp-j-2020-you-ji&#34;&gt;CSP-J 2020&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">OI in 2020</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://zxh23682.github.io/post/dui-lie-xue-xi-bi-ji/"" data-c="
